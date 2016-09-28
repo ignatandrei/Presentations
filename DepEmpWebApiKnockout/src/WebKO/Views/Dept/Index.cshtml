@@ -1,0 +1,52 @@
+﻿<h1>Department List</h1>
+
+
+    <p>Number of departments: <span data-bind='text: Departments().length'>&nbsp;</span> department(s)</p>
+    <table data-bind='visible: Departments().length > 0'>
+        <thead>
+            <tr>
+                <th>Department name</th>
+               
+                <th />
+            </tr>
+        </thead>
+        <tbody data-bind='foreach: Departments'>
+            <tr>
+                <td><input class='required' data-bind='value: name, uniqueName: true' /></td>
+                <td><a href='#' data-bind='click: $root.removeDepartment'>Delete</a></td>
+                <td><a href='#' data-bind='click: $root.save'>Save</a></td>
+
+
+</tr>
+        </tbody>
+    </table>
+
+    <button data-bind='click: addDepartment'>Add Department</button>
+   
+
+@section Scripts{
+    <script>
+        var deps = [];
+        $.ajax({
+                url: "http://localhost:10441/api/dep"
+            })
+            .done(function(data) {
+                debugger;
+                if (data.item1) {
+                    deps = data.item2;
+                    var viewModel = new DeptModel(deps);
+                    ko.applyBindings(viewModel);
+
+                   
+                } else {
+                    alert("error  on server  - check server logs");
+                }
+            })
+            .fail(function() { alert("error on connection"); });
+        //.always(function() { alert("complete"); });
+
+
+       
+    </script>
+    
+}
