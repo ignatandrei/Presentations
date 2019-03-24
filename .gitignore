@@ -251,3 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 /2019/shorts/DockerForDevs/CreateApp/createAng/newAng
+/2019/shorts/DockerForDevs/RunApp/runAng/newAng
