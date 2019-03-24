@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docker for Developers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# Docker for Developers   =>
+
+| For        | =>What           | 
+| ------------- |:-------------:|
+| ![:img cd, 20%](cd.png)      | DevelopmentSoftware( Angular, .NET Core, others) | 
+| ![:img linux, 10%](linux.ico) | Databases(SqlServer,Mongo, others)     |
+| ![:img Windows, 10%](win.ico) | Running Tests(XUnit, JUnit, others)     |
+| ![:img Docker, 20%](docker.png) | Continous Delivery(AzureDevOps, Heroku, others)    |
+| ![:img Android, 10%](android.png) | Generating Deployment Application(Windows,Android,iOS,Mac, Linux)    |
+
+
+---
+
+# Agenda
+
+0. About me
+1. Introduction to Docker (images, container, logs)
+2. Scenario Create applications
+3. Scenario Run Applications
+4. Scenario Test Applications
+5. Scenario Create Deploy Applications
+6. Integration Run + Test for Developers
+7. Continous Testing + Deployment - Stankins
+7. Questions ?
+---
+class: center, top
+
+# About me
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+# Introduction to Docker (images, container, logs)
+
+Docker Hub for images
+MCR.Microsoft.Com 
+
+Demo 
+
+1. Jenkins
+1. Stankins
+1. Running BNR
+1. Running Blitz from BrentOzar
+
+---
+
+# Scenario Create applications
+
+Demo Angular, .NET Core, Cordova, SqlServer
+
+---
+
+# Scenario Run Applications
+
+Demo Angular, .NET Core, Cordova, SqlServer
+
+---
+
+# Scenario Test Applications
+
+Demo Angular, .NET Core
+
+---
+# Scenario Create Deploy Applications
+
+Demo Angular, .NET Core
+
+---
+
+# Integration Run + Test for Developers
+
+Demo Angular, .NET Core
+
+---
+
+# Continous Testing + Deployment
+
+Stankins
+1. Build on Linux with Docker
+2. Integration Test with Docker(SqlServer, Jenkins, Cachet)
+
+Introduction to YAML for Azure 
+
+[https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=vsts&tabs=schema]
+
+[https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core?view=vsts&tabs=yaml]
+
+Automatic Deploy Demo - modifying some data
+
+[GIT - https://github.com/ignatandrei/stankins](https://github.com/ignatandrei/stankins)
+
+[Pipeline Azure Devops https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1](https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1)
+
+Time ~ 20 minutes
+
+---
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
