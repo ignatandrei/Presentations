@@ -250,3 +250,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/2019/shorts/DockerForDevs/CreateApp/createAng/newAng
