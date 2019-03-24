@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 /2019/shorts/DockerForDevs/CreateApp/createAng/newAng
 /2019/shorts/DockerForDevs/RunApp/runAng/newAng
+/2019/shorts/DockerForDevs/RunApp/runNetCore/newNetCore/newNetCoreWebApi
