@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+ENV NODE_ROOT usr/app/
+WORKDIR $NODE_ROOT
+
+COPY NETCore .
+#dotnet watch -p NetCoreTestProject/NetCoreTestProject.csproj test
+CMD tail -f /dev/null
+
+#EXPOSE 5000 
+#EXPOSE 49153
