@@ -1,2 +1,4 @@
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth
 vs code in container
+https://github.com/codercom/code-server
+https://blog.sixeyed.com/adventures-in-docker-coding-on-a-remote-browser/
