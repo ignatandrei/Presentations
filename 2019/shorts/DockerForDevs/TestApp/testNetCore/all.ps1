@@ -11,10 +11,8 @@ while($TRUE){
 	}
     switch($result.ChangeType){
         Changed{
-        #TODO: see if folder or file
-			#Write-Host " modified " $result.Name
-			
-            $fullName = [System.IO.Path]::Combine($watcher.Path ,$result.Name)          
+        
+			$fullName = [System.IO.Path]::Combine($watcher.Path ,$result.Name)          
 			
 			$doNotCopy = $result.Name.Contains(".vs") -Or $result.Name.Contains("/obj/")
 			$doNotCopy = $doNotCopy -Or $result.Name.Contains("/bin/")
@@ -22,12 +20,24 @@ while($TRUE){
 				#Write-Host " except " +  $result.Name
 				continue;
 			}
+			Write-Host "sleep"
+			Start-Sleep 1
+			$exists = Test-Path -Path $fullName -PathType Any
+			$containerPath = $result.Name.Replace("\","/")
+			Write-Host " exists : " $exists
+			if(-Not $exists){
+				$fullName = Split-Path -parent $fullName 
+				$containerPath = Split-Path -parent $containerPath
+				
+			}
+			
 			$isFolder= (Get-Item  $fullName ) -is [System.IO.DirectoryInfo]
 			if($isFolder){
 				$fullName= $fullName + "/." #https://docs.docker.com/engine/reference/commandline/cp/
 			}
-            $cmd= "docker cp $fullName testNetCoreContainer:/usr/app/"+$result.Name.Replace("\","/")
-            Write-Host $cmd
+            $cmd= "docker cp $fullName testNetCoreContainer:/usr/app/"+$containerPath.Replace("\","/")
+            $date = Get-Date -format "yyyyMMdd:HHmmss"
+			Write-Host $date $cmd
             Invoke-Expression -Command $cmd
             
 
