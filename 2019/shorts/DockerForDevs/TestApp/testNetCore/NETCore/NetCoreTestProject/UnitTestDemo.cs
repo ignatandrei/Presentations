@@ -11,7 +11,7 @@ namespace NetCoreTestProject
         [Theory(DisplayName ="Some example")]
         [InlineData(15, 5, 3)]
         [InlineData(10, 2, 5)]
-        public async Task TestDivide(int x, int y, int sum)
+        public async Task TestDivide(int x, int y, int result)
         {
             #region arrange
             var imp = new MyImportantClass();
@@ -20,7 +20,7 @@ namespace NetCoreTestProject
             var res = await imp.Divide(x, y);
             #endregion
             #region assert
-            Assert.Equal(res, sum);
+            Assert.Equal(res, result);
             #endregion
         }
         [Trait("All", "Data")]
