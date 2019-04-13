@@ -9,8 +9,11 @@ while($TRUE){
 	if($result.TimedOut){
 		continue;
 	}
-    switch($result.ChangeType){
-        Changed{
+	$res=$result.ChangeType.ToString().ToLower();
+	#Write-Host $res
+    switch($res){
+		
+		{($_.Contains("change")  -or $_.Contains("create") )}{
         
 			$fullName = [System.IO.Path]::Combine($watcher.Path ,$result.Name)          
 			
