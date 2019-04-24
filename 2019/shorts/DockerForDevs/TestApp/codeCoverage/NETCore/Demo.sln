@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreSimpleBusinessLogic", "NetCoreSimpleBusinessLogic\NetCoreSimpleBusinessLogic.csproj", "{076BC539-B57C-43A1-9CC4-92D6263053B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreTestProject", "NetCoreTestProject\NetCoreTestProject.csproj", "{CBA5511B-1580-4DEE-A074-392F2408A81B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{076BC539-B57C-43A1-9CC4-92D6263053B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076BC539-B57C-43A1-9CC4-92D6263053B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076BC539-B57C-43A1-9CC4-92D6263053B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076BC539-B57C-43A1-9CC4-92D6263053B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA5511B-1580-4DEE-A074-392F2408A81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA5511B-1580-4DEE-A074-392F2408A81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA5511B-1580-4DEE-A074-392F2408A81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA5511B-1580-4DEE-A074-392F2408A81B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C8D6EB5-551A-4905-B84A-CEA1AD393222}
+	EndGlobalSection
+EndGlobal
