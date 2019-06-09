@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
+ENV NODE_ROOT usr/app/
+WORKDIR $NODE_ROOT
+RUN dotnet tool install --global dotnet-property 
+RUN dotnet tool install --global coverlet.console --version 1.4.1
+RUN dotnet tool install --global dotnet-reportgenerator-globaltool  
+
+ENV PATH="${PATH}:/root/.dotnet/tools"
+CMD tail -f /dev/null
+
+EXPOSE 5000 
