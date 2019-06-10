@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
+ENV NODE_ROOT usr/app/
+WORKDIR $NODE_ROOT
+
+RUN dotnet tool install --global dotnet-try --version 1.0.19264.11
+
+ENV PATH="${PATH}:/root/.dotnet/tools"
+
+CMD ["dotnet","try","demo"]
+
+EXPOSE 5000 
