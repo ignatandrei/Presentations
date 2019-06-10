@@ -6,6 +6,8 @@ RUN dotnet tool install --global dotnet-try --version 1.0.19264.11
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
+ENV ASPNETCORE_URLS=http://+:5000
+
 CMD ["dotnet","try","demo"]
 
 EXPOSE 5000 
