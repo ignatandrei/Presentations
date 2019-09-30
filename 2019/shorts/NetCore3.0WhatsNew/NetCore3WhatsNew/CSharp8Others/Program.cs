@@ -7,6 +7,7 @@ namespace CSharp8Others
     {
         /// <summary>
         /// https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
+        /// https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
