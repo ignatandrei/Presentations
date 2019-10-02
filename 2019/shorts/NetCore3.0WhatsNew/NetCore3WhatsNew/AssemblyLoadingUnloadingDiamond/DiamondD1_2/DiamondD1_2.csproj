@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>With Just GetMyBlog without arguments</Description>
+    <Copyright>MIT</Copyright>
+  </PropertyGroup>
+
+</Project>

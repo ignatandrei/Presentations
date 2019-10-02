@@ -8,6 +8,7 @@ namespace CSharp8WhatsNew
         /// <summary>
         /// Reference: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
         /// https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
+        /// https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/
         /// edit the .csproj
         /// dotnet publish -c Release -r win-x64 --self-contained true
         /// </summary>
