@@ -29,27 +29,49 @@ namespace AssemblyLoadingUnloadingDiamond
             {
                 //  var assembly = this.LoadFromStream(fs);
                 var assembly = this.LoadFromAssemblyName(new AssemblyName(namePlugin));
-                var type = assembly.GetTypes();
-                
-                foreach (var t in type)
+                var types = assembly.GetTypes();
+                foreach(var type in types)
                 {
-                    var instance = Activator.CreateInstance(t);
-                    var q = instance as IPlugin;
-                    return q;
+                    try
+                    {
+                        var instance = Activator.CreateInstance(type);
+                        var res = instance as IPlugin;
+                        if (res != null) return res;
+                    }
+                    catch
+                    {
+                        //just swalow
+                    }
                 }
-
-
+                
+                
                 return null;
             }
 
         }
         protected override Assembly Load(AssemblyName name)
         {
+
+            //shameless copy after https://github.com/natemcmaster/DotNetCorePlugins
+            try
+            {
+                var defaultAssembly = Default.LoadFromAssemblyName(name);
+                if (defaultAssembly != null)
+                {
+                    // return null so ALC will fallback to loading from Default ALC directly
+                    return null;
+                }
+            }
+            catch
+            {
+                // Swallow errors in loading from the default context
+            }
             string assemblyPath = _resolver.ResolveAssemblyToPath(name);
             if (assemblyPath != null)
             {
                 return LoadFromAssemblyPath(assemblyPath);
             }
+            
             string fullPossibleName = Path.Combine(mainAssemblyToLoadPath, name.Name + ".dll");
             if (File.Exists(fullPossibleName))
             {
