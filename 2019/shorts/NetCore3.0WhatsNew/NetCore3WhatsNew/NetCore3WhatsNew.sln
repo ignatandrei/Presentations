@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp8Others", "CSharp8Oth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCom", "WpfCom\WpfCom.csproj", "{CDFC13EA-C5B6-40E4-AAB2-6379FB55B63F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncEnumerable", "AsyncEnumerable\AsyncEnumerable.csproj", "{F3C675C4-B8FF-42BA-9EFA-09361F45A037}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CDFC13EA-C5B6-40E4-AAB2-6379FB55B63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFC13EA-C5B6-40E4-AAB2-6379FB55B63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFC13EA-C5B6-40E4-AAB2-6379FB55B63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
