@@ -9,8 +9,9 @@ namespace PluginA
 
         public string LoadData()
         {
-            Console.WriteLine("From A");
-            return "From A";
+            var diamond = new DiamondD1_2.clsTest();
+            Console.WriteLine($"From A {diamond.GetMyBlog()}");
+            return $"From A ";
         }
     }
 }
