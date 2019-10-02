@@ -29,6 +29,7 @@ namespace AssemblyLoadingUnloadingDiamond
             {
                 //  var assembly = this.LoadFromStream(fs);
                 var assembly = this.LoadFromAssemblyName(new AssemblyName(namePlugin));
+                
                 var types = assembly.GetTypes();
                 foreach(var type in types)
                 {
@@ -36,6 +37,7 @@ namespace AssemblyLoadingUnloadingDiamond
                     {
                         var instance = Activator.CreateInstance(type);
                         var res = instance as IPlugin;
+                        
                         if (res != null) return res;
                     }
                     catch

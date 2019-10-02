@@ -3,6 +3,9 @@ using System;
 
 namespace PluginA
 {
+    /// <summary>
+    /// https://www.nuget.org/packages/DiamondD1_2/1.0.0
+    /// </summary>
     public class clsA : IPlugin
     {
         public string Name { get =>  "clsA";  }
