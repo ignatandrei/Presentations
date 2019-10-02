@@ -5,6 +5,7 @@ namespace AssemblyLoadingUnloadingDiamond
 {
     /// <summary>
     /// https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support
+    /// https://github.com/dotnet/samples/tree/master/core/tutorials/Unloading
     /// please use https://github.com/natemcmaster/DotNetCorePlugins
     /// </summary>
     class Program
