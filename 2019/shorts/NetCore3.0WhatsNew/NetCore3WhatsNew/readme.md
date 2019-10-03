@@ -1,7 +1,16 @@
 <div class="reveal">
 			<div class="slides">
 				<section>
-				<h2>ASP.NET Core/MVC and Knockout.js - introduction</h2>					
+					<div>
+				.NET Core What's new
+				</div>
+				<ul><li>About me</li>
+				<li>C# 8.0</li>
+				<li>ASP.NET Core</li>
+				<li>EF Core</li>
+				<li>Summary</li>
+				</ul>
+				
 					<p>
 						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
 					</p>
