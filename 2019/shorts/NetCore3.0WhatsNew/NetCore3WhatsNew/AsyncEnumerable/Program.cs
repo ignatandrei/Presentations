@@ -10,6 +10,7 @@ namespace AsyncEnumerable
     {
         /// <summary>
         /// see also https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/generate-consume-asynchronous-stream
+        /// see also https://devblogs.microsoft.com/dotnet/announcing-ef-core-3-0-and-ef-6-3-general-availability/
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
