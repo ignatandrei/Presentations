@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0
+ENV NODE_ROOT usr/app/
+RUN dotnet tool install -g dotnet-try --version 1.0.19264.11
+WORKDIR $NODE_ROOT
+ENV PATH="${PATH}:/root/.dotnet/tools"
+CMD dotnet try
+EXPOSE 5000
