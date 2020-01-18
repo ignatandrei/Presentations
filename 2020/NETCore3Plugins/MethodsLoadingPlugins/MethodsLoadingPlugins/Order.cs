@@ -11,27 +11,30 @@ namespace MethodsLoadingPlugins
         }
         public List<LineOrder> lines { get; set; }
         public Calculate[] Calculates { get; }
-
+        private double? amount;
         public double Amount()
         {
-            double amount = 0;
+            if (amount.HasValue)
+                return amount.Value;
+
+            amount = 0;
             foreach (var line in lines)
             {
                 amount += line.sellGood.Price * line.Number;
             }
-            return amount;
+            return amount.Value;
         }
         public double CalculateAmount() {
-            double amount = Amount();
+            amount = Amount();
             foreach (var calc in Calculates)
             {
                 if (calc.CanCalculate(this))
                 {
-                    return calc.NewAmount(this);
+                    amount = calc.NewAmount(this);
                 }
             }
 
-            return amount;
+            return amount.Value;
 
         }
 

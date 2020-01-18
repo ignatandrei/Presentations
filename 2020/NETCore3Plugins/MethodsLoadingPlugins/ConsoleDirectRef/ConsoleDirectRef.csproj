@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MethodsLoadingPlugins\OrderCalculator.csproj" />
     <ProjectReference Include="..\MoreThan100\MoreThan100.csproj" />
+    <ProjectReference Include="..\ThreeForTwo\ThreeForTwo.csproj" />
   </ItemGroup>
 
 </Project>

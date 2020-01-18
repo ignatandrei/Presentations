@@ -12,7 +12,11 @@ namespace MoreThan100
 
         public double NewAmount(Order o)
         {
-            return o.Amount() * 90 / 100;
+            Console.WriteLine($"entered plugin  {nameof(DeductionMore)}  with amount {o.Amount()}");
+            var amount = o.Amount() * 90 / 100;
+            Console.WriteLine($"exit plugin  {nameof(DeductionMore)}  with amount {amount}");
+            return amount;
+            
         }
     }
 }
