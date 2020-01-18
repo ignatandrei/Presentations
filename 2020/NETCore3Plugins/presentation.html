@@ -74,10 +74,10 @@ class: center, middle
 0. About me
 1. Plugins - what + usage
 2. Methods loading plugins ( direct references,reflection)
-3. Diamond problem and .NET Core 3 plugins
+3. .NET Core 3 specific for plugins
 5. Questions ?
 
-Code at https://github.com/ignatandrei/Presentations/tree/master/2020/shorts/NetCore3.0WhatsNew
+Code at https://github.com/ignatandrei/Presentations/tree/master/2020/NETCore3Plugins
 ---
 class: center, top
 
@@ -97,13 +97,61 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 
 TD @ EA
 ---
+class: center, top
 
 # Plugins - what + usage
+		
+Definition: https://en.wikipedia.org/wiki/Plug-in_(computing)
 
-        
-Definition
+<small>
+In computing, a plug-in (or plugin, add-in, addin, add-on, or addon) is a software component that adds a specific feature to an existing computer program. When a program supports plug-ins, it enables customization.
+</small>
+
+Examples
+
+1. Office ( word, excel,outlook, ...): https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview
+2. Chrome : https://chrome.google.com/webstore/category/extensions?hl=en
+3. Visual Studio : https://marketplace.visualstudio.com/ : LiveShare
 
 ---
+class: center, middle
+# Methods loading plugins 
+
+1. Direct References - example
+2. Load At runtime with Reflection - example
+
+---
+class: center, middle
+# .NET Core specific for plugins 
+
+
+
+1. Loading- Unloading plugins  - example
+https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support
+
+2. Diamond problem for plugins :
+https://en.wikipedia.org/wiki/Multiple_inheritance
+![:img ignat, 10%](imgs/diamond.bmp)
+
+example
+
+---
+
+class: center, middle
+
+
+# Agenda
+
+
+0. About me
+1. Plugins - what + usage
+2. Methods loading plugins ( direct references,reflection)
+3. Diamond problem and .NET Core 3 plugins
+5. Questions ?
+
+Code at https://github.com/ignatandrei/Presentations/tree/master/2020/shorts/NetCore3.0WhatsNew
+---
+
 class: center, top
 
 # Questions?
@@ -122,6 +170,7 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 
 TD @ EA
 
+---
 
     </textarea>
     <script src="remark-latest.min.js">
