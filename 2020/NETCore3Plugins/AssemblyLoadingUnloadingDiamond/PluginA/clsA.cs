@@ -1,5 +1,6 @@
 ﻿using PluginInterfaces;
 using System;
+using System.Collections.Generic;
 
 namespace PluginA
 {
@@ -8,6 +9,14 @@ namespace PluginA
     /// </summary>
     public class clsA : IPlugin
     {
+        public clsA()
+        {
+            for (int i = 0; i < 1000000; i++)
+            {
+                lst.Add("ASDFASDASDASDSd");
+            }
+        }
+        public List<string> lst = new List<string>();
         public string Name { get =>  "clsA";  }
 
         public string LoadData()
