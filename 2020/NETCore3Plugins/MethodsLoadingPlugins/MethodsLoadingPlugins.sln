@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeForTwo", "ThreeForTwo\ThreeForTwo.csproj", "{059A5276-AC5F-44E6-9FEA-80AE8AB47C4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLoadPlugin", "ConsoleLoadPlugin\ConsoleLoadPlugin.csproj", "{41401DA9-9F12-4759-9C76-714DF0993249}"
+	ProjectSection(ProjectDependencies) = postProject
+		{059A5276-AC5F-44E6-9FEA-80AE8AB47C4F} = {059A5276-AC5F-44E6-9FEA-80AE8AB47C4F}
+		{87CDFDE8-0C9E-45D9-A4BC-71AC18781526} = {87CDFDE8-0C9E-45D9-A4BC-71AC18781526}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
