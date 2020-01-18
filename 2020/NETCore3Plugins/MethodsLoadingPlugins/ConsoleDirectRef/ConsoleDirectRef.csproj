@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MethodsLoadingPlugins\OrderCalculator.csproj" />
+    <ProjectReference Include="..\MoreThan100\MoreThan100.csproj" />
+  </ItemGroup>
+
+</Project>
