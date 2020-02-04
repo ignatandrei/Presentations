@@ -1,0 +1,13 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+ENV NODE_ROOT usr/app/
+WORKDIR $NODE_ROOT
+
+COPY NETCore .
+RUN dotnet tool install --global coverlet.console
+RUN dotnet tool install  -g dotnet-reportgenerator-globaltool 
+RUN dotnet test NetCoreTestProject/NetCoreTestProject.csproj --logger trx  --logger "console;verbosity=normal" --collect "Code coverage"
+ENV PATH="${PATH}:/root/.dotnet/tools"
+RUN coverlet NetCoreTestProject/bin/Debug/netcoreapp2.1/NetCoreTestProject.dll --target "dotnet" --targetargs "test NetCoreTestProject/NetCoreTestProject.csproj --configuration Debug --no-build"  --format opencover --exclude "[xunit*]*" --exclude "[*]NetCoreTestProject*"
+RUN reportgenerator "-reports:coverage.opencover.xml" "-targetdir:coveragereport" "-reporttypes:HTMLInline;HTMLSummary;Badges"
+CMD tail -f /dev/null
+

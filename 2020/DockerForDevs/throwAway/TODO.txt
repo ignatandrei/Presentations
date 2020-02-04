@@ -1,0 +1,8 @@
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer --no-auth
+vs code in container
+https://github.com/codercom/code-server
+https://blog.sixeyed.com/adventures-in-docker-coding-on-a-remote-browser/
+https://blog.sixeyed.com/tag/docker/
+https://blog.sixeyed.com/your-must-have-powershell-aliases-for-docker/
+https://gist.github.com/sixeyed/c3ae1fd8033b8208ad29458a56856e05
+https://github.com/sixeyed/docker-on-windows
