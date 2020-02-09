@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
 ENV NODE_ROOT usr/app/
 WORKDIR $NODE_ROOT
 CMD tail -f /dev/null
