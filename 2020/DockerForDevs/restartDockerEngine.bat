@@ -49,10 +49,10 @@ REM Run shell as admin (example) - put here code as you like
 ECHO %batchName% Arguments: %1 %2 %3 %4 %5 %6 %7 %8 %9
 @echo on
 sc stop com.docker.service
-taskkill /IM:"Docker for Windows.exe" /f
+taskkill /IM:"Docker Desktop.exe" /f
 pause
 sc start com.docker.service
 echo %ProgramW6432%
-START "docker" "%ProgramW6432%\Docker\Docker\Docker for Windows.exe" 
+START "docker" "%ProgramW6432%\Docker\Docker\Docker Desktop.exe" 
 pause
 rem cmd /k
