@@ -1,0 +1,10 @@
+FROM node
+
+RUN npm install -g @angular/cli@8.1.2
+RUN set -x \
+    && node -v \
+    && npm -v \
+    && ng version
+	
+#CMD ng serve --host 0.0.0.0 --port 4800
+EXPOSE 4800 

@@ -14,5 +14,6 @@ call docker cp newang8_container:/usr/app/package-lock.json newAng8
 call docker cp newang8_container:/usr/app/package.json newAng8
 call docker cp newang8_container:/usr/app/src newAng8
 call docker cp newang8_container:/usr/app/tsconfig.json newAng8
+call docker cp newang8_container:/usr/app/tsconfig.app.json newAng8
 call docker cp newang8_container:/usr/app/tslint.json newAng8
 
