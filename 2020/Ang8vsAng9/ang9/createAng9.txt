@@ -1,0 +1,19 @@
+FROM node:12.0
+ARG nameapp
+ENV NODE_ROOT usr/app/
+
+RUN echo "Name angular application to be created is $nameapp"
+RUN mkdir -p $NODE_ROOT
+RUN npm install -g @angular/cli@9.0.4
+
+RUN ng new $nameapp --directory=$NODE_ROOT --routing=true --commit=false --defaults=true --verbose=true
+
+WORKDIR $NODE_ROOT
+
+RUN set -x \
+    && node -v \
+    && npm -v \
+    && ng version
+	
+CMD ng serve --host 0.0.0.0 --port 4900
+EXPOSE 4900 
