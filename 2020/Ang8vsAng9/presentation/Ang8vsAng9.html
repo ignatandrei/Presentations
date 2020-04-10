@@ -77,8 +77,10 @@ class: center, middle
 0. About me
 1. Introduction to Docker (images, container) 
 1. VSCode with Docker
-2. Angular 8 vs Angular 9
 2. Angular  9 What's new
+2. Angular 8 vs Angular 9
+2. Ivy
+2. Updating
 7. Questions ?
 ---
 class: center, top
@@ -122,6 +124,29 @@ Running in containers
 DevContainers: https://github.com/microsoft/vscode-dev-containers
 
 CTRL+SHIFT+P - open folder in container
+---
+
+# Angular  9 What's new
+
+Source: https://auth0.com/blog/angular-9-whats-new/
+https://github.com/angular/angular/blob/master/CHANGELOG.md#900-2020-02-06
+
+1. Provided in: root, any, platform
+https://angular.io/api/core/Injectable
+( read also: https://angular.io/guide/architecture-services , https://angular.io/guide/dependency-injection)
+
+2. Ivy smaller bundling size + Ivy makes AOT to the ng serve
+https://slides.com/andreiantal/angular-9-a-look-at-ivy/#/9
+
+3. Improved CSS class and style binding
+https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+
+4. Testing: Component harnesses
+https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+
+5. @angular/google-maps, @angular/youtube-player - https://github.com/angular/components
+
+6. VSCode extension: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 
 ---
 
@@ -134,27 +159,25 @@ Demo project Ang 8 vs Ang 9
 1.  <app-fake></app-fake> - compile time
 1.  ExpressionChangedAfterItHasBeenCheckedError 
 1.  Debug components in console
+
 ---
+class: center, top
 
-# Angular  9 What's new
+# Ivy
 
-Source: https://auth0.com/blog/angular-9-whats-new/
+https://slides.com/andreiantal/angular-9-a-look-at-ivy/#/16
 
-1. Provided in: root, any, platform
-https://angular.io/api/core/Injectable
-( read also: https://angular.io/guide/architecture-services , https://angular.io/guide/dependency-injection)
+https://www.reddit.com/r/Angular2/comments/f18z2s/big_surprise_after_compile_with_ivy/
 
-2. Ivy smaller bundling size + Ivy makes AOT to the ng serve
+( Doom 1 size: 2.39 MB)
 
-3. Improved CSS class and style binding
-https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+---
+class: center, top
 
-4. Testing: Component harnesses
-https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+# Updating
 
-5. @angular/google-maps, @angular/youtube-player - https://github.com/angular/components
+https://angular.io/guide/updating-to-version-9
 
-6. VSCode extension: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 ---
 class: center, top
 
