@@ -4,3 +4,8 @@ folderToc("../2016",  {
     filter: '*.html',
     title: 'Presentations'
 });
+var DirArchiver = require('dir-archiver');
+var archive = new DirArchiver('../2016', '../docs/2016.zip',[]);
+ 
+// Create the zip file.
+archive.createZip();
