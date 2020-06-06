@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dir-archiver": "^1.1.1",
     "folder-toc": "^0.3.1"
   }
 }
