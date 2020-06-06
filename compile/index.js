@@ -89,3 +89,5 @@ folderToc("../docs",  {
     filter: '*prez.html',
     title: 'Presentations'
 });
+
+fs.copyFileSync(`../docs/index.html`, `../docs/404.html`);
