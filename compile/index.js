@@ -1,4 +1,17 @@
 const fs = require('fs');
+const path=require('path');
+
+let files= fs.readdirSync("../docs/");
+console.log(files.length);
+let filesHtml = files.filter( function( filename) {return (filename.indexOf("prez.html")>=0);});
+console.log(filesHtml.length);
+filesHtml.forEach(v=> fs.unlinkSync(path.join("../docs/",v)));
+
+let filesZip = files.filter( function( filename) {return (filename.indexOf(".zip")>=0);});
+filesZip.forEach(v=> fs.unlinkSync(path.join("../docs/",v)));
+
+
+
 var DirArchiver = require('dir-archiver');
 var folder= '../2016/';
 var file ='DepEmpWebApiKnockout';
@@ -86,8 +99,11 @@ archive.createZip();
 var folderToc = require("folder-toc");
 folderToc("../docs",  {
     name: 'index.html',
+    templateDir: path.join(__dirname, 'resources/classic'),
+    templateFile: 'index.jst',
     filter: '*prez.html',
     title: 'Presentations'
+    
 });
 
 fs.copyFileSync(`../docs/index.html`, `../docs/404.html`);
