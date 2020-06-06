@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>.NET Core What's New</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+
+# Agenda
+
+
+0. About me
+1. C# 8.0 What's new
+2. .NET Core What's new
+3. ASP.NET Core What's new
+4. EF Core What's new
+6. Questions ?
+
+Code at https://github.com/ignatandrei/Presentations/tree/master/2019/shorts/NetCore3.0WhatsNew
+---
+class: center, top
+
+# About me
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+# C# 8.0 What's new
+
+Reference: 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
+https://github.com/dotnet/csharplang/blob/master/meetings/2017/LDM-2017-03-08.md
+
+Demos:
+
+1. Default Interface Inheritance 
+1. Multiple Interface Inheritance 
+1. Switch
+1. Deconstruct
+
+Other demos:
+
+1. UsingUsage
+1. StaticLocalFunctions();
+1. Nullable();
+1. Version();
+1. Indexes();
+1. NullCoalescing();
+
+See NetCore3WhatsNew.sln
+        
+---
+
+# .NET Core What's new
+
+Reference:
+
+https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
+
+https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/
+
+Demos:
+
+1. AsyncEnumerable
+1. WPF 
+1. COM
+1. Build ( trim, single file)
+1. Diamond hell with plugins
+
+See NetCore3WhatsNew.sln and AssemblyLoadingUnloadingDiamond.sln
+
+---
+
+# ASP.NET Core What's new
+
+Reference:
+
+https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-3.0?view=aspnetcore-3.0
+
+
+1. Blazor + Blazor Server
+1. gRPC - https://docs.microsoft.com/en-us/aspnet/core/grpc/index?view=aspnetcore-3.0 
+1. SignalR - reconnection, authorization
+1. NewtonSoft => System.Text.JSON
+1. Windows Authentication has been extended onto Linux and macOS. 
+1. GenericHost - see https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-3.0&tabs=visual-studio#hostbuilder-replaces-webhostbuilder
+1. As of ASP.NET Core 3.0, .NET Framework is no longer a supported target framework
+
+---
+
+# EF Core What's new
+
+Reference:
+https://devblogs.microsoft.com/dotnet/announcing-ef-core-3-0-and-ef-6-3-general-availability/
+
+1. Refactoring + Single SQL statement per LINQ query
+1. Restricted client evaluation - i.e. Explicit AsEnumerable
+1. C# 8.0 support - AsAsyncEnumerable
+1. IDbCommandInterceptor
+
+See NetCore3WhatsNew.sln , AsyncEnumerable 
+
+See https://github.com/ignatandrei/EFRecordAndPlay/tree/master/EF_Core3/EFCoreRecordAndPlay/EFRecordAndPlayTest
+
+
+
+
+---
+class: center, top
+
+# Questions?
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

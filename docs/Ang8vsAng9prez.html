@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular  for Developers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# Angular 9 vs Angular 8 ![:img Angular, 20%](angular.ico)  =>
+
+
+---
+
+# Agenda
+
+0. About me
+1. Introduction to Docker (images, container) 
+1. VSCode with Docker
+2. Angular  9 What's new
+2. Angular 8 vs Angular 9
+2. Ivy
+2. Updating
+7. Questions ?
+---
+class: center, top
+
+# About me
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+# Introduction to Docker (images, container) +  VSCode run images
+
+Docker Hub for images
+MCR.Microsoft.Com 
+
+
+Demo 
+
+1. Jenkins : docker pull jenkins/jenkins , docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+1. Sql Server tutorial: https://www.codeproject.com/Articles/5258260/Using-Docker-for-Local-SQL-Server-Development
+1. Stankins : docker run -p 5000:5000 ignatandrei/stankins_linux
+1. Your database ? 
+
+---
+# VSCode with Docker
+
+Interacting with containers
+
+Running in containers
+
+DevContainers: https://github.com/microsoft/vscode-dev-containers
+
+CTRL+SHIFT+P - open folder in container
+---
+
+# Angular  9 What's new
+
+Source: https://auth0.com/blog/angular-9-whats-new/
+https://github.com/angular/angular/blob/master/CHANGELOG.md#900-2020-02-06
+
+1. Provided in: root, any, platform
+https://angular.io/api/core/Injectable
+( read also: https://angular.io/guide/architecture-services , https://angular.io/guide/dependency-injection)
+
+2. Ivy smaller bundling size + Ivy makes AOT to the ng serve
+https://slides.com/andreiantal/angular-9-a-look-at-ivy/#/9
+
+3. Improved CSS class and style binding
+https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+
+4. Testing: Component harnesses
+https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+
+5. @angular/google-maps, @angular/youtube-player - https://github.com/angular/components
+
+6. VSCode extension: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+
+---
+
+# Angular 8 vs Angular 9
+
+Info from:
+https://blog.angular.io/version-9-of-angular-now-available-project-ivy-has-arrived-23c97b63cfa3
+
+Demo project Ang 8 vs Ang 9
+1.  <app-fake></app-fake> - compile time
+1.  ExpressionChangedAfterItHasBeenCheckedError 
+1.  Debug components in console
+
+---
+class: center, top
+
+# Ivy
+
+https://slides.com/andreiantal/angular-9-a-look-at-ivy/#/16
+
+https://www.reddit.com/r/Angular2/comments/f18z2s/big_surprise_after_compile_with_ivy/
+
+( Doom 1 size: 2.39 MB)
+
+---
+class: center, top
+
+# Updating
+
+https://angular.io/guide/updating-to-version-9
+
+---
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

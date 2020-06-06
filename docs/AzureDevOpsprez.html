@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Azure DevOps</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# AzureDevOps + GitHub  =>
+
+| For        | =>What           | 
+| ------------- |:-------------:|
+| ![:img cd, 20%](cd.png)      | Version Control, Build, Tests, CodeCoverage | 
+| ![:img linux, 10%](linux.ico) | Console App, Desktop App     |
+| ![:img Windows, 10%](win.ico) | Console App, Desktop App     |
+| ![:img Docker, 20%](docker.png) | Windows, Linux container    |
+| ![:img Android, 10%](android.png) | APK    |
+| ![:img Android, 10%](azure.png) | Whatever you want e.g. [website](https://azurestankins.azurewebsites.net)    |
+
+
+
+---
+
+# Agenda
+
+0. About me
+1. Introduction to Azure DevOps
+2. Introduction to the application
+3. Introduction to Docker
+3. Introduction to YAML for Azure 
+4. Automatic Deploy Demo - modifying some data
+5. Stankins CD flow  
+6. Lessons learned from Stankins  YAML
+7. Questions ?
+---
+class: center, top
+
+# About me
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+# Introduction to Azure DevOps + GitHub
+
+GitHub - source control
+
+[DotNet - https://github.com/Microsoft/dotnet](https://github.com/Microsoft/dotnet)
+
+[StankinsAlive - https://github.com/ignatandrei/stankins](https://github.com/ignatandrei/stankins)
+
+
+Azure DevOps = source control + pipelines
+
+[Stankins - https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1](https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1)
+
+[Azure Pipeline on GitHub = https://github.com/marketplace/azure-pipelines](https://github.com/marketplace/azure-pipelines)
+
+Explanation of links
+
+---
+
+# Introduction to the application
+
+StankinsAlive - Instant Monitoring
+
+[Github -  https://github.com/ignatandrei/stankins](https://github.com/ignatandrei/stankins)
+
+[demo-  https://azurestankins.azurewebsites.net/](https://azurestankins.azurewebsites.net/dashboard)
+
+![:img all, 70%](all.png)
+Demo
+---
+
+# Introduction to Docker - application as component
+
+Docker Hub 
+
+[SqlServer docker - https://hub.docker.com/r/microsoft/mssql-server/](https://hub.docker.com/r/microsoft/mssql-server/)
+
+[Dotnet docker -  https://hub.docker.com/r/microsoft/dotnet/](https://hub.docker.com/r/microsoft/dotnet/)
+
+[StankinsAlive docker -  https://cloud.docker.com/repository/docker/ignatandrei/stankins_windows](https://cloud.docker.com/repository/docker/ignatandrei/stankins_windows)
+
+[StankinsAlive docker -  https://cloud.docker.com/repository/docker/ignatandrei/stankins_linux](https://cloud.docker.com/repository/docker/ignatandrei/stankins_linux)
+
+Demo Sql Server
+
+Demo StankinsAlive
+---
+
+# Introduction to YAML for Azure 
+
+[https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=vsts&tabs=schema]
+
+[https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core?view=vsts&tabs=yaml]
+
+<ul>
+<li class="x-hidden-focus">Job 1<ul>
+<li class="x-hidden-focus">Step 1.1</li>
+<li>Step 1.2</li>
+<li>...</li>
+</ul>
+</li>
+<li>Job 2<ul>
+<li>Step 2.1</li>
+<li>Step 2.2</li>
+<li>...</li>
+</ul>
+</li>
+<li>...</li>
+</ul>
+Step = task or script .
+
+Task = specific command
+
+Script = user command 
+
+- task: CopyFiles@2
+    inputs:
+        contents: 'stankinsv2/solution/StankinsV2/StankinsCordova/**/app*.apk'
+        targetFolder: '$(Build.ArtifactStagingDirectory)'
+        flattenFolders: true
+		
+- script: |
+		rem other commands
+        xcopy coveragereport  $(Build.ArtifactStagingDirectory)\cc\ /S   
+        dir 
+    displayName: test dot net
+---
+
+# Automatic Deploy Demo - modifying some data
+
+[GIT - https://github.com/ignatandrei/stankins](https://github.com/ignatandrei/stankins)
+
+[Pipeline Azure Devops https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1](https://dev.azure.com/ignatandrei0674/stankinsv2/_build?definitionId=1)
+
+Time ~ 20 minutes
+---
+
+# Stankins CD Flow
+
+
+https://github.com/ignatandrei/stankins/blob/master/azure-pipelines.yml
+
+![:img all, 70%](pipeline.png) 
+
+---
+
+# Lessons learned from Stankins  YAML 
+
+
+The bad(and solutions)
+
+<p class="small">
+Long time to run - Make a small job to test and variables to run only this ( spaces anyone ?)
+</p><p class="small">
+Variables not work always -  declare in powershell
+</p><p class="small">
+Syntax is sometimes unpolished (task.setvariable variable=PWversion;isOutput=true) 
+</p><p class="small">
+Versions for same task ( AndroidSigning@2 vs AndroidSigning@3) -read docs
+</p><p class="small">
+Small inconveniences ( hidden variables , files ,robocopy, npm ...)
+</p>
+
+The normal
+
+<p class="small">
+Need for external tools( version: delay, dotnetproperty vs json, codecoverage,electron...)
+</p>
+
+The good
+<p class="small">
+For CI/CD it has all it needs https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/?view=vsts
+</p><p class="small">
+Bash/Cmd/Powershell - important - curl -s https://codecov.io/bash > codecov
+</p><p class="small">
+Unlimited build time (>300 builds for StankinsAlive)
+</p>
+
+---
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

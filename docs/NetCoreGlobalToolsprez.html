@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>NET Core Global Tools</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, top
+
+# NET Core Global Tools
+
+ Everything you need for your project and a CI DevOps
+ 
+
+---
+
+# Agenda
+
+1. About me
+
+2. What is .NET Core Global Tools ?
+
+3. Examples of .NET Core Global Tools
+
+5. DotNet Try and Docker
+
+6. Creating a .NET Core Global Tool
+
+7. Questions
+
+
+---
+class: center, top
+
+# About me
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+
+# What is .NET Core Global Tools ?
+
+Command prompts in Nuget packages
+
+Reference: https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools
+
+Made by MSFT: https://github.com/aspnet/AspNetCore/tree/master/src/Tools
+
+3rd Party List : https://github.com/natemcmaster/dotnet-tools
+
+Powershell: https://www.hanselman.com/blog/InstallingPowerShellWithOneLineAsANETCoreGlobalTool.aspx
+
+Example  /  Demo
+
+dotnet tool list -g
+
+
+dotnet tool uninstall -g dotnetsay
+
+dotnetsay 
+
+dotnet tool install -g dotnetsay
+
+dotnetsay
+
+---
+
+# Examples of .NET Core Global Tools
+
+Demo : 
+
+DotNetProperty https://github.com/loresoft/DotNet.Property
+
+Coverlet https://github.com/tonerdo/coverlet
+
+Report Generator https://github.com/danielpalme/ReportGenerator/
+
+Used in CI by me:
+ 
+Sonar : https://github.com/SonarSource/sonar-scanner-msbuild
+(https://sonarcloud.io/dashboard?id=ignatandrei_stankins )
+
+dotnet-warp : https://github.com/Hubert-Rybak/dotnet-warp
+
+powershell : https://www.hanselman.com/blog/InstallingPowerShellWithOneLineAsANETCoreGlobalTool.aspx
+
+http repl: https://www.hanselman.com/blog/ACommandlineREPLForRESTfulHTTPServices.aspx
+
+---
+# DotNet Try and Docker
+
+Demo : 
+
+More examples:
+https://nodatime.org/2.4.x/userguide/recipes
+https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1
+https://dotnet.microsoft.com/platform/try-dotnet
+
+---
+# Creation/Use of a .NET Global Tool
+
+Documentation:
+https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools-how-to-create
+
+Because of arguments, use a template:
+https://github.com/natemcmaster/dotnet-globaltool-templates
+
+
+Add version + Deploy on Nuget - recognize and show install
+( Maybe Azure PipeLines?)
+
+Optional : list on https://github.com/natemcmaster/dotnet-tools
+( see AOP) 
+or not ( https://www.nuget.org/packages/dotnet-gcr )
+
+---
+
+
+class: center, top
+
+# Questions ?
+
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+All code at https://github.com/ignatandrei/angNetCoreDemo/
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

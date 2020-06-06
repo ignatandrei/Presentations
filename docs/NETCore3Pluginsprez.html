@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>.NET Core Plugins</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+
+# Agenda
+
+
+0. About me
+1. Plugins - what + usage
+2. Methods loading plugins ( direct references,reflection)
+3. .NET Core 3 specific for plugins
+4. My implementations
+5. Questions ?
+
+Code at https://github.com/ignatandrei/Presentations/tree/master/2020/NETCore3Plugins
+---
+class: center, top
+
+# About me
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+TD @ EA
+---
+class: center, top
+
+# Plugins - what + usage
+		
+Definition: https://en.wikipedia.org/wiki/Plug-in_(computing)
+
+<small>
+In computing, a plug-in (or plugin, add-in, addin, add-on, or addon) is a software component that adds a specific feature to an existing computer program. When a program supports plug-ins, it enables customization.
+</small>
+
+Examples
+
+1. Office ( word, excel,outlook, ...): https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview
+2. Chrome : https://chrome.google.com/webstore/category/extensions?hl=en
+3. Visual Studio : https://marketplace.visualstudio.com/ : LiveShare
+4. Wordpress, Photoshop , ...
+---
+class: center, middle
+# Methods loading plugins 
+
+1. ## Direct References - example : Calculate Order of goods, 2For3, AmountReduction
+2. ## Load At runtime with Reflection - example
+### Ensure that in plugins you do have the 2 dll(MoreThan100.dll , ThreeForTwo.dll)
+---
+class: center, middle
+# .NET Core specific for plugins 
+
+
+
+1. Loading- Unloading plugins  - example
+https://docs.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support
+
+2. Diamond problem for plugins :
+https://en.wikipedia.org/wiki/Multiple_inheritance
+![:img ignat, 10%](imgs/diamond.bmp)
+
+example
+
+---
+class: center, middle
+# My implementations
+
+
+
+Help from https://github.com/natemcmaster/DotNetCorePlugins
+
+2. https://github.com/ignatandrei/InfoValutar
+
+3. https://github.com/ignatandrei/FileExtension
+
+
+---
+
+
+class: center, middle
+
+
+# Agenda
+
+
+0. About me
+1. Plugins - what + usage
+2. Methods loading plugins ( direct references,reflection)
+3. Diamond problem and .NET Core 3 plugins
+4. My implementations
+5. Questions ?
+
+Code at https://github.com/ignatandrei/Presentations/tree/master/2020/shorts/NetCore3.0WhatsNew
+---
+
+class: center, top
+
+# Questions?
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+TD @ EA
+
+---
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
