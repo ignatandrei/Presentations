@@ -1,0 +1,212 @@
+<!-- <!doctype html>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<h1>ASP.NET Core/MVC and Knockout.js - introduction</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+				<h1>What is Knockout?</h1>					
+					<p>
+						
+						<small>http://knockoutjs.com/</small>
+						
+					</p>
+					<p>http://learn.knockoutjs.com/</p>
+					<p>http://knockoutjs.com/examples/</p>
+				</section>
+				<section>
+				<h1> ASP.NET Core / MVC -  open source </h1>					
+
+<p>https://docs.asp.net/en/latest/</> 
+<p>https://github.com/aspnet/home</p>
+				<p>based on .NET Core ,https://www.microsoft.com/net/core#windows </p>
+<p>Runs on Windows/Linux/Mac + docker</p>
+
+				</section>
+					<section>
+				<h1>Base principles in MVC - view, controller, <strike>model</strike></h1>	
+				
+				<p>Demo</p>
+			
+				</section>
+				
+				<section>
+				<h1>webAPI</h1>	
+				<p>Hosting in IIS, Windows service, console application</p>
+				<p>Demo values controller</p>
+			
+				</section>
+				
+				<section>
+				<h1>Combining all in one application</h1>	
+				<p>Demo</p>
+				<p> </p>
+			
+				</section>
+				<section>
+				
+				<h1>Questions ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<h1>OCR</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+				<h1>What/Why is OCR?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Optical_character_recognition</small>
+						
+					</p>
+					<p>Automatic number plate recognition ( mall)</p>
+					<p>Book scanning</p>
+				</section>
+				<section>
+				<h1> solutions</h1>					
+
+<p>Tesseract ( not in this demo)</> 
+				<p>One Note </p>
+<p>Windows Universal Samples</p>
+
+				</section>
+					<section>
+				<h1>One Note</h1>	
+				
+				<p>Demo</p>
+				<small>https://github.com/ignatandrei/OneNoteOCR</small>
+				</section>
+				<section>
+				<h1>Windows Universal Samples</h1>					
+
+				<p>Demo</p>
+				<small>https://github.com/Microsoft/Windows-universal-samples</small>
+				</section>
+				<section>
+				<p>Conclusion</p>
+				
+				<p>MSFT: Major, minor, build, and revision numbers.</p>
+				<p>SemVer.org: MAJOR.MINOR.PATCH</p>
+				<p>UAT/Release: AssemblyInformationalVersion</p>
+				</section>
+				<section>
+				
+				<h1>Questions ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
+ -->

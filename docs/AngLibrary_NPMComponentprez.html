@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular Library + NPM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# Angular Library / Project => NPM   
+
+From  ![:img ang, 10%](ang.png) to ![:img npm, 10%](npm.png)
+
+---
+
+# Agenda
+
+0. About me
+10. Introduction to Angular application
+20. Introduction to the Angular library
+25. Demo Angular + library
+30. Introduction to NPM + Deploying library
+50. Questions ?
+---
+class: center, top
+
+# About me
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+# Introduction to Angular application
+
+Angular  = front end for Web( and Desktop(Linux/Windows/Mac) , and Mobile(Android/iOS)
+
+Code
+```javascript
+ng new myTestApp
+cd myTestApp
+npm i
+ng serve --open 
+```
+
+And this is how >222MB of javascript renders a Web Application
+( not fair - there is tree-shaking - we will see it)
+---
+
+# Introduction to the Angular library / project
+
+Why ? Reusability of components
+
+
+Code
+```javascript
+ng generate library my-name --prefix=ignatandrei
+//see projects folder
+//see angular.json, tsconfig.json
+ng build my-name
+//see myTestApp\projects\my-name\src\lib\my-name.component.ts
+```
+
+---
+
+#  Demo Angular + library
+
+Change code in main project and in library
+
+Code
+```javascript
+//src\app\app.module.ts
+//import {MyNameModule} from 'my-name';
+import {MyNameModule} from 'projects/my-name/src/lib/my-name.module';
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MyNameModule
+  ]
+//src\app\app.component.html
+<ignatandrei-my-name></ignatandrei-my-name>
+
+```
+---
+
+class: center, top
+
+
+# Introduction to NPM + Deploying library
+
+https://www.npmjs.com/package/versions-netcore-angular
+
+Open Stankins
+Code
+```javascript
+npm whoami
+ng build versions-netcore-angular // in folder stankins\stankinsv2\solution\StankinsV2\StankinsAliveAngular\
+cd dist/versions-netcore-angular
+copy readme.md file to dist/versions-netcore-angular
+npm publish
+npm update versions-netcore-angular
+```
+---
+
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

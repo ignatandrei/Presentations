@@ -1,16 +1,20 @@
-
+const fs = require('fs');
 var DirArchiver = require('dir-archiver');
 var folder= '../2016/';
 var file ='DepEmpWebApiKnockout';
+var fileHtml='presentation/index.html';
 var archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
  
 // Create the zip file.
 archive.createZip();
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
 
 folder='../2019/shorts/';
 file='AngLibrary_NPMComponent'
+fileHtml='presentation.html';
 
 archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
  
 // Create the zip file.
 archive.createZip();
@@ -65,6 +69,6 @@ archive.createZip();
 var folderToc = require("folder-toc");
 folderToc("../docs",  {
     name: 'index.html',
-    filter: '*.zip',
+    filter: '*prez.html',
     title: 'Presentations'
 });
