@@ -30,7 +30,9 @@
         <a href='<%= file.name.replace("prez.html",".zip") %>'>Zip</a>
         <a href='<%= file.name %>' target='_blank'>New window</a>
       </a>
+      <hr />
     <% } %>
+    
   </div>
 
   <iframe src="<%= files[0].path  %>" name="file-content" class="file-content"></iframe>
