@@ -37,6 +37,7 @@ namespace XabarilHC
                 .AddHealthChecksUI(setup =>
                 {
                     setup.AddHealthCheckEndpoint("All", $"http://localhost:80/health");//config file
+                    setup.AddHealthCheckEndpoint("AnotherHealthCheck", $"http://localhost:80/health");//config file
                 })
                 .AddInMemoryStorage();
 
