@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ASP.NET Core Health Check</title>
+    <title>Tracing and Activity and Jaeger</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -67,21 +67,22 @@ layout: true
 
 class: center, middle
 
-# ASP.NET Core Health Check   =>
+# Tracing and Activity and Jaeger   =>
 
 ( press > )
 
-https://ignatandrei.github.io/Presentations/NETCoreHealthChecksprez.html
+https://ignatandrei.github.io/Presentations/ActvityTracing.html
 
 Code at 
-https://ignatandrei.github.io/Presentations/NETCoreHealthChecksprez.zip
+https://ignatandrei.github.io/Presentations/ActvityTracing.zip
 ---
 
 # Agenda
 
 0. About me
-1. Introduction in Health Checks 
-2. Xabaril Health Checks 
+1. Introduction Microservices Tracing - Span / Trace 
+2. Jaeger UI
+3. Integration with .NET Core via Activity
 7. Discussion  / Questions ?
 ---
 class: center, top
@@ -104,54 +105,37 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 ---
 class: center, top
 
-# Introduction in Health Checks
+# Introduction Microservices Tracing - Span / Trace 
 
+Problem
 
-Demo 
+Orchestration / Choreography
 
-1. Ping
-1. Health Check
-1. Custom Health Check Drive
-1. Custom output
+![:img ignat, 70%](OrcCho.png)
 
 Link
 
-https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-3.1
+https://mualle.net/microservices-architecture-vs-service-oriented-architecture/
 
-
+https://opentracing.io/docs/overview/tracers/
 ---
 class: left, top
 
-# Xabaril Health Checks
+# Jaeger
 
-1. https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
-1. (optional) Has UI
-2. What can monitor  - Other Xabaril + 
+Why : https://opentracing.io/docs/overview/tracers/
 
-<small>
-ArangoDB,Sql Server,MySql,Oracle,Sqlite,RavenDB,Postgres,EventStore,MongoDB,CosmosDb
+Link: https://www.jaegertracing.io/docs/1.18/getting-started/
 
-RabbitMQ,IbmMQElasticsearch,Kafka,Solr,Redis,SendGrid
+UI: https://www.jaegertracing.io/docs/1.18/frontend-ui/
+---
+class: left, top
 
-System: Disk Storage, Private Memory, Virtual Memory, Process, Windows Service
+# Integration with .NET Core via Activity
 
-Azure Service Bus: EventHub, Queue and Topics
-Azure Storage: Blob, Queue and Table
-Azure Key Vault,Azure DocumentDb,Azure IoT Hub,
+Demo - finally!
 
-Amazon DynamoDb , Amazon S3
-
-Google Cloud Firestore
-
-Network: Ftp, SFtp, Dns, Tcp port, Smtp, Imap
-
-Uri: single uri and uri groups
-
-Consul,Hangfire,SignalR, Kubernetes,Identity Server
-</small>
-
- Demo ! ( rabbit ...)
-
+Code at  https://github.com/ignatandrei/testJaeger
 ---
 class: center, top
 
