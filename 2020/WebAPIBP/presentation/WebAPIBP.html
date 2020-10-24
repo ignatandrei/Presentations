@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebAPI should / must have</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# WebAPI should / must have   =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/WebAPIBP.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/WebAPIBP.zip
+---
+
+# Agenda
+
+00. About me
+01. Introduction to WebAPI
+02. Development = Visibility
+03. Development = Authorization + Authentication
+04. Development = Problem Details
+05. Testing 
+06. Production = Versioning
+07. Production = CORS
+08. Production = WhiteBox monitoring
+09. Production = Blackbox monitoring + observability
+10. Production = Rate Limit
+11. Production = Cache Data
+12. Production = State
+
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+class: center, top
+
+#  Introduction to WebAPI 
+
+Demo : Visibility - browse to /weatherforecast
+
+
+---
+class: left, top
+
+# Development = Visibility
+
+Why : See your web api
+
+
+Open API / Swagger  – read https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle or https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag
+
+For graphQL you can use https://github.com/graphql-dotnet/server
+
+You can also see https://github.com/ignatandrei/netcoreblockly ( my pet project for integrating GraphQL + Swagger with Blockly
+
+Demo1: Visibility
+Browse to /swagger
+( Why  swagger does not generate ? - start as exe )
+
+---
+class: left, top
+
+# Authorization and Authentication
+
+Windows Identity : https://docs.microsoft.com/en-us/aspnet/core/security/authentication
+
+ASP.NET Identity –  https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identit
+
+Identity Server ( soon to be retired , paid version available ) – https://identityserver.io/
+
+OpenIddict – https://github.com/openiddict/openiddict-core 
+
+OAuth, JWT, Cookie, 2FA s: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/secure-net-microservices-web-applications/
+
+
+No Demo
+
+
+---
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
