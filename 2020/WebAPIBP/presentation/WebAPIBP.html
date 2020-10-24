@@ -133,8 +133,13 @@ For graphQL you can use https://github.com/graphql-dotnet/server
 
 You can also see https://github.com/ignatandrei/netcoreblockly ( my pet project for integrating GraphQL + Swagger with Blockly
 
-Demo1: Visibility
-Browse to /swagger
+Demo: Visibility
+Browse to 
+
+/api/blog
+
+/swagger
+
 ( Why  swagger does not generate ? - start as exe )
 
 ---
@@ -155,6 +160,31 @@ OAuth, JWT, Cookie, 2FA s: https://docs.microsoft.com/en-us/dotnet/architecture/
 
 No Demo
 
+---
+class: left, top
+
+# Development = Problem Details
+
+Why : Understand problems
+
+https://docs.microsoft.com/en-us/aspnet/core/web-api/handle-errors?view=aspnetcore-3.1
+
+https://codeopinion.com/http-api-problem-details-in-asp-net-core/
+Demo: Visibility
+
+Browse to  
+
+/api/blog/1  - in VS -nice page
+
+/api/blog/1  - in the exe - 500 
+
+Uncomment 
+
+//app.UseProblemDetails();
+
+Go Again to
+
+/api/blog/1  - in the exe - 500 
 
 ---
 class: center, top

@@ -16,5 +16,11 @@ namespace Visibility.Controllers
         {
             return "http://msprogrammer.serviciipeweb.ro/2020/10/05/asp-net-core-webapi-should-must-have/";
         }
+
+        [HttpGet("{id}")]
+        public string Get(string id)
+        {
+            throw new ArgumentException($" error {id}");
+        }
     }
 }
