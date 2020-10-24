@@ -1,5 +1,5 @@
 V1:
-- NameCommand: Command001
+- NameCommand: CommandToBlog
   Host: http://
   RelativeRequestUrl: api/Blog
   Verb: 
