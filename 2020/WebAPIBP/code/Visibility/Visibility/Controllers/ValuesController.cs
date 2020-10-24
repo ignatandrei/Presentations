@@ -11,6 +11,7 @@ namespace Visibility.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        
         //Answer to the right - delete spaces                                                                                                                TODO: put [HttpGet]
         public string Get()
         {
