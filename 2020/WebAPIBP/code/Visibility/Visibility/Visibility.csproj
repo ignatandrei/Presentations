@@ -20,6 +20,7 @@
   <ItemGroup>
     <PackageReference Include="ExtensionNetCore3" Version="1.0.2020.16924014" />
     <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="5.1.1" />
+    <PackageReference Include="NetCore2Blockly" Version="1.1.2020.25553965" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.0" />
   </ItemGroup>
 

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NetCore2Blockly;
 
 namespace Visibility
 {
@@ -30,12 +31,18 @@ namespace Visibility
             services.AddProblemDetails();
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddBlockly();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCLI();
+            app.UseBlocklyUI(new BlocklyUIOptions()
+            {
+                HeaderName="Demo for WEBAPI Visibility"
+            });
+            app.UseBlockly();
             //app.UseProblemDetails();
             if (env.IsDevelopment())
             {
