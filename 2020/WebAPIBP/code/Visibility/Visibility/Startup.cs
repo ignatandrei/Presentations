@@ -28,7 +28,10 @@ namespace Visibility
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCLI();
-            services.AddProblemDetails();
+            services.AddProblemDetails(opt=>
+            {
+                opt.IncludeExceptionDetails = (cnt,ex) => true;
+            });
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddBlockly();
