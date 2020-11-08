@@ -277,8 +277,26 @@ https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-3
 class: left, top
 
 
-#Production –BlackBox Monitoring and Observability – read about RED and USE
+#Production –BlackBox Monitoring and Observability – 
+
+RED - Rate, Errors, Duration
+
+Rate - the number of requests, per second, you services are serving.
+Errors - the number of failed requests per second.
+Duration - distributions of the amount of time each request takes.
+
+USE - Utilization, Saturation, Errors
+ 
+Utilization: the average time the resource was busy servicing work
+
+Saturation: the degree to which the resource has extra work which it can’t service, often queued
+
+Errors: the count of error events
+
+Read about 
 AppMetrics – https://www.app-metrics.io/web-monitoring/aspnet-core/tracking-middleware/
+
+
 Ecosystem: Prometheus
 ---
 
@@ -286,8 +304,12 @@ class: left, top
 
 
 #Production –Rate limit – do not allow insane usage
+
 https://github.com/stefanprodan/AspNetCoreRateLimit
-Started my own project – do not have time to finish : https://github.com/ignatandrei/NetCoreRetarder
+
+Started my own project – do not have time to finish : 
+https://github.com/ignatandrei/NetCoreRetarder
+
 ---
 
 class: left, top
@@ -295,9 +317,16 @@ class: left, top
 
 #Production –Caching data – to return latest values
 
-static variable caching
+V1: static variable caching
 
-IMemoryCache – https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
+V2: IMemoryCache 
+
+https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
+
+
+V3: Distributed Caching:
+
+https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-3.1
 
 ---
 
@@ -309,6 +338,15 @@ class: left, top
 HealthChecks – https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks
 
 More HC + UI:  https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
+
+Monitor:
+
+1. Asp.NET Core  
+2. System: free space, ram
+3. Databases:
+4. Anything other
+ 
+See https://ignatandrei.github.io/Presentations/NETCoreHealthChecksprez.html#1
 
 ---
 
