@@ -1,0 +1,5 @@
+# https://refactorsaurusrex.com/posts/how-to-host-a-clickonce-installer-on-github/
+
+*.manifest binary
+*.application binary
+*.deploy binary
