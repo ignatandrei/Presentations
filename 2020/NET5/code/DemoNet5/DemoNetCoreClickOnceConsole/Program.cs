@@ -6,7 +6,7 @@ namespace DemoNetCoreClickOnceConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine($"Hello World from {ThisAssembly.Project.AssemblyName} version {ThisAssembly.Info.Version} ");
         }
     }
 }
