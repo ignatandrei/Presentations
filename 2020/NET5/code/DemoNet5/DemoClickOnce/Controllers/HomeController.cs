@@ -17,7 +17,10 @@ namespace DemoClickOnce.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult Data()
+        {
+            return Content( "adad");
+        }
         public IActionResult Index()
         {
             //here it works , in razor not

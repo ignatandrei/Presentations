@@ -12,4 +12,8 @@
     <PackageReference Include="ThisAssembly" Version="1.0.0-rc.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DemoClickOnce\DemoClickOnce.csproj" />
+  </ItemGroup>
+
 </Project>

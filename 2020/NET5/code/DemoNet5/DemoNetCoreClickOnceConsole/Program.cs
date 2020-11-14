@@ -10,6 +10,9 @@ namespace DemoNetCoreClickOnceConsole
 
             //https://ignatandrei.github.io/Presentations/clickonce/democonsole/
             Console.WriteLine($"Hello World from {ThisAssembly.Project.AssemblyName} version {ThisAssembly.Info.Version} ");
+            
+            Console.ReadLine();
+            DemoClickOnce.Program.Main(args);
         }
     }
 }
