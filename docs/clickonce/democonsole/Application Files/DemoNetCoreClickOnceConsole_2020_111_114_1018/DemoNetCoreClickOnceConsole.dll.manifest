@@ -86,7 +86,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>f9mYnlmHF5oNMgg45YGRWli/kgeNbteoF3pJLJSndrA=</dsig:DigestValue>
+      <dsig:DigestValue>9GO4IF7ZJT7wv7lj0892H4ufLhuv4DgTUun1CHxwOkM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="mscordaccore.dll" size="1047928">
