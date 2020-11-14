@@ -13,7 +13,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Application Files\DemoNetCoreClickOnceConsole_2020_111_114_1545\DemoNetCoreClickOnceConsole.dll.manifest" size="8456">
+    <dependentAssembly dependencyType="install" codebase="https://ignatandrei.github.io/Presentations/clickonce/democonsole/Application Files/DemoNetCoreClickOnceConsole_2020_111_114_1545/DemoNetCoreClickOnceConsole.dll.manifest" size="8456">
       <assemblyIdentity name="DemoNetCoreClickOnceConsole.exe" version="2020.111.114.1545" publicKeyToken="bb5d05f4a16b7a92" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
