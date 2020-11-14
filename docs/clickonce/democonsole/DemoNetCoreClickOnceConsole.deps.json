@@ -1,0 +1,111 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DemoNetCoreClickOnceConsole/2020.111.114.1018": {
+        "dependencies": {
+          "ThisAssembly": "1.0.0-rc.1"
+        },
+        "runtime": {
+          "DemoNetCoreClickOnceConsole.dll": {}
+        }
+      },
+      "ThisAssembly/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.AssemblyInfo": "1.0.0-rc.1",
+          "ThisAssembly.Constants": "1.0.0-rc.1",
+          "ThisAssembly.Metadata": "1.0.0-rc.1",
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1",
+          "ThisAssembly.Project": "1.0.0-rc.1",
+          "ThisAssembly.Strings": "1.0.0-rc.1"
+        }
+      },
+      "ThisAssembly.AssemblyInfo/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1"
+        }
+      },
+      "ThisAssembly.Constants/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1"
+        }
+      },
+      "ThisAssembly.Metadata/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1"
+        }
+      },
+      "ThisAssembly.Prerequisites/1.0.0-rc.1": {},
+      "ThisAssembly.Project/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1"
+        }
+      },
+      "ThisAssembly.Strings/1.0.0-rc.1": {
+        "dependencies": {
+          "ThisAssembly.Prerequisites": "1.0.0-rc.1"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DemoNetCoreClickOnceConsole/2020.111.114.1018": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ThisAssembly/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nSBK2cEfw2OYzLdhQX/tUQcecbSu+6WyNjvxHy842OnRi8KidLSzxfTxW6fmZyGzYihB0gnODj3HycTgBKj7Ag==",
+      "path": "thisassembly/1.0.0-rc.1",
+      "hashPath": "thisassembly.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.AssemblyInfo/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3ZF+7Wfv2Gg1SNQc4hM6bixGqRPnPLYNhMXAwMsE1Imf5DN1bCTYGDJlKV+4GjbnP0tBm3ofzWo7T/4jOmkcBA==",
+      "path": "thisassembly.assemblyinfo/1.0.0-rc.1",
+      "hashPath": "thisassembly.assemblyinfo.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.Constants/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BbR7Kkb9GOxdGjmqtVLlNmDvLxoANWcAAmE50ViUzGp0NH8UIyfqft25DWKf1DR+/xCMOSVN8ryyBCduqzHNjw==",
+      "path": "thisassembly.constants/1.0.0-rc.1",
+      "hashPath": "thisassembly.constants.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.Metadata/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GnDh9Az9+H1FKF61kCzk05uNF1CHe2VHc7h4hiXJbXXUN90jSRyb7qJB95azAgcb8kgnYZhDW9hlwzTwibcuaA==",
+      "path": "thisassembly.metadata/1.0.0-rc.1",
+      "hashPath": "thisassembly.metadata.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.Prerequisites/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AHfYElK4MnH2zQM2UdN4/BrSNePUFsuN9uYapXuIcFgrjbedkkz1oEaccAr5d1PL2nNEnkhr9CnS1KgVRR45FA==",
+      "path": "thisassembly.prerequisites/1.0.0-rc.1",
+      "hashPath": "thisassembly.prerequisites.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.Project/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OMiVJPYMnuWBGxeMKqcj7l/2saTlQ6TRfE9/c6gxn2Nfn3NzZGMo3nROGDtezX1ximbwteBN/t2YdI1RaUOYhw==",
+      "path": "thisassembly.project/1.0.0-rc.1",
+      "hashPath": "thisassembly.project.1.0.0-rc.1.nupkg.sha512"
+    },
+    "ThisAssembly.Strings/1.0.0-rc.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vaiNKfQ8ei2A9A9uj6XNuypJ4i1dhG7zsXDoy+GCfF26BF/4kWDb5cNV8KsedsNGg9FqUoyO9pjC4pjBxMOeXQ==",
+      "path": "thisassembly.strings/1.0.0-rc.1",
+      "hashPath": "thisassembly.strings.1.0.0-rc.1.nupkg.sha512"
+    }
+  }
+}

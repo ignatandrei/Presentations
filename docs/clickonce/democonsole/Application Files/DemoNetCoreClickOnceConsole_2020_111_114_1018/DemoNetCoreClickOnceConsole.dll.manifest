@@ -53,49 +53,40 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="clrcompression.dll" size="747912">
+  <file name="DemoNetCoreClickOnceConsole.deps.json" size="4127">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3+8c9FfxOr6TNrqhDk79yNMwjZBRX2KEjynItKzi1L8=</dsig:DigestValue>
+      <dsig:DigestValue>ZvRFAA7niM8jCbCIRnhEnNHoe/Fg2grWS8Pd1nBg7uY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="clrjit.dll" size="1324424">
+  <file name="DemoNetCoreClickOnceConsole.dll" size="5120">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>l8dm29l4bmbpZyYzcbnwap8hqilQeV1CVKEe3NIOQw4=</dsig:DigestValue>
+      <dsig:DigestValue>xV+6HVffSxvonNRO5LGTncqPhgARWeVpuvpvoxGWYPA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="coreclr.dll" size="5155720">
+  <file name="DemoNetCoreClickOnceConsole.exe" size="142336">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8x0giTKNuI/9Vh9W25RMrnlkdHjityviAdlWB7iuFmY=</dsig:DigestValue>
+      <dsig:DigestValue>kRjB2pfwPy4PzOvqMVmzG9PEHXXqJMUPuGubKcUm5sc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DemoNetCoreClickOnceConsole.exe" size="53285964">
+  <file name="DemoNetCoreClickOnceConsole.runtimeconfig.json" size="147">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9GO4IF7ZJT7wv7lj0892H4ufLhuv4DgTUun1CHxwOkM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="mscordaccore.dll" size="1047928">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mGq816RyEFOp6Glexu9lMUUNc2ygmR1UQYOxCcUMW7E=</dsig:DigestValue>
+      <dsig:DigestValue>iI6/O4au0ALAS89Abi2t9lb1sAS59+Uw9x90XT+zCNQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

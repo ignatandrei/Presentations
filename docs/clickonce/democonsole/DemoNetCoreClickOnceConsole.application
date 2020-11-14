@@ -2,7 +2,7 @@
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <assemblyIdentity name="DemoNetCoreClickOnceConsole.application" version="2020.111.114.1018" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="DemoNetCoreClickOnceConsole" asmv2:product="DemoNetCoreClickOnceConsole" xmlns="urn:schemas-microsoft-com:asm.v1" />
-  <deployment install="true" mapFileExtensions="true">
+  <deployment install="true" mapFileExtensions="true" co.v1:createDesktopShortcut="true">
     <subscription>
       <update>
         <beforeApplicationStartup />
@@ -14,14 +14,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Application Files\DemoNetCoreClickOnceConsole_2020_111_114_1018\DemoNetCoreClickOnceConsole.dll.manifest" size="5078">
+    <dependentAssembly dependencyType="install" codebase="Application Files\DemoNetCoreClickOnceConsole_2020_111_114_1018\DemoNetCoreClickOnceConsole.dll.manifest" size="4745">
       <assemblyIdentity name="DemoNetCoreClickOnceConsole.exe" version="2020.111.114.1018" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Sl9785a4M7E3vRQ5UZw13Vb4CbQAPuslfgvOdzMlNa8=</dsig:DigestValue>
+        <dsig:DigestValue>3rrk19+x+A1cp1Ks0rC1KmpFUiNHwvVPuqHlk6PT0rE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
