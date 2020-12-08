@@ -16,8 +16,14 @@ namespace EFCoreDemo
             Console.WriteLine(obj["IDDepartment"]);
 
             //split query
-            var depAll = cont.Departments.Include(it => it.Employees).ToArray();
-            var depSplit=cont.Departments.AsSplitQuery().Include(it => it.Employees).ToArray();
+            var dataQueryable = cont.Departments.Include(it => it.Employees);
+            var full = dataQueryable.ToQueryString();
+            var arr = dataQueryable.ToArray();
+
+
+            dataQueryable = cont.Departments.AsSplitQuery().Include(it => it.Employees);
+            var split = dataQueryable.ToQueryString();
+            arr =dataQueryable .ToArray();
 
         }
     }
