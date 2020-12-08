@@ -8,7 +8,7 @@ namespace EFCoreDemo
         static void Main(string[] args)
         {
             var cont = new testsContext();
-            cont.Database.EnsureCreated();
+            //cont.Database.EnsureCreated();
             Console.WriteLine("Nr deps:"+ cont.Departments.Count());
             var obj = (cont.DepartmentWithNumber.First());
             Console.WriteLine(obj["IDDepartment"]);

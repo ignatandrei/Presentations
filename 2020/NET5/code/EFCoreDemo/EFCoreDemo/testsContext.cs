@@ -39,10 +39,10 @@ namespace EFCoreDemo
             modelBuilder.SharedTypeEntity<Dictionary<string, object>>("DepNr", b =>
             {
                 b.HasNoKey();
-                b.IndexerProperty<string>("Name");
-                b.IndexerProperty<int>("Nr");
-                b.IndexerProperty<string>("IDDepartment").IsRequired();
-                b.ToSqlQuery(@" select d.IDDepartment, Count(*) as nr 
+                //b.IndexerProperty<string>("Name");
+                b.IndexerProperty<int>("Nr"); // why is here int and there long ?
+                b.IndexerProperty<long>("IDDepartment").IsRequired();
+                b.ToSqlQuery(@" select d.IDDepartment, Count(*) as Nr 
                     from Department d left join Employee e
                     on d.IDDepartment= e.IDDepartment
                     group by d.IDDepartment"
