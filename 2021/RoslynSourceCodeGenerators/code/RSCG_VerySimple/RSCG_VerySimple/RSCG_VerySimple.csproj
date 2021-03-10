@@ -7,6 +7,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RSCG_Simple\RSCG_Simple.csproj" OutputItemType="Analyzer"  />
+    
   </ItemGroup>
-
+  <PropertyGroup>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
 </Project>

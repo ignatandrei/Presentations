@@ -13,6 +13,7 @@ namespace RSCG_Simple
                 using System;
                 public class MyTest{
                     public static void WriteDate(){
+                        System.Diagnostics.Debugger.Break();
                         Console.WriteLine(DateTime.Now.ToString());
                     }
                 }";
@@ -21,7 +22,7 @@ namespace RSCG_Simple
 
         public void Initialize(GeneratorInitializationContext context)
         {
-            Debugger.Launch();
+            //Debugger.Launch();
         }
     }
 
