@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCG_VerySimple", "RSCG_VerySimple\RSCG_VerySimple.csproj", "{126FFF03-609D-4A9A-AE92-D3C04F8C891D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCG_Simple", "RSCG_Simple\RSCG_Simple.csproj", "{AB0206D3-F5AD-4369-9D9D-3B8A2022DC85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{126FFF03-609D-4A9A-AE92-D3C04F8C891D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126FFF03-609D-4A9A-AE92-D3C04F8C891D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126FFF03-609D-4A9A-AE92-D3C04F8C891D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126FFF03-609D-4A9A-AE92-D3C04F8C891D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0206D3-F5AD-4369-9D9D-3B8A2022DC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0206D3-F5AD-4369-9D9D-3B8A2022DC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0206D3-F5AD-4369-9D9D-3B8A2022DC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0206D3-F5AD-4369-9D9D-3B8A2022DC85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A90D376-2E9B-4173-8473-1AF0DBCEDD81}
+	EndGlobalSection
+EndGlobal
