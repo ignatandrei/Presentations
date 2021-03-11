@@ -34,6 +34,8 @@ namespace AutoTracing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
+            //OpenTelemetry.Trace.TracerProvider.Default.GetTracer("as").StartActiveSpan("asd";
+            
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(ResourceBuilder
                         .CreateDefault()
