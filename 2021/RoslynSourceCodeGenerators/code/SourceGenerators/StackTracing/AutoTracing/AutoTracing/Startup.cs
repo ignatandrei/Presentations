@@ -1,3 +1,4 @@
+using AT_BL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace AutoTracing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<PersonRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -36,13 +37,15 @@ namespace AutoTracing
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(ResourceBuilder
                         .CreateDefault()
-                        .AddService("Andrei"))
-                        
+                        .AddService("Andrei"))                        
                         .AddAspNetCoreInstrumentation()
+                        .AddHttpClientInstrumentation()
                         .AddZipkinExporter(c =>
                         {
+                            //docker run -d -p 9411:9411 openzipkin/zipkin
                             c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
                         })
+                        
                     .AddConsoleExporter());
         }
 
