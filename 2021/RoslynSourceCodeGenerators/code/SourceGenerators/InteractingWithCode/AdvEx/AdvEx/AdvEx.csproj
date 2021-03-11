@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="AOPMethodsCommon" Version="2021.2.27.640" />
     <PackageReference Include="AOPMethodsGenerator" Version="2021.2.27.640" />
+    <PackageReference Include="MockSourceGenerator" Version="0.3.0" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="enum.txt" />

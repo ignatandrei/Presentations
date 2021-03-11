@@ -16,7 +16,23 @@ namespace AdvEx
         static void Main(string[] args)
         {
             ParseEnum();
+            CreateFromInterface();
+
         }
+
+        private static void CreateFromInterface()
+        {
+            IPerson p = (IPerson)new PersonMock
+            {
+                MockFirstName = "Andrei",
+                MockLastName ="Ignat",
+                MockFullName = ()=>"test"
+            };
+            Console.WriteLine(p.LastName);
+            Console.WriteLine(p.FullName());
+
+        }
+
         static void ParseEnum()
         {
             Console.WriteLine("Please give the state");
