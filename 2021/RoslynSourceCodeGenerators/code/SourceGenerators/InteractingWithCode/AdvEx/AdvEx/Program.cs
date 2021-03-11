@@ -17,6 +17,18 @@ namespace AdvEx
         {
             ParseEnum();
             CreateFromInterface();
+            CopyConstructor();
+        }
+
+        private static void CopyConstructor()
+        {
+            var p1 = new Person();
+            p1.ID = 7;
+            p1.FirstName = "Andrei";
+            (int id, _, _) = p1;
+            Console.WriteLine(id);
+            var p2 = new Person(p1);
+            Console.WriteLine(p2.FirstName);
 
         }
 

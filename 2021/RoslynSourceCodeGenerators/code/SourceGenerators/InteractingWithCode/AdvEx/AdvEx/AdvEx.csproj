@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="enum.txt" />
+    <AdditionalFiles Include="CopyConstructor.txt" />
   </ItemGroup>
 
 </Project>
-  

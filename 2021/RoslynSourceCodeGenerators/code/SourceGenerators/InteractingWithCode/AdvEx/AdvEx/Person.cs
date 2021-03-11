@@ -1,4 +1,6 @@
-﻿namespace AdvEx
+﻿using AOPMethodsCommon;
+
+namespace AdvEx
 {
     public interface IPerson
     {
@@ -8,8 +10,8 @@
 
         string FullName();
     }
-
-    public class Person : IPerson
+    [AutoMethods(template = TemplateMethod.CustomTemplateFile, CustomTemplateFileName = "CopyConstructor.txt")]
+    public partial class Person : IPerson
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
