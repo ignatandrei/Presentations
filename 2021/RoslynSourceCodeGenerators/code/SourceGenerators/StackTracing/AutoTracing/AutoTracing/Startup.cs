@@ -11,6 +11,7 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace AutoTracing
 {
     public class Startup
     {
+        public static readonly ActivitySource MyActivitySource = new ActivitySource("Andrei1");
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,24 +30,27 @@ namespace AutoTracing
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(MyActivitySource);
             services.AddScoped<PersonRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
-            //OpenTelemetry.Trace.TracerProvider.Default.GetTracer("as").StartActiveSpan("asd";
             
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(ResourceBuilder
                         .CreateDefault()
-                        .AddService("Andrei"))                        
+                        //.AddService("Andrei")
+                        )                        
+                        .AddSource(MyActivitySource.Name)
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
+                        
                         .AddZipkinExporter(c =>
                         {
                             //docker run -d -p 9411:9411 openzipkin/zipkin
-                            c.Endpoint = new Uri("http://localhost:9429/api/v2/spans");
+                            c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
                         })
                         
                     .AddConsoleExporter());

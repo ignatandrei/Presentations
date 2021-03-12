@@ -12,36 +12,18 @@ namespace AT_BL
     }
     public class PersonRepository
     {
-        private readonly TracerProvider tp;
+        private readonly ActivitySource tp;
 
-        public PersonRepository(TracerProvider tp)
+        public PersonRepository(ActivitySource tp)
         {
             this.tp = tp;
+            
         }
         public async Task<Person> GetFromId(int id)
         {
-            var a = Activity.Current;
-            var s = Tracer.CurrentSpan;
-            var t = TracerProvider.Default.GetTracer("ad");
-            var s21 = tp.GetTracer("test");
-            using var s3 = s21.StartActiveSpan("my test", SpanKind.Internal);
-
-            using var s1 = t.StartActiveSpan("asd");
-            
-            //var q1 = s.Start();
-            //var b = q1.SpanId == s.SpanId;
-            //var as2 = new ActivitySource("Samples.SampleServer");
-
-            //using (var as1 = new Activity("getfromid"))
-
-            //using (var q = as2.StartActivity("test", ActivityKind.Server))
-            //{
-
-            //as1.SetTag("ASDASD","asd");
-            //    as1.SetParentId(s.TraceId,s.SpanId);
-            //    as1.Start();
-            //  q.Start();
+            using var r=tp.StartActivity("aaaaaa");
             await Task.Delay(1000);
+            using var r1 = tp.StartActivity("bbb");
             return new Person()
             {
                 ID = id,
