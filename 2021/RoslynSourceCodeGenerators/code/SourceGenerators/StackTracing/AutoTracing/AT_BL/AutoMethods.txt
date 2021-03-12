@@ -42,8 +42,9 @@ namespace {{NamespaceName}} {
         [CallerMemberName] string memberName = "",
         [CallerFilePath] string sourceFilePath = "",
         [CallerLineNumber] int sourceLineNumber = 0){
+            Console.WriteLine("{{mi.NewName}}");
             //var sw=Stopwatch.StartNew();
-            using var newAct = activitySource.StartActivity("loadDetails");
+            using var newAct = activitySource.StartActivity("{{mi.NewName}}");
              newAct.AddTag("method","{{mi.NewName}}");
              newAct.AddTag("called from ",memberName);
              newAct.AddTag("called from file",sourceFilePath);
