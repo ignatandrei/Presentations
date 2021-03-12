@@ -42,7 +42,7 @@ namespace AutoTracing
 
                             ResourceBuilder
                             .CreateDefault()
-                            .AddService("andrei")
+                            .AddService(ThisAssembly.Project.AssemblyName)
                             
                         )
                         .AddAspNetCoreInstrumentation()

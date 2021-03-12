@@ -53,7 +53,7 @@ namespace AT_BL
         public async Task<Person[]> autoSearchAndLoadData(string name)
         {
             var personsFound = await SearchFullName(name);
-
+            
             foreach (var item in personsFound)
             {
                 if( !await LoadDetails(item))

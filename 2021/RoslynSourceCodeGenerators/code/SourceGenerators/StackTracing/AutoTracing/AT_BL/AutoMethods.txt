@@ -44,31 +44,37 @@ namespace {{NamespaceName}} {
         [CallerLineNumber] int sourceLineNumber = 0){
             Console.WriteLine("{{mi.NewName}}");
             //var sw=Stopwatch.StartNew();
-            var activitySource = Activity.Current.Source;
-            using var newAct = activitySource.StartActivity("{{mi.NewName}}");
-             if(newAct.Parent !=null)
+            var activitySource = Activity.Current?.Source;
+            using var newAct = activitySource?.StartActivity("{{mi.NewName}}");
+             if(newAct?.Parent !=null)
                 newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
 
-             newAct.AddTag("method","{{mi.NewName}}");
-             newAct.AddTag("called from ",memberName);
-             newAct.AddTag("called from file",sourceFilePath);
-             newAct.AddTag("called from line",sourceLineNumber);
+             newAct?.AddTag("method","{{mi.NewName}}");
+             newAct?.AddTag("called from ",memberName);
+             newAct?.AddTag("called from file",sourceFilePath);
+             newAct?.AddTag("called from line",sourceLineNumber);
              var utcTime =System.DateTime.UtcNow;
-             newAct.AddTag("UTCDate",utcTime.ToString("yyyyMMddHHmmss"));
+             newAct?.AddTag("UTCDateStart",utcTime.ToString("yyyyMMddHHmmss"));
              var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault()?.Value;
              user ??= "NoUserConfigured";
-             newAct.AddTag("user",user);
+             newAct?.AddTag("user",user);
+             newAct?.AddEvent(new ActivityEvent("Start {{mi.NewName}}"));
 
             try{ //original method
                 {{returnString}} {{  strAwait }} {{mi.Name}}({{ mi.parametersCallCSharp }});
             }
             catch(Exception ex){
                 newAct?.RecordException(ex);
+                newAct?.AddEvent(new ActivityEvent("Error {{mi.NewName}}"));
                 //Serilog.Log.Error(ex, $"error in {{mi.NewName}} called from {memberName} , file {sourceLineNumber}, line {sourceLineNumber}" + ex.Message);
                 throw;
             }
             finally{
                 //Serilog.Log.Information($"EndMethod {{mi.NewName}} in {sw.Elapsed.TotalMilliseconds} ");   
+                utcTime =System.DateTime.UtcNow;
+                newAct?.AddTag("UTCDateEnd",utcTime.ToString("yyyyMMddHHmmss"));  
+                newAct?.AddEvent(new ActivityEvent("END {{mi.NewName}}"));
+
             }
 
 
