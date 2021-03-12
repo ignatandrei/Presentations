@@ -1,4 +1,5 @@
-﻿using OpenTelemetry.Trace;
+﻿using AOPMethodsCommon;
+using OpenTelemetry.Trace;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,17 +8,22 @@ using System.Threading.Tasks;
 namespace AT_BL
 {
 
-    public class PersonRepository
-    {
-        private readonly ActivitySource tp;
+    [AutoMethods(template = TemplateMethod.CustomTemplateFile, CustomTemplateFileName = "AutoMethods.txt", MethodSuffix = "auto")]
 
-        public PersonRepository(ActivitySource tp)
+    public partial class PersonRepository
+    {
+        private readonly ActivitySource activitySource;
+
+        public PersonRepository(ActivitySource activitySource)
         {
-            this.tp = tp;
+            this.activitySource = activitySource;
             
         }
+        //TODO: put auto
         async Task<bool> LoadDetails(Person p)
         {
+            //using var newAct = activitySource.StartActivity("loadDetails");
+           
             var nr = new Random().Next(1, p.ID * 1000);
             await Task.Delay(nr);
             return true;

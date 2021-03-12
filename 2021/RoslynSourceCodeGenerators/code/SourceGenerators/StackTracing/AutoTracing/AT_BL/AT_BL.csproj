@@ -4,10 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AOPMethodsCommon" Version="2021.2.27.640" />
+    <PackageReference Include="AOPMethodsGenerator" Version="2021.2.27.640" OutputItemType="Analyzer" />
     <PackageReference Include="OpenTelemetry" Version="1.0.1" />
     <PackageReference Include="OpenTelemetry.Api" Version="1.0.1" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="5.0.1" />
     <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
     <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
   </ItemGroup>
-  </Project>
+  <ItemGroup>
+    <AdditionalFiles Include="AutoMethods.txt" />
+  </ItemGroup>
+
+</Project>
