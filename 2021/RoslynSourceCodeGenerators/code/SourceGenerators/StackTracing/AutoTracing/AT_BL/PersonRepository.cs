@@ -47,8 +47,8 @@ namespace AT_BL
             }
             return ret.ToArray();
         }
-
-        public async Task<Person[]> SearchAndLoadData(string name)
+        //TODO: put auto
+        public async Task<Person[]> autoSearchAndLoadData(string name)
         {
             var personsFound = await SearchFullName(name);
             foreach (var item in personsFound)
