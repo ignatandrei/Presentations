@@ -3,6 +3,7 @@ using OpenTelemetry.Trace;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AT_BL
@@ -51,12 +52,16 @@ namespace AT_BL
         public async Task<Person[]> autoSearchAndLoadData(string name)
         {
             var personsFound = await SearchFullName(name);
+
             foreach (var item in personsFound)
             {
-                if (!await LoadDetails(item))
+                if( !await LoadDetails(item))
                     break;
 
             }
+            
+            var tasks = personsFound.Select(it => LoadDetails(it));
+            await Task.WhenAll(tasks);
 
             return personsFound;
         }
