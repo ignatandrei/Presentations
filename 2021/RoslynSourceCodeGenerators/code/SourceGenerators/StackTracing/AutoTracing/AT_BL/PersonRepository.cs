@@ -1,4 +1,5 @@
 ﻿using AOPMethodsCommon;
+using AT_DAL;
 using OpenTelemetry.Trace;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,19 @@ namespace AT_BL
 
     public partial class PersonRepository
     {
-        static string NameAss = ThisAssembly.Project.AssemblyName; 
-        public PersonRepository()
+        static string NameAss = ThisAssembly.Project.AssemblyName;
+        private readonly PersonContext pc;
+
+        public PersonRepository(PersonContext pc)
         {
             var s = Activity.Current.Source.Name;
+            this.pc = pc;
         }
 
     
     //TODO: put auto
     async Task<bool> autoLoadDetails(Person p)
         {
-            //using var newAct = activitySource.StartActivity("loadDetails");
             
             var nr = new Random().Next(1, p.ID * 1000);
             await Task.Delay(nr);
@@ -32,21 +35,7 @@ namespace AT_BL
         //todo: put auto
         async Task<Person[]> autoSearchFullName(string SearchName)
         {
-            if (string.IsNullOrEmpty(SearchName))
-                SearchName = "Ignat";
-            var ret = new List<Person>();
-            await Task.Delay(1000);
-            for (int i = 0; i < SearchName.Length / 4+1; i++)
-            {
-
-                ret.Add( new Person()
-                {
-                    ID = i+1,
-                    Name = $"Person with {SearchName}"
-                });
-
-            }
-            return ret.ToArray();
+            return await pc.SearchAfterFullName(SearchName);
         }
         //TODO: put auto
         public async Task<Person[]> autoSearchAndLoadData(string name)

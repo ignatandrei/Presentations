@@ -1,4 +1,4 @@
-﻿namespace AT_BL
+﻿namespace AT_DAL
 {
     public class Person
     {
@@ -6,6 +6,4 @@
         public string Name { get; set; }
 
     }
-
 }
-

@@ -1,8 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AOPMethodsCommon" Version="2021.2.27.640" />
     <PackageReference Include="AOPMethodsGenerator" Version="2021.2.27.640" OutputItemType="Analyzer" />
@@ -16,9 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="AutoMethods.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AT_DAL\AT_DAL.csproj" />
   </ItemGroup>
 
 </Project>
