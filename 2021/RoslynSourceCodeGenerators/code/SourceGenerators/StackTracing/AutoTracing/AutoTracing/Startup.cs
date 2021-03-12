@@ -45,7 +45,7 @@ namespace AutoTracing
                         .AddZipkinExporter(c =>
                         {
                             //docker run -d -p 9411:9411 openzipkin/zipkin
-                            c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
+                            c.Endpoint = new Uri("http://localhost:9429/api/v2/spans");
                         })
                         
                     .AddConsoleExporter());

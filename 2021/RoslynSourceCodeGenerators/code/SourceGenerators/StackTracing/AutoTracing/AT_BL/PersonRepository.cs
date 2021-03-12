@@ -12,11 +12,20 @@ namespace AT_BL
     }
     public class PersonRepository
     {
+        private readonly TracerProvider tp;
+
+        public PersonRepository(TracerProvider tp)
+        {
+            this.tp = tp;
+        }
         public async Task<Person> GetFromId(int id)
         {
             var a = Activity.Current;
             var s = Tracer.CurrentSpan;
-            var t = TracerProvider.Default.GetTracer("ad);
+            var t = TracerProvider.Default.GetTracer("ad");
+            var s21 = tp.GetTracer("test");
+            using var s3 = s21.StartActiveSpan("my test", SpanKind.Internal);
+
             using var s1 = t.StartActiveSpan("asd");
             
             //var q1 = s.Start();
