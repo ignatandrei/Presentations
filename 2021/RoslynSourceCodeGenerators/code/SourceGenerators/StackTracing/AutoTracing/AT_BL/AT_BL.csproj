@@ -11,6 +11,8 @@
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="5.0.1" />
     <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
     <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+    <PackageReference Include="ThisAssembly" Version="1.0.6" OutputItemType="Analyzer"  />
+
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="AutoMethods.txt" />

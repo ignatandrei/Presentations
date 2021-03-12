@@ -13,8 +13,7 @@ namespace AT_BL
 
     public partial class PersonRepository
     {
-        public static readonly ActivitySource activitySource = new ActivitySource("AT_BL");
-
+        static string NameAss = ThisAssembly.Project.AssemblyName; 
         public PersonRepository()
         {
             var s = Activity.Current.Source.Name;
