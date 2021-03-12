@@ -12,6 +12,7 @@ using System.CodeDom.Compiler;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Linq;
+using OpenTelemetry.Trace;
 namespace {{NamespaceName}} {
 
     [GeneratedCode("AOPMethods", "{{version}}")]
@@ -49,7 +50,7 @@ namespace {{NamespaceName}} {
              newAct.AddTag("called from line",sourceLineNumber);
              var utcTime =System.DateTime.UtcNow;
              newAct.AddTag("UTCDate",utcTime.ToString("yyyyMMddHHmmss"));
-             var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault();
+             var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault()?.Value;
              user ??= "NoUserConfigured";
              newAct.AddTag("user",user);
 

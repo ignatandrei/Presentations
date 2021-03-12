@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AT_BL
 {
 
-    [AutoMethods(template = TemplateMethod.CustomTemplateFile, CustomTemplateFileName = "AutoMethods.txt", MethodSuffix = "auto")]
+    [AutoMethods(template = TemplateMethod.CustomTemplateFile, CustomTemplateFileName = "AutoMethods.txt", MethodPrefix = "auto")]
 
     public partial class PersonRepository
     {
@@ -20,7 +20,7 @@ namespace AT_BL
             
         }
         //TODO: put auto
-        async Task<bool> LoadDetails(Person p)
+        async Task<bool> autoLoadDetails(Person p)
         {
             //using var newAct = activitySource.StartActivity("loadDetails");
            
@@ -28,8 +28,8 @@ namespace AT_BL
             await Task.Delay(nr);
             return true;
         }
-
-        async Task<Person[]> SearchFullName(string SearchName)
+        //todo: put auto
+        async Task<Person[]> autoSearchFullName(string SearchName)
         {
             if (string.IsNullOrEmpty(SearchName))
                 SearchName = "Ignat";
