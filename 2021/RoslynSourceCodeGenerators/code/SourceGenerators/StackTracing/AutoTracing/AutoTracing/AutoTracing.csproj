@@ -12,6 +12,7 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc2" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="ThisAssembly" Version="1.0.6" OutputItemType="Analyzer"  />
   </ItemGroup>
 
   <ItemGroup>

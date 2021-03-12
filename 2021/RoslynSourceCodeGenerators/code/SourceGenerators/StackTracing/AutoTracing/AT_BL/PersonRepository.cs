@@ -13,18 +13,19 @@ namespace AT_BL
 
     public partial class PersonRepository
     {
-        private readonly ActivitySource activitySource;
+        public static readonly ActivitySource activitySource = new ActivitySource("AT_BL");
 
-        public PersonRepository(ActivitySource activitySource)
+        public PersonRepository()
         {
-            this.activitySource = activitySource;
-            
+            var s = Activity.Current.Source.Name;
         }
-        //TODO: put auto
-        async Task<bool> autoLoadDetails(Person p)
+
+    
+    //TODO: put auto
+    async Task<bool> autoLoadDetails(Person p)
         {
             //using var newAct = activitySource.StartActivity("loadDetails");
-           
+            
             var nr = new Random().Next(1, p.ID * 1000);
             await Task.Delay(nr);
             return true;
