@@ -41,12 +41,12 @@ namespace AutoTracing
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(ResourceBuilder
                         .CreateDefault()
-                        //.AddService("Andrei")
+                        .AddService("Andrei")
                         )                        
-                        .AddSource(MyActivitySource.Name)
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
-                        
+
+                        .AddSource(MyActivitySource.Name)
                         .AddZipkinExporter(c =>
                         {
                             //docker run -d -p 9411:9411 openzipkin/zipkin
