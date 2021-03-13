@@ -46,20 +46,22 @@ namespace {{NamespaceName}} {
             //var sw=Stopwatch.StartNew();
             var activitySource = Activity.Current?.Source;
             using var newAct = activitySource?.StartActivity(NameAss +":{{mi.NewName}}");
-             if(newAct?.Parent !=null)
-                newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
-
-             newAct?.AddTag("method","{{mi.NewName}}");
-             newAct?.AddTag("called from ",memberName);
-             newAct?.AddTag("called from file",sourceFilePath);
-             newAct?.AddTag("called from line",sourceLineNumber);
-             var utcTime =System.DateTime.UtcNow;
-             newAct?.AddTag("UTCDateStart",utcTime.ToString("yyyyMMdd:HHmmss"));
-             var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault()?.Value;
-             user ??= "NoUserConfigured";
-             newAct?.AddTag("user",user);
-             newAct?.AddEvent(new ActivityEvent("START {{mi.NewName}}"));
-             newAct?.SetStatus(Status.Ok);
+            if(newAct != null){
+                 if(newAct?.Parent !=null)
+                    newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
+                 //newAct.DisplayName="aaa";
+                 newAct.AddTag("method","{{mi.NewName}}");
+                 newAct.AddTag("called from ",memberName);
+                 newAct.AddTag("called from file",sourceFilePath);
+                 newAct.AddTag("called from line",sourceLineNumber);
+                 var utcTime =System.DateTime.UtcNow;
+                 newAct.AddTag("UTCDateStart",utcTime.ToString("yyyyMMdd:HHmmss"));
+                 var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault()?.Value;
+                 user ??= "NoUserConfigured";
+                 newAct.AddTag("user",user);
+                 newAct.AddEvent(new ActivityEvent("START {{mi.NewName}}"));
+                 newAct.SetStatus(Status.Ok);
+             }
             try{ //original method
                 
                 {{returnString}} {{  strAwait }} {{mi.Name}}({{ mi.parametersCallCSharp }});
@@ -74,7 +76,7 @@ namespace {{NamespaceName}} {
             }
             finally{
                 //Serilog.Log.Information($"EndMethod {{mi.NewName}} in {sw.Elapsed.TotalMilliseconds} ");   
-                utcTime =System.DateTime.UtcNow;
+                var utcTime =System.DateTime.UtcNow;
                 newAct?.AddTag("UTCDateEnd",utcTime.ToString("yyyyMMdd:HHmmss"));  
                 newAct?.AddEvent(new ActivityEvent("END {{mi.NewName}}"));
 
