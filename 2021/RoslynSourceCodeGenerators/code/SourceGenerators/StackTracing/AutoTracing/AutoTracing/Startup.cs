@@ -38,18 +38,19 @@ namespace AutoTracing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
-            
+
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(
 
                             ResourceBuilder
                             .CreateDefault()
                             .AddService(ThisAssembly.Project.AssemblyName)
-                            
+                            .AddService("test")
+                            .AddTelemetrySdk()
                         )
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
-
+                        .AddSqlClientInstrumentation()
                         .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
                         .AddZipkinExporter(c =>
                         {
@@ -58,7 +59,7 @@ namespace AutoTracing
                             c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
                         })
 
-                    .AddConsoleExporter());
+                    .AddConsoleExporter()) ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
