@@ -25,7 +25,7 @@ namespace AT_DAL
             return "asdasd";
         }
         //put [auto] prefix
-        public async Task<Person[]> SearchAfterFullName(string SearchName)
+        public async Task<Person[]> autoSearchAfterFullName(string SearchName)
         {
             try
             {

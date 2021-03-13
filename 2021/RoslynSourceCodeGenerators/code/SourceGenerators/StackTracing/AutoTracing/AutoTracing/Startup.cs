@@ -60,12 +60,18 @@ namespace AutoTracing
                         })
                         .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
                         .AddSource("Andrei") //to be use with ActivitySource
-                        .AddZipkinExporter(c =>
+                        //docker run -d --name jaeger   -e COLLECTOR_ZIPKIN_HTTP_PORT=9411   -p 5775:5775/udp   -p 6831:6831/udp   -p 6832:6832/udp   -p 5778:5778   -p 16686:16686 -p 14268:14268   -p 14250:14250 -p 9411:9411 jaegertracing/all-in-one:1.22
+                        //http://localhost:16686/
+                        .AddJaegerExporter(c=>
                         {
-                            //docker run -it--rm - p 9411:9411 openzipkin / zipkin
-                            //http://localhost:9411/
-                            c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
+                            
                         })
+                        //.AddZipkinExporter(c =>
+                        //{
+                        //    //docker run -it--rm - p 9411:9411 openzipkin / zipkin
+                        //    //http://localhost:9411/
+                        //    c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
+                        //})
 
                     .AddConsoleExporter()) ;
         }

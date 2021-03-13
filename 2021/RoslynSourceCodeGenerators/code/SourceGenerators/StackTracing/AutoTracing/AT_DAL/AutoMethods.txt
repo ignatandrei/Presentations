@@ -46,11 +46,12 @@ namespace {{NamespaceName}} {
             //var sw=Stopwatch.StartNew();
             var cnt=Activity.Current;
             var activitySource = Activity.Current?.Source;
-            using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Client);
+            using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Server);
             if(newAct != null){
                  if(newAct?.Parent !=null)
                     newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
                  newAct.SetTag("peer.service", ThisAssembly.Project.AssemblyName);
+                 newAct.SetTag("service", ThisAssembly.Project.AssemblyName);
                  newAct.SetTag("net.peer.name", ThisAssembly.Project.AssemblyName);
                  newAct.AddTag("class.method","{{ClassName}}.{{mi.NewName}}");
                  newAct.AddTag("called from ",memberName);
