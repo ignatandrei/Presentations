@@ -58,8 +58,8 @@ namespace AutoTracing
                             opt.SetDbStatementForStoredProcedure = true;
                             
                         })
-                            .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
-                        .AddSource("Andrei")
+                        .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
+                        .AddSource("Andrei") //to be use with ActivitySource
                         .AddZipkinExporter(c =>
                         {
                             //docker run -it--rm - p 9411:9411 openzipkin / zipkin
