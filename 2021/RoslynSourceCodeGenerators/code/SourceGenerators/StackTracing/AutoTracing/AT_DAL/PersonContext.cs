@@ -10,7 +10,7 @@ namespace AT_DAL
 
     public partial class PersonContext
     {
-        private string tryOpenSql()
+        private string autoTryOpenSql()
         {
             using (var con =new SqlConnection("Data Source=MyDataSource;Initial Catalog=tests;Integrated Security=False;User ID=sa;Password=yourStrong(!)Password"))
             {
@@ -24,13 +24,13 @@ namespace AT_DAL
         }
         static string NameAss = ThisAssembly.Project.AssemblyName;
         //put [auto] prefix
-        public async Task<Person[]> SearchAfterFullName(string SearchName)
+        public async Task<Person[]> autoSearchAfterFullName(string SearchName)
         {
             try
             {
-                tryOpenSql();
+                TryOpenSql();
             }
-            catch 
+            catch
             {
 
             }

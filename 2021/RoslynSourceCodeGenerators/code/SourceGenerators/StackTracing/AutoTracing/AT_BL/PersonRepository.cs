@@ -27,7 +27,7 @@ namespace AT_BL
 
     
     //put [auto] prefix
-    async Task<bool> LoadDetails(Person p)
+    async Task<bool> autoLoadDetails(Person p)
         {
             
             var nr = new Random().Next(1, p.ID * 1000);
@@ -35,13 +35,13 @@ namespace AT_BL
             return true;
         }
         //put [auto] prefix
-        async Task<Person[]> SearchFullName(string SearchName)
+        async Task<Person[]> autoSearchFullName(string SearchName)
         {
             await Task.Delay(1000 );
             return await pc.SearchAfterFullName(SearchName);
         }
         //put [auto] prefix
-        public async Task<Person[]> SearchAndLoadData(string name)
+        public async Task<Person[]> autoSearchAndLoadData(string name)
         {
             var personsFound = await SearchFullName(name);
             
@@ -71,7 +71,7 @@ namespace AT_BL
             return personsFound;
         }
         //put [auto] prefix
-        async Task<int> FindDebts(Person p)
+        async Task<int> autoFindDebts(Person p)
         {
             await Task.Delay(1000);
             if(p.ID % 2== 0)

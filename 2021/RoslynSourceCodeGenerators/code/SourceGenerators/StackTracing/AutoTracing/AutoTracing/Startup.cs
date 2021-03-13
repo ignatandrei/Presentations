@@ -62,7 +62,7 @@ namespace AutoTracing
                         .AddSource("Andrei")
                         .AddZipkinExporter(c =>
                         {
-                            //docker run -d -p 9411:9411 openzipkin/zipkin
+                            //docker run -it--rm - p 9411:9411 openzipkin / zipkin
                             //http://localhost:9411/
                             c.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
                         })
