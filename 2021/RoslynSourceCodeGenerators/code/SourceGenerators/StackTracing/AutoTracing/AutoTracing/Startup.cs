@@ -38,7 +38,7 @@ namespace AutoTracing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
-
+            
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(
 

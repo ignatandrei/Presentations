@@ -54,25 +54,27 @@ namespace {{NamespaceName}} {
              newAct?.AddTag("called from file",sourceFilePath);
              newAct?.AddTag("called from line",sourceLineNumber);
              var utcTime =System.DateTime.UtcNow;
-             newAct?.AddTag("UTCDateStart",utcTime.ToString("yyyyMMddHHmmss"));
+             newAct?.AddTag("UTCDateStart",utcTime.ToString("yyyyMMdd:HHmmss"));
              var user = ((System.Security.Claims.ClaimsPrincipal)System.Threading.Thread.CurrentPrincipal)?.Claims?.FirstOrDefault()?.Value;
              user ??= "NoUserConfigured";
              newAct?.AddTag("user",user);
-             newAct?.AddEvent(new ActivityEvent("Start {{mi.NewName}}"));
+             newAct?.AddEvent(new ActivityEvent("START {{mi.NewName}}"));
 
             try{ //original method
                 {{returnString}} {{  strAwait }} {{mi.Name}}({{ mi.parametersCallCSharp }});
+                newAct?.SetStatus(Status.Ok);
             }
             catch(Exception ex){
                 newAct?.RecordException(ex);
                 newAct?.AddEvent(new ActivityEvent("Error {{mi.NewName}}"));
+                newAct?.SetStatus(Status.Error);
                 //Serilog.Log.Error(ex, $"error in {{mi.NewName}} called from {memberName} , file {sourceLineNumber}, line {sourceLineNumber}" + ex.Message);
                 throw;
             }
             finally{
                 //Serilog.Log.Information($"EndMethod {{mi.NewName}} in {sw.Elapsed.TotalMilliseconds} ");   
                 utcTime =System.DateTime.UtcNow;
-                newAct?.AddTag("UTCDateEnd",utcTime.ToString("yyyyMMddHHmmss"));  
+                newAct?.AddTag("UTCDateEnd",utcTime.ToString("yyyyMMdd:HHmmss"));  
                 newAct?.AddEvent(new ActivityEvent("END {{mi.NewName}}"));
 
             }

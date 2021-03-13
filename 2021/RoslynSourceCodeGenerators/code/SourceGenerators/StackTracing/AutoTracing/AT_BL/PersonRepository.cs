@@ -19,7 +19,9 @@ namespace AT_BL
 
         public PersonRepository(PersonContext pc)
         {
-            var s = Activity.Current.Source.Name;
+            var a = Activity.Current;
+            var s = a?.Source;
+            
             this.pc = pc;
         }
 
@@ -35,6 +37,7 @@ namespace AT_BL
         //todo: put auto
         async Task<Person[]> autoSearchFullName(string SearchName)
         {
+            await Task.Delay(500);
             return await pc.SearchAfterFullName(SearchName);
         }
         //TODO: put auto
