@@ -15,9 +15,10 @@ namespace AT_DAL
         {
             if (string.IsNullOrEmpty(SearchName))
                 SearchName = "Ignat";
+
             var ret = new List<Person>();
-            await Task.Delay(1000);
-            for (int i = 0; i < SearchName.Length / 4 + 1; i++)
+            await Task.Delay(100 * new Random().Next(1, (SearchName.Length / 2)));
+            for (int i = 0; i < SearchName.Length / 10 + 2; i++)
             {
 
                 ret.Add(new Person()

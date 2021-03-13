@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace AT_BL
@@ -37,7 +38,7 @@ namespace AT_BL
         //put [auto] prefix
         async Task<Person[]> SearchFullName(string SearchName)
         {
-            await Task.Delay(500);
+            await Task.Delay(1000 );
             return await pc.SearchAfterFullName(SearchName);
         }
         //put [auto] prefix
@@ -66,6 +67,8 @@ namespace AT_BL
                     //maybe log? 
                 }
             }
+            var c = new HttpClient();
+            var s = c.GetStringAsync("http://www.bing.com");
             return personsFound;
         }
         //put [auto] prefix
