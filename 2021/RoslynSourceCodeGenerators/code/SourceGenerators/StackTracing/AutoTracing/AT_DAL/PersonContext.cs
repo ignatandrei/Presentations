@@ -10,8 +10,8 @@ namespace AT_DAL
     public partial class PersonContext
     {
         static string NameAss = ThisAssembly.Project.AssemblyName;
-
-        public async Task<Person[]> autoSearchAfterFullName(string SearchName)
+        //put [auto] prefix
+        public async Task<Person[]> SearchAfterFullName(string SearchName)
         {
             if (string.IsNullOrEmpty(SearchName))
                 SearchName = "Ignat";
