@@ -44,7 +44,6 @@ namespace AT_BL
         //put [auto] prefix
         public async Task<Person[]> SearchAndLoadData(string name)
         {
-            var newP = this.dc.dboDepartment.ToList();
             var personsFound = await SearchFullName(name);
             
             foreach (var item in personsFound)
