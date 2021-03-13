@@ -54,8 +54,27 @@ namespace AT_BL
             
             var tasks = personsFound.Select(it => LoadDetails(it));
             await Task.WhenAll(tasks);
+            foreach (var item in personsFound)
+            {
+                try
+                {
+                    await FindDebts(item);
+                }
+                catch (Exception)
+                {
 
+                    //maybe log? 
+                }
+            }
             return personsFound;
+        }
+
+        async Task<int> autoFindDebts(Person p)
+        {
+            await Task.Delay(1000);
+            if(p.ID % 2== 0)
+                throw new ArgumentException("a test exception");
+            return p.ID;
         }
     }
 

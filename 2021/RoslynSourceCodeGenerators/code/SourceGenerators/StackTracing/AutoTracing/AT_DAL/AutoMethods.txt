@@ -59,10 +59,10 @@ namespace {{NamespaceName}} {
              user ??= "NoUserConfigured";
              newAct?.AddTag("user",user);
              newAct?.AddEvent(new ActivityEvent("START {{mi.NewName}}"));
-
+             newAct?.SetStatus(Status.Ok);
             try{ //original method
                 {{returnString}} {{  strAwait }} {{mi.Name}}({{ mi.parametersCallCSharp }});
-                newAct?.SetStatus(Status.Ok);
+                
             }
             catch(Exception ex){
                 newAct?.RecordException(ex);
