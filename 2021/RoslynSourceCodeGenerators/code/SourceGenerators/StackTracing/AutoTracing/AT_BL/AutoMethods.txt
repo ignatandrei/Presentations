@@ -45,11 +45,11 @@ namespace {{NamespaceName}} {
             Console.WriteLine("{{mi.NewName}}");
             //var sw=Stopwatch.StartNew();
             var activitySource = Activity.Current?.Source;
-            using var newAct = activitySource?.StartActivity(NameAss +":{{mi.NewName}}");
+            using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Client);
             if(newAct != null){
                  if(newAct?.Parent !=null)
                     newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
-                 //newAct.DisplayName="aaa";
+                 newAct.SetTag("peer.service", ThisAssembly.Project.AssemblyName);
                  newAct.AddTag("method","{{mi.NewName}}");
                  newAct.AddTag("called from ",memberName);
                  newAct.AddTag("called from file",sourceFilePath);

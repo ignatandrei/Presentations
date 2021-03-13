@@ -48,7 +48,7 @@ namespace {{NamespaceName}} {
             using var newAct = activitySource?.StartActivity(NameAss +":{{mi.NewName}}");
              if(newAct?.Parent !=null)
                 newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
-
+             newAct?.SetTag("peer.service", ThisAssembly.Project.AssemblyName);
              newAct?.AddTag("method","{{mi.NewName}}");
              newAct?.AddTag("called from ",memberName);
              newAct?.AddTag("called from file",sourceFilePath);

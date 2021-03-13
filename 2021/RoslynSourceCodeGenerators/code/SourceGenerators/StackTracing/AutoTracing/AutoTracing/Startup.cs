@@ -39,7 +39,6 @@ namespace AutoTracing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
-            services.AddDbContext<DatabaseContext>(opt => opt.UseInMemoryDatabase("db_Andrei"));
 
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(
@@ -47,8 +46,7 @@ namespace AutoTracing
                             ResourceBuilder
                             .CreateDefault()
                             .AddService(ThisAssembly.Project.AssemblyName)
-                            .AddService("test")
-                            .AddTelemetrySdk()
+                            //.AddTelemetrySdk()
                         )
                         .AddAspNetCoreInstrumentation()
                         //.AddEntityFrameworkInstrumentation()
@@ -61,7 +59,7 @@ namespace AutoTracing
                             
                         })
                             .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
-                        .AddSource("asd")
+                        .AddSource("Andrei")
                         .AddZipkinExporter(c =>
                         {
                             //docker run -d -p 9411:9411 openzipkin/zipkin

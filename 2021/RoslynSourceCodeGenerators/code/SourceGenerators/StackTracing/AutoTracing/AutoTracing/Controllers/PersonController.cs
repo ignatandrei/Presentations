@@ -24,9 +24,9 @@ namespace AutoTracing.Controllers
         [HttpGet("id")]
         public Task<Person[]> Get([FromServices] PersonRepository p, string id)
         {
-            using var s = new ActivitySource("asd").StartActivity("test123");
-            s.DisplayName = "AAAA";
-            
+            using var s = Activity.Current?.Source?.StartActivity("WWW_Get_PersonRepository", ActivityKind.Client);
+            s?.SetTag("peer.service", "UseAnyName");
+
             return p.SearchAndLoadData(id);
         }
     }

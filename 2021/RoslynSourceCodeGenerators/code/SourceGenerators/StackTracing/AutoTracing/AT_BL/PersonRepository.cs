@@ -15,7 +15,6 @@ namespace AT_BL
 
     public partial class PersonRepository
     {
-        static string NameAss = ThisAssembly.Project.AssemblyName;
         private readonly PersonContext pc;
 
         public PersonRepository(PersonContext pc )
