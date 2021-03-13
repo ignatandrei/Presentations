@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,7 +24,9 @@ namespace AutoTracing.Controllers
         [HttpGet("id")]
         public Task<Person[]> Get([FromServices] PersonRepository p, string id)
         {
-
+            using var s = new ActivitySource("asd").StartActivity("test123");
+            s.DisplayName = "AAAA";
+            
             return p.SearchAndLoadData(id);
         }
     }

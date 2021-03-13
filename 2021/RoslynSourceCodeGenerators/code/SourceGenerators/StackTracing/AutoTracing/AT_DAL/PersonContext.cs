@@ -1,4 +1,5 @@
 ﻿using AOPMethodsCommon;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,10 +10,30 @@ namespace AT_DAL
 
     public partial class PersonContext
     {
+        private string tryOpenSql()
+        {
+            using (var con =new SqlConnection("Data Source=MyDataSource;Initial Catalog=tests;Integrated Security=False;User ID=sa;Password=yourStrong(!)Password"))
+            {
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "select";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return "asdasd";
+        }
         static string NameAss = ThisAssembly.Project.AssemblyName;
         //put [auto] prefix
         public async Task<Person[]> SearchAfterFullName(string SearchName)
         {
+            try
+            {
+                tryOpenSql();
+            }
+            catch 
+            {
+
+            }
             if (string.IsNullOrEmpty(SearchName))
                 SearchName = "Ignat";
 

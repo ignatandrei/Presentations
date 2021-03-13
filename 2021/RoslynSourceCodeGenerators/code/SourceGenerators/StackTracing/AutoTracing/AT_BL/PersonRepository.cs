@@ -18,7 +18,7 @@ namespace AT_BL
         static string NameAss = ThisAssembly.Project.AssemblyName;
         private readonly PersonContext pc;
 
-        public PersonRepository(PersonContext pc)
+        public PersonRepository(PersonContext pc )
         {
             var a = Activity.Current;
             var s = a?.Source;
@@ -44,6 +44,7 @@ namespace AT_BL
         //put [auto] prefix
         public async Task<Person[]> SearchAndLoadData(string name)
         {
+            var newP = this.dc.dboDepartment.ToList();
             var personsFound = await SearchFullName(name);
             
             foreach (var item in personsFound)

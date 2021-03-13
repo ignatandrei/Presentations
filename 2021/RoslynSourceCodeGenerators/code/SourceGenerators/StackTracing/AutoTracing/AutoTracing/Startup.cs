@@ -3,6 +3,7 @@ using AT_DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -38,6 +39,7 @@ namespace AutoTracing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AutoTracing", Version = "v1" });
             });
+            services.AddDbContext<DatabaseContext>(opt => opt.UseInMemoryDatabase("db_Andrei"));
 
             services.AddOpenTelemetryTracing((builder) => builder
                     .SetResourceBuilder(
@@ -49,9 +51,17 @@ namespace AutoTracing
                             .AddTelemetrySdk()
                         )
                         .AddAspNetCoreInstrumentation()
+                        //.AddEntityFrameworkInstrumentation()
                         .AddHttpClientInstrumentation()
-                        .AddSqlClientInstrumentation()
-                        .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
+                        .AddSqlClientInstrumentation(opt=> {
+                            opt.EnableConnectionLevelAttributes = true;
+                            opt.RecordException = true;
+                            opt.SetDbStatementForText = true;
+                            opt.SetDbStatementForStoredProcedure = true;
+                            
+                        })
+                            .AddSource("OpenTelemetry.Instrumentation.AspNetCore")
+                        .AddSource("asd")
                         .AddZipkinExporter(c =>
                         {
                             //docker run -d -p 9411:9411 openzipkin/zipkin
