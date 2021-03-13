@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace AT_DAL
@@ -10,7 +11,7 @@ namespace AT_DAL
 
     public partial class PersonContext
     {
-        private string autoTryOpenSql()
+        private string TryOpenSql()
         {
             using (var con =new SqlConnection("Data Source=MyDataSource;Initial Catalog=tests;Integrated Security=False;User ID=sa;Password=yourStrong(!)Password"))
             {
@@ -20,11 +21,11 @@ namespace AT_DAL
                     cmd.ExecuteNonQuery();
                 }
             }
+            
             return "asdasd";
         }
-        static string NameAss = ThisAssembly.Project.AssemblyName;
         //put [auto] prefix
-        public async Task<Person[]> autoSearchAfterFullName(string SearchName)
+        public async Task<Person[]> SearchAfterFullName(string SearchName)
         {
             try
             {
@@ -34,6 +35,7 @@ namespace AT_DAL
             {
 
             }
+            var q = ActivityKind.Producer;
             if (string.IsNullOrEmpty(SearchName))
                 SearchName = "Ignat";
 

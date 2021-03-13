@@ -44,15 +44,15 @@ namespace {{NamespaceName}} {
         [CallerLineNumber] int sourceLineNumber = 0){
             Console.WriteLine("{{mi.NewName}}");
             //var sw=Stopwatch.StartNew();
+            var cnt=Activity.Current;
             var activitySource = Activity.Current?.Source;
             using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Client);
             if(newAct != null){
                  if(newAct?.Parent !=null)
                     newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
-
-                newAct.SetTag("peer.service", ThisAssembly.Project.AssemblyName);
-                newAct.SetTag("net.peer.name", ThisAssembly.Project.AssemblyName);
-                 newAct.AddTag("method","{{mi.NewName}}");
+                 newAct.SetTag("peer.service", ThisAssembly.Project.AssemblyName);
+                 newAct.SetTag("net.peer.name", ThisAssembly.Project.AssemblyName);
+                 newAct.AddTag("class.method","{{ClassName}}.{{mi.NewName}}");
                  newAct.AddTag("called from ",memberName);
                  newAct.AddTag("called from file",sourceFilePath);
                  newAct.AddTag("called from line",sourceLineNumber);
@@ -81,7 +81,7 @@ namespace {{NamespaceName}} {
                 var utcTime =System.DateTime.UtcNow;
                 newAct?.AddTag("UTCDateEnd",utcTime.ToString("yyyyMMdd:HHmmss"));  
                 newAct?.AddEvent(new ActivityEvent("END {{mi.NewName}}"));
-
+                cnt=Activity.Current;
             }
 
 
