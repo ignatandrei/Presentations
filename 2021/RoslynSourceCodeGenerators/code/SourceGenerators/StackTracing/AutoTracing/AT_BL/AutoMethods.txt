@@ -46,7 +46,7 @@ namespace {{NamespaceName}} {
             Console.WriteLine("{{mi.NewName}}");
             //var sw=Stopwatch.StartNew();
             var activitySource = Activity.Current?.Source;
-            using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Server);
+            using var newAct = activitySource?.StartActivity("{{mi.NewName}}",ActivityKind.Client);
             if(newAct != null){
                  if(newAct?.Parent !=null)
                     newAct.Parent.AddEvent(new ActivityEvent("{{mi.NewName}}"));
