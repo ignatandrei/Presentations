@@ -71,7 +71,7 @@ namespace AT_BL
             return personsFound;
         }
         //put [auto] prefix
-        async Task<int> autoFindDebts(Person p)
+        async Task<int> FindDebts(Person p)
         {
             await Task.Delay(1000);
             if(p.ID % 2== 0)
