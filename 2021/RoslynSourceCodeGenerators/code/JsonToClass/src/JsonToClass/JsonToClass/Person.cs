@@ -1,4 +1,4 @@
-﻿namespace JsonToClass
+﻿namespace JsonToClass.Json.Persons
 {
     partial class Person
     {

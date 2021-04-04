@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
+using JsonToClass.Json.Persons;
 namespace JsonToClass
 {
     class Program
