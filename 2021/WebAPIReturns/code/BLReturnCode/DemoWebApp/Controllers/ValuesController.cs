@@ -38,7 +38,7 @@ namespace DemoWebApp.Controllers
             // save to database, then
             return p.ID;
         }
-        //for a middleware 
+        //for post , see the  middleware http://msprogrammer.serviciipeweb.ro/2021/04/05/what-i-should-return-from-webapi/ 
         [HttpGet("{id}")]
         public ReplyData<Person> GetWithReply(int id)
         {
