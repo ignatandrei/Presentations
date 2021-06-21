@@ -12,7 +12,7 @@ namespace DemoWebApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // try with 1 and 2
+        // try with 1 2 3
         // read more https://weblog.west-wind.com/posts/2020/Feb/24/Null-API-Responses-and-HTTP-204-Results-in-ASPNET-Core
         [HttpGet("{id}")]
         public Person GetPerson(int id)
@@ -38,7 +38,7 @@ namespace DemoWebApp.Controllers
             // save to database, then
             return p.ID;
         }
-
+        //for a middleware 
         [HttpGet("{id}")]
         public ReplyData<Person> GetWithReply(int id)
         {
@@ -78,16 +78,25 @@ namespace DemoWebApp.Controllers
 
         private Person RetrieveFromDatabase(int id)
         {
-            if (id % 2 == 0)
-                return new Person()
-                {
-                    ID = id,
-                    Name = "Andrei Ignat " + id
-                    
-                };
+            switch (id % 3)
+            {
+                case 0:
+                    return null;
+                case 1:
+                    throw new ArgumentException($"there is no person with id {id}");
+                case 2:
 
+                    return new Person()
+                    {
+                        ID = id,
+                        Name = "Andrei Ignat " + id
 
-            return null;
+                    };
+                    //not necessary
+                default:
+                    return null;
+
+            }
         }
     }
 }
