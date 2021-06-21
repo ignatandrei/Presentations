@@ -12,7 +12,8 @@ namespace DemoWebApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // TODO: try with 1 and 2
+        // try with 1 and 2
+        // read more https://weblog.west-wind.com/posts/2020/Feb/24/Null-API-Responses-and-HTTP-204-Results-in-ASPNET-Core
         [HttpGet("{id}")]
         public Person GetPerson(int id)
         {
@@ -37,6 +38,44 @@ namespace DemoWebApp.Controllers
             // save to database, then
             return p.ID;
         }
+
+        [HttpGet("{id}")]
+        public ReplyData<Person> GetWithReply(int id)
+        {
+
+            return RetrieveWithReplyFromDatabase(id);
+        }
+
+        private ReplyData<Person> RetrieveWithReplyFromDatabase(int id)
+        {
+            try
+            {
+                Person p = RetrieveFromDatabase(id);
+                if (p == null)
+                {
+                    var r = new ReplyData<Person>();
+                    r.Success = false;
+                    r.Message = "Cannot find person with id " + id;
+                    return r;
+                }
+                else
+                {
+                    var r = new ReplyData<Person>();
+                    r.Success = true;
+                    r.ReturnObject = p;
+
+                    return r;
+                }
+            }
+            catch (Exception ex)
+            {
+                var r = new ReplyData<Person>();
+                r.Success = false;
+                r.Message = ex.Message;
+                return r;
+            }
+        }
+
         private Person RetrieveFromDatabase(int id)
         {
             if (id % 2 == 0)
