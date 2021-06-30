@@ -6,9 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AOPMethodsCommon" Version="2021.2.27.640" />
-    <PackageReference Include="AOPMethodsGenerator" Version="2021.2.27.640" />
+    <PackageReference Include="AOPMethodsCommon" Version="2021.6.11.907" />
+    <PackageReference Include="AOPMethodsGenerator" Version="2021.6.11.907" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.10.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0" />
     <PackageReference Include="MockSourceGenerator" Version="0.3.0" />
+    <PackageReference Include="ThisAssembly" Version="1.0.8" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="enum.txt" />
