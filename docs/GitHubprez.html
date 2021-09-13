@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# Github  Dev/CodeSpaces/Copilot =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/GitHub.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/GitHub.zip
+---
+
+# Agenda
+
+0. About me
+1. GitHub Dev
+3. GitHub CodeSpaces 
+3. GitHub CodeSpaces .NET 
+3. GitHub CodeSpaces  Angular
+3. GitHub Copilot 
+7. Discussion  / Questions ?
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Ebook RSCG Examples https://amzn.to/3f6gll3
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+class: center, top
+
+# GitHub Dev
+
+VSCode inside
+Press . inside 
+
+https://github.com/ignatandrei/MicroservicesPortChooser
+
+and goto
+
+https://github.dev/ignatandrei/MicroservicesPortChooser
+
+---
+class: center, top
+
+# GitHub CodeSpaces 
+
+Example: 
+https://ignatandrei-microservicesportchooser-q4477jfpv5.github.dev/
+
+Images:
+https://aka.ms/ghcs-default-image
+
+
+---
+class: center, top
+
+# GitHub CodeSpaces .NET 
+
+.NET :
+
+cd /workspaces/MicroservicesPortChooser/src/MicroservicesPortChooser/MicroservicesPortChooserWeb
+
+dotnet run
+
+then
+
+https://ignatandrei-microservicesportchooser-q4477jfpv5-5000.githubpreview.dev/swagger/index.html
+
+
+---
+class: center, top
+
+# GitHub CodeSpaces Angular
+
+Angular:
+
+cd /workspaces/MicroservicesPortChooser/src/MicroservicesAng
+
+npm i
+
+npm start
+
+then
+
+https://ignatandrei-microservicesportchooser-q4477jfpv5-4200.githubpreview.dev/static/mpcv1
+
+---
+class: center, top
+
+# GitHub Copilot in VSCode (!VS)
+
+Example MSPC:
+
+//in main
+public static void Main(string[] args)
+//add two numbers 
+
+in Register.cs 
+//create copy constructor    
+
+//angular , create ts file
+//create class http interceptor
+
+//create method for intercepting http requests
+
+---
+class: center, top
+
+# Experiments:
+
+https://towardsdatascience.com/some-experiments-using-github-copilot-with-python-90f8065fb72e
+
+https://github.com/cassidoo/github-copilot-demo
+
+https://blog.logrocket.com/building-github-copilot-app/
+
+https://applitools.com/blog/using-github-copilot-to-automate-tests/
+
+
+---
+class: left, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
