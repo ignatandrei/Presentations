@@ -82,7 +82,7 @@ https://ignatandrei.github.io/Presentations/RoslynSourceCodeGenerators.zip
 0. About me
 1. What is RSCG ?
 3. Simple Generator Examples (generate files from CSV,XML, JSON)
-4. Interacting with Code examples ( enum / mock / copy constructor )
+4. Interacting with Code examples (TimeBomb, enum / mock / copy constructor )
 3. StackTrace with RSCG , Open Tracing, 
 4. Links to get started 
 7. Discussion  / Questions ?
@@ -124,7 +124,7 @@ https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/
 
 ![:img how, 80%](how.png)
 
-Demo:
+Demo RSCG_VerySimple :
 
 
 Forget  Debugger.Launch => IsRoslynComponent
@@ -140,14 +140,23 @@ class: center, top
 
 # Simple Generator Examples (generate files from CSV,XML, JSON)
 
-Demo SourceGenerators/SourceGenerators
+Demo SourceGenerators/SourceGenerators.sln ( CSV and XML )
 
 Demo  JsonToClass ?
 
 ---
 class: center, top
 
-# Interacting with Code Examples ( enum / copy constructor / mock  )
+# Interacting with Code Examples 
+
+## Detailed Practical example to generate code from existing 
+
+RSCG_TimeBombComment\RSCG_TimeBombComment.sln
+
+## More examples from nuget 
+enum / copy constructor / mock
+InteractingWithCode\AdvEx.sln
+
 
 ---
 class: center, top
@@ -159,8 +168,16 @@ Demo  StackTracing
 
 https://github.com/open-telemetry/opentelemetry-dotnet/issues/762#issuecomment-804958106
 
+SourceGenerators\StackTracing\AutoTracing\AutoTracing.sln
+
+Jaeger
+docker run -d --name jaeger -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 14250:14250  jaegertracing/all-in-one:1.22
+
+http://localhost:16686/
+
 ---
 class: center, top
+
 
 # Links to get started 
 
