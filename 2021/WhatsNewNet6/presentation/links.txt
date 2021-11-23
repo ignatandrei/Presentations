@@ -3,3 +3,8 @@ https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-6
 https://devblogs.microsoft.com/dotnet/file-io-improvements-in-dotnet-6/
 
 https://devblogs.microsoft.com/dotnet/announcing-net-6/
+
+https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/
+
+
+https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-source-generator/
