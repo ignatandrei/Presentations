@@ -8,3 +8,8 @@ https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/
 
 
 https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-source-generator/
+
+https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-6.0/whatsnew
+
+https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=aspnetcore-6.0
+
