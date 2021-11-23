@@ -19,6 +19,7 @@ namespace WebAPIDemo.Controllers
                 yield return i;
             }
         }
+        //Demo: EFCore 6 with IAsyncEnumerable
 
         //// GET api/<ValuesController>/5
         //[HttpGet("{id}")]
