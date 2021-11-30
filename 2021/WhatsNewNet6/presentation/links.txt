@@ -15,3 +15,8 @@ https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=a
 
 http://dontcodetired.com/blog/?tag=cs10newseries
 
+https://devblogs.microsoft.com/dotnet/get-to-know-ef-core-6/
+
+https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
+
+https://blog.ndepend.com/modern-c-hello-world/
