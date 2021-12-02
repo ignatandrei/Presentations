@@ -20,3 +20,11 @@ https://devblogs.microsoft.com/dotnet/get-to-know-ef-core-6/
 https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
 
 https://blog.ndepend.com/modern-c-hello-world/
+
+https://devblogs.microsoft.com/visualstudio/visual-studio-2022/
+
+https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
+
+https://devblogs.microsoft.com/visualstudio/introducing-the-new-razor-editor-in-visual-studio-2022/
+
+https://visualstudiomagazine.com/articles/2021/11/08/vs-2022-ga.aspx
