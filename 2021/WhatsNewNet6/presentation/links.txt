@@ -28,3 +28,5 @@ https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
 https://devblogs.microsoft.com/visualstudio/introducing-the-new-razor-editor-in-visual-studio-2022/
 
 https://visualstudiomagazine.com/articles/2021/11/08/vs-2022-ga.aspx
+
+https://kymphillpotts.com/dotnetconf-recap.html
