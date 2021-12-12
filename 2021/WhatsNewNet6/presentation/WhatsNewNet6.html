@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhatsNewNet6</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# WhatsNewNet6   =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/WhatsNewNet6prez.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/WhatsNewNet6.zip
+---
+
+# Agenda
+
+0. About me
+4. Links 
+7. Discussion  / Questions ?
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+class: center, top
+
+# What's new VS2022? 
+
+64 Bit
+
+Intellicode - AI powered like Github Copilot
+
+Conditional Breakpoint + Force Run to Cursor
+
+Not tried yet:  
+
+committing across many repos: https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
+
+Razor editor: https://devblogs.microsoft.com/visualstudio/introducing-the-new-razor-editor-in-visual-studio-2022/
+
+More details at : https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes-preview
+
+---
+class: top
+
+# What's new C# 10
+
+DotNet: https://devblogs.microsoft.com/dotnet/file-io-improvements-in-dotnet-6/
+
+1. Minimal program + Implicit usings and global usings
+```csharp
+WriteLine("Hello Worldx");
+CsharpVsPython();
+```
+2. CallerArgumentExpression
+
+3. Source generator for System.Text.Json and logging
+
+4. Linq API : MaxBy , Chunks : example with threads
+
+5. DateOnly, TimeOnly : https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/
+
+
+---
+class: top
+
+# What's new ASP.NET C# 10 
+https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=aspnetcore-6.0
+1. Minimal API , Razor , Blazor , IAsyncDisposable
+2. HttpLoggingMiddleware 
+3. AsyncEnumerable
+```csharp
+//Demo: AsyncEnumerable
+// https://localhost:7115/api/Values/GetValues
+[HttpGet]
+public async IAsyncEnumerable<int> GetValues()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        await Task.Delay(2000);
+        yield return i;
+    }
+}
+```
+
+---
+class: top
+
+# What's new  EFCore 6
+
+1. Speed
+
+```csharp
+[HttpGet("{id}")]
+public ReplyData<Person> GetWithReply(int id)
+{
+
+    return RetrieveWithReplyFromDatabase(id);
+}
+
+private ReplyData<Person> RetrieveWithReplyFromDatabase(int id)
+{
+    try
+    {
+        Person p = RetrieveFromDatabase(id);
+        if (p == null)
+        {
+            var r = new ReplyData<Person>();
+            r.Success = false;
+            r.Message = "Cannot find person with id " + id;
+            return r;
+        }
+        else
+        {
+            var r = new ReplyData<Person>();
+            r.Success = true;
+            r.ReturnObject = p;
+
+            return r;
+        }
+    }
+    catch (Exception ex)
+    {
+        var r = new ReplyData<Person>();
+        r.Success = false;
+        r.Message = ex.Message;
+        return r;
+    }
+}
+
+```
+---
+class: center, top
+
+# Links to get started 
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio
+
+https://restfulapi.net/richardson-maturity-model
+
+https://blog.ploeh.dk/2013/05/01/rest-lesson-learned-avoid-hackable-urls/
+
+---
+class: left, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
