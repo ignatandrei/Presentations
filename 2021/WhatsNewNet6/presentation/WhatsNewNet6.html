@@ -81,7 +81,11 @@ https://ignatandrei.github.io/Presentations/WhatsNewNet6.zip
 # Agenda
 
 0. About me
-4. Links 
+1. What's new VS2022?
+2. What's new C# 10
+3. What's new ASP.NET C# 10
+4. What's new EFCore 6
+5. Links 
 7. Discussion  / Questions ?
 ---
 class: center, top
@@ -143,7 +147,6 @@ CsharpVsPython();
 
 3. Source generator for System.Text.Json and logging
 
-4. Linq API : MaxBy , Chunks : example with threads
 
 5. DateOnly, TimeOnly : https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/
 
@@ -169,63 +172,66 @@ public async IAsyncEnumerable<int> GetValues()
     }
 }
 ```
+4. Linq API : MaxBy - example , Chunks : example with threads
+
+6. Value Type Records ( equality not by reflection)
+
+7. Interpolated string : https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/interpolated-string-handler
+(see latest example)
 
 ---
 class: top
 
 # What's new  EFCore 6
 
-1. Speed
+1. Minimal API + Speed
 
-```csharp
-[HttpGet("{id}")]
-public ReplyData<Person> GetWithReply(int id)
-{
+2. Compiled Models : https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-5-compiled-models/
 
-    return RetrieveWithReplyFromDatabase(id);
-}
+3. Conventions - varchar(200) for all string columns https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-6-configure-conventions/
 
-private ReplyData<Person> RetrieveWithReplyFromDatabase(int id)
-{
-    try
-    {
-        Person p = RetrieveFromDatabase(id);
-        if (p == null)
-        {
-            var r = new ReplyData<Person>();
-            r.Success = false;
-            r.Message = "Cannot find person with id " + id;
-            return r;
-        }
-        else
-        {
-            var r = new ReplyData<Person>();
-            r.Success = true;
-            r.ReturnObject = p;
+4. Support Temporal Tables 
 
-            return r;
-        }
-    }
-    catch (Exception ex)
-    {
-        var r = new ReplyData<Person>();
-        r.Success = false;
-        r.Message = ex.Message;
-        return r;
-    }
-}
+5. Migrations, Cosmos DB, SavePoints, and others :https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
+
 
 ```
 ---
 class: center, top
 
 # Links to get started 
+https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-6
 
-https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio
+https://devblogs.microsoft.com/dotnet/file-io-improvements-in-dotnet-6/
 
-https://restfulapi.net/richardson-maturity-model
+https://devblogs.microsoft.com/dotnet/announcing-net-6/
 
-https://blog.ploeh.dk/2013/05/01/rest-lesson-learned-avoid-hackable-urls/
+https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/
+
+
+https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-source-generator/
+
+https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-6.0/whatsnew
+
+https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=aspnetcore-6.0
+
+http://dontcodetired.com/blog/?tag=cs10newseries
+
+https://devblogs.microsoft.com/dotnet/get-to-know-ef-core-6/
+
+https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
+
+https://blog.ndepend.com/modern-c-hello-world/
+
+https://devblogs.microsoft.com/visualstudio/visual-studio-2022/
+
+https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
+
+https://devblogs.microsoft.com/visualstudio/introducing-the-new-razor-editor-in-visual-studio-2022/
+
+https://visualstudiomagazine.com/articles/2021/11/08/vs-2022-ga.aspx
+
+https://kymphillpotts.com/dotnetconf-recap.html
 
 ---
 class: left, top
