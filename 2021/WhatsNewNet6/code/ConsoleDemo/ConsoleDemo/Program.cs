@@ -2,9 +2,16 @@
 // Demo: minimal program
 // Demo: global usings: see See file globalusing.cs.
 // Read more at https://docs.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives
+
 WriteLine("Hello Worldx");
 CsharpVsPython();
+MaxByExample();
 
+void MaxByExample()
+{
+    var list = Employee.GetFake();
+    WriteLine( list.MaxBy(it => it.Salary));
+}
 
 
 
