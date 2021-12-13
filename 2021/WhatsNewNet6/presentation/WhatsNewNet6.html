@@ -189,10 +189,17 @@ class: top
 2. Compiled Models : https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-5-compiled-models/
 
 3. Conventions - varchar(200) for all string columns https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-6-configure-conventions/
-
+```csharp
+configurationBuilder
+.Properties<string>()
+.AreUnicode(false)
+.HaveMaxLength(1024);
+```
+        
 4. Support Temporal Tables 
 
 5. Migrations, Cosmos DB, SavePoints, and others :https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
+
 
 
 ```
