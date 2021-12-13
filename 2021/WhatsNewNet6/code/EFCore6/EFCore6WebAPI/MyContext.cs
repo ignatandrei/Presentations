@@ -51,7 +51,8 @@ public partial class MyContext : DbContext
             entity.Property(e => e.Name)
                 .IsRequired()
                 //.HasMaxLength(50)
-                //.IsUnicode(false);
+                //.IsUnicode(false)
+                ;
         });
 
         modelBuilder.Entity<Employee>(entity =>
@@ -67,7 +68,8 @@ public partial class MyContext : DbContext
             entity.Property(e => e.Name)
                 .IsRequired()
                 //.HasMaxLength(100)
-                //.IsUnicode(false);
+                //.IsUnicode(false)
+                ;
 
             entity.HasOne(d => d.IddepartmentNavigation)
                 .WithMany(p => p.Employees)
