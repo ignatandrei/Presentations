@@ -4,15 +4,40 @@
 // Read more at https://docs.microsoft.com/en-us/dotnet/core/project-sdk/overview#implicit-using-directives
 
 WriteLine("Hello Worldx");
+await ChunkWithThreads();
+return;
 CsharpVsPython();
 MaxByExample();
 
+//Demo: MaxBy
 void MaxByExample()
 {
     var list = Employee.GetFake();
     WriteLine( list.MaxBy(it => it.Salary));
 }
+//Demo: Chunk
+async Task<int> ChunkWithThreads()
+{
+    Console.WriteLine(" ALL at once");
+    var arr=Enumerable.Range(1,23).Select(it=>CreateT(it));
+    await Task.WhenAll( arr.ToArray());
+    Console.WriteLine(" in chunks");
+    var data = arr.Chunk(Environment.ProcessorCount);
+    foreach (var item in data)
+    {
+        var arrChunk = item.ToArray();
+        await Task.WhenAll(arrChunk);
+        Console.WriteLine("!!!batch completend for "+ arrChunk.Length);
+    }
+    return 0;
+}
 
+async Task<int> CreateT(int id)
+{
+    await Task.Delay(Random.Shared.Next(1000,2000));
+    Console.WriteLine("task" + id);
+    return id;
+}
 
 
 //https://www.red-gate.com/simple-talk/development/dotnet-development/10-reasons-python-better-than-c-sharp/
