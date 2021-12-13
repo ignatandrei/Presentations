@@ -138,15 +138,16 @@ class: top
 
 DotNet: https://devblogs.microsoft.com/dotnet/file-io-improvements-in-dotnet-6/
 
-1. Minimal program + Implicit usings and global usings
+1. Demo :Minimal program , Implicit usings ,global usings, 
 ```csharp
 WriteLine("Hello Worldx");
 CsharpVsPython();
 ```
-2. CallerArgumentExpression
+2. //Demo: file scoped namespaces
 
-3. Source generator for System.Text.Json and logging
+3. Demo: CallerArgumentExpression
 
+4. Demo: Source generator for System.Text.Json (and logging)
 
 5. DateOnly, TimeOnly : https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/
 
@@ -156,15 +157,12 @@ class: top
 
 # What's new ASP.NET C# 10 
 https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0?view=aspnetcore-6.0
-1. Minimal API , Razor , Blazor , IAsyncDisposable
+1. Demo: Minimal API ; then  Razor , Blazor , IAsyncDisposable
 2. HttpLoggingMiddleware 
-3. AsyncEnumerable
+3. Demo: AsyncEnumerable
 ```csharp
-//Demo: AsyncEnumerable
-// https://localhost:7115/api/Values/GetValues
 [HttpGet]
-public async IAsyncEnumerable<int> GetValues()
-{
+public async IAsyncEnumerable<int> GetValues(){
     for (int i = 0; i < 10; i++)
     {
         await Task.Delay(2000);
@@ -183,26 +181,30 @@ public async IAsyncEnumerable<int> GetValues()
 class: top
 
 # What's new  EFCore 6
-
+<small>
 1. Minimal API + Speed
-
 2. Compiled Models : https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-5-compiled-models/
-
+dotnet ef dbcontext optimize
+```csharp
+var iddepartment = runtimeEntityType.AddProperty(
+"Iddepartment",
+typeof(long),
+propertyInfo: typeof(Department).GetProperty("Iddepartment", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly),
+fieldInfo: typeof(Department).GetField("<Iddepartment>k__BackingField", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly),
+valueGenerated: ValueGenerated.OnAdd,
+afterSaveBehavior: PropertySaveBehavior.Throw);
+```
 3. Conventions - varchar(200) for all string columns https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-6-configure-conventions/
 ```csharp
-configurationBuilder
-.Properties<string>()
-.AreUnicode(false)
-.HaveMaxLength(1024);
+configurationBuilder.Properties<string>()
+.AreUnicode(false).HaveMaxLength(1024);
 ```
-        
 4. Support Temporal Tables 
-
 5. Migrations, Cosmos DB, SavePoints, and others :https://docs.microsoft.com/ro-ro/ef/core/what-is-new/ef-core-6.0/whatsnew
 
+</small>
 
 
-```
 ---
 class: center, top
 
