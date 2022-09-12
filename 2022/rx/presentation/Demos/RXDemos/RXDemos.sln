@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXSampleConsole", "RXSampleConsole\RXSampleConsole.csproj", "{1BC3C7BE-0A89-4980-ABC5-29965F9EAB46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RXSampleConsole", "RXSampleConsole\RXSampleConsole.csproj", "{1BC3C7BE-0A89-4980-ABC5-29965F9EAB46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RXSampleWinForm", "RXSampleWinForm\RXSampleWinForm.csproj", "{BBB92DA4-A629-4D83-87E3-01D279596B3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1BC3C7BE-0A89-4980-ABC5-29965F9EAB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC3C7BE-0A89-4980-ABC5-29965F9EAB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC3C7BE-0A89-4980-ABC5-29965F9EAB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB92DA4-A629-4D83-87E3-01D279596B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB92DA4-A629-4D83-87E3-01D279596B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB92DA4-A629-4D83-87E3-01D279596B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB92DA4-A629-4D83-87E3-01D279596B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
