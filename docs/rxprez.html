@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Roslyn Source Code Generator</title>
+    <title>What is RX</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -67,24 +67,23 @@ layout: true
 
 class: center, middle
 
-# Roslyn Source Code Generator   =>
+# What is RX   =>
 
 ( press > )
 
-https://ignatandrei.github.io/Presentations/RoslynSourceCodeGeneratorsprez.html
+https://ignatandrei.github.io/Presentations/rxprez.html
 
 Code at 
-https://ignatandrei.github.io/Presentations/RoslynSourceCodeGenerators.zip
+https://ignatandrei.github.io/Presentations/rx.zip
 ---
 
 # Agenda
 
 0. About me
-1. What is RSCG ?
-3. Simple Generator Examples (generate files from CSV,XML, JSON)
-4. Interacting with Code examples (TimeBomb, enum / mock / copy constructor )
-3. StackTrace with RSCG , Open Tracing, 
-4. Links to get started 
+1. Introduction RX - Reactive Extensions 
+2. Some Sites
+3. Key Concepts
+5. Demo .NET Core / JavaScript / TypeScript
 7. Discussion  / Questions ?
 ---
 class: center, top
@@ -107,112 +106,126 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 ---
 class: center, top
 
-# Ebook RSCG Examples
+# Introduction RX - Reactive Extension 
 
-Amazon: https://amzn.to/3f6gll3
+## What is RX  ?
 
-Free:  https://ignatandrei.github.io/RSCG_Examples/
+Rx is a library for composing asynchronous and event-based programs using observable collections.
 
-Github Examples: https://github.com/ignatandrei/RSCG_Examples/
+## Why RX ?
 
----
-class: center, top
+"You want to have the result pushed to you when it is ready. Even better, when working with result sets, you want to receive individual results as they are ready. You do not want to wait for the entire set to be processed before you see the first row."
 
-# What is RSCG ? 
-
-https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/
-
-C# 9
-
-![:img how, 80%](how.png)
-
-Demo RSCG_VerySimple :
-
-
-Forget  Debugger.Launch => IsRoslynComponent
-
-System.Diagnostics.Debugger.Break
-
-Writing logs: DoDiagnostics
-
-Where are the files ?
-
----
-class: center, top
-
-# Simple Generator Examples (generate files from CSV,XML, JSON)
-
-Demo SourceGenerators/SourceGenerators.sln ( CSV and XML )
-
-Demo  JsonToClass ?
-
----
-class: center, top
-
-# Interacting with Code Examples 
-
-## Detailed Practical example to generate code from existing 
-
-RSCG_TimeBombComment\RSCG_TimeBombComment.sln
-
-## More examples from nuget 
-enum / copy constructor / mock
-InteractingWithCode\AdvEx.sln
+http://introtorx.com/Content/v1.0.10621.0/01_WhyRx.html#WhyRx
 
 
 ---
 class: center, top
 
-# StackTrace with RSCG , Open Tracing
+# Some Sites 
 
+## Reference
 
-Demo  StackTracing
+https://github.com/ReactiveX - Java, JavaScript, Go ...
 
-https://github.com/open-telemetry/opentelemetry-dotnet/issues/762#issuecomment-804958106
+https://github.com/dotnet/reactive - .NET implementation
 
-SourceGenerators\StackTracing\AutoTracing\AutoTracing.sln
+## Learn
 
-Jaeger
-docker run -d --name jaeger -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 14250:14250  jaegertracing/all-in-one:1.22
+http://introtorx.com/
 
-http://localhost:16686/
+http://rxwiki.wikidot.com/101samples
+
+https://www.reactiveui.net/reactive-extensions/
+
+https://livebook.manning.com/book/rx-dot-net-in-action/chapter-4/212
+
+https://www.learnrxjs.io/
+
+https://rxmarbles.com/
+
+https://blog.andrei.rinea.ro/2013/06/01/bing-it-on-reactive-extensions-story-code-and-slides/
 
 ---
 class: center, top
 
+# KeyConcepts
 
-# Links to get started 
+( remember IEnumerable<T> and IEnumerator<T> ?)
 
-https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md
+Publisher : IObserver
+Consumer : IObservable
+Both : Subject 
+```csharp
+public interface IObservable<out T>
+{
+	IDisposable Subscribe(IObserver<T> observer);
+}
+public interface IObserver<in T>
+{
+	void OnCompleted();
+	void OnError(Exception error);
+	void OnNext(T value);
+}
+public sealed class Subject<T> : ISubject<T>, 
+    ISubject<T, T>, IObserver<T>, IObservable<T>, IDisposable
+	
+``` 
+ReplaySubject , BehaviorSubject , 
 
-https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.cookbook.md
+Composition functions 
 
-https://github.com/dotnet/roslyn-sdk/tree/master/samples/CSharp/SourceGenerators
-
-https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/
-
-https://turnerj.com/blog/the-pain-points-of-csharp-source-generators
-
-# Future
-
-Integrated in .NET 6 by Microsoft :
-
-https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-5/#libraries-jsonserializer-source-generation
-
-https://docs.microsoft.com/ro-ro/dotnet/core/extensions/logger-message-generator
 
 ---
-class: left, top
+class: center, top
+
+# Demos 
+
+.NET 
+
+Demos\RXDemos - sample console + windows Forms
+
+JavaScript
+
+https://github.com/ignatandrei/rxDemo/
+
+https://rxdemo.azurewebsites.net/
+
+---
+class: center, top
+
+# Some Sites 
+## Learn
+
+http://introtorx.com/
+
+http://rxwiki.wikidot.com/101samples
+
+https://www.reactiveui.net/reactive-extensions/
+
+https://livebook.manning.com/book/rx-dot-net-in-action/chapter-4/212
+
+https://www.learnrxjs.io/
+
+https://rxmarbles.com/
+
+https://blog.andrei.rinea.ro/2013/06/01/bing-it-on-reactive-extensions-story-code-and-slides/
+
+
+---
+class: center, top
 
 # Questions?
 
 Andrei Ignat http://msprogrammer.serviciipeweb.ro/
 
-Amazon: https://amzn.to/3f6gll3
+www.ASP.NET forum moderator
 
-Free:  https://ignatandrei.github.io/RSCG_Examples/
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
 
-Github Examples: https://github.com/ignatandrei/RSCG_Examples/
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
 
 Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 
