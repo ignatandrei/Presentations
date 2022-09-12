@@ -20,6 +20,9 @@ Console.WriteLine("done");
 //http://rxwiki.wikidot.com/101samples
 //https://www.reactiveui.net/reactive-extensions/
 //https://livebook.manning.com/book/rx-dot-net-in-action/chapter-4/212
+//https://www.learnrxjs.io/
+//https://rxmarbles.com/
+//https://github.com/ReactiveX
 //reading a file
 var obsLines = Observable.Generate(
     File.OpenText("a.txt"),

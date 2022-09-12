@@ -82,9 +82,8 @@ https://ignatandrei.github.io/Presentations/rx.zip
 0. About me
 1. Introduction RX - Reactive Extensions 
 2. Some Sites
-2. Demo .NET Core
-3. Demo JavaScript / TypeScript
-4. Links
+3. Key Concepts
+5. Demo .NET Core / JavaScript / TypeScript
 7. Discussion  / Questions ?
 ---
 class: center, top
@@ -109,10 +108,108 @@ class: center, top
 
 # Introduction RX - Reactive Extension 
 
-RX
+## What is RX  ?
+
+Rx is a library for composing asynchronous and event-based programs using observable collections.
+
+## Why RX ?
+
+"You want to have the result pushed to you when it is ready. Even better, when working with result sets, you want to receive individual results as they are ready. You do not want to wait for the entire set to be processed before you see the first row."
+
+http://introtorx.com/Content/v1.0.10621.0/01_WhyRx.html#WhyRx
+
 
 ---
 class: center, top
+
+# Some Sites 
+
+## Reference
+
+https://github.com/ReactiveX - Java, JavaScript, Go ...
+
+https://github.com/dotnet/reactive - .NET implementation
+
+## Learn
+
+http://introtorx.com/
+
+http://rxwiki.wikidot.com/101samples
+
+https://www.reactiveui.net/reactive-extensions/
+
+https://livebook.manning.com/book/rx-dot-net-in-action/chapter-4/212
+
+https://www.learnrxjs.io/
+
+https://rxmarbles.com/
+
+https://blog.andrei.rinea.ro/2013/06/01/bing-it-on-reactive-extensions-story-code-and-slides/
+
+---
+class: center, top
+
+# KeyConcepts
+
+( remember IEnumerable<T> and IEnumerator<T> ?)
+
+Publisher : IObserver
+Consumer : IObservable
+Both : Subject 
+```csharp
+public interface IObservable<out T>
+{
+	IDisposable Subscribe(IObserver<T> observer);
+}
+public interface IObserver<in T>
+{
+	void OnCompleted();
+	void OnError(Exception error);
+	void OnNext(T value);
+}
+public sealed class Subject<T> : ISubject<T>, 
+    ISubject<T, T>, IObserver<T>, IObservable<T>, IDisposable
+	
+``` 
+ReplaySubject , BehaviorSubject , 
+
+Composition functions 
+
+
+---
+class: center, top
+
+# Demos 
+
+.NET 
+
+Demos\RXDemos - sample console
+
+JavaScript
+
+https://github.com/ignatandrei/rxDemo/
+
+https://rxdemo.azurewebsites.net/
+
+---
+class: center, top
+
+# Some Sites 
+## Learn
+
+http://introtorx.com/
+
+http://rxwiki.wikidot.com/101samples
+
+https://www.reactiveui.net/reactive-extensions/
+
+https://livebook.manning.com/book/rx-dot-net-in-action/chapter-4/212
+
+https://www.learnrxjs.io/
+
+https://rxmarbles.com/
+
+https://blog.andrei.rinea.ro/2013/06/01/bing-it-on-reactive-extensions-story-code-and-slides/
 
 
 ---
