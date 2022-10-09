@@ -220,6 +220,13 @@ fileHtml='presentation/rx.html';
 archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
 fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
  
+ 
+folder='../2022/';
+file='win10'
+fileHtml='presentation/win10.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
 // Create the zip file.
 archive.createZip();
 
