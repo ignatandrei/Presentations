@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
+﻿
+
+
 
 
 WriteLine("Hello, World!");
@@ -11,9 +11,10 @@ var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
 
-
-var serviceName = "MyCompany.MyProduct.MyService";
-var serviceVersion = "1.0.0";
+//old way
+//var serviceName = Assembly.GetExecutingAssembly().GetName().Name;
+var serviceName = ThisAssembly.Project.AssemblyName;
+var serviceVersion = ThisAssembly.Info.Version;
 
 // Configure important OpenTelemetry settings and the console exporter
 using var tracerProvider = Sdk.CreateTracerProviderBuilder()
@@ -42,26 +43,6 @@ using (var activity = MyActivitySource.StartActivity("SayHello"))
 #endregion
 ReadKey();
 
-
-
-var serviceProvider = new ServiceCollection()
-                   .AddLogging()
-                   .AddSingleton<IConfiguration>(config)
-                   .AddOpenTelemetryTracing(
-                   //.Add(b =>
-                   //{
-                   //    b//.AddRequestAdapter()
-                   //   .UseJaeger(c =>
-                   //   {
-                   //       var s = config.GetSection("Jaeger");
-
-                   //       s.Bind(c);
-
-
-                   //   });
-                   //    var x = new Dictionary<string, object>() {
-                   //         { "PC", Environment.MachineName } };
-                   //    b.SetResource(new Resource(x.ToArray()));
-
-                   //})
-                   .BuildServiceProvider();
+var read = new SendHttpReq();
+var nr = await read.SendMoreRequests();
+WriteLine("received " + nr);
