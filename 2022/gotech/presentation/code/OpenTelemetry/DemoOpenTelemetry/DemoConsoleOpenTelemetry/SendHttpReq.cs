@@ -11,36 +11,45 @@ namespace DemoConsoleOpenTelemetry
 
         public SendHttpReq()
         {
-
         }
 
         public async Task<int> SendMoreRequests()
         {
-            var t = Enumerable.Range(1, 5).Select(
+            using (var activity = ActivityData.AddActivity())
+            {
+                var t = Enumerable.Range(1, 5).Select(
 
-                 async it =>
-                {
-                    string url = $"WeatherForecast/GetData/{it}";
-                    var secs = new Random(it).Next(1, it+2)*1000;
-                    await Task.Delay(secs);
-                    return await MakeRequest(url);
-                }
-                ).ToArray();
+                     async it =>
+                    {
+                        string url = $"WeatherForecast/GetData/{it}";
+                        var secs = new Random(it).Next(1, it + 2) * 1000;
+                        await Task.Delay(secs);
+                        return await MakeRequest(url);
+                    }
+                    ).ToArray();
 
-            var res = await Task.WhenAll(t);
-            return res.Sum();
+                var res = await Task.WhenAll(t);
+                return res.Sum();
+            }
         }
 
         static async Task<int> MakeRequest(string name)
         {
+            try
+            {
+                using var hc = new HttpClient();
+                hc.BaseAddress = new Uri("http://localhost:5275/");
+                var res = await hc.GetStringAsync(name);
+                //WriteLine(res);
+                WriteLine("Task " + name + " succeeded");
+                return res.Length;
+            }
+            catch
+            {
+                WriteLine("Task " + name + " NOT succeeded");
+                return -1;
 
-            using var hc = new HttpClient();
-            hc.BaseAddress = new Uri("http://localhost:5275/");
-            var res = await hc.GetStringAsync(name);
-            //WriteLine(res);
-            WriteLine("Task " + name + " succeeded");
-            return res.Length;
-
+            }
 
         }
     }

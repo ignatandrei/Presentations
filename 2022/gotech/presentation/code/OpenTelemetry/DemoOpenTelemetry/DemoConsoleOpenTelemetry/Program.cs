@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-WriteLine("Hello, World!");
+﻿WriteLine("Hello, World!");
 
 #region writing to console
 
@@ -50,3 +45,4 @@ ReadKey();
 var read = new SendHttpReq();
 var nr = await read.SendMoreRequests();
 WriteLine("received " + nr);
+

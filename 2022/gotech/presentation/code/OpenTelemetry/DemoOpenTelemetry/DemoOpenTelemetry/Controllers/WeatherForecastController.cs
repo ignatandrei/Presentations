@@ -21,6 +21,9 @@ namespace DemoOpenTelemetry.Controllers
         [HttpGet("{nr}")]
         public IEnumerable<WeatherForecast> GetData(int nr)
         {
+            if (nr % 3 == 0)
+                throw new ArgumentException($"cannot have number {nr}");
+
             return Enumerable.Range(1, nr).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
