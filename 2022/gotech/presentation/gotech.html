@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NET features that will improve your coding and debugging experience : Roslyn SourceCodeGenerators, IAsyncEnumerable , OpenTelemetry</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , TD EA</div>
+ 
+---
+
+class: center, middle
+
+# .NET features that will improve your coding and debugging experience : Roslyn SourceCodeGenerators, IAsyncEnumerable , OpenTelemetry   =>
+
+---
+
+# Agenda
+
+0. About me
+1. Roslyn SourceCodeGenerators 
+2. IAsyncEnumerable
+3. OpenTelemetry
+7. Discussion  / Questions ?
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat 
+
+MVP Developer Technologies: https://mvp.microsoft.com/en-us/PublicProfile/4025203?fullName=Ignat%20Andrei
+
+Linkedin: https://www.linkedin.com/in/ignatandrei/
+
+Technical Director Electronic Arts : https://www.ea.com
+---
+class: center, top
+
+# Roslyn Source Code Generators
+
+## What is RSCG  ?
+
+https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview
+
+## Microsoft Usage ( Json, Logging, MapGet) 
+
+https://twitter.com/davidfowl/status/1582955638736695296
+
+
+## Demos 
+
+Generate Static Function
+
+Generate About Commit
+
+---
+class: center, top
+
+# IAsyncEnumerable 
+
+## What is async / await  ?
+
+https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/
+
+
+## What is IAsyncEnumerable ?
+
+https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+
+## Demos WebAPI
+
+
+
+---
+class: center, top
+
+# OpenTelemetry
+
+## OpenTelemetry definition and uses
+
+https://opentelemetry.io/
+
+## OpenTelemetry in .NET Core
+
+## Demo with Jaeger and .NET Core WebAPI and RSCG
+
+---
+class: center, top
+
+# Questions?
+
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat 
+
+MVP Developer Technologies: https://mvp.microsoft.com/en-us/PublicProfile/4025203?fullName=Ignat%20Andrei
+
+Linkedin: https://www.linkedin.com/in/ignatandrei/
+
+
+Technical Director Electronic Arts : https://www.ea.com
+
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
