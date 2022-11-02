@@ -23,6 +23,10 @@ using var tracerProvider = Sdk.CreateTracerProviderBuilder()
         ResourceBuilder.CreateDefault()
             .AddService(serviceName: serviceName, serviceVersion: serviceVersion))
     .AddConsoleExporter()
+   .AddHttpClientInstrumentation(it =>
+   {
+       it.RecordException = true;
+   })
     .AddJaegerExporter(c =>
     {
 

@@ -37,7 +37,7 @@ namespace DemoConsoleOpenTelemetry
             using var hc = new HttpClient();
             hc.BaseAddress = new Uri("http://localhost:5275/");
             var res = await hc.GetStringAsync(name);
-            WriteLine(res);
+            //WriteLine(res);
             WriteLine("Task " + name + " succeeded");
             return res.Length;
 
