@@ -25,7 +25,7 @@ public class ActivityData
          [CallerFilePath] string filePath = ""
         )
     {
-        var activity = MyActivitySource.StartActivity(member);
+        var activity = MyActivitySource.StartActivity("Exception_"+ className +"_"+ member);
         activity.SetStatus (ActivityStatusCode.Error);
         activity?.SetTag("CallerMemberName", member);
         activity?.SetTag("line", line);

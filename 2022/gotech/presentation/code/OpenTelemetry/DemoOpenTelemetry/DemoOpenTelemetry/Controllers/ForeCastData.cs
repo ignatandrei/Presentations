@@ -12,9 +12,7 @@ namespace DemoOpenTelemetry.Controllers
         [AOPMarkerMethod]
         public async Task<WeatherForecast[]> GetData(int nr)
         {
-            if (nr % 3 == 0)
-                throw new ArgumentException($"cannot have number {nr}");
-
+           
             var data = Enumerable.Range(1, nr)
                 .Select(async index => await FindForeCast(index))
                 .ToArray();
@@ -24,7 +22,11 @@ namespace DemoOpenTelemetry.Controllers
         [AOPMarkerMethod]
         public async Task<WeatherForecast> FindForeCast(int index)
         {
+
             await Task.Delay(Random.Shared.Next(100, 1000));
+            if (index % 5 == 0)
+                throw new ArgumentException($"cannot have number {index}");
+
             return new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
