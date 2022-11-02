@@ -1,4 +1,4 @@
-﻿using AOPMethodsCommon;
+using AOPMethodsCommon;
 using Scriban;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace DemoConsoleOpenTelemetry
                             var data = await MakeRequest(url);
                             return data;
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             ActivityData.AddActivityException(ex)?.Dispose();
                         }
@@ -45,16 +45,20 @@ namespace DemoConsoleOpenTelemetry
             }
         }
         [AOPMarkerMethod]
-        static async Task<int> MakeRequest(string name)
+        public async Task<int> MakeRequest(string name)
         {
             using var hc = new HttpClient();
             hc.BaseAddress = new Uri("http://localhost:5275/");
             var res = await hc.GetStringAsync(name);
             //WriteLine(res);
             WriteLine("Task " + name + " succeeded");
-            return res.Length;
-
-
+            return await Calculate(name, res);
+        }
+        [AOPMarkerMethod]
+        public async Task<int> Calculate(string? name, string? data)
+        {
+            await Task.Delay(2000);
+            return (data?.Length  ?? 10) % (name?.Length ?? 2);
         }
     }
 }

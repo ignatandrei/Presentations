@@ -18,7 +18,7 @@ namespace {{NamespaceName}} {
     [GeneratedCode("AOPMethods", "{{version}}")]
     [CompilerGenerated]
     public partial class {{ClassName}}{
-
+    //andrei
 
         {{~ for mi in Methods ~}}
         //{{mi.Name}}
@@ -40,8 +40,7 @@ namespace {{NamespaceName}} {
             end
             }}
         public {{strAsync}} {{mi.ReturnType}} {{mi.NewName}} ({{mi.parametersDefinitionCSharp }} ){
-            using var activity = ActivityData.AddActivity();
-            {
+            using var span = ActivityData.AddActivity();            
             {{~ for miArg in mi.Parameters  ~}}
                 string val{{ miArg.Key }} ;
                 try{
@@ -67,7 +66,8 @@ namespace {{NamespaceName}} {
             }
             finally{
                 span?.Stop();
-                var milleElapsed = System.DateTime.UtcNow.Subtract(utcTime).TotalMilliseconds;
+
+                //var milleElapsed = System.DateTime.UtcNow.Subtract(utcTime).TotalMilliseconds;
                 //this.serverTiming.Metrics.Add(new Lib.AspNetCore.ServerTiming.Http.Headers.ServerTimingMetric("{{ClassName}}.{{mi.NewName}}",(decimal)milleElapsed ));
             }
 
@@ -75,5 +75,5 @@ namespace {{NamespaceName}} {
         }//end {{mi.NewName}}
         
         {{ end}}
-    }
- }
+    }//end class {{ClassName}}
+ }//end namespace {{NamespaceName}}
