@@ -22,7 +22,13 @@ using var tracerProvider = Sdk.CreateTracerProviderBuilder()
         ResourceBuilder.CreateDefault()
             .AddService(serviceName: serviceName, serviceVersion: serviceVersion))
     .AddConsoleExporter()
-    .AddJaegerExporter
+    .AddJaegerExporter(c =>
+    {
+
+        var s = config.GetSection("Jaeger");
+
+        s.Bind(c);
+    })
     .Build();
 
 var MyActivitySource = new ActivitySource(serviceName);
