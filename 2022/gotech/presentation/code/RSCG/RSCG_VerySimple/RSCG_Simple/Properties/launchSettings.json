@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RSCG_Simple": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\RSCG_VerySimple\\RSCG_VerySimple.csproj"
+    }
+  }
+}
