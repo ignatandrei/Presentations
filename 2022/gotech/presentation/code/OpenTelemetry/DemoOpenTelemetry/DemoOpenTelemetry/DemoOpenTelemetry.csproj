@@ -21,6 +21,10 @@
 	  <AdditionalFiles Include="../AutoMethod.txt" />
 
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ActivityData.cs" Link="ActivityData.cs" />
+  </ItemGroup>
   <PropertyGroup>
 	  <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 	  <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>

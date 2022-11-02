@@ -40,7 +40,7 @@ namespace {{NamespaceName}} {
             end
             }}
         public {{strAsync}} {{mi.ReturnType}} {{mi.NewName}} ({{mi.parametersDefinitionCSharp }} ){
-            using var span = ActivityData.AddActivity();            
+            using var span = ActivityData.AddActivity("{{ClassName}}");            
             {{~ for miArg in mi.Parameters  ~}}
                 string val{{ miArg.Key }} ;
                 try{

@@ -40,6 +40,7 @@ using (var activity = MyActivitySource.StartActivity("SayHello"))
     activity?.SetTag("baz", new int[] { 1, 2, 3 });
 }
 #endregion
+WriteLine("look into Jaeger");
 ReadKey();
 
 var read = new SendHttpReq();
