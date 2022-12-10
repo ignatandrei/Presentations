@@ -13,6 +13,10 @@
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
+      div.showSmall{
+        line-height: 0.7;
+  		font-size: 15px;
+	  }
 	  p.small {
 		line-height: 0.7;
 		font-size: 15px;
@@ -117,17 +121,7 @@ class: center, top
 
 # What's new VS2022? 
 
-
-
-64 Bit
-
-Intellicode - AI powered like Github Copilot
-
-Conditional Breakpoint + Force Run to Cursor
-
 committing across many repos: https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
-
-Razor editor: https://devblogs.microsoft.com/visualstudio/introducing-the-new-razor-editor-in-visual-studio-2022/
 
 More details at : https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-notes
 
@@ -135,6 +129,11 @@ More details at : https://learn.microsoft.com/en-us/visualstudio/releases/2022/r
 class: top
 
 # What's new C# 11
+
+<small>
+Try CentralPackageManagement
+https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management
+There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
 
 https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11
 
@@ -144,32 +143,77 @@ https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtu
 ![:img int32, 10%](int32.png)
  https://learn.microsoft.com/en-us/dotnet/api/system.int32?view=net-7.0
 
-
+</small>
 ---
 class: top
 
 # What's new ASP.NET 7 
-
+.showSmall[
 https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-7.0
+### Adopt :
+1. Bind arrays and string values from headers and query strings
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/parameter-binding?view=aspnetcore-7.0
 
-## Adopt :
+2. IParsable .TryParse
+https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-7.0#itp7
+
+3. Shadow copy IIS https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-2/
+
+4. TypedResults
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.inestedhttpresult
+
+### Assess:
+1. RateLimiter 
+https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit
+
+2. Problem details service
+https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors
+
+### Trial
+
+1. The new mechanism to infer binding source of API Controller action parameters uses the following rules
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/7.0/api-controller-action-parameters-di
+
+2. Request Decompression
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/request-decompression?preserve-view=true&view=aspnetcore-7.0
 
 
-## Assess:
-1. RateLimiter - demo, code
 
-2. 
-
-## Trial
-
+]
 
 ---
 class: top
 
 # What's new  EFCore 7
-<small>
-Wow
-</small>
+
+.showSmall[
+
+  https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew
+
+  1. Faster ( identity, insert , graph ...)
+
+  1. JSON Columns - queries , updates....
+
+  2. ExecuteUpdate, ExecuteDelete
+
+  3. TPC mapping ( inheritance )
+  
+  4. Reverse engineering templates
+
+  5. Applications can now remove or replace any of these Model Conventions
+
+  6. SP map for CRUD
+
+  7. All kind of interceptors
+
+  8. Lazy init of connection strings
+
+  9. Query enhancements
+
+  10. Entity modifications - struct for PK, sequences....
+
+  11. Winforms
+]
 
 
 ---
