@@ -18,4 +18,6 @@ Int32 i = 0;//press F12
 //delete the "" after this line
 var d = DateTime.Now.ToString("");
 //RSCG
+WriteLine(MessageBoxW(IntPtr.Zero, "asd", "asd", 1));
+//RSCG
 WriteLine(MessageBoxW_LI(IntPtr.Zero, "asd", "asd", 1));
