@@ -26,6 +26,7 @@
             dateRange = new DateRange { From = fromDate, To = toDate };
             return true;
         }
+        //better if it was ref instead of out parameter
         dateRange =  new DateRange { From = default, To = default };
         return false;
     }
