@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 namespace WhatsNewNet7.Controllers;
 
 [ApiController]
@@ -44,4 +42,14 @@ public class WeatherForecastController : ControllerBase
             
         }
     }
-}
+    [HttpGet()]
+    public IEnumerable<WeatherForecast> GetWeatherInRange([FromQuery] DateRange range))
+    {
+         //if (!ModelState.IsValid)
+         //       return null;
+        var data = GetWeather().ToArray();
+        foreach(var item in data){
+            
+        }
+    }
+    }
