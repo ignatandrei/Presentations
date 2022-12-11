@@ -10,7 +10,7 @@ namespace Net7Demo
     {
         [DllImport("user32.dll", EntryPoint = "MessageBoxW", CharSet = CharSet.Unicode, SetLastError = true)]
 
-        private static extern int MessageBoxW(IntPtr hWnd, string lpText, string lpCaption, uint uType);
+        internal static extern int MessageBoxW(IntPtr hWnd, string lpText, string lpCaption, uint uType);
 
 
         [LibraryImport("user32.dll", EntryPoint = "MessageBoxW", SetLastError = true,
