@@ -1,3 +1,4 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,7 +18,11 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseAuthorization();
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
+
+app.UseBlocklyUI(app.Environment);
+app.UseBlocklyAutomation();
 
 app.Run();
