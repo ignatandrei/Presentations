@@ -16,5 +16,13 @@
         "description":  "rate limiter",
         "categories":  "demo",
         "blocks":  "controls_for;text_print;get__api_WeatherForecast_GetData;math_number"
+    },
+    {
+        "id":  "tiltratelimiter",
+        "description":  "rate limiter for CORS",
+        "categories":  "demo",
+        "blocks":  "controls_for;text_print;math_number"
     }
+
+
 ]
