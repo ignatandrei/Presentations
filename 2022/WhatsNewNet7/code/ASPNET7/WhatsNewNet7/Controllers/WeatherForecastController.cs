@@ -28,28 +28,24 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
     [HttpGet()]
-    public IEnumerable<WeatherForecast> GetWeatherForCities([FromQuery]string[] cities)
+    public IEnumerable<WeatherForecast> GetWeatherForCities([FromQuery] string[] cities)
     {
-        var data= GetWeather().ToArray();
+        var data = GetWeather().ToArray();
         var l = Math.Min(data.Length, cities.Length);
-        while(l>0)
+        while (l > 0)
         {
             l--;
-            var item = data[l ];
+            var item = data[l];
             item.Summary = $"weather for {cities[l]}";
-            item.Date = DateOnly.FromDateTime( DateTime.Now);
+            item.Date = DateOnly.FromDateTime(DateTime.Now);
             yield return item;
-            
+
         }
     }
     [HttpGet()]
-    public IEnumerable<WeatherForecast> GetWeatherInRange([FromQuery] DateRange range))
+    public IEnumerable<WeatherForecast> GetWeatherInRange([FromQuery] DateRange range)
     {
-         //if (!ModelState.IsValid)
-         //       return null;
         var data = GetWeather().ToArray();
-        foreach(var item in data){
-            
-        }
+        return data;
     }
-    }
+}
