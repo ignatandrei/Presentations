@@ -1,7 +1,7 @@
 
 
 namespace WhatsNewNet7.Controllers;
-[EnableRateLimiting("fixed1Minute100")]
+[EnableRateLimiting("fixed")]
 [ApiController]
 [Route("api/[controller]/[action]")]
 public class WeatherForecastController : ControllerBase
@@ -20,7 +20,8 @@ public class WeatherForecastController : ControllerBase
     [HttpGet()]
     public string GetData(int i)
     {
-        return "Received "+i;
+        var dt = DateTime.Now.ToString("mm:ss");
+        return $"Received {i} at {dt}";
     }
         [HttpGet()]
     public IEnumerable<WeatherForecast> GetWeather()

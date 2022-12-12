@@ -3,14 +3,18 @@
         "id":  "iparseable",
         "description":  "parse DateRange",
         "categories":  "demo",
-        "blocks":  ""
+        "blocks":  "text_print;get__api_WeatherForecast_GetWeatherInRange;text;math_number"
     },
- {
+    {
         "id":  "cities",
         "description":  "send array",
         "categories":  "demo",
-        "blocks":  ""
+        "blocks":  "text_print;get__api_WeatherForecast_GetWeatherForCities;lists_create_with;text;math_number;httprequest"
+    },
+    {
+        "id":  "ratelimiter",
+        "description":  "rate limiter",
+        "categories":  "demo",
+        "blocks":  "controls_for;text_print;get__api_WeatherForecast_GetData;math_number"
     }
-
-   
 ]

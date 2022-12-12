@@ -8,10 +8,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRateLimiter(_ => _
-    .AddFixedWindowLimiter(policyName: "fixed1Minute100", options =>
+    .AddFixedWindowLimiter(policyName: "fixed", options =>
     {
-        options.PermitLimit = 100;
-        options.Window = TimeSpan.FromSeconds(10);
+        options.PermitLimit = 20;
+        options.Window = TimeSpan.FromSeconds(5);
         //options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
         options.QueueLimit = 20;
     }));
@@ -27,7 +27,7 @@ if (app.Environment.IsDevelopment())
 //app.UseAuthorization();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-app.MapControllers().RequireRateLimiting("fixed1Minute100");
+app.MapControllers().RequireRateLimiting("fixed");
 
 app.UseBlocklyUI(app.Environment);
 app.UseBlocklyAutomation();
