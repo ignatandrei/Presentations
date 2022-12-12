@@ -7,9 +7,16 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddRateLimiter(_ => _
+    .AddFixedWindowLimiter(policyName: "fixed1Minute100", options =>
+    {
+        options.PermitLimit = 100;
+        options.Window = TimeSpan.FromSeconds(10);
+        //options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        options.QueueLimit = 20;
+    }));
 var app = builder.Build();
-
+app.UseRateLimiter();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -20,7 +27,7 @@ if (app.Environment.IsDevelopment())
 //app.UseAuthorization();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-app.MapControllers();
+app.MapControllers().RequireRateLimiting("fixed1Minute100");
 
 app.UseBlocklyUI(app.Environment);
 app.UseBlocklyAutomation();

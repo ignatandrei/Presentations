@@ -1,6 +1,7 @@
 
-namespace WhatsNewNet7.Controllers;
 
+namespace WhatsNewNet7.Controllers;
+[EnableRateLimiting("fixed1Minute100")]
 [ApiController]
 [Route("api/[controller]/[action]")]
 public class WeatherForecastController : ControllerBase
@@ -16,8 +17,12 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-
     [HttpGet()]
+    public string GetData(int i)
+    {
+        return "Received "+i;
+    }
+        [HttpGet()]
     public IEnumerable<WeatherForecast> GetWeather()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
