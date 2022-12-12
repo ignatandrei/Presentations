@@ -1,0 +1,48 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" x="75" y="84">
+    <value name="TEXT">
+      <block type="get__api_WeatherForecast_GetWeatherForCities">
+        <value name="val_cities">
+          <block type="lists_create_with">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT">Buc</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text">
+                <field name="TEXT">Bacau</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="override_Host">
+          <block type="text">
+            <field name="TEXT"> </field>
+          </block>
+        </value>
+        <value name="override_Port">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="httprequest">
+            <field name="TypeOutput">Text</field>
+            <field name="TypeRequest">GET</field>
+            <value name="TheUrl">
+              <shadow type="text">
+                <field name="TEXT">/api/WeatherForecast/GetWeatherForCities?cities=Buc&amp;cities=Sibiu</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

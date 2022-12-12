@@ -48,8 +48,8 @@ public class WeatherForecastController : ControllerBase
     {
         var data = GetWeather().ToArray();
         data = data.Where(it =>
-            (range.From <= it.Date) &&
-            (range.To >= it.Date)
+            (it.Date >= range.From ) &&
+            (it.Date <= range.To )
             )
             .ToArray();
      
