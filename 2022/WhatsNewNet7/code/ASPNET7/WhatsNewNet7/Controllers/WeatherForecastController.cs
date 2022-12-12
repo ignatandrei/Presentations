@@ -1,3 +1,4 @@
+
 namespace WhatsNewNet7.Controllers;
 
 [ApiController]
@@ -43,9 +44,18 @@ public class WeatherForecastController : ControllerBase
         }
     }
     [HttpGet()]
-    public IEnumerable<WeatherForecast> GetWeatherInRange([FromQuery] DateRange range)
+    public Results<Ok<WeatherForecast[]>,NotFound<string>> GetWeatherInRange([FromQuery] DateRange range)
     {
         var data = GetWeather().ToArray();
-        return data;
+        data = data.Where(it =>
+            (range.From <= it.Date) &&
+            (range.To >= it.Date)
+            )
+            .ToArray();
+     
+        if (data.Length == 0)
+            return TypedResults.NotFound("cannot find date");
+        
+        return TypedResults.Ok( data);
     }
 }
