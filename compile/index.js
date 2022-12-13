@@ -253,4 +253,17 @@ folderToc("../docs",  {
     
 });
 
+
+
+folder='../2022/';
+file='WhatsNewNet7'
+fileHtml='presentation/WhatsNewNet7.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
+// Create the zip file.
+archive.createZip();
+
+
+
 fs.copyFileSync(`../docs/index.html`, `../docs/404.html`);
