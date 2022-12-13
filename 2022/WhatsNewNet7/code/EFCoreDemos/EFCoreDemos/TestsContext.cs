@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreDemos;
 
+//Andrei 
 public partial class TestsContext : DbContext
 {
     public TestsContext()

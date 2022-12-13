@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace EFCoreDemos;
 
+//andrei - here is entity name
 public partial class Employee
 {
     public long Idemployee { get; set; }
