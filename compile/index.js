@@ -242,6 +242,16 @@ fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
 // Create the zip file.
 archive.createZip();
 
+folder='../2022/';
+file='WhatsNewNet7'
+fileHtml='presentation/WhatsNewNet7.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
+// Create the zip file.
+archive.createZip();
+
+
 
 var folderToc = require("folder-toc");
 folderToc("../docs",  {
@@ -253,16 +263,6 @@ folderToc("../docs",  {
     
 });
 
-
-
-folder='../2022/';
-file='WhatsNewNet7'
-fileHtml='presentation/WhatsNewNet7.html';  
-archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
-fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
- 
-// Create the zip file.
-archive.createZip();
 
 
 
