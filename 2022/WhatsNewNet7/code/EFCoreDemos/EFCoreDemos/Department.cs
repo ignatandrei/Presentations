@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace EFCoreDemos;
 
 //andrei - here is entity name
