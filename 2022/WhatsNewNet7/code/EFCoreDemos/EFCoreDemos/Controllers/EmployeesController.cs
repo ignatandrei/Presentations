@@ -24,22 +24,22 @@ namespace EFCoreDemos.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-          if (_context.Employees == null)
+          if (_context.Employee == null)
           {
               return NotFound();
           }
-            return await _context.Employees.ToListAsync();
+            return await _context.Employee.ToListAsync();
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmployee(long id)
         {
-          if (_context.Employees == null)
+          if (_context.Employee == null)
           {
               return NotFound();
           }
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(id);
 
             if (employee == null)
             {
@@ -85,11 +85,11 @@ namespace EFCoreDemos.Controllers
         [HttpPost]
         public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
-          if (_context.Employees == null)
+          if (_context.Employee == null)
           {
-              return Problem("Entity set 'TestsContext.Employees'  is null.");
+              return Problem("Entity set 'TestsContext.Employee'  is null.");
           }
-            _context.Employees.Add(employee);
+            _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetEmployee", new { id = employee.Idemployee }, employee);
@@ -99,17 +99,17 @@ namespace EFCoreDemos.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(long id)
         {
-            if (_context.Employees == null)
+            if (_context.Employee == null)
             {
                 return NotFound();
             }
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
             }
 
-            _context.Employees.Remove(employee);
+            _context.Employee.Remove(employee);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -117,7 +117,7 @@ namespace EFCoreDemos.Controllers
 
         private bool EmployeeExists(long id)
         {
-            return (_context.Employees?.Any(e => e.Idemployee == id)).GetValueOrDefault();
+            return (_context.Employee?.Any(e => e.Idemployee == id)).GetValueOrDefault();
         }
     }
 }

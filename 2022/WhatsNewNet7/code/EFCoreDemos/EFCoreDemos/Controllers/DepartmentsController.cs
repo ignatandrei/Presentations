@@ -16,22 +16,22 @@ namespace EFCoreDemos.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Department>>> GetDepartments()
         {
-          if (_context.Departments == null)
+          if (_context.Department == null)
           {
               return NotFound();
           }
-            return await _context.Departments.ToListAsync();
+            return await _context.Department.ToListAsync();
         }
 
         // GET: api/Departments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Department>> GetDepartment(long id)
         {
-          if (_context.Departments == null)
+          if (_context.Department == null)
           {
               return NotFound();
           }
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _context.Department.FindAsync(id);
 
             if (department == null)
             {
@@ -77,11 +77,11 @@ namespace EFCoreDemos.Controllers
         [HttpPost]
         public async Task<ActionResult<Department>> PostDepartment(Department department)
         {
-          if (_context.Departments == null)
+          if (_context.Department == null)
           {
-              return Problem("Entity set 'TestsContext.Departments'  is null.");
+              return Problem("Entity set 'TestsContext.Department'  is null.");
           }
-            _context.Departments.Add(department);
+            _context.Department.Add(department);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetDepartment", new { id = department.Iddepartment }, department);
@@ -91,17 +91,17 @@ namespace EFCoreDemos.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDepartment(long id)
         {
-            if (_context.Departments == null)
+            if (_context.Department == null)
             {
                 return NotFound();
             }
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _context.Department.FindAsync(id);
             if (department == null)
             {
                 return NotFound();
             }
 
-            _context.Departments.Remove(department);
+            _context.Department.Remove(department);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -109,7 +109,7 @@ namespace EFCoreDemos.Controllers
 
         private bool DepartmentExists(long id)
         {
-            return (_context.Departments?.Any(e => e.Iddepartment == id)).GetValueOrDefault();
+            return (_context.Department?.Any(e => e.Iddepartment == id)).GetValueOrDefault();
         }
     }
 }

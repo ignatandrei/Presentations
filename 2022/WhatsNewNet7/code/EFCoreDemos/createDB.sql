@@ -4,7 +4,7 @@ docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong@Passw0rd>" `
    -d `
    mcr.microsoft.com/mssql/server:2022-latest
 
-Scaffold-DbContext 'Data Source=.;Initial Catalog=tests;UID=sa;PWD=<YourStrong@Passw0rd>;TrustServerCertificate=true' Microsoft.EntityFrameworkCore.SqlServer -f
+dotnet ef dbcontext scaffold 'Data Source=.;Initial Catalog=tests;UID=sa;PWD=<YourStrong@Passw0rd>;TrustServerCertificate=true' Microsoft.EntityFrameworkCore.SqlServer --force --no-onconfiguring --no-pluralize --no-build --json
 
 */
 create database tests
@@ -66,6 +66,7 @@ CREATE TABLE [dbo].[Employee](
 	[IDEmployee] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](100) NOT NULL,
 	[IDDepartment] [bigint] NOT NULL,
+	[Salary] [bigint] NOT NULL
  CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
 (
 	[IDEmployee] ASC

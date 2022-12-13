@@ -19,9 +19,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseBlocklyUI(app.Environment);
+app.UseBlocklyAutomation();
 
 app.Run();
