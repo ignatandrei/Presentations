@@ -1,29 +1,35 @@
 'use strict';
 
-function LikeButton() {
-  const [liked, setLiked] = React.useState(false);
-
-  if (liked) {
-    return 'You liked this!';
-  }
-
+function LikeButton(props) {
+  const [nr, setNr] = React.useState(1);
+  let x=1;
   return (
-    <button onClick={() => setLiked(true)}>
-      Like
+    <button onClick={() => {
+      setNr(nr=>nr+1);
+      x++;
+      if(props.msgToParent)
+      props.msgToParent(nr);
+
+    }}>
+      Like {nr} {x} {props.test}
     </button>
   );
 }
 function DivTest() {
-return (<div>Test</div>_;
+return (<div>Test</div>);
 }
 
 function LikeButtonNew() {
 
+  const messageFromChild=(nr)=>{
+    console.log("I have received from child" + nr);
+  }
+  
   return (
     <span>
-    <LikeButton></LikeButton>
-<DivTest></DivTest>
-    <LikeButton></LikeButton>
+    <LikeButton test="Andrei" msgToParent={messageFromChild} ></LikeButton>
+    <DivTest></DivTest>
+    <LikeButton test="Ignat"></LikeButton>
     </span>
   )
 }
