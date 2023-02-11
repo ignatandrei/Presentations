@@ -1,0 +1,16 @@
+{
+  "name": "react2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "like_button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.20.7",
+    "babel-preset-react-app": "^10.0.1"
+  }
+}

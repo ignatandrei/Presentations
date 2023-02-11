@@ -48,3 +48,5 @@ root.render(React.createElement(LikeButtonClass , {test:"#message#"}));
 const domContainerFunc = document.querySelector('#like_button_container_forFunc');
 const rootFunc = ReactDOM.createRoot(domContainerFunc);
 rootFunc.render(React.createElement(LikeButtonFunc,{test:'!message!'}));
+
+
