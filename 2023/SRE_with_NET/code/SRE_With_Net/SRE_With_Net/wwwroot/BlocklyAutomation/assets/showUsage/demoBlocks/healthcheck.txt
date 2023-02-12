@@ -1,0 +1,27 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="window_open" x="28" y="185">
+    <value name="TEXT">
+      <block type="text">
+        <field name="TEXT">/healthz</field>
+      </block>
+    </value>
+    <next>
+      <block type="window_open">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">/healthchecks-api</field>
+          </block>
+        </value>
+        <next>
+          <block type="window_open">
+            <value name="TEXT">
+              <block type="text">
+                <field name="TEXT">/healthchecks-ui</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -9,6 +9,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//for health of the service
+builder.Services
+    .AddHealthChecks()
+    .AddCheck<RandomHealthCheck>("YouCanHaveInClass")
+    .AddUrlGroup(new Uri("http://httpbin.org/status/200"))
+    //.AddApplicationStatus()
+    ;
+builder.Services
+    .AddHealthChecksUI(opt =>
+    {
+        opt.AddHealthCheckEndpoint("default api", "/healthz");
+    })
+    .AddInMemoryStorage();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,5 +39,16 @@ if (app.Environment.IsDevelopment())
 app.MapControllers();
 app.UseBlocklyAutomation();
 app.UseBlocklyUI(app.Environment);
+
+//for health of the service
+app.MapHealthChecks("healthz", new HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecksUI(opt =>
+{ });
+
 
 app.Run();

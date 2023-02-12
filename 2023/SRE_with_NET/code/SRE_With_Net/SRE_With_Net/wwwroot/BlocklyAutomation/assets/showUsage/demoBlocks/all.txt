@@ -1,0 +1,8 @@
+﻿[
+    {
+        "id":  "healthcheck",
+        "description":  "1. health checks",
+        "categories":  "api;list",
+        "blocks":  ""
+    }
+]
