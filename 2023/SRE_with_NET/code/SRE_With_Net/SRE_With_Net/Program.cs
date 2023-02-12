@@ -1,4 +1,6 @@
 using NetCore2BlocklyNew;
+using SRE_With_Net.Controllers;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +38,14 @@ if (app.Environment.IsDevelopment())
 
 //app.UseAuthorization();
 
+//shutdown
+app.Use(async (context, next) =>
+{
+    if(!UtilsController.IsCancellationRequired)
+        await next(context);
+    else
+        context.Response.StatusCode= 418;
+});
 app.MapControllers();
 app.UseBlocklyAutomation();
 app.UseBlocklyUI(app.Environment);
@@ -50,5 +60,5 @@ app.MapHealthChecks("healthz", new HealthCheckOptions
 app.MapHealthChecksUI(opt =>
 { });
 
-
-app.Run();
+//shutdown
+await app.RunAsync(UtilsController.cts.Token);
