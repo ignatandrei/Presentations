@@ -3,6 +3,11 @@ import './App.css';
 import GrandFather from './GrandFather'; 
 import Brother from './Brother';
 function App() {
+const arrNumbers=Array.from(
+  {length: 3},
+  (item, index) => item = index + 1
+);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,9 +25,17 @@ function App() {
         </a>
       </header>
 
-      <GrandFather ></GrandFather>
-
+      <h1>See document title ?</h1>
+      <h1>A single GrandFather</h1>
       <GrandFather></GrandFather>
+      <h1>And a array of GrandFathers</h1>
+
+      {arrNumbers.map(function(_, index){
+                return <>
+                <h1>Grandfather {index+1}</h1>
+                <GrandFather></GrandFather>
+                </>
+              })}
 
     </div>
   );
