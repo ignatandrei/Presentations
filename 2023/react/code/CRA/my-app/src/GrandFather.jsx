@@ -1,8 +1,12 @@
 import React from 'react';
-function GrandFather(props){
+import Father from './Father';
+function GrandFather(props) {
     return (
-        <div>I am grandfather</div>
-        
+        <>
+            <div>I am grandfather</div>
+            <Father></Father>
+            
+        </>
     )
 
 }

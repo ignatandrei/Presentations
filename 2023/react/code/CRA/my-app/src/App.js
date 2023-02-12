@@ -1,9 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import GrandFather from './GrandFather'; 
-import Father from './Father';
 import Brother from './Brother';
-import Sister from './Sister';
 function App() {
   return (
     <div className="App">
@@ -24,13 +22,8 @@ function App() {
 
       <GrandFather ></GrandFather>
 
-      <GrandFather >
-      <Father></Father>
+      <GrandFather></GrandFather>
 
-      </GrandFather>
-        
-          <Brother></Brother>
-          <Sister></Sister>
     </div>
   );
 }
