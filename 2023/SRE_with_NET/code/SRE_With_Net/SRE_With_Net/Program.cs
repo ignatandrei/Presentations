@@ -74,3 +74,6 @@ finally
     //for logging
     NLog.LogManager.Shutdown();
 }
+
+//for testing
+public partial class Program { }
