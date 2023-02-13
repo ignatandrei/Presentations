@@ -1,0 +1,18 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" x="131" y="105">
+    <value name="TEXT">
+      <block type="text">
+        <field name="TEXT">see project test data</field>
+      </block>
+    </value>
+    <next>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">run powershell with codeCoverage.ps1</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

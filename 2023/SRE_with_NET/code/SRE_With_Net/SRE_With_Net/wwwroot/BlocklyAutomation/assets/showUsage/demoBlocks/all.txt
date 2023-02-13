@@ -23,9 +23,17 @@
     "categories": "api;list",
     "blocks": ""
   },
+
   {
     "id": "docs",
     "description": "6. docs",
+    "categories": "api;list",
+    "blocks": ""
+  },
+
+  {
+    "id": "codeCoverage",
+    "description": "7. docs",
     "categories": "api;list",
     "blocks": ""
   }
