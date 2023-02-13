@@ -29,6 +29,8 @@ builder.Services
     })
     .AddInMemoryStorage();
 
+//for instrumentation
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
