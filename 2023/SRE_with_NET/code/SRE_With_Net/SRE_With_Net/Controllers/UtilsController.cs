@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Internal;
 
 namespace SRE_With_Net.Controllers
 {
@@ -43,6 +44,20 @@ namespace SRE_With_Net.Controllers
                 var evtID = new EventId(3000, "ExArg");
                 _logger.LogError(evtID, ex, "in trace error");
                 throw;
+            }
+        }
+
+        [HttpGet]
+        public string? AllEndpoints([FromServices] DfaGraphWriter graphWriter, [FromServices] EndpointDataSource dataSource)
+        {
+            using (var sw = new StringWriter())
+            {
+                // Write the graph
+                graphWriter.Write(dataSource, sw);
+                var graph = sw.ToString();
+
+                // Write the graph to the response
+                return graph;
             }
         }
     }
