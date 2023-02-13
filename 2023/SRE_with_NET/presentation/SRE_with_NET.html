@@ -97,7 +97,7 @@ https://ignatandrei.github.io/Presentations/SRE_with_NET.zip
 9. Links 
 7. Discussion  / Questions ?
 ---
-class: center, top
+class:  top
 
 # About me
 
@@ -122,9 +122,17 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 
 
 ---
-class: center, top
+class:  top
 
 # How can I check the health of the service
+
+Q: 
+
+Did you securely configured endpoints that I can ping periodically?
+
+Is it going to use the same port as the service ? 
+
+A: 
 
 https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
 
@@ -139,52 +147,122 @@ class: top
 
 # How can I safely and gracefully restart the service
 
-Shutdown gracefull - ok . Maybe with a middleware ?
+Q: 
 
+Does graceful shutdowns wait for inflight requests to finish?
+
+If I restart the service, will there be any disruption or performance degradation?
+
+A: 
+
+Shutdown -ok . Gracefull - not so ok . Maybe with a middleware ?
 
 ---
 class: top
 
 # How and why would the service fail
 
+Q:
+
+Does it has any external dependencies ?
+
+And what happens if it does ?
+
+Do you have a playbook, or sequence of steps, to bring the service back up?
+
+A: 
+
 HealthCheck with Sql Server
 
 https://tiltwebapp.azurewebsites.net/healthchecks-ui
 
 ---
-class: center, top
+class: top
 
 # Do you use appropriate logging levels depending on the environments ?
+
+Q:
+
+Are you logging to stdout ?
+
+What format of logs are you using, (JSON, PLAINTEXT)?
+
+A: 
 
 NLog and NLOGConfig
 
 ---
-class: center, top
+class:  top
 
 # What kind of metrics are you exposing
 
+Q: 
+
+Are you measuring the RED signals?
+
+  Rate (# of requests per second)
+
+  Errors (# of errors per second) and
+
+  Duration (time each request takes)
+
+A:
+
+RED , grafana, prometheus, azure instrumentation ....
 
 ---
-class: center, top
+class:  top
 
 # Is there any documentation/design specification for the service ?
 
+Q:
+
+Are you using gRPC or REST ?
+
+How can I see the API contract?
+
+Do you have a OpenAPI/Swagger spec
+
+A:
 
 Swagger
 
+TBD : swagger to html
+
+
 ---
-class: center, top
+class:  top
 
 # How does the data flow through the service ?
 
-TBD : swagger to html
+Q: 
+
+Do you have any PII/Sensitive data flowing through the service?
+
+Is any part of the data captured in the service logs?
+
+A:
+
+Do not know....
 
 ---
-class: center, top
+class:  top
 
 # What is the testing coverage ?
 
+Q:
 
+Do you wrote unit, integration tests for it?
+
+Is there a end to end test that I can run discard issues?
+
+A:
+
+    (X|N|)Unit | MSTest
+    
+    Coverlet with ReportGenerator
+
+    
 
 ---
 class: left, top
