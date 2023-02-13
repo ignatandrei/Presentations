@@ -1,10 +1,14 @@
-using NetCore2BlocklyNew;
-using SRE_With_Net.Controllers;
-using System.Globalization;
 
+
+// for logging
+var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+logger.Debug("init main");
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// for logging
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -60,5 +64,13 @@ app.MapHealthChecks("healthz", new HealthCheckOptions
 app.MapHealthChecksUI(opt =>
 { });
 
-//shutdown
-await app.RunAsync(UtilsController.cts.Token);
+try
+{
+    //shutdown
+    await app.RunAsync(UtilsController.cts.Token);
+}
+finally
+{
+    //for logging
+    NLog.LogManager.Shutdown();
+}

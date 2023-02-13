@@ -10,5 +10,17 @@
         "description":  "2. shutdown",
         "categories":  "api;list",
         "blocks":  ""
+    },
+     {
+        "id":  "fail",
+        "description":  "3. fail",
+        "categories":  "api;list",
+        "blocks":  ""
+    },
+     {
+        "id":  "logging",
+        "description":  "4. logging",
+        "categories":  "api;list",
+        "blocks":  ""
     }
 ]

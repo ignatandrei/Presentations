@@ -30,5 +30,20 @@ namespace SRE_With_Net.Controllers
         {
             return 10;
         }
+        [HttpGet]
+        public int TraceError(int id)
+        {
+            try
+            {
+                var x = id;
+                throw new ArgumentOutOfRangeException(nameof(id),id,"not good id:"+id );
+
+            }
+            catch(Exception ex) {
+                var evtID = new EventId(3000, "ExArg");
+                _logger.LogError(evtID, ex, "in trace error");
+                throw;
+            }
+        }
     }
 }

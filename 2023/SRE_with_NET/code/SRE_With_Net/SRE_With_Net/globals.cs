@@ -4,4 +4,9 @@
 //global using HealthChecks.ApplicationStatus.DependencyInjection; 
 global using Microsoft.Extensions.Diagnostics.HealthChecks;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-global using HealthChecks.UI.Client; 
+global using HealthChecks.UI.Client;
+global using NetCore2BlocklyNew;
+global using NLog.Web;
+global using SRE_With_Net.Controllers;
+global using System.Globalization;
+global using NLog;
