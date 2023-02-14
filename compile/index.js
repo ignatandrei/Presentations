@@ -252,6 +252,26 @@ fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
 archive.createZip();
 
 
+folder='../2023/';
+file='react'
+fileHtml='presentation/react.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
+// Create the zip file.
+archive.createZip();
+
+
+folder='../2023/';
+file='SRE_with_NET'
+fileHtml='presentation/SRE_with_NET.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
+// Create the zip file.
+archive.createZip();
+
+
 
 var folderToc = require("folder-toc");
 folderToc("../docs",  {
