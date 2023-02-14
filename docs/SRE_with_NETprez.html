@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SRE with .NET </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      div.showSmall{
+        line-height: 0.7;
+  		font-size: 15px;
+	  }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# SRE with .NET =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/SRE_with_NETprez.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/SRE_with_NET.zip
+---
+
+# Agenda
+
+0. About me
+1. SRE_with_NET : https://oschvr.com/posts/what-id-like-as-sre/
+2. How can I check the health of the service
+2. How can I safely and gracefully restart the service
+3. How and why would the service fail
+4. Do you use appropriate logging levels depending on the environments ?
+5. What kind of metrics are you exposing ?
+6. Is there any documentation/design specification for the service ?
+7. How does the data flow through the service ?
+8. What is the testing coverage for this service ?
+9. Links 
+7. Discussion  / Questions ?
+---
+class:  top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+class:  top
+
+# How can I check the health of the service
+
+Q: 
+
+Did you securely configured endpoints that I can ping periodically?
+
+Is it going to use the same port as the service ? 
+
+A: 
+
+https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
+
+Demo 1: http://localhost:5128/BlocklyAutomation/automation/loadexample/healthcheck
+
+
+You can add also sql server and more ...
+
+
+---
+class: top
+
+# How can I safely and gracefully restart the service
+
+Q: 
+
+Does graceful shutdowns wait for inflight requests to finish?
+
+If I restart the service, will there be any disruption or performance degradation?
+
+A: 
+
+Shutdown -ok . Gracefull - not so ok . Maybe with a middleware ?
+
+---
+class: top
+
+# How and why would the service fail
+
+Q:
+
+Does it has any external dependencies ?
+
+And what happens if it does ?
+
+Do you have a playbook, or sequence of steps, to bring the service back up?
+
+A: 
+
+HealthCheck with Sql Server
+
+https://tiltwebapp.azurewebsites.net/healthchecks-ui
+
+---
+class: top
+
+# Do you use appropriate logging levels depending on the environments ?
+
+Q:
+
+Are you logging to stdout ?
+
+What format of logs are you using, (JSON, PLAINTEXT)?
+
+A: 
+
+NLog and NLOGConfig
+
+---
+class:  top
+
+# What kind of metrics are you exposing
+
+Q: 
+
+Are you measuring the RED signals?
+
+  Rate (# of requests per second)
+
+  Errors (# of errors per second) and
+
+  Duration (time each request takes)
+
+A:
+
+grafana, prometheus, azure instrumentation ....
+
+https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew%2Cnetcore6
+
+
+
+---
+class:  top
+
+# Is there any documentation/design specification for the service ?
+
+Q:
+
+Are you using gRPC or REST ?
+
+How can I see the API contract?
+
+Do you have a OpenAPI/Swagger spec
+
+A:
+
+Swagger
+
+TBD : swagger to html
+
+
+---
+class:  top
+
+# How does the data flow through the service ?
+
+Q: 
+
+Do you have any PII/Sensitive data flowing through the service?
+
+Is any part of the data captured in the service logs?
+
+A:
+
+Do not know....
+
+---
+class:  top
+
+# What is the testing coverage ?
+
+Q:
+
+Do you wrote unit, integration tests for it?
+
+Is there a end to end test that I can run discard issues?
+
+A:
+
+    (X|N|)Unit | MSTest
+    
+    Coverlet with ReportGenerator
+
+    
+
+---
+class: left, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
