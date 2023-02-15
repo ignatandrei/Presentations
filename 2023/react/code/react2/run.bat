@@ -1,0 +1,1 @@
+wt new-tab --title VSCode -d "." PowerShell -noexit -c  "code ."
