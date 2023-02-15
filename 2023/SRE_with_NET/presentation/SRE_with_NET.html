@@ -157,6 +157,10 @@ A:
 
 Shutdown -ok . Gracefull - not so ok . Maybe with a middleware ?
 
+http://localhost:5128/BlocklyAutomation/automation/loadexample/shutdown
+
+
+
 ---
 class: top
 
@@ -176,6 +180,8 @@ HealthCheck with Sql Server
 
 https://tiltwebapp.azurewebsites.net/healthchecks-ui
 
+http://localhost:5128/BlocklyAutomation/automation/loadexample/fail
+
 ---
 class: top
 
@@ -190,6 +196,8 @@ What format of logs are you using, (JSON, PLAINTEXT)?
 A: 
 
 NLog and NLOGConfig
+
+http://localhost:5128/BlocklyAutomation/automation/loadexample/logging
 
 ---
 class:  top
@@ -212,6 +220,7 @@ grafana, prometheus, azure instrumentation ....
 
 https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew%2Cnetcore6
 
+http://localhost:5128/BlocklyAutomation/automation/loadexample/instrumentation
 
 
 ---
@@ -232,6 +241,8 @@ A:
 Swagger
 
 TBD : swagger to html
+
+http://localhost:5128/BlocklyAutomation/automation/loadexample/docs
 
 
 ---
@@ -266,7 +277,7 @@ A:
     
     Coverlet with ReportGenerator
 
-    
+Run codeCoverage.ps1    
 
 ---
 class: left, top
