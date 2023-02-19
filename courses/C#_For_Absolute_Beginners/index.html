@@ -1,0 +1,308 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <sub><a href="?print-pdf">PDF</a></sub>
+        <h1>C# for absolute beginners</h1>
+        <pre><code data-trim data-noescape>
+public class Program()
+{
+}
+  </code></pre>
+
+        Prerequisites:
+        <p> Visual Studio with .NET Desktop Development </p>
+
+      </section>
+
+      <section>
+        <h1>Lesson 1</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## My First Console  program
+
+        Structure of a .NET Console 
+
+        Framework functions ( console )
+
+        ---
+        ## simple variables
+<small>
+  
+### boolean
+
+true , false
+
+### String 
+
+Concatenation, interpolation , substring ...
+
+### int
+
+addition, increment, modulo, ...
+
+## dates
+
+year, ticks, timespan , ...
+</small>
+
+        ---
+        ## Decision / loops
+
+### if , else, switch
+
+### while , for , foreach
+
+---
+## Data types + nullable + converting
+
+Other data types( byte, float, long )
+
+Converting between them 
+
+---
+## Final review and questions
+
+Homework: https://learn.microsoft.com/en-us/training/paths/csharp-data/
+
+      </textarea>
+        </section>
+
+      </section>
+      <section>
+        <h1>Lesson 2</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 1
+
+        ---
+        ## Methods in C# 
+
+Calling function from C# Framework
+
+Creating methods 
+
+Return values from  functions ( Tuple, out, ref )
+
+---
+## Exceptions in C# 
+
+Try / Catch / Finally
+
+Exercise : check a IBAN-13 
+
+https://en.wikipedia.org/wiki/ISBN#
+
+
+---
+## enums in C#
+
+Exercise : check a IBAN-13 
+
+https://en.wikipedia.org/wiki/ISBN#
+
+---
+## Variables and methods
+
+LifeTime / Visibility
+
+---
+## Final review and questions
+
+Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
+
+
+
+</textarea>
+        </section>
+      </section>
+      <section>
+        <h1>Lesson 3</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 2
+        ---
+        ## Classes / namespaces
+
+        Properties / fields 
+
+        Methods            
+
+        new operator
+
+        Static 
+
+        ---
+        ## Methods
+        
+        Optional operators
+
+        
+        ---
+        ## Value vs Reference types
+            
+        Equality operator
+
+        Equal 
+
+        string special case
+
+        ---
+        ## Final review and questions
+        
+        Homework: https://learn.microsoft.com/en-us/training/paths/csharp-logic/
+                  </textarea>
+        </section>
+
+
+      </section>
+      <section>
+        <h1>Lesson 4</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 3
+
+        ---
+        ## Constructor with parameters
+
+            
+        ---
+        ## Interfaces
+
+        
+        ---
+        ## inheritance / composition
+
+          Overloading / Overriding
+
+        ---
+        ## Final review and questions
+
+            </textarea>
+
+        </section>
+      </section>
+      <section>
+        <h1>Lesson 5</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 4
+
+        ---
+        ## Static , abstract
+        
+        ---
+        ## Generic types
+
+        ---
+        ## Generic collections
+
+        ---
+        ## Final review and questions
+
+          </textarea>
+
+        </section>
+      </section>
+      <section>
+        <h1>Lesson 6</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 5
+
+        ---
+        ## Example of classes: Working with files and folders in C# 
+            
+
+        ---
+        ## Final review and questions
+Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applications-csharp/
+( without webapi )
+                    </textarea>
+        </section>
+      </section>
+
+      <section>
+        <h1>Lesson 7</h1>
+
+
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 6
+
+        ---
+        ## 
+        
+        Library to borrow book
+
+        <small>A library has a collection of books, each one belongs on a shelter .
+        The library could have multiple copies of the same book .        
+        A book can have one or more authors.        
+        A person could borrow not more than 3 books from a library for a maximum of 3 weeks.
+      
+        Make an application that , once a library of books has data
+        
+        1. Could find  books by the name of the author ( starting, containing )
+        2. Could find  books by the name of the book ( starting, containing )
+        3. Could find  books that are borrowed to someone 
+
+        When finding a book, should list if the book is available or not to be borrowed.
+      </small>
+
+        ---
+        ## Final review and questions
+                    </textarea>
+        </section>
+      </section>
+      <section>
+        <h1>Lesson 8</h1>
+        <section data-markdown>
+          <textarea data-template>
+        ## Questions for Lesson 7
+        ---
+        ## Continuing exercise 7
+        ---
+        ## Final review and questions
+          </textarea>
+          
+        </section>
+      </section>
+
+    </div>
+  </div>
+  <script src="dist/reveal.js"></script>
+  <!-- <script src="dist/plugin/highlight/highlight.js"></script> -->
+  <script src="dist/plugin/markdown/markdown.js"></script>
+  <script src="dist/plugin/search/search.js"></script>
+  <script src="dist/plugin/notes/notes.js"></script>
+  <script src="dist/plugin/math/math.js"></script>
+  <script src="dist/plugin/zoom/zoom.js"></script>
+
+  <script>
+    Reveal.initialize({
+      plugins: [RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom],
+      slideNumber: 'c/t'
+    });
+  </script>
+</body>
+
+</html>
