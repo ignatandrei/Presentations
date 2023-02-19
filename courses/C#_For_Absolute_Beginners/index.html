@@ -72,7 +72,7 @@ Other data types( byte, float, long )
 Converting between them 
 
 ---
-## Final review and questions
+## Final questions for lesson
 
 Homework: https://learn.microsoft.com/en-us/training/paths/csharp-data/
 
@@ -121,7 +121,7 @@ https://en.wikipedia.org/wiki/ISBN#
 LifeTime / Visibility
 
 ---
-## Final review and questions
+## Final questions for lesson
 
 Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
 
@@ -165,7 +165,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
         string special case
 
         ---
-        ## Final review and questions
+        ## Final questions for lesson
         
         Homework: https://learn.microsoft.com/en-us/training/paths/csharp-logic/
                   </textarea>
@@ -196,7 +196,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
           Overloading / Overriding
 
         ---
-        ## Final review and questions
+        ## Final questions for lesson
 
             </textarea>
 
@@ -221,7 +221,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
         ## Generic collections
 
         ---
-        ## Final review and questions
+        ## Final questions for lesson
 
           </textarea>
 
@@ -242,7 +242,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/
             
 
         ---
-        ## Final review and questions
+        ## Final questions for lesson
 Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applications-csharp/
 ( without webapi )
                     </textarea>
@@ -276,7 +276,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applicat
       </small>
 
         ---
-        ## Final review and questions
+        ## Final questions for lesson
                     </textarea>
         </section>
       </section>
@@ -289,7 +289,7 @@ Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applicat
         ---
         ## Continuing exercise 7
         ---
-        ## Final review and questions
+        ## Final questions for lesson
           </textarea>
           
         </section>
@@ -317,6 +317,22 @@ Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applicat
     return ["lesson : " + nr + " part "+ (Reveal.getIndices( slide ).v+1) ];
   }
     });
+
+    Reveal.on( 'slidechanged', event => {
+      // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+      var nrLesson=event.indexh;
+      if(nrLesson<1)
+        return;
+      //window.alert(event.indexh +"="+event.indexv);
+      var h1s= document.getElementsByTagName("h1");
+      for(var i = 0;i<h1s.length;i++){
+        var h1=h1s[i];
+        //console.log("a", h1.innerText , "Lesson "+ nrLesson, h1.innerText.indexOf("Lesson "+ nrLesson));
+        if(h1.innerText.indexOf("LESSON "+ nrLesson)>-1){
+          h1.innerText="LESSON "+ nrLesson + " part "+ (event.indexv+1);
+        }
+      }
+} );
   </script>
 </body>
 
