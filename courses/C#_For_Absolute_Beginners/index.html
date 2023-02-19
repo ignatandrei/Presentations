@@ -309,7 +309,13 @@ Homework: https://learn.microsoft.com/en-us/training/paths/build-dotnet-applicat
   <script>
     Reveal.initialize({
       plugins: [RevealMenu ,RevealMarkdown, RevealSearch, RevealNotes, RevealMath, RevealZoom],
-      slideNumber: 'c/t'
+      slideNumber:  slide => {
+
+        var nr=Reveal.getIndices( slide ).h ;
+        if(nr == 0)
+          return ["Start"];
+    return ["lesson : " + nr + " part "+ (Reveal.getIndices( slide ).v+1) ];
+  }
     });
   </script>
 </body>
