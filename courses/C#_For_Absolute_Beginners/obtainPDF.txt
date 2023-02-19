@@ -1,0 +1,4 @@
+rem install serve
+rem install decktabe
+start serve .
+start  decktape  automatic http://localhost:3000 .\index.pdf
