@@ -1,0 +1,37 @@
+V1:
+- NameCommand: CommandToBlog
+  Host: http://
+  RelativeRequestUrl: api/Blog
+  Verb: 
+  ContentType: application/json
+  DataToSend: 
+- NameCommand: Command002
+  Host: https://
+  RelativeRequestUrl: api/Blog
+  Verb: 
+  ContentType: application/json
+  DataToSend: 
+- NameCommand: Command003
+  Host: http://
+  RelativeRequestUrl: api/Blog/{id}
+  Verb: GET
+  ContentType: application/json
+  DataToSend: ''
+- NameCommand: Command004
+  Host: https://
+  RelativeRequestUrl: api/Blog/{id}
+  Verb: GET
+  ContentType: application/json
+  DataToSend: ''
+- NameCommand: Command005
+  Host: http://
+  RelativeRequestUrl: WeatherForecast
+  Verb: GET
+  ContentType: application/json
+  DataToSend: 
+- NameCommand: Command006
+  Host: https://
+  RelativeRequestUrl: WeatherForecast
+  Verb: GET
+  ContentType: application/json
+  DataToSend: 

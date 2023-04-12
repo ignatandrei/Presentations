@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Jaeger" Version="0.3.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0-preview.5.20278.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0-preview.5.20278.1" />
+    <PackageReference Include="OpenTelemetry" Version="0.2.0-alpha.275" />
+    <PackageReference Include="OpenTelemetry.Adapter.AspNetCore" Version="0.2.0-alpha.275" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="0.2.0-alpha.275" />
+    <PackageReference Include="OpenTelemetry.Hosting" Version="0.2.0-alpha.220" />
+    <PackageReference Include="OpenTracing" Version="0.12.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.1.0" />
+  </ItemGroup>
+</Project>

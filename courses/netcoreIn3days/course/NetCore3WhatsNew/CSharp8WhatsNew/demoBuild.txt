@@ -1,0 +1,9 @@
+dotnet tool install -g dotnet-property
+dotnet publish -c Release -r win-x64 --self-contained true
+pause
+dotnet property "CSharp8WhatsNew.csproj" PublishSingleFile:true
+dotnet publish -c Release -r win-x64 --self-contained true
+pause
+dotnet property "CSharp8WhatsNew.csproj" PublishTrimmed:true
+dotnet publish -c Release -r win-x64 --self-contained true
+

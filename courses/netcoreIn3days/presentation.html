@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>.NET Core</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, top
+
+# .NET Core 
+
+http://dontpad.com/netcore20210106
+
+http://dontpad.com/netcore20210101
+
+---
+
+# Agenda
+<small>
+10. About me
+
+20. .NET Core, .NET Standard, .NET Framework
+
+25. Some C# advanced  
+
+25. C# 7-8 what's new
+
+25. .NET Core 3 what's new
+
+25. .NET Core backend - BL, DAL, Security, tests
+
+50. EF - console, ASP.NET Scaffolding
+
+60. Functional Anatomy of ASP.NET Core 	
+
+65.  Ecosystem
+	
+70. C# 9 What's new
+
+75. ASP.NET Core 5
+
+80. Roslyn Code Generators
+
+85. EF Core 5
+
+90. Breaking Changes
+
+95. General discussion architecture
+
+</small>
+---
+class: center, top
+
+# About me
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+
+# .NET Core, .NET Standard, .NET Framework
+
+https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+
+.NET Standard 2.0 is that it ups the number of available APIs from 13,000 to 32,000, compared to .NET Standard 1.6. https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md
+
+Compatibility Problems https://github.com/dotnet/standard/issues/481
+
+Demo 
+
+1. .NET Standard project visible in both .NET Core and .NET Framework
+
+2.  Environment.CurrentDirectory 
+
+Demo: 
+DemoNetStandard folder,  What's new 1 + What's new 2
+
+---
+
+# Some C# advanced 
+
+1. IEnumerable vs Array vs yield
+	
+2. Task / ASYNC AWAIT - Windows forms (not ASP.NET Core) problem
+
+	1. https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Async-programming-deep-dive  – to gain inner knowledge about what code is async / await
+
+	2. Read https://blog.stephencleary.com/2012/02/async-and-await.html to have started into async await
+
+	3. Read MSDN for a better understanding : https://msdn.microsoft.com/en-us/magazine/jj991977.aspx?f=255&MSPPError=-2147217396
+
+	4. Common pitfalls in ASP.NET  Framework( not in console! ) with async await: https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
+
+	5. No problem in ASP.NET Core: https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html
+	
+
+3. DemoAsyncAwait - problem in windows forms
+		
+---
+
+# Some C# 7-8 what's new 
+ 
+1. Async enumerable
+
+1. Default Interface Inheritance 
+
+1. Multiple Interface Inheritance 
+
+1. Switch
+
+1. Deconstruct
+
+1. ## In code NetCore3WhatsNew.sln - but will not make demo ....
+
+1. UsingUsage
+
+1. StaticLocalFunctions();
+
+1. Nullable();
+
+1. Version();
+
+1. Indexes();
+
+1. NullCoalescing();
+
+
+---
+
+# .NET Core What's new
+
+Reference:
+
+https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
+
+https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/
+
+Demos:
+
+1. AsyncEnumerable
+1. WPF 
+1. COM
+1. Build ( trim, single file)
+1. Diamond hell with plugins
+
+See NetCore3WhatsNew.sln and AssemblyLoadingUnloadingDiamond.sln
+
+---
+# .NET Core backend - BL, DAL, Security, tests
+
+DemoNETCoreTest
+
+
+---
+
+
+
+# EF - console, ASP.NET Scaffolding
+
+
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding
+
+See create.sql
+
+microsoft.entityframeworkcore.sqlserver
+Microsoft.EntityFrameworkCore.Tools
+
+
+---
+class: center, top
+# Functional Anatomy of ASP.NET Core
+
+1. DI - demoFromAttributes
+2. WebAPI  + Swagger
+4. Routing
+5. Middleware
+4. Versioning
+5. Not in this demo :
+	4. Formatters 
+	3. Filters
+
+---
+class: center, top
+# Ecosystem
+
+1. Logging - demo NLog
+2. HealthChecks - demo Xabaril
+3. Activity  - demo JaegerNetCore
+		
+---
+class: center, top
+# C# 9 What's new
+	
+1. records ,
+
+2. init only setters,
+3. new ,
+4. Extension GetEnumerator support for foreach loops,
+5. pattern matching and, or, not ,
+6. New features for partial methods
+
+https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
+
+
+Demo
+
+---
+class: center, top
+# ASP.NET Core 5
+
+https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-5.0?view=aspnetcore-5.0
+
+Swagger ,JSON extensions ,Startup class,Blazor,SignalR, Kestrel
+
+No demo
+
+---
+class: center, top
+# Roslyn Code Generators
+
+Just add code, do not modify, at Build Time https://github.com/dasMulli/data-builder-generator
+
+https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.cookbook.md
+
+https://www.cazzulino.com/source-generators.html
+
+example : Skinny Generators
+
+https://github.com/ignatandrei/AOP_With_Roslyn
+
+On the fly Demo
+
+---
+class: center, top
+
+# EF Core 5
+
+https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew
+
+https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding
+
+Demo for ToSqlQuery ,PropertyBags- dictionary, Split-Query, ToQueryString
+
+Many , many more:
+
+Many2Many
+
+Dotnet counters
+
+ISaveChangesInterceptor ( see also https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/interceptors )
+
+Migrations , TPT instead of TPH
+
+Table Valued Functions
+
+ToTable / ToView
+
+ContextFactory - to create
+
+---
+class: center, top
+# Breaking Changes
+
+https://docs.microsoft.com/en-us/dotnet/core/compatibility/5.0
+
+https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/breaking-changes
+
+https://jimmybogard.com/mind-your-strings-with-net-5-0/
+
+https://www.infoq.com/news/2020/12/net-5-breaking-changes/
+
+https://www.infoq.com/news/2020/12/net-5-breaking-changes-2/
+
+Demo: globalization
+
+
+---
+class: center, top
+# General discussion architecture
+
+---
+class: center, top
+
+# Questions ?
+
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+	 <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

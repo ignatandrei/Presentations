@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="plugins\MoreThan100.dll" />
+    <None Remove="plugins\readMe.txt" />
+    <None Remove="plugins\ThreeForTwo.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="plugins\MoreThan100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="plugins\readMe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="plugins\ThreeForTwo.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MethodsLoadingPlugins\OrderCalculator.csproj" />
+  </ItemGroup>
+
+</Project>

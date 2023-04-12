@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MyTopLevel.cs": {
+      "commandName": "Project"
+    },
+    "Program.cs": {
+      "commandName": "Project"
+    }
+  }
+}
