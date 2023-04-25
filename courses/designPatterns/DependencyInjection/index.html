@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Dependency Injection / IOC</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css"/>
+	
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<p> Design patterns love story</p>
+				<small>
+				<p>Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+Richard had an idea.</p><p>
+“Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.</p><p>
+“I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”</p><p>
+Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.</p><p>
+“Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”</p><p>
+“Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.</p><p>
+
+(Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+</p>
+				</small>
+				</section>
+				<section>
+					<h1>
+					AbstractSingletonProxyFactoryBean 
+					</h1>
+					http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+				</section>
+				<section>
+				<h1>Dependency Injection</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+					<h1>Content</h1>
+
+		<h4>What is DI?</h4>
+		<h4>DI means - constructor, setter, interface</h4>
+		<h4>DI frameworks</h4>
+		<h4>Questions/Discussion ? </h4>
+				</section>
+<section>
+				<section>
+				<h1>What is DI?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Dependency_injection
+						</small>
+						
+					</p>
+					<p>
+					Dependency injection is a design principle in which code creating a new object supplies the other objects that the new object depends on for operation. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it. The service is made part of the client's state. Passing the service to the client, rather than allowing a client to build or find the service, is the fundamental requirement of the pattern.
+					</p>
+					
+				</section>
+				
+
+			
+				<section>
+				<h1> DI - constructor injection</h1>	
+
+				
+				
+				<small> Implementation C# .NET Core</small>					
+				
+				<p>
+				<small>DIDemo </small>
+				</p>
+				</section>
+				<section>
+				<h1> DI - setter injection</h1>					
+				
+<p>Not really used  . Do someone use?</p>
+				</section>
+				<section>
+				<h1> DI - interface injection</h1>	
+			
+				
+				
+				<small> Implementation ASP.NET Core</small>					
+				
+				<pre class="brush: csharp;">
+services.AddSingleton &lt; IMyImportantClass, MyImportantClass &gt;();
+				</pre>
+
+
+<pre class="brush: csharp;">
+IMyImportantClass my;
+        public HomeController(IMyImportantClass my)
+        {
+            this.my = my;
+        }
+</pre>
+<pre class="brush: csharp;">
+ public IActionResult About()
+        {
+            ViewData["Message"] = my.MyMessage;
+
+            return View();
+        }
+</pre>
+	
+				
+				<small>DiDemoASPNETCore </small>
+				
+				</section>
+</section>
+	
+	
+	<section>
+		<section>
+			<h1>Dependency Injection Frameworks</h1>
+			<small>
+			<ol>
+			<li>Microsoft.Extensions.DependencyInjection</li>
+			<li>Unity</li>
+			<li>Structure Map</li>
+			<li>http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx</li>
+			</ol>
+			</small>
+		</section>
+		<section>
+			<h1>Problems</h1>
+			<p>Code harder to understand ( interface everywhere)</p>
+			<p>constructor with &gt;3 parameters</p>
+		
+		</section>
+		
+		<section>
+			<h1>Links</h1>
+			<small class="reveal">https://martinfowler.com/articles/injection.html</small>			
+			<small class="reveal">http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx</small>
+
+
+		</section>
+	</section>
+				
+
+		<section>
+					<h1>Content</h1>
+
+<h4>What is DI?</h4>
+<h4>DI means - constructor, setter, interface</h4>
+<h4>DI frameworks</h4>
+<h4>Questions/Discussion ? </h4>
+				</section>
+				
+				
+<section>
+				
+				<h1>Questions/Discussion ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		
+		<script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Decorator</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css"/>
+	
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			
+			<div class="slides">
+				<section>
+				<p> Design patterns love story</p>
+				<small>
+				<p>Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+Richard had an idea.</p><p>
+“Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.</p><p>
+“I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”</p><p>
+Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.</p><p>
+“Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”</p><p>
+“Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.</p><p>
+
+(Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+</p>
+				</small>
+				</section>
+				<section>
+					<h1>
+					AbstractSingletonProxyFactoryBean 
+					</h1>
+					http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+				</section>
+				
+				<section>
+				Content 
+					<h4>What is Decorator?</h4>	
+					<h4>Decorator in .NET</h4>						
+					<h4>Decorator in sealed classes </h4>
+					<h4>The ugly: too many classes </h4>
+					<h4>Homework - NetFlix </h4>
+					<h4>Questions/Discussion</h4>
+					
+				</section>
+<section>			
+				<section>
+				<h1>What is Decorator?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Decorator_pattern</small>
+						<small>http://www.dofactory.com/net/decorator-design-pattern</small>
+						
+					</p>
+					<p>
+					In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.[1] The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
+					</p>
+					
+					
+					
+					
+				</section>
+				
+
+			
+				<section>
+				<h1> Decorator example in .NET </h1>	
+<p>  </a>
+</p>
+			<p>
+				<small>Example:FileStream, CryptoStream,GZipStream </small>
+			</p>
+				
+				</section>
+		
+<section>
+				<h1> Sealed classes </h1>	
+<p>  </a>
+</p>
+			<p>
+				<small>Example:DBConnection</small>
+			</p>
+				
+				</section>
+
+<section>
+				<h1> The ugly: too many classes </h1>	
+<p>  </a>
+</p>
+			<p>
+				<small>Example:Coffee</small>
+			</p>
+				
+				</section>
+				
+<section>
+				<h1> Homework- NetFlix </h1>	
+<p>  </a>
+</p>
+			<p>
+				<small>Netflix - make netflix items viewable for every derived class</small>
+			</p>
+			<p>
+				<small>when viewing, record name of the user</small>
+			</p>
+		<p>
+				<small>when viewing, also record time start and time end</small>
+			</p>
+		
+		
+				</section>
+				
+</section>
+<section>
+				Content 
+					<h4>What is Decorator?</h4>	
+					<h4>Decorator in .NET</h4>						
+					<h4>Decorator in sealed classes </h4>
+<h4>The ugly: too many classes </h4>
+										
+					<h4>Homework - NetFlix </h4>
+				
+					<h4>Questions/Discussion</h4>
+					
+				</section>
+				<section>
+				
+				<h1>Questions/Discussion ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		
+		<script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>

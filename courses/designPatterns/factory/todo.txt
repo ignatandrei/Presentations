@@ -1,0 +1,43 @@
+http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+http://discuss.joelonsoftware.com/default.asp?joel.3.219431.12
+
+
+controller factory in MVC
+
+- implementation of interface ...
+- creation separated from representation of the object
+- create animal  from command line( dog, cat)
+   - walk
+usual factory
+
+factory method
+ factory create class 
+
+
+fromseconds
+fromticks
+frommilliseconds
+https://app.pluralsight.com/player?course=csharp-design-strategies&author=jon-skeet&name=skeet-patterns-m8-factory&clip=2&mode=live
+
+
+in .net:
+
+dbproviderfactory
+odbcfactory
+
+abstractfactory
+decouples client from concrete product
+
+eliminate dependencies in the tree
+https://app.pluralsight.com/player?course=tactical-design-patterns-dotnet-managing-responsibilities&author=zoran-horvat&name=tactical-design-patterns-dotnet-managing-responsibilities-m2&clip=3&mode=live
+
+
+animal
+
+dog
+
+example 
+
+
+
+

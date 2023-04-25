@@ -1,0 +1,224 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Several Design Patterns</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);</script>
+</head>
+<body>
+    <div class="reveal">
+
+        <div class="slides">
+            <section>
+                <p> Design patterns love story</p>
+                <small>
+                    <p>
+                        Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+                        Richard had an idea.
+                    </p><p>
+                        “Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.
+                    </p><p>
+                        “I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”
+                    </p><p>
+                        Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.
+                    </p><p>
+                        “Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”
+                    </p><p>
+                        “Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.
+                    </p><p>
+                        (Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+                    </p>
+                </small>
+            </section>
+            <section>
+                <h1>
+                    AbstractSingletonProxyFactoryBean
+                </h1>
+                http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+            </section>
+
+            <section>
+                Content
+                <h4>NullObject</h4>
+                <h4>Iterator</h4>
+                <h4>Prototype</h4>
+                <h4>Adapter</h4>
+                <h4>Builder</h4>
+                
+
+
+                <h4>Questions/Discussion</h4>
+
+            </section>
+            <section>
+                <section>
+                    <h1>What is NullObject?</h1>
+                    <p>
+
+                        <small>https://en.wikipedia.org/wiki/Null_object_pattern</small>
+
+                    </p>
+                    <p>
+                        Instead of using a null reference to convey absence of an object (for instance, a non-existent customer), one uses an object which implements the expected interface, but whose method body is empty.
+                    </p>
+                </section>
+                <section>
+                    <h1> Null object example in .NET </h1>
+                    <p>
+                        <small>Example:String.Empty,EventArgs.Empty , folders  </small>
+                        <small>
+                            For example, a function may retrieve a list of files in a folder and perform some action on each. In the case of an empty folder, one response may be to throw an exception or return a null reference rather than a list. Thus, the code which expects a list must verify that it in fact has one before continuing, which can complicate the design.
+                            By returning a null object (i.e. an empty list) instead, there is no need to verify that the return value is in fact a list.
+                        </small>
+                    <p>Demo + coalescing ?? + null-conditional operator ?.</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>What is Iterator?</h1>
+                    <p>
+                        <small>http://www.dofactory.com/net/iterator-design-pattern </small>
+
+                        <small>https://en.wikipedia.org/wiki/Iterator_pattern </small>
+                    </p>
+                    <p>
+                        The iterator pattern is a design pattern in which an iterator is used to traverse a container and access the container's elements.
+                    </p>
+                </section>
+                <section>
+                    <h1> Iterator example in .NET /IEnumerator  , IEnumerator <T></h1>
+                    <p>
+                        <small>Example:array, list, collections  </small>
+
+                    <p>Demo with foreach , yield and Linq  </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>What is Prototype?</h1>
+                    <p>
+                        <small>http://www.dofactory.com/net/prototype-design-pattern </small>
+
+                        <small>https://en.wikipedia.org/wiki/Prototype_pattern </small>
+                    </p>
+                    <p>
+                        It is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
+                    </p>
+                </section>
+                <section>
+                    <h1> Prototype example in .NET  <T></h1>
+                    <p>
+                        <small>Example:ICloneable , MemberwiseClone </small>
+                    <p>Demo with shallow and deep clone  </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>What is Adapter?</h1>
+                    <p>
+                        <small>http://www.dofactory.com/net/adapter-design-pattern </small>
+
+                        <small>https://en.wikipedia.org/wiki/Adapter_pattern </small>
+                    </p>
+                    <p>
+                        Adapter design pattern allows the interface of an existing class to be used as another interface.[1] It is often used to make existing classes work with others without modifying their source code.
+                    </p>
+                </section>
+                <section>
+                    <h1> Adapter example in .NET  <T></h1>
+                    <p>
+                        <small>Example:SqlDataAdapter  </small>
+						<small>String to byte</small>
+                        <small> delegate => function </small>
+                    <p>Demo   </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>What is Builder?</h1>
+                    <p>
+                        <small>http://www.dofactory.com/net/builder-design-pattern </small>
+ </p><p>
+                        <small>https://en.wikipedia.org/wiki/Builder_pattern </small>
+                    </p>
+                    <p>
+                        The intent of the Builder design pattern is to separate the construction of a complex object from its representation
+                    </p>
+                </section>
+                <section>
+                    <h1> Builder example in .NET  <T></h1>
+                    <p>
+                        <small>Example:SqlConnectionStringBuilder,  UriBuilder </small>
+
+                    <p>Demo   </p>
+                </section>
+            </section>
+            <section>
+                Content
+                <h4>NullObject</h4>
+                <h4>Iterator</h4>
+                <h4>Prototype</h4>
+                <h4>Adapter</h4>
+                <h4>Builder</h4>
+                <h4>Questions/Discussion</h4>
+
+            </section>
+            <section>
+
+                <h1>Questions/Discussion ? </h1>
+
+                <p>Thank you</p>
+                <p>
+                    <small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+                </p>
+            </section>
+
+
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+    <script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            history: true,
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'plugin/markdown/marked.js' },
+                { src: 'plugin/markdown/markdown.js' },
+                { src: 'plugin/notes/notes.js', async: true },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });</script>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+</body>
+</html>

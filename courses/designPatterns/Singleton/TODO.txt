@@ -1,0 +1,1 @@
+add VS2015 solution with singleton example and demo that is one instance ( and use in a separate function) 

@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Facade</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css"/>
+	
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<p> Design patterns love story</p>
+				<small>
+				<p>Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+Richard had an idea.</p><p>
+“Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.</p><p>
+“I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”</p><p>
+Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.</p><p>
+“Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”</p><p>
+“Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.</p><p>
+
+(Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+</p>
+				</small>
+				</section>
+				<section>
+					<h1>
+					AbstractSingletonProxyFactoryBean 
+					</h1>
+					http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+				</section>
+				<section>
+				<h1>Facade</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+					<h1>Content</h1>
+
+		<h4>What is Facade?</h4>
+		<h4>Facade examples  - MessageBox, My, WebClient</h4>		
+		<h4>Facade discussion </h4>
+		
+		<h4>Questions/Discussion ? </h4>
+				</section>
+<section>
+				<section>
+				<h1>What is Facade?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Facade_pattern
+						</small>
+						
+					</p>
+					<p>
+					Facade is  is an object that provides a simplified interface to a larger body of code, such as a class library.
+					 A facade can
+					 <small>
+					 <ol>
+<li>
+make a software library easier to use, understand and test, since the facade has convenient methods for common tasks,
+</li><li>
+make the library more readable, for the same reason,</li><li>
+reduce dependencies of outside code on the inner workings of a library, since most code uses the facade, thus allowing more flexibility in developing the system,</li><li>
+wrap a poorly designed collection of APIs with a single well-designed API.</li>
+					</ol>
+					</small>
+				</section>
+				
+
+			
+				<section>
+				<h1> MessageBox demo</h1>	
+
+				
+				
+				<small> 
+				The MessageBox class provides a function e that makes it easy to display dialogs.
+				</small>					
+				
+				<p>
+				<small>FacadeMB demo </small>
+				<small>https://referencesource.microsoft.com/#System.Windows.Forms/winforms/Managed/System/WinForms/MessageBox.cs,e426fc24b95c791e</small>
+				</p>
+				</section>
+				<section>
+				<h1> My in VB.NET</h1>					
+				
+<p>My.Computer.Audio , My.Computer.Clipboard</p>
+<small>FacadeMy demo </small>
+				</section>
+				
+				
+				<section>
+				<h1> WebClient</h1>	
+			
+				
+				
+				<small> WebClient DownloadString / DownloadFile</small>					
+				
+				<pre class="brush: csharp;">
+
+				 var wc = new WebClient();
+            var s = wc.DownloadString("http://www.yahoo.com");
+            
+				</pre>				
+				</section>
+</section>
+	
+	
+		
+		<section>
+			<h1>Facade discussion</h1>
+			<small class="reveal">Are  Nuget packages  facades ? </small>			
+			<small class="reveal">Is Jquery a facade ?</small>
+			<small class="reveal">Is .NET Framework a facade ?</small>
+
+
+		</section>
+	</section>
+				
+
+		<section>
+				<h1>Facade</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+					<h1>Content</h1>
+
+		<h4>What is Facade?</h4>
+		<h4>Facade examples  - MessageBox, My, WebClient</h4>		
+		<h4>Facade discussion </h4>
+		
+		<h4>Questions/Discussion ? </h4>
+				</section>
+<section>
+				
+				
+<section>
+				
+				<h1>Questions/Discussion ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		
+		<script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>

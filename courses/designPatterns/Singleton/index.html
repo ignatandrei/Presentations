@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Singleton</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css"/>
+	
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<p> Design patterns love story</p>
+				<small>
+				<p>Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+Richard had an idea.</p><p>
+“Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.</p><p>
+“I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”</p><p>
+Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.</p><p>
+“Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”</p><p>
+“Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.</p><p>
+
+(Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+</p>
+				</small>
+				</section>
+				<section>
+					<h1>
+					AbstractSingletonProxyFactoryBean 
+					</h1>
+					http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+				</section>
+				<section>
+				<h1>Creational patterns - Singleton + Multiton</h1>					
+					<p>
+						<small> <a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				<section>
+					<h1>Content</h1>
+
+<h4>What is Singleton?</h4>
+<h4> Singleton Implementation </h4>
+<h4>Multiton</h4>
+<h4>.NET Framework singleton / multiton example </h4>
+<h4>Problems</h4>
+<h4>Related: Desktop single instance application </h4>
+<h4>Questions/Discussion ? </h4>
+				</section>
+				<section>
+				<h1>What is Singleton?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Singleton_pattern</small>
+						
+					</p>
+					<p>The singleton pattern is a software design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system</p>
+					
+				</section>
+				
+<section>
+			
+				<section>
+				<h1> Singleton Implementation </h1>	
+<p> C++ and C#				
+				</section>
+				
+				<section>
+				
+				<h1> Implementation C++</h1>					
+	
+<p> from <a href='https://msdn.microsoft.com/en-us/library/ee817670.aspx' target="_blank">https://msdn.microsoft.com/en-us/library/ee817670.aspx</a>
+</p>
+	
+<p>
+<pre class="brush: cpp;">
+class Singleton {
+public: 
+    static Singleton* Instance();
+protected: 
+    Singleton();
+private:
+    static Singleton* _instance;
+}
+// Implementation 
+Singleton* Singleton::_instance = 0;
+Singleton* Singleton::Instance() {
+    if (_instance == 0) {
+        _instance = new Singleton;
+    }
+    return _instance;
+}
+</pre>
+
+				</section>
+				<section>
+				<h1> Implementation C#</h1>					
+				
+<p>
+<pre class="brush: csharp;">
+sealed class Singleton 
+{
+    private Singleton() {}
+    public static readonly Singleton Instance = new Singleton();
+}
+</pre>
+				</section>
+				
+</section>
+<section>
+		<section>
+	<h1>Multiton</h1>
+	<p>Multiton pattern instead ensures a single instance per key from <a href='https://en.wikipedia.org/wiki/Multiton_pattern' target='_blank'>https://en.wikipedia.org/wiki/Multiton_pattern</a></p>
+		</section>
+		
+		<section>
+			<h1>C# implementation</h1>
+			<p>Singleton implementation for ReadOnlyDictionary&lt;Key,BlogPosting&gt; </p>
+			
+			
+			<p>For more advanced uses , a Lazy + ConcurrentDictionary </p>
+			
+			
+		</section>
+		
+			
+		
+	</section>
+	
+				<section>
+				<h1>.NET Framework singleton / multiton example </h1>
+				<p>Application / Session in ASP.NET </p>
+				<p> Demo at <a href='http://localhost/dp/Singleton/a.asp' target='_blank'>http://localhost/dp/Singleton/a.asp</a>
+				</section>
+</section>
+	<section>
+		<section>
+			<h1>Problems</h1>
+		</section>
+		<section>
+			<h1>Theoretical</h1>
+			<p>defined by application - now same application could be run in multiple pc on cloud</p>
+			<p>global variable => threading? </p>
+			<p>methods  do not show they use singletons ( it does not show in parameters)</p>
+		</section>
+		<section>
+			<h1>Practical - Testing</h1>
+			<p>Can not be easy mocked / stubbed , e.g. DateTime.Now - workflow based on time</p>
+			
+			<small class="reveal">Solution with Dependency Injection</small>
+		
+			<pre class="brush: csharp;">
+interface IClock
+{
+    DateTime Now { get; } 
+}
+</pre>
+<small class="reveal">Solution with Static functions to be modified in test</small>
+ Ayende <a href='https://ayende.com/blog/3408/dealing-with-time-in-tests'>https://ayende.com/blog/3408/dealing-with-time-in-tests</a>
+<pre class="brush: csharp;">
+public static class SystemTime
+{
+    public static Func<DateTime> Now = () => DateTime.Now;
+}
+</pre>
+
+</p>
+		</section>
+	</section>
+<section>
+				<section>
+				<h1>Related: Desktop single instance application </h1>
+					<p> Single instance of an application 
+				</section>
+	
+	
+				<section>
+	
+				<h1>Solution Mutex C# </h1>
+				<p> Demo at <a href='http://sanity-free.org/143/csharp_dotnet_single_instance_application.html' target='_blank'>http://sanity-free.org/143/csharp_dotnet_single_instance_application.html</a>
+				<p> Not considering run as admin when send message</p>
+				</section>
+				<section>
+	
+				<h1>Solution VB </h1>
+				<p>Built in <img src='vb.png' /></p>
+				</section>
+</section>	
+				<section>
+
+				
+				<h1>Questions/Discussion ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		
+		<script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>

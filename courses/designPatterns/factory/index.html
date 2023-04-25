@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Factory</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link type="text/css" rel="stylesheet" href="syntax/styles/shCoreDefault.css"/>
+	
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<p> Design patterns love story</p>
+				<small>
+				<p>Richard tilted his head to watch the waves push flotsam against the boat hull below. Up and down, the flotsam moved. Up and down.
+Richard had an idea.</p><p>
+“Virginia, my dear”, he said to the blond woman beside him. “We’ve been singletons on this ship for a long time”.</p><p>
+“I know, Richard”, she replied. “My mean step-mother, the intercepting filter that she is, denies me time with others.”</p><p>
+Richard paused for a moment, to contemplate strategy. Her father, with his pipes and filters, would return soon, and force them to communicate over his message bus. He glanced aft, and saw no one else around. Richard turned his front controller to face Virginia, and looked her in the eyes. She was close now, and Richard could feel his active record rising.</p><p>
+“Virginia”, he whispered. “There is no observer in sight. Let us run below deck. I want to peel away your façade, and tightly couple.”</p><p>
+“Oh yes, Richard”, she blushed, and leaned towards him. “I want you to give me a dependency injection”.</p><p>
+
+(Copiata dupa http://odetocode.com/blogs/scott/archive/2005/11/22/design-patterns-a-love-story.aspx )
+</p>
+				</small>
+				</section>
+				<section>
+					<h1>
+					AbstractSingletonProxyFactoryBean 
+					</h1>
+					http://docs.spring.io/spring-framework/docs/2.5.x/api/org/springframework/aop/framework/AbstractSingletonProxyFactoryBean.html
+				</section>
+				
+				<section>
+				Content 
+					<h4>What is Factory?</h4>	
+					<h4>Simple Factory( constructor )</h4>	
+					<h4>Factory Method</h4>	
+					<h4>Abstract Factory</h4>	
+					<h4>gorilla</h4>	
+					<h4>Questions/Discussion</h4>	
+					
+				</section>
+<section>			
+				<section>
+				<h1>What is Factory?</h1>					
+					<p>
+						
+						<small>https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)</small>
+						
+					</p>
+					<p>
+					a factory is a function or method that returns objects of a varying prototype or class from some method call, which is assumed to be "new"
+					</p>
+					<p><small>Simple Factory( constructor )</small></p>
+					<p>
+					<small>Factory Method </small></p>
+					<p>
+					<small>Abstract Factory </small></p>
+					
+					
+					
+				</section>
+				
+
+			
+				<section>
+				<h1> Simple Factory( constructor ) </h1>	
+<p> Instead of having contructors, make simple functions that construct object </a>
+</p>
+			<p>
+				<small>Example:Convert.ToDouble</small>
+			</p>
+				<p>
+				FactoryConstructor demo and discussion 
+				</p>
+				</section>
+				<section>
+				<h1>  Factory Method</h1>	
+<p> <small>
+Define an interface<span STYLE="color:red">or abstract class</span> for creating an object, but let subclasses decide which class to instantiate. The Factory method lets a class defer instantiation it uses to subclasses.
+(Gang Of Four)
+
+
+</small></p>
+<p>Example:
+				<small>https://msdn.microsoft.com/en-us/library/system.data.idbcommand.createparameter.aspx</small>
+<p>Remarks</p>	
+<p>
+When inheriting from IDbCommand, a .NET Framework data provider implements a strongly-typed version of CreateParameter.
+</p>	
+<p>
+<small> Demo Factory Method</small>
+</p>
+				</section>
+				<section>
+				<h1>  Abstract Factory </h1>	
+<p> <small>
+The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes
+
+</small></p><p>
+<small> Example: DbProviderFactories.GetFactory , MVC Controller Factory</small>
+</p><p>
+<small> Demo Abstract Factory</small>
+</p>
+				</section>
+				
+</section>
+<section><h1>Solving gorrilla problem</h1>
+<small>
+"Because the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle."
+
+</small>
+	<small>
+	Demo with Person , Adress and AdressFactory</small>
+</section>
+<section>
+	<small><a href='http://discuss.joelonsoftware.com/?joel.3.219431.12' target='_blank'> http://discuss.joelonsoftware.com/?joel.3.219431.12 </a></small>
+	<small><p>
+	<p>So I go to the hardware store to buy the tools, and I ask the sales clerk where I can find a hammer.</p><p>
+
+"A hammer?" he asks. "Nobody really buys hammers anymore. They're kind of old fashioned."</p><p>
+[...]</p><p>
+According to our research, what people really needed wasn't a Universal Hammer after all. It's always better to have the right kind of hammer for the job. So, we started selling hammer factories, capable of producing whatever kind of hammers you might be interested in using. All you need to do is staff the hammer factory with workers, activate the machinery, buy the raw materials, pay the utility bills, and PRESTO...you'll have *exactly* the kind of hammer you need in no time flat.</p><p>
+[...]</p><p>
+And this is the way everyone is doing it now? Everyone is using a general-purpose tool-building factory factory factory now, whenever they need a hammer?</p>
+</small>
+</section>
+<section>
+				Content 
+					<h4>What is Factory?</h4>	
+					<h4>Simple Factory( constructor )</h4>	
+					<h4>Factory Method</h4>	
+					<h4>Abstract Factory</h4>	
+					<h4>gorilla</h4>	
+					<h4>Questions/Discussion</h4>	
+					
+				</section>
+				<section>
+				
+				<h1>Questions/Discussion ? </h1>	
+				
+				<p>Thank you</p>
+					<p>
+						<small><a href="http://msprogrammer.serviciipeweb.ro/">Andrei Ignat</a> / <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></small>
+					</p>
+				</section>
+				
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		
+		<script type="text/javascript" src="syntax/scripts/shCore.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="syntax/scripts/shBrushCpp.js"></script>
+
+		
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</body>
+</html>
