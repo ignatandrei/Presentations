@@ -6,6 +6,10 @@ namespace DalManual;
 
 public partial class TestsDatabase2RestContext : DbContext
 {
+    public TestsDatabase2RestContext()
+    {
+    }
+
     public TestsDatabase2RestContext(DbContextOptions<TestsDatabase2RestContext> options)
         : base(options)
     {
@@ -16,6 +20,10 @@ public partial class TestsDatabase2RestContext : DbContext
     public virtual DbSet<Employee> Employee { get; set; }
 
     public virtual DbSet<Test> Test { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Trusted_Connection=No;Data Source=.;Initial Catalog=testsDatabase2Rest;UID=sa;PWD=<YourStrong@Passw0rd>;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
