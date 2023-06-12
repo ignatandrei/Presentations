@@ -11,9 +11,11 @@ var modelBuilder = new ODataConventionModelBuilder();
 modelBuilder.EntitySet<Department>("Department").EntityType.HasKey(d=>d.Iddepartment);
 
 // Add services to the container.
-
+//https://learn.microsoft.com/en-us/odata/webapi-8/overview
 builder.Services.AddControllers().AddOData(
-    options => options.EnableQueryFeatures()
+    options => options
+    .Select().Filter().OrderBy().Expand().Count()
+    .EnableQueryFeatures()
     .AddRouteComponents(
         routePrefix: "odata",
         model: modelBuilder.GetEdmModel()));
@@ -35,8 +37,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
+app.UseRouting();
 
-app.MapControllers();
+app.UseEndpoints(endpoints => endpoints.MapControllers());
 
 app.Run();
