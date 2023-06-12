@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualCode", "ManualCode\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalManual", "DalManual\DalManual.csproj", "{2F9FB76F-8514-49DE-8D41-C6E1C94AB2EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualWithOdata", "ManualWithOdata\ManualWithOdata.csproj", "{F97027A8-F79A-4F49-A7EB-CA421E40982B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F9FB76F-8514-49DE-8D41-C6E1C94AB2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F9FB76F-8514-49DE-8D41-C6E1C94AB2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F9FB76F-8514-49DE-8D41-C6E1C94AB2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97027A8-F79A-4F49-A7EB-CA421E40982B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97027A8-F79A-4F49-A7EB-CA421E40982B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97027A8-F79A-4F49-A7EB-CA421E40982B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97027A8-F79A-4F49-A7EB-CA421E40982B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
