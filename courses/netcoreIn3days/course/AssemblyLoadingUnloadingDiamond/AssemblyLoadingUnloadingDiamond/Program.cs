@@ -52,7 +52,11 @@ namespace AssemblyLoadingUnloadingDiamond
         static void LoadAssemblyA()
         {
             string PluginAPath = Path.Combine(Environment.CurrentDirectory, "pluginA");
-            
+            if (!Directory.Exists(PluginAPath))
+            {
+                Console.WriteLine($"copy the plugin A into {PluginAPath}");
+                return;
+            }
 
             //Ensure that you have copied the pluginA and pluginB
             var tcA = new TestAssemblyLoadContext(PluginAPath);
