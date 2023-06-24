@@ -29,7 +29,7 @@ namespace AsyncAwait
                 
                 return file.Result & console.Result;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 //Console.WriteLine("exception:" + ex.Message);   
                 if (file.IsFaulted)

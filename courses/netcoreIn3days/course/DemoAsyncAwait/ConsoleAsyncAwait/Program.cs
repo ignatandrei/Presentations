@@ -1,21 +1,8 @@
-﻿using AsyncAwait;
-using System;
-using System.Threading.Tasks;
+﻿//convert to async
+var t = new TwoTasks();
 
-namespace ConsoleAsyncAwait
-{
-    class Program
-    {     
-        //convert to async
-        async static Task Main(string[] args)
-        {
-            var t = new TwoTasks();
+var res = await t.Await2Task();
+//.GetAwaiter().GetResult();
 
-            var res = await t.Await2Task();
-                //.GetAwaiter().GetResult();
+WriteLine(res);
 
-            Console.WriteLine(res);
-            
-        }
-    }
-}
