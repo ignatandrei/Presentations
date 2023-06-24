@@ -91,15 +91,35 @@ https://raw.githubusercontent.com/dotnet/standard/v2.1.0/docs/versions/netstanda
 
 Compatibility Problems https://github.com/dotnet/standard/issues/481
 
-NET 5.0 =>....
-Demo 
+NET 5.0 => 
 
 1. .NET Standard project visible in both .NET Core and .NET Framework
 
 2.  Environment.CurrentDirectory 
 
 Demo: 
+
 DemoNetStandard folder,  What's new 1 + What's new 2
+
+---
+
+# C# and .NET
+	
+	Latest version .NET 7 : https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7
+	Latest version C# : https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11
+
+	What can you do:
+
+	- Console
+	- Desktop ( WPF, Winforms)
+	- Web ( ASP.NET Core WebAPI / MVC / RazorWebPages , Blazor)
+	- Mobile ( and try to unify desktop ): MAUI
+	- Game Development ( Unity)
+	- ML/ AI : ML.NET
+	- Azure Cloud ( + integrations)
+	- IOT (Windows IoT Core)
+
+	Demo : Let's see if you have installed VS with templates
 
 ---
 
@@ -134,6 +154,8 @@ No problem in ASP.NET Core
 
 1. COM objects:NetCore3WhatsNew/WpfCom.csproj
 
+1. Automatic Update -ClickOnce
+	
 1. using , indexes, others: NetCore3WhatsNew/CSharp8WhatsNew.csproj
 
 1. record : CSharp9WhatsNew
@@ -143,12 +165,18 @@ No problem in ASP.NET Core
 
 # Some C# main points - part 3
 	
-1. Nullable Enable
-1. CallerArgumentExpression 
-1. Build ( trim, single file)
-1. Diamond hell with plugins:AssemblyLoadingUnloadingDiamond.sln
-1. Static interfaces and math support 
+	1. Nullable Enable : Demo : Part3/Part3.sln
+	1. CallerArgumentExpression and others :Demo: Part3/Part3.sln
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/caller-information
+	1. Build ( trim, single file, self contained )
+https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
+https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli
+
+	1. Diamond hell with plugins:AssemblyLoadingUnloadingDiamond.sln
+	
+	1. Static interfaces and math support 
 https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members
+
 
 ---
 # .NET Core backend - BL, DAL, Security, tests
