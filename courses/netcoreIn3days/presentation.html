@@ -35,15 +35,11 @@ http://dontpad.com/netcore20210101
 
 20. .NET Core, .NET Standard, .NET Framework
 
-25. Some C# advanced  
-
-25. C# 7-8 what's new
-
-25. .NET Core 3 what's new
+25. Some C# main points
 
 25. .NET Core backend - BL, DAL, Security, tests
 
-50. EF - console, ASP.NET Scaffolding
+50. Some EF main points - console, ASP.NET Scaffolding
 
 60. Functional Anatomy of ASP.NET Core 	
 
@@ -90,7 +86,7 @@ https://dotnet.microsoft.com/en-us/platform/dotnet-standard#versions
 
 .NET Standard 2.0 is that it ups the number of available APIs from 13,000 to 32,000, compared to .NET Standard 1.6. 
 
-https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md
+<!-- https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md -->
 https://raw.githubusercontent.com/dotnet/standard/v2.1.0/docs/versions/netstandard2.0_diff.md
 
 Compatibility Problems https://github.com/dotnet/standard/issues/481
@@ -109,72 +105,50 @@ DemoNetStandard folder,  What's new 1 + What's new 2
 
 # Some C# main points - Task ASYNC AWAIT
 
-1. Race conditions - who has the error ? 
+1. Race conditions - who has the error ? Virus up
 	
-2.  Windows forms (not ASP.NET Core) problem
+1. https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Async-programming-deep-dive  – to gain inner knowledge about what code is async / await
 
-	1. https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Async-programming-deep-dive  – to gain inner knowledge about what code is async / await
+2. Read https://blog.stephencleary.com/2012/02/async-and-await.html to have started into async await
 
-	2. Read https://blog.stephencleary.com/2012/02/async-and-await.html to have started into async await
+3. Read MSDN for a better understanding : https://msdn.microsoft.com/en-us/magazine/jj991977.aspx?f=255&MSPPError=-2147217396
 
-	3. Read MSDN for a better understanding : https://msdn.microsoft.com/en-us/magazine/jj991977.aspx?f=255&MSPPError=-2147217396
+4. Common pitfalls in ASP.NET  Framework( not in console! ) with async await: https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
 
-	4. Common pitfalls in ASP.NET  Framework( not in console! ) with async await: https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
-
-	5. No problem in ASP.NET Core: https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html
+5. https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html
 	
-3. DemoAsyncAwait - problem in windows forms
+3. DemoAsyncAwait - problem in windows forms,
+No problem in ASP.NET Core
 
 ---
 
-# Some C# main points - others
-	
-1. globals using
+# Some C# main points - part 2
 	
 1. IEnumerable vs Array vs yield
 
-1. Async enumerable
+1. Async enumerable :Console, WebAPI NetCore3WhatsNew/DemoAsynEnumerable.csproj
 
-1. Default Interface Inheritance / Multiple Interface Inheritance 
+1. Default Interface Inheritance :NetCore3WhatsNew/CSharp8WhatsNew.csproj  
 
-1. Switch
+1. Switch,  Deconstruct
 
-1. Deconstruct
+1. COM objects:NetCore3WhatsNew/WpfCom.csproj
 
-1. ## In code NetCore3WhatsNew.sln - but will not make demo ....
+1. using , indexes, others: NetCore3WhatsNew/CSharp8WhatsNew.csproj
 
-1. UsingUsage
-
-1. StaticLocalFunctions();
-
-1. Nullable();
-
-1. Version();
-
-1. Indexes();
-
-1. NullCoalescing();
+1. record : CSharp9WhatsNew
 
 
 ---
 
-# .NET Core What's new
-
-Reference:
-
-https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
-
-https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/
-
-Demos:
-
-1. AsyncEnumerable
-1. WPF 
-1. COM
+# Some C# main points - part 3
+	
+1. Nullable Enable
+1. CallerArgumentExpression 
 1. Build ( trim, single file)
-1. Diamond hell with plugins
-
-See NetCore3WhatsNew.sln and AssemblyLoadingUnloadingDiamond.sln
+1. Diamond hell with plugins:AssemblyLoadingUnloadingDiamond.sln
+1. Static interfaces and math support 
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members
 
 ---
 # .NET Core backend - BL, DAL, Security, tests

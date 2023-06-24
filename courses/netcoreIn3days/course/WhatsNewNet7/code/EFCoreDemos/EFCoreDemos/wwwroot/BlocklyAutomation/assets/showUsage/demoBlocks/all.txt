@@ -1,0 +1,14 @@
+﻿[
+    {
+        "id":  "executeUpdate",
+        "description":  "execute update",
+        "categories":  "demo",
+        "blocks":  "text_print;get__api_WeatherForecast_GetWeatherInRange;text;math_number"
+    },
+ {
+        "id":  "interceptor",
+        "description":  "execute interceptor",
+        "categories":  "demo",
+        "blocks":  "text_print;get__api_WeatherForecast_GetWeatherInRange;text;math_number"
+    }
+]

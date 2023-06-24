@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>2020.111.115.1115</Version>
+    <Authors>Andrei Ignat</Authors>
+    <Company>AOM</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ThisAssembly" Version="1.0.0-rc.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DemoClickOnce\DemoClickOnce.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+</Project>

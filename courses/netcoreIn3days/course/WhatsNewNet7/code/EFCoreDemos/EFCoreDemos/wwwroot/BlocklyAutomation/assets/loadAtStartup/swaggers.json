@@ -1,0 +1,9 @@
+[{
+		"id":"TILT",
+		"link":"http://tiltwebapp.azurewebsites.net/swagger/v1/swagger.json"
+},
+{
+		"id":"MySite",
+		"link":"/swagger/v1/swagger.json"
+}
+]

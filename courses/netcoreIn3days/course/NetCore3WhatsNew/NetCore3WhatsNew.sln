@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29324.140
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp8WhatsNew", "CSharp8WhatsNew\CSharp8WhatsNew.csproj", "{36E1BBBC-BF6E-4A77-85BD-0E9D9DE92E60}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCom", "WpfCom\WpfCom.csproj", "{CDFC13EA-C5B6-40E4-AAB2-6379FB55B63F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncEnumerable", "AsyncEnumerable\AsyncEnumerable.csproj", "{F3C675C4-B8FF-42BA-9EFA-09361F45A037}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAsynEnumerable", "DemoAsynEnumerable\DemoAsynEnumerable.csproj", "{A5ED0AE5-8D9C-4811-9AFC-84415466BAD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C675C4-B8FF-42BA-9EFA-09361F45A037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5ED0AE5-8D9C-4811-9AFC-84415466BAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5ED0AE5-8D9C-4811-9AFC-84415466BAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5ED0AE5-8D9C-4811-9AFC-84415466BAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5ED0AE5-8D9C-4811-9AFC-84415466BAD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

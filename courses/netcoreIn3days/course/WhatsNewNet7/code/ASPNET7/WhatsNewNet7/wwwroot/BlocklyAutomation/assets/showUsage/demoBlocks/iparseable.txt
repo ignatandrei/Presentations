@@ -1,0 +1,23 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" x="126" y="112">
+    <value name="TEXT">
+      <block type="get__api_WeatherForecast_GetWeatherInRange">
+        <value name="val_range">
+          <block type="text">
+            <field name="TEXT">2000-10-10,2025-12-31</field>
+          </block>
+        </value>
+        <value name="override_Host">
+          <block type="text">
+            <field name="TEXT"> </field>
+          </block>
+        </value>
+        <value name="override_Port">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>

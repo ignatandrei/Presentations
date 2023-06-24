@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace AsyncEnumerable
 {
@@ -16,7 +17,7 @@ namespace AsyncEnumerable
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFProviders.InMemory;Trusted_Connection=True;ConnectRetryCount=0");
-                optionsBuilder.UseInMemoryDatabase(databaseName: "testing");
+                optionsBuilder.UseInMemoryDatabase(databaseName: "test"+Guid.NewGuid());
             }
             //TODO: add configuring to table
         }

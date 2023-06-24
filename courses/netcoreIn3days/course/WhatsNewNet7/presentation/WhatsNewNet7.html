@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhatsNewNet7</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      div.showSmall{
+        line-height: 0.7;
+  		font-size: 15px;
+	  }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# WhatsNewNet7   =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/WhatsNewNet7prez.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/WhatsNewNet7.zip
+---
+
+# Agenda
+
+0. About me
+1. What's new VS2022 ?
+2. What's new C# 11
+3. What's new Blazor
+3. What's new ASP.NET Core 7
+4. What's new EFCore 7
+5. Links 
+7. Discussion  / Questions ?
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+---
+class: center, top
+
+# What's new VS2022? 
+
+committing across many repos: https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/
+
+More details at : https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-notes
+
+---
+class: top
+
+# What's new .NET 7
+
+https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7
+
+System.Formats.Tar 
+
+System.Runtime.InteropServices.JavaScript
+
+StringSyntaxAttribute 
+
+RSCG: https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke-source-generation?source=recommendations
+
+Demo Folder : Net7Demo
+---
+class: top
+
+# What's new C# 11 
+
+<small>
+CentralPackageManagement
+https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management
+There is currently no support in Visual Studio or the .NET CLI for Central Package Management.
+
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11
+
+Static interfaces and math support
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members
+
+![:img int32, 10%](int32.png)
+ https://learn.microsoft.com/en-us/dotnet/api/system.int32?view=net-7.0
+
+Demo Folder : WhatsNewCSharp11  
+</small>
+---
+class: top
+
+# What's new Blazor
+
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-7.0#blazor
+
+Not only Blazor -  JSImport , JSExport
+
+https://learn.microsoft.com/en-us/aspnet/core/client-side/dotnet-interop?view=aspnetcore-7.0
+
+Demo Folder: TestBlazor
+
+---
+class: top
+
+# What's new ASP.NET 7 
+.showSmall[
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-7.0
+#### Adopt :
+1. Bind arrays and string values from headers and query strings
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/parameter-binding?view=aspnetcore-7.0
+
+2. IParsable .TryParse
+https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-7.0#itp7
+
+3. Shadow copy IIS https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-2/
+
+4. TypedResults
+https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.inestedhttpresult
+
+#### Assess:
+1. RateLimiter 
+https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit
+
+2. Problem details service
+https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors
+
+#### Trial
+
+1. The new mechanism to infer binding source of API Controller action parameters uses the following rules
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/7.0/api-controller-action-parameters-di
+
+2. Request Decompression
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/request-decompression?preserve-view=true&view=aspnetcore-7.0
+
+#### Demo Folder : ASPNET7
+
+]
+
+---
+class: top
+
+# What's new  EFCore 7
+
+.showSmall[
+
+  https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew
+
+  1. Faster ( identity, insert , graph ...)
+
+  1. JSON Columns - queries , updates....
+
+  2. **ExecuteUpdate, ExecuteDelete**
+
+  3. TPC mapping ( inheritance )
+  
+  4. **Reverse engineering templates**
+
+  5. Applications can now remove or replace any of these Model Conventions
+
+  6. SP map for CRUD
+
+  7. **All kind of interceptors**
+
+  8. Lazy init of connection strings
+
+  9. Query enhancements
+
+  10. Entity modifications - splitting, struct for PK, sequences....
+
+  11. Winforms 
+  12. Others !
+
+  Demo Folder : EFCoreDemos
+]
+
+
+---
+class: center, top
+
+# Links to get started 
+
+https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7
+
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11
+
+https://learn.microsoft.com/en-us/aspnet/core/client-side/dotnet-interop?view=aspnetcore-7.0
+
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-7.0
+
+https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew
+
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/static-virtual-interface-members
+
+https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke-source-generation?source=recommendations
+
+---
+class: left, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Roslyn Source Code Generators with examples :
+
+Amazon: https://amzn.to/3f6gll3
+
+Free:  https://ignatandrei.github.io/RSCG_Examples/
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
