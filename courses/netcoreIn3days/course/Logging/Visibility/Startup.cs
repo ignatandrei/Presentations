@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ExtensionNetCore3;
+//using ExtensionNetCore3;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NetCore2Blockly;
+//using NetCore2Blockly;
 
 namespace Visibility
 {
@@ -27,25 +27,25 @@ namespace Visibility
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCLI();
+  //          services.AddCLI();
             services.AddProblemDetails(opt=>
             {
                 opt.IncludeExceptionDetails = (cnt,ex) => true;
             });
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddBlockly();
+            //services.AddBlockly();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCLI();
-            app.UseBlocklyUI(new BlocklyUIOptions()
-            {
-                HeaderName="Demo for WEBAPI Visibility"
-            });
-            app.UseBlockly();
+            //app.UseCLI();
+            //app.UseBlocklyUI(new BlocklyUIOptions()
+            //{
+            //    HeaderName="Demo for WEBAPI Visibility"
+            //});
+            //app.UseBlockly();
             //app.UseProblemDetails();
             if (env.IsDevelopment())
             {
