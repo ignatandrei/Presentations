@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <IsPackable>true</IsPackable>
+    <IsRoslynComponent>true</IsRoslynComponent>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="RootNamespace" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+
+  </ItemGroup>
+  <PropertyGroup>
+    <Version>2021.9.15.2200</Version>
+    <PackageVersion>2021.9.15.2200</PackageVersion>
+    <Authors>Andrei Ignat</Authors>
+    <Description>This package make a time bomb from comment.</Description>
+    <Title>TimeBombComment</Title>
+    <PackageId>RSCG_TimeBombComment</PackageId>
+    <PackageTags>C#;.NET;ASP.NET Core;Roslyn;RSCG</PackageTags>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>tb.png</PackageIcon>
+    <RepositoryUrl>https://github.com/ignatandrei/RSCG_TimeBombComment</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ignatandrei/RSCG_TimeBombComment</PackageProjectUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Deterministic>true</Deterministic>
+    <DebugType>embedded</DebugType>
+
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+
+</Project>

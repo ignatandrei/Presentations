@@ -231,7 +231,9 @@ class: center, top
 2. WebAPI  + Swagger
 4. Routing
 5. Middleware
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/extensibility
 4. Versioning
+https://github.com/microsoft/aspnet-api-versioning/wiki/Versioning-via-the-URL-Path
 5. Not in this demo :
 	4. Formatters 
 	3. Filters
@@ -243,100 +245,78 @@ class: center, top
 # Ecosystem
 
 1. Logging with NLOG - demo Logging
+https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-5
 2. HealthChecks - demo NETCoreHealthChecks/Xabaril
 https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks
 3. Activity  - demo JaegerNetCore
 		
 ---
 class: center, top
-# C# 9 What's new
-	
-1. records ,
+		
+# ASP.NET Core Latest
 
-2. init only setters,
-3. new ,
-4. Extension GetEnumerator support for foreach loops,
-5. pattern matching and, or, not ,
-6. New features for partial methods
+RateLimiter https://learn.microsoft.com/en-us/aspnet/core/performance/rate-limit
 
-https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
+Problem details service https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors
 
+IParsable .TryParse
+https://learn.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-7.0#itp7
 
-Demo
+TypedResults https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.inestedhttpresult
 
----
-class: center, top
-# ASP.NET Core 5
+IValidatableObject
 
-https://docs.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-5.0?view=aspnetcore-5.0
-
-Swagger ,JSON extensions ,Startup class,Blazor,SignalR, Kestrel
-
-No demo
+Demo : WhatsNewNet7\code\ASPNET7
 
 ---
 class: center, top
 # Roslyn Code Generators
 
-Just add code, do not modify, at Build Time https://github.com/dasMulli/data-builder-generator
+Just add code, do not modify, at Build Time 
 
+Deprecated but easy to demo:
 https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.cookbook.md
 
-https://www.cazzulino.com/source-generators.html
+Demo: 
 
-example : Skinny Generators
+RoslynCodeGenerators/RSCG_VerySimple
 
-https://github.com/ignatandrei/AOP_With_Roslyn
+RoslynCodeGenerators/RSCG_TimeBombComment
 
-On the fly Demo
-
----
-class: center, top
-
-# EF Core 5
-
-https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew
-
-https://docs.microsoft.com/en-us/ef/core/managing-schemas/scaffolding
-
-Demo for ToSqlQuery ,PropertyBags- dictionary, Split-Query, ToQueryString
-
-Many , many more:
-
-Many2Many
-
-Dotnet counters
-
-ISaveChangesInterceptor ( see also https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/interceptors )
-
-Migrations , TPT instead of TPH
-
-Table Valued Functions
-
-ToTable / ToView
-
-ContextFactory - to create
-
----
-class: center, top
-# Breaking Changes
-
-https://docs.microsoft.com/en-us/dotnet/core/compatibility/5.0
-
-https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/breaking-changes
-
-https://jimmybogard.com/mind-your-strings-with-net-5-0/
-
-https://www.infoq.com/news/2020/12/net-5-breaking-changes/
-
-https://www.infoq.com/news/2020/12/net-5-breaking-changes-2/
-
-Demo: globalization
-
+More examples: https://ignatandrei.github.io/RSCG_Examples/v2/
 
 ---
 class: center, top
 # General discussion architecture
+
+---
+class: center, top
+# Practical exercise 
+
+
+Sunteti BNR. 
+Fiecare banca care are sucursala in RO 
+va trimite datele cu persoane ( id )si datorii .
+
+Cerinta 10:
+
+Afisati Bancile si Persoanele care au datorii la banci ( amount>0) .
+
+Trebuie afisata fiecare Banca cu id si nume si 
+, pentru fiecare banca,  lista de persoane pentru acea banca care au datorii la banca respectiva
+
+Cerinta 20:
+
+Afisati persoanele care au datorii la cel putin 2 banci
+
+
+Cerinta 30:
+
+Transferati datoria unei persoane de la o banca aceleaiasi persoane la alta banca .
+
+Daca in urma transferului se  depaseste MaxDebt pe banca respectiva, transferul nu se mai face. 
+Intoarceti un status code de la https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
 
 ---
 class: center, top
