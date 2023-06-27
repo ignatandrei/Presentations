@@ -30,8 +30,8 @@ namespace demoFrom
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            services.AddScoped<InjectedService>();
+            services.AddTransient<InjectedService>();
+            //services.AddScoped<InjectedService>();
             services.AddTransient<MiddleWareHeader>();
 
             services.AddMvc()

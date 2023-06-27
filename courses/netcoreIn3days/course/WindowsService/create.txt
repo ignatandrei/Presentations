@@ -1,0 +1,1 @@
+sc create myTest binPath=C:\test\WebApplication1\WebApplication1\bin\Debug\net7.0\WebApplication1.exe

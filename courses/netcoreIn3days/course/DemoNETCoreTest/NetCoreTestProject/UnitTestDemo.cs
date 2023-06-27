@@ -26,7 +26,7 @@ namespace NetCoreTestProject
             Assert.Equal(res, divResult);
             #endregion
         }
-        [Trait("All", "Data")]
+        [Trait("All", "Datax")]
         [Theory(DisplayName = "Divide by 0")]
         [InlineData(15, 0)]        
         public async Task TestDivide0(int x, int y)
