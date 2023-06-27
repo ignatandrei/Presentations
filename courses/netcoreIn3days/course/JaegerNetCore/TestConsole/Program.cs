@@ -28,7 +28,7 @@ namespace TestConsole
             Console.WriteLine("Hello World!");
 
             var hc = new HttpClient();
-            hc.BaseAddress = new Uri("http://localhost:5000/");
+            hc.BaseAddress = new Uri("http://localhost:63596/");
 
             var opt = new JaegerExporterOptions();
             var config = new ConfigurationBuilder()
