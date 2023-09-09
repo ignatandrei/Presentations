@@ -1,6 +1,15 @@
 ﻿// See https://learn.microsoft.com/en-us/aspnet/core/performance/caching/memory for more information
-WriteLine("Hello, World!");
 
+
+WriteLine("Hello, World!" + DateTime.Now.ToString("mm_ss"));
+ManualCaching mc = new();
+WriteLine((await mc.GetTime()).ToString("mm_ss"));
+await Task.Delay(3000);
+
+WriteLine((await mc.GetTime()).ToString("mm_ss"));
+
+WriteLine("now with expiration, press any key to continue");
+ReadLine();
 var cached = new clsCachedData(new MemoryCache(new MemoryCacheOptions()));
 
 while (true)
