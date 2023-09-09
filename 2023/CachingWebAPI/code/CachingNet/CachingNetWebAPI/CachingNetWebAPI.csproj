@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="7.0.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
     <PackageReference Include="NetCore2Blockly" Version="7.2023.427.2025" />
     <PackageReference Include="SkinnyControllersCommon" Version="2023.5.14.2055" />
     <PackageReference Include="SkinnyControllersGenerator" Version="2023.5.14.2055" />
@@ -16,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CachingNetDB\CachingNetDB.csproj" />
     <ProjectReference Include="..\CachingNetObj\CachingNetObj.csproj" />
   </ItemGroup>
 

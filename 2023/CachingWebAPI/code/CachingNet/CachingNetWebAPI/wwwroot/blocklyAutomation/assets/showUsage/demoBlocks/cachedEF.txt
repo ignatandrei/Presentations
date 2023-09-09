@@ -1,0 +1,116 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="controls_repeat_ext" x="133" y="-296">
+    <value name="TIMES">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+      <block type="math_number">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text">
+            <field name="TEXT">see console - load from cache</field>
+          </block>
+        </value>
+        <next>
+          <block type="text_print">
+            <value name="TEXT">
+              <block type="get__api_Departments_GetDepartmentsWithCaching">
+                <value name="override_Host">
+                  <block type="text">
+                    <field name="TEXT"> </field>
+                  </block>
+                </value>
+                <value name="override_Port">
+                  <block type="math_number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="post__api_Departments_PostDepartment">
+            <value name="val_values">
+              <block type="Department">
+                <value name="val_idDept">
+                  <block type="math_number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="val_name">
+                  <block type="text">
+                    <field name="TEXT">test</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="override_Host">
+              <block type="text">
+                <field name="TEXT"> </field>
+              </block>
+            </value>
+            <value name="override_Port">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext">
+            <value name="TIMES">
+              <shadow type="math_number">
+                <field name="NUM">10</field>
+              </shadow>
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="text_print">
+                <value name="TEXT">
+                  <shadow type="text">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text">
+                    <field name="TEXT">see console - load from cache</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print">
+                    <value name="TEXT">
+                      <block type="get__api_Departments_GetDepartmentsWithCaching">
+                        <value name="override_Host">
+                          <block type="text">
+                            <field name="TEXT"> </field>
+                          </block>
+                        </value>
+                        <value name="override_Port">
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

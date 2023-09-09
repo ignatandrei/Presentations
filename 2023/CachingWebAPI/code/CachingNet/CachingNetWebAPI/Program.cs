@@ -1,3 +1,6 @@
+
+using Microsoft.Data.SqlClient;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<clsCachedData>();
 builder.Services.AddTransient<clsDistributedCachedData>();
+builder.Services.AddTransient<CachingDepts>();
 builder.Services.AddMemoryCache();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddDistributedSqlServerCache(options =>
@@ -17,6 +21,10 @@ builder.Services.AddDistributedSqlServerCache(options =>
     options.SchemaName = "dbo";
     options.TableName = "TestCache";
 });
+string con = builder.Configuration.GetConnectionString("Test_ConnectionString");
+builder.Services.AddDbContext<TestContext>(options =>
+    options.UseSqlServer(con));
+SqlDependency.Start(con);
 var app = builder.Build();
 app.UseBlocklyUI(app.Environment);
 // Configure the HTTP request pipeline.

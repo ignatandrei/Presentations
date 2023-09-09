@@ -16,6 +16,12 @@
         "description":  "show distributed simpler code caching",
         "categories":  "api;list",
         "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
+    },
+{
+        "id":  "cachedEF",
+        "description":  "show cached ef",
+        "categories":  "api;list",
+        "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
     }
 
 

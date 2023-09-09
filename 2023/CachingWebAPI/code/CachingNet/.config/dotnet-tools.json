@@ -7,6 +7,12 @@
       "commands": [
         "dotnet-sql-cache"
       ]
+    },
+    "dotnet-ef": {
+      "version": "7.0.10",
+      "commands": [
+        "dotnet-ef"
+      ]
     }
   }
 }
