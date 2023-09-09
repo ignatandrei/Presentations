@@ -1,0 +1,8 @@
+[
+    {
+        "id":  "simplecaching",
+        "description":  "show simple caching",
+        "categories":  "api;list",
+        "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
+    }
+]
