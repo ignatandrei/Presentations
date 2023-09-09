@@ -4,5 +4,19 @@
         "description":  "show simple caching",
         "categories":  "api;list",
         "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
+    },
+{
+        "id":  "distributed",
+        "description":  "show distributed caching",
+        "categories":  "api;list",
+        "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
+    },
+{
+        "id":  "distributedSimpler",
+        "description":  "show distributed simpler code caching",
+        "categories":  "api;list",
+        "blocks":  "object_create;text;text_multiline;text_print;converterTemplate"
     }
+
+
 ]

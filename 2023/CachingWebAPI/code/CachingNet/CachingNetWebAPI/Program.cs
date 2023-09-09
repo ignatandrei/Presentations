@@ -1,6 +1,3 @@
-using CachingNetObj;
-using NetCore2BlocklyNew;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +7,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<clsCachedData>();
+builder.Services.AddTransient<clsDistributedCachedData>();
 builder.Services.AddMemoryCache();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddDistributedSqlServerCache(options =>
+{
+    options.ConnectionString = builder.Configuration.GetConnectionString(
+        "DistCache_ConnectionString");
+    options.SchemaName = "dbo";
+    options.TableName = "TestCache";
+});
 var app = builder.Build();
 app.UseBlocklyUI(app.Environment);
 // Configure the HTTP request pipeline.
