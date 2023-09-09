@@ -1,3 +1,7 @@
+--SELECT name, is_broker_enabled FROM sys.databases
+
+--ALTER DATABASE Test SET ENABLE_BROKER;
+
 create database Test;
 go
 ALTER DATABASE Test SET ENABLE_BROKER;
@@ -18,7 +22,7 @@ CREATE TABLE [dbo].[Department](
 ) ON [PRIMARY]
 GO
 
-update Department set Name='asaasd' where IdDept=1
+update Department set Name='asxaasd' where IdDept=1
 insert into Department( Name) values ('asdasd')
 
 
