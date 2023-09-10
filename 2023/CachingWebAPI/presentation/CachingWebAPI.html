@@ -80,10 +80,10 @@ https://ignatandrei.github.io/Presentations/CachingWebAPI.zip
 # Agenda
 
 0. About me
-2. CachingWebAPI -  simple 
-3. CachingWebAPI - Odata
-4. Generator with CodeTemplates
-4. Notable mention :  https://github.com/Azure/data-api-builder
+2. Caching -  simple 
+3. Caching - Expiration
+4. Caching - Distributed
+5. Caching with SqlDependency
 7. Discussion  / Questions ?
 
 ---
@@ -108,49 +108,55 @@ Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
 
 class: center, top
 
-# CachingWebAPI -  manual 
+# Caching -  manual 
 
-1. Add DbContext : scaffold from database
-2. Add controller / minimal API : scaffold from VS
-3. Run 
+Forever caching  - similar with Lazy<T>
 
-See API when adding controller / minimal API
+See class ManualCaching 
 
+See Program.cs in CachingNetConsole
+
+---
+class: center, top
+
+# Caching -  Expiration
+
+See IMemoryCache and class clsCachedData
+
+See Program.cs in CachingNetConsole
+
+Start docker and run createDistributedCache.ps1 . Also run dep.sql 
+
+Start CachingNetWebAPI and see in VisualAPI example "show simple caching"
 
 
 ---
 class: center, top
 
-# CachingWebAPI -  OData 
+# Caching - Distributed
 
-See program.cs and controller in project ManualWithOdata
+code at clsDistributedCachedData and a simpler example at GetTimeCachedSimpler
 
-Also see https://localhost:7204/odata/Departments?$select=Name
- 
-and 
+Visual API Example "show Distributed caching" and "show Distributed simpler code caching"
 
-https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/query-options?tabs=net60
+Also see database DistCache 
 
----
-class: center, top
-
-# Generator with CodeTemplates
-
-DB2Code 
-https://marketplace.visualstudio.com/items?itemName=ignatandrei.databasetocode
-
-Code at
-https://github.com/ignatandrei/queryViewer/
+Can start 2 instances of webapi.
 
 ---
 class: center, top
 
-# Notable mention :  https://github.com/Azure/data-api-builder  
+# Caching with SqlDependency
 
+Docs: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql/detecting-changes-with-sqldependency
 
-For the moment, CLI , not generating from database
+Depends on ServiceBroker . 
 
-https://learn.microsoft.com/en-us/azure/data-api-builder/get-started/get-started-azure-sql
+Show a simpler example with SqlTableDependency 
+
+Code at CachingDepts
+
+See example "Show cached EF" 
 
 ---
 class: center, top

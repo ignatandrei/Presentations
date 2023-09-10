@@ -6,7 +6,8 @@ ManualCaching mc = new();
 WriteLine((await mc.GetTime()).ToString("mm_ss"));
 await Task.Delay(3000);
 
-WriteLine((await mc.GetTime()).ToString("mm_ss"));
+WriteLine("cached "+(await mc.GetTime()).ToString("mm_ss"));
+WriteLine("now " + DateTime.Now.ToString("mm_ss"));
 
 WriteLine("now with expiration, press any key to continue");
 ReadLine();
