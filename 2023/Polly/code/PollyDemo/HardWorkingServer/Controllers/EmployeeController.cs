@@ -42,6 +42,14 @@ namespace HardWorkingServer.Controllers
             return "this is the history for " + empId;
         }
 
+        [HttpGet("{empId}")]
+        public async Task<string> GetWeatherForEmp(int empId)
+        {
+            Console.WriteLine("trying to get weather for " + empId);
+            await Task.Delay(Random.Shared.Next(empId) * 100);
+            Console.WriteLine("found weather for " + empId);
+            return "I found that is very cold ";
+        }
 
     }
 }
