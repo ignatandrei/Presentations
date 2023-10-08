@@ -1,4 +1,5 @@
 using HardWorkingBLL;
+using Microsoft.AspNetCore.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<EmployeeHistory, EmployeeHistory>();
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = 429;
+    options.AddConcurrencyLimiter("max3", c =>
+    {
+        c.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.NewestFirst;
+        c.QueueLimit = 3;
+        c.PermitLimit = 3;       
+    });    
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,8 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
-
+//app.UseAuthorization();
+app.UseRateLimiter();
 app.MapControllers();
 
 app.Run();

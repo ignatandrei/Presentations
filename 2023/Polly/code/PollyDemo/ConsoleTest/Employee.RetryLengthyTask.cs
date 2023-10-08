@@ -1,6 +1,6 @@
 ﻿namespace ConsoleTest;
 
-internal class Employee
+internal class EmployeeRetryLengthyTasks
 {
     static string url= $"http://localhost:5223/api";
     static HttpClient httpClient = new HttpClient();

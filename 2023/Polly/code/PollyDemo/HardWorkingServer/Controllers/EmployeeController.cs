@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace HardWorkingServer.Controllers
 {
@@ -31,5 +32,16 @@ namespace HardWorkingServer.Controllers
             return TypedResults.Ok<string>(data);
 
         }
+
+
+        [EnableRateLimiting("max3")]
+        [HttpGet("{empId}")]
+        public async Task<string> GetHistoryNOW_LimitedConcurrency(int empId)
+        {
+            await Task.Delay(Random.Shared.Next(empId)*10);
+            return "this is the history for " + empId;
+        }
+
+
     }
 }

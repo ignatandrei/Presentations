@@ -2,7 +2,11 @@
 
 
 #region retry when sure of result
-//await Employee.CalculateHistoryOld();
-//await Employee.CalculateWithPolly();
+//await EmployeeRetryLengthyTasks.CalculateHistoryOld();
+//await EmployeeRetryLengthyTasks.CalculateWithPolly();
 #endregion
+#region RateLimiting
+//await EmployeeRateLimiting.CalculateHistoryOld(4, 234, 579, 3423, 8756, 45, 2);
+await EmployeeRateLimiting.CalculateHistoryPolly(4, 234, 579, 3423, 8756, 45, 2);
 
+#endregion
