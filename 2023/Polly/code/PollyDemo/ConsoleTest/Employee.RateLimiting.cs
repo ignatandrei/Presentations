@@ -36,6 +36,7 @@ internal class EmployeeRateLimiting
     }
     public static async Task CalculateHistoryPolly(params int[] empId)
     {
+        //TODO: read about https://www.pollydocs.org/strategies/rate-limiter
         var maxRetryCount = 10;
         var DurationBetweenRetries = 1;//will exponent with retry count!
         //same retur policy, just with HttpStatusCode.TooManyRequests 
@@ -59,12 +60,12 @@ internal class EmployeeRateLimiting
             WriteLine($"start polly for {it}");
             var urlLimit = $"{url}/Employee/GetHistoryNOW_LimitedConcurrency/{it}";
             using var response = await retryPolicy
-    .ExecuteAsync(() =>
-    httpClient.SendAsync(new HttpRequestMessage
-    {
-        Method = HttpMethod.Get,
-        RequestUri = new Uri(urlLimit)
-    }));
+                .ExecuteAsync(() =>
+                httpClient.SendAsync(new HttpRequestMessage
+                {
+                    Method = HttpMethod.Get,
+                    RequestUri = new Uri(urlLimit)
+                }));
 
             if (response.IsSuccessStatusCode)
             {
