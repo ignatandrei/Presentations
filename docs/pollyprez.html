@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polly</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# Introduction in Polly   =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/pollyprez.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/polly.zip
+---
+
+# Agenda
+
+10. About me
+20. Examples of WebAPI calls that need more than Request/ Response
+25. What is Polly  ?
+30. Example : Long Running process 
+40. Example : Too Many requests / Rate Limiting
+50. Example : Timeout with default answer
+70. Discussion  / Questions ?
+
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+class: left, top
+
+# Examples of WebAPI calls that need more than Request/ Response
+
+10. Long Running process  
+
+e.g. export data , having back an ID that identifies the request as complete
+
+20. Too Many requests / Rate Limiting
+
+30. Timeout for the user : need to display cached data 
+
+e.g. Weather
+
+---
+class: center, top
+
+# What is Polly  ?
+
+Polly is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. 
+
+https://github.com/App-vNext/Polly
+
+Examples here are with WebAPI, but can be implemented also for others ( retry for faulty database connection)
+
+https://thepollyproject.azurewebsites.net/about/
+
+---
+class: center, top
+
+# Example : Long Running process 
+
+
+*WebAPI* : CalculateHistory and History from EmployeeController
+
+*Demo* : EmployeeRetryLengthyTasks.CalculateHistoryOld() and EmployeeRetryLengthyTasks.CalculateWithPolly;
+
+
+
+---
+class: center, top
+
+# Example : Too Many requests / Rate Limiting
+
+
+*WebAPI* : GetHistoryNOW_LimitedConcurrency from EmployeeController
+
+*Demo* : EmployeeRateLimiting.CalculateHistoryOld and EmployeeRateLimiting.CalculateHistoryPolly;
+
+
+---
+class: center, top
+
+# Example : Timeout with default answer
+
+*WebAPI* : GetWeatherForEmp from EmployeeController
+
+*Demo* : EmpWeather.GetWeather;
+
+
+---
+class: center, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
