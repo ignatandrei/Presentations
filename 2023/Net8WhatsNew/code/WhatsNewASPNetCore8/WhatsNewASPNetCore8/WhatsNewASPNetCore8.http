@@ -1,0 +1,6 @@
+@WhatsNewASPNetCore8_HostAddress = http://localhost:5261
+
+GET {{WhatsNewASPNetCore8_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
