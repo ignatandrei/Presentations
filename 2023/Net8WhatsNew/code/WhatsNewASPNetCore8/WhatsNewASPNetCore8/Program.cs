@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using WhatsNewASPNetCore8;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddKeyedSingleton<ICache, BigCache>("big");
 builder.Services.AddKeyedSingleton<ICache, SmallCache>("small");
+builder.Services.AddOptions<MyAppOptions>()
+    .Bind(builder.Configuration.GetSection(MyAppOptions.ConfigName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 
 var app = builder.Build();
 
@@ -30,5 +36,7 @@ app.MapGet("/", () => "Hello World!").WithTags("Weather");
 app.MapGroup("v1").MapCacheEndpoints().WithTags("Caching");
 
 app.RegisterWeatherEndpoints();
+
+app.MapGet("/MyAppOptionsEndpoint", (IOptionsMonitor<MyAppOptions> opt) => opt.CurrentValue.AppDisplayName);
 
 app.Run();

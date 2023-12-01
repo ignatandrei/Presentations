@@ -1,0 +1,31 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "OptionValidation",
+  "steps": [
+    {
+      "file": "WhatsNewASPNetCore8/appsettings.json",
+      "description": "I want to read and validation MyAppOptionsInConfig",
+      "line": 10
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "And I register here - and I validate",
+      "line": 18
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "I use here ",
+      "line": 40
+    },
+    {
+      "file": "WhatsNewASPNetCore8/MyAppOptions.cs",
+      "description": "and here is the class",
+      "line": 13
+    },
+    {
+      "file": "WhatsNewASPNetCore8/MyAppOptions.cs",
+      "description": "Also, this is a RSCG - see obj\\GX",
+      "line": 19
+    }
+  ]
+}
