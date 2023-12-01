@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "KeyedServices",
+  "steps": [
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "register with key services",
+      "line": 11
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "Keyed Services ( with Group and tags)",
+      "line": 30
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Cache.cs",
+      "description": "this is how you call",
+      "line": 18
+    }
+  ]
+}

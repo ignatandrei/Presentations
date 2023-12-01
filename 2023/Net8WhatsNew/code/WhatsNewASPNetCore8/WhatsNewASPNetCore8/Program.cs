@@ -8,6 +8,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddKeyedSingleton<ICache, BigCache>("big");
+builder.Services.AddKeyedSingleton<ICache, SmallCache>("small");
 
 var app = builder.Build();
 
@@ -23,8 +25,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "Hello World!").WithTags("Weather"); 
+app.MapGet("/", () => "Hello World!").WithTags("Weather");
 
+app.MapGroup("v1").MapCacheEndpoints().WithTags("Caching");
 
 app.RegisterWeatherEndpoints();
 
