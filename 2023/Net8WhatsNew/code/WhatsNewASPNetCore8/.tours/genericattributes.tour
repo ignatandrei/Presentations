@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "GenericAttributes",
+  "steps": [
+    {
+      "file": "WhatsNewASPNetCore8/Controllers/WeatherForecastController.cs",
+      "description": "GenericAttributes - Produces ... side discussion: Results make the same for Minimal API (see next steps and swagger)",
+      "line": 41
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Controllers/WeatherForecastController.cs",
+      "description": "This will not show OK and NotFound in Swagger",
+      "line": 22
+    },
+    {
+      "file": "WhatsNewASPNetCore8/WeatherExtension.cs",
+      "description": "this will show ok and notfound in swagger",
+      "line": 16
+    }
+  ]
+}
