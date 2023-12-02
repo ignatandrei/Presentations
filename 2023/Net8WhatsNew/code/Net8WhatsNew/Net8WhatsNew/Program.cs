@@ -40,6 +40,7 @@ Console.WriteLine("end delay one second Delay");
 
 Console.WriteLine("Delay 10 second");
 
+//await 10 seconds because of fake time provider
 await Task.WhenAny(Task.Delay(TimeSpan.FromSeconds(1),tp), DelayMoreSeconds(10, fake));
 
 Console.WriteLine("end delay ten second Delay");

@@ -127,23 +127,22 @@ class: left, top
 https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8
 
 Breaking Changes : https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0
+dotnet publish and dotnet pack produce Release output by default
 
+    Time Abstraction,Stream-based ZipFile methods  (DEMO)
 
-What I like:  
+    Simplified build output path (DEMO)
 
-    Time Abstraction (DEMO)
+    https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/ ?
 
-    Stream-based ZipFile methods (DEMO)
+    .NET Aspire,  AOT , Data Validation, FrozenDictionary
 
-    .NET Aspire,  AOT , Data Validation
-
-    System.Text.Json improvements
-    
+    System.Text.Json improvements    
     (https://devblogs.microsoft.com/dotnet/system-text-json-in-dotnet-8/)
 
-    GenericAttributes ( see ASP.NET Core 8 for example)
-    Keyed DI Services. Option Validation ( see ASP.NET Core 8 for example) 
-    Configuration Binding Source Generators ( see ASP.NET Core 8 for example)
+see ASP.NET Core 8 for example : 
+    GenericAttributes ,Keyed DI Services. Option Validation 
+    Configuration Binding Source Generators 
 
 Demo Net8WhatsNew\Net8WhatsNew.sln
 
@@ -162,17 +161,43 @@ See Code Tour in VS Code for examples
 
     Interceptors (DEMO, Demo2)
 
+    AOT 
+
     IExceptionHandler, ProblemDetails improvements https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling
 
     Authentication and authorization , Redis for OutputCaching
 
     DebuggerDisplay , HttpLogging , Short-circuit middleware
 
-    AOT
+    Request Timeout Middleware https://learn.microsoft.com/en-us/aspnet/core/performance/timeouts?view=aspnetcore-8.0
 
 Demo WhatsNewASPNetCore8\WhatsNewASPNetCore8.csproj
 
 Demo2 RSCG_Templating\RSCG_TemplatingDemo.sln
+
+---
+class: left, top
+
+# Whats new in EF Core 8
+
+
+Breaking changes : https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes
+
+Contains (TODO: demo)
+
+What's new: 
+https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew
+
+Objects saved to the database can be split into three broad categories:
+
+    Objects that are unstructured and hold a single value. For example, int, Guid, string, IPAddress. These are (somewhat loosely) called "primitive types".
+    Objects that are structured to hold multiple values, and where the identity of the object is defined by a key value. For example, Blog, Post, Customer. These are called "entity types".
+    Objects that are structured to hold multiple values, but the object has no key defining identity. For example, Address, Coordinate.
+
+    EFCoreMongoDB
+    DateOnly/TimeOnly (TODO: demo)
+    JSON(TODO: demo)
+    HierarchyId(TODO: demo)
 
 
 
