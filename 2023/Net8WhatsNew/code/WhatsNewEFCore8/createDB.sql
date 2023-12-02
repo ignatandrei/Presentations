@@ -1,3 +1,10 @@
+--//https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew
+--//https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes
+--//docker pull mcr.microsoft.com/mssql/server:2022-latest
+--//docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+--//dotnet tool install --global dotnet-ef --no-cache
+--//dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Test;UID=sa;PWD=yourStrong(!)Password;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer
+
 USE [master]
 GO
 /****** Object:  Database [test]    Script Date: 12/2/2023 5:16:41 PM ******/
