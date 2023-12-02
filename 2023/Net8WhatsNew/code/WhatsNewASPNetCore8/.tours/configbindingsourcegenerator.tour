@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ConfigBindingSourceGenerator",
+  "steps": [
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "Add configuration ",
+      "line": 16
+    },
+    {
+      "file": "WhatsNewASPNetCore8/WhatsNewASPNetCore8.csproj",
+      "description": "Add this ",
+      "line": 16
+    },
+    {
+      "file": "WhatsNewASPNetCore8/WhatsNewASPNetCore8.csproj",
+      "description": "This is just for seeing the output - it is not necessary",
+      "line": 20
+    }
+  ]
+}

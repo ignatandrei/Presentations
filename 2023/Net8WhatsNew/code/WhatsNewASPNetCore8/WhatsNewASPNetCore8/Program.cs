@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddKeyedSingleton<ICache, BigCache>("big");
 builder.Services.AddKeyedSingleton<ICache, SmallCache>("small");
 builder.Services.AddOptions<MyAppOptions>()
-    .Bind(builder.Configuration.GetSection(MyAppOptions.ConfigName))
+    .BindConfiguration(MyAppOptions.ConfigName)
     .ValidateDataAnnotations()
     .ValidateOnStart();
 
