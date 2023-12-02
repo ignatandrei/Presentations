@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NET 8 Whats New</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+	  p.small {
+		line-height: 0.7;
+		font-size: 15px;
+	  }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+	  
+	  div.my-header {
+	background-color: #F77A00;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffb76b), color-stop(0%,#ffa73d), color-stop(0%,#ffffff), color-stop(10%,#ffffff), color-stop(25%,#F77A00), color-stop(100%,#F77A00));
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+}
+
+div.my-footer {
+    border-top: 1px solid #ccc;
+    font-size: 10pt;
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 30px;
+	width: 100%;
+}
+
+div.my-footer p {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.my-footer img {
+	height: 30px;
+	bottom: 0px;
+	left: 0px;
+	position: fixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+layout: true
+<div class="my-header"></div>
+ <div class="my-footer">Andrei Ignat , http://msprogrammer.serviciipeweb.ro/</div>
+ 
+---
+
+class: center, middle
+
+# NET 8 Whats New   =>
+
+( press > )
+
+https://ignatandrei.github.io/Presentations/NET8WhatsNewprez.html
+
+Code at 
+https://ignatandrei.github.io/Presentations/NET8WhatsNew.zip
+---
+
+# Agenda
+
+0. About me
+
+10. What's new in C# 12 
+
+20. What's new in .NET 8 
+
+30. What's new in ASP.NET Core 8
+
+40. What's new in EF Core 8
+
+70. Discussion  / Questions ?
+
+---
+class: center, top
+
+# About me
+
+![:img ignat, 10%](ignat.jpg)
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+---
+
+class: left, top
+
+# What's new in C# 12 
+
+Link: https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12
+
+What I like :
+
+    Primary constructors and differences for record (DEMO)
+
+    Alias for any type ( DEMO )
+    Collection literals (DEMO )
+    Interceptors ( see asp.net core 8 for examples of MapGet ,MapPost ...)
+
+Demo WhatsNewC12\WhatsNewC12.sln
+
+---
+class: left, top
+
+# What's new in .NET 8 
+
+https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8
+
+Breaking Changes : https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0
+dotnet publish and dotnet pack produce Release output by default
+
+    Time Abstraction,Stream-based ZipFile methods  (DEMO)
+
+    Simplified build output path (DEMO)
+
+    https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/ 
+
+    .NET Aspire,  AOT , Data Validation, FrozenDictionary
+
+    System.Text.Json improvements    
+    (https://devblogs.microsoft.com/dotnet/system-text-json-in-dotnet-8/)
+
+see ASP.NET Core 8 for example : 
+    GenericAttributes ,Keyed DI Services. Option Validation 
+    Configuration Binding Source Generators 
+
+Demo Net8WhatsNew\Net8WhatsNew.sln
+
+---
+class: left, top
+
+# Whats new in ASP.NET Core 8
+
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-8.0
+
+See Code Tour in VS Code for examples
+
+    GenericAttributes ,Keyed DI Services (DEMO)
+
+    Option Validation ,Configuration Binding Source Generators (DEMO)
+
+    Interceptors (DEMO, Demo2)
+
+    AOT 
+
+    IExceptionHandler, ProblemDetails improvements https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling
+
+    Authentication and authorization , Redis for OutputCaching
+
+    DebuggerDisplay , HttpLogging , Short-circuit middleware
+
+    Request Timeout Middleware https://learn.microsoft.com/en-us/aspnet/core/performance/timeouts?view=aspnetcore-8.0
+
+Demo WhatsNewASPNetCore8\WhatsNewASPNetCore8.csproj
+
+Demo2 RSCG_Templating\RSCG_TemplatingDemo.sln
+
+---
+class: left, top
+
+# Whats new in EF Core 8
+
+
+Breaking changes : https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes
+
+Contains (demo)
+
+What's new: 
+https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew
+
+Objects saved to the database can be split into three broad categories:
+
+    Objects that are unstructured and hold a single value. For example, int, Guid, string, IPAddress. These are (somewhat loosely) called "primitive types".
+    Objects that are structured to hold multiple values, and where the identity of the object is defined by a key value. For example, Blog, Post, Customer. These are called "entity types".
+    Objects that are structured to hold multiple values, but the object has no key defining identity. For example, Address, Coordinate.
+
+    Raw SQL queries can now be composed using LINQ operators. (demo)
+
+    EFCoreMongoDB provider
+    DateOnly/TimeOnly 
+    JSON
+    HierarchyId
+
+
+
+---
+class: left, top
+
+# More Links
+
+    https://blog.martincostello.com/native-aot-make-dotnet-lambda-go-brr/
+
+    https://github.com/miroslavpopovic/what-is-new-in-dotnet
+
+    https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12
+
+    https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-8
+
+    https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0
+
+    https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/
+
+    https://devblogs.microsoft.com/dotnet/system-text-json-in-dotnet-8/
+
+    https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-8.0
+
+    https://learn.microsoft.com/en-us/aspnet/core/fundamentals/error-handling
+
+    https://learn.microsoft.com/en-us/aspnet/core/performance/timeouts?view=aspnetcore-8.0
+
+    https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes
+
+    https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew
+
+
+
+---
+class: left, top
+
+# Questions?
+
+Andrei Ignat http://msprogrammer.serviciipeweb.ro/
+
+www.ASP.NET forum moderator
+
+YouTube 5 minutes .NET and tools : http://bit.ly/5MinTools
+
+Book Making Open Source Component  : http://bit.ly/NetOpenSourceComponent
+
+Book Copy Paste from StackOverflow : https://amzn.to/2PQ8EDc
+
+Monthly meetings:  https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/
+
+
+
+    </textarea>
+    <script src="remark-latest.min.js">
+    </script>
+    <script>
+	remark.macros.img = function (altText, width) {
+  var url = this;
+  return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+};
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
