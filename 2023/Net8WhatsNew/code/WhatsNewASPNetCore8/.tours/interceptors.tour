@@ -1,0 +1,16 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Interceptors",
+  "steps": [
+    {
+      "file": "WhatsNewASPNetCore8/WhatsNewASPNetCore8.csproj",
+      "description": "RDG",
+      "line": 17
+    },
+    {
+      "file": "WhatsNewASPNetCore8/Program.cs",
+      "description": "See in obj\\GX this one generated",
+      "line": 34
+    }
+  ]
+}
