@@ -1,7 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using WhatsNewASPNetCore8;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +12,14 @@ builder.Services.AddOptions<MyAppOptions>()
     .BindConfiguration(MyAppOptions.ConfigName)
     .ValidateDataAnnotations()
     .ValidateOnStart();
+builder.Services.Configure<HostOptions>(options =>
+{
+    options.ServicesStartConcurrently = true;// put false
+    options.ServicesStopConcurrently = true;
+});
+builder.Services.AddHostedService<MyHostedServices1>();
+builder.Services.AddHostedService<MyHostedServices2>();
+Console.WriteLine("MAIN " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
 
 var app = builder.Build();
 
