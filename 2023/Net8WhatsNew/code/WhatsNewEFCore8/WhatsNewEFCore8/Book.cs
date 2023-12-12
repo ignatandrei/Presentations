@@ -1,4 +1,4 @@
 ﻿namespace WhatsNewEFCore8;
-public record Book(int ID ,string Name)
+public record Book(long ID ,string Name)
 {
 }

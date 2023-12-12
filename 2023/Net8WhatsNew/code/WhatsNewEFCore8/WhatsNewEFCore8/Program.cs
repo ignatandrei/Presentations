@@ -6,9 +6,6 @@
 //dotnet ef dbcontext scaffold "Data Source=.;Initial Catalog=Test;UID=sa;PWD=yourStrong(!)Password;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer
 
 
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-
 WriteLine("https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes");
 
 long[] ids = [2, 34, 2, 89];
