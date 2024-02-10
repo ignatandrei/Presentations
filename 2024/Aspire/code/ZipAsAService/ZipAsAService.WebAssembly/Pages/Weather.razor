@@ -1,20 +1,18 @@
 ﻿@page "/weather"
-@* @attribute [StreamRendering(true)] *@
-@* @attribute [OutputCache(Duration = 5)] *@
+@inject HttpClient Http
 
-@inject WeatherApiClient WeatherApi;
+@inject WeatherApiClient weatherApiClient
+@inject IBlazorDownloadFileService BlazorDownloadFileService;
 
-@inject IBlazorDownloadFileService BlazorDownloadFileService; 
-<PageTitle>Weather or zip</PageTitle>
+<PageTitle>Weather</PageTitle>
 
-<h1>Weather or zip </h1>
+<h1>Weather</h1>
 
-<p>This component demonstrates showing data loaded from a backend API service.</p>
-
-<p>Zip file </p>
+<p>This component demonstrates fetching data from the server.</p>
 
 <button class="btn btn-primary" @onclick="DownloadZippedText">Download zip</button>
 <input type="text" @bind="InputValue" />
+
 
 @if (forecasts == null)
 {
@@ -46,20 +44,21 @@ else
 }
 
 @code {
-    private string InputValue { get; set; }= "Andrei";
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await WeatherApi.GetWeatherAsync();
+        //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        forecasts= await weatherApiClient.GetWeatherAsync();
     }
+    private string InputValue { get; set; } = "Andrei";
 
     private async void DownloadZippedText()
     {
         Console.WriteLine("start");
         string text = InputValue;
-        
-        var zippedBytes = await WeatherApi.GetZipFile(text);
+
+        var zippedBytes = await weatherApiClient.GetZipFile(text);
 
         if (zippedBytes.Length > 0)
         {
@@ -71,4 +70,5 @@ else
             Console.WriteLine("Error downloading file.");
         }
     }
+    
 }

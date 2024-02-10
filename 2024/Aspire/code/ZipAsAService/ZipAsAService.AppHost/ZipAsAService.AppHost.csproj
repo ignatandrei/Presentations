@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ZipAsAService.ApiService\ZipAsAService.ApiService.csproj" />
-    <ProjectReference Include="..\ZipAsAService.Web\ZipAsAService.Web.csproj" />
+    <ProjectReference Include="..\ZipAsAService.WebAssembly\ZipAsAService.WebAssembly.csproj" />
   </ItemGroup>
 
   <ItemGroup>

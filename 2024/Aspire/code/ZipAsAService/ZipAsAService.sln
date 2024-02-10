@@ -12,7 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.Web", "ZipAsA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.BLL", "ZipAsAService.BLL\ZipAsAService.BLL.csproj", "{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipAsAService.BLLTests", "ZipAsAService.BLLTests\ZipAsAService.BLLTests.csproj", "{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.BLLTests", "ZipAsAService.BLLTests\ZipAsAService.BLLTests.csproj", "{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipAsAService.WebAssembly", "ZipAsAService.WebAssembly\ZipAsAService.WebAssembly.csproj", "{BDCAA0EA-C66B-4B9B-BDA5-8F7C5455B13F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCAA0EA-C66B-4B9B-BDA5-8F7C5455B13F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCAA0EA-C66B-4B9B-BDA5-8F7C5455B13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCAA0EA-C66B-4B9B-BDA5-8F7C5455B13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCAA0EA-C66B-4B9B-BDA5-8F7C5455B13F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

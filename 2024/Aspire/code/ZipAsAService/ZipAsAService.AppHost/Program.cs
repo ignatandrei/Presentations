@@ -1,11 +1,11 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("cache");
+//var cache = builder.AddRedis("cache");
 
 var apiService = builder.AddProject<Projects.ZipAsAService_ApiService>("apiservice");
 
-builder.AddProject<Projects.ZipAsAService_Web>("webfrontend")
-    .WithReference(cache)
+builder.AddProject<Projects.ZipAsAService_WebAssembly>("webfrontend")
+    //.WithReference(cache)
     .WithReference(apiService)
     ;
 

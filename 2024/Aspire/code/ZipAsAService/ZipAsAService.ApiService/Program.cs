@@ -7,6 +7,14 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder => builder.SetIsOriginAllowed(a=>true)
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -16,10 +24,11 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
+app.UseCors("AllowAll");
 
 app.MapGet("/weatherforecast", async () =>
 {
-    await Task.Delay(Random.Shared.Next(5000, 10000)); ;
+    await Task.Delay(Random.Shared.Next(2000, 5000)); ;
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (

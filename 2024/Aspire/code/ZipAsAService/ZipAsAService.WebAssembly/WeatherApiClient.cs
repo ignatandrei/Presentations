@@ -1,3 +1,4 @@
+
 namespace ZipAsAService.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
