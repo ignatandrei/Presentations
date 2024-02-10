@@ -12,4 +12,8 @@ builder.AddProject<Projects.ZipAsAService_WebAssembly>("webfrontend")
 builder.AddProject("tests", "../ZipAsAService.BLLTests/ZipAsAService.BLLTests.csproj")
 
 ;
+
+builder.AddProject("winformsclient", "../ZipAsAService.WinForm/ZipAsAService.WinForm.csproj")
+    .WithReference(apiService);
+
 builder.Build().Run(); 
