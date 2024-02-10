@@ -16,4 +16,10 @@ builder.AddProject("tests", "../ZipAsAService.BLLTests/ZipAsAService.BLLTests.cs
 builder.AddProject("winformsclient", "../ZipAsAService.WinForm/ZipAsAService.WinForm.csproj")
     .WithReference(apiService);
 
+builder.AddNpmApp("angular", "../ZipAsAService.Angular")
+    .WithReference(apiService)
+    .WithServiceBinding(containerPort: 4200, scheme: "http", env: "PORT")
+    //.AsDockerfileInManifest()
+    ;
+
 builder.Build().Run(); 
