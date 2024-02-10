@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34526.213
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.AppHost", "ZipAsAService.AppHost\ZipAsAService.AppHost.csproj", "{6CEBFE2F-3977-4FD3-90A7-24D70C29B92A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.ServiceDefaults", "ZipAsAService.ServiceDefaults\ZipAsAService.ServiceDefaults.csproj", "{95239699-DB7B-437F-8A80-92724ABECF1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.ApiService", "ZipAsAService.ApiService\ZipAsAService.ApiService.csproj", "{E0FB45EF-B8B6-4380-9BCC-790A820FC702}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.Web", "ZipAsAService.Web\ZipAsAService.Web.csproj", "{9AE07198-E2DB-4221-AD4C-E668D49260F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipAsAService.BLL", "ZipAsAService.BLL\ZipAsAService.BLL.csproj", "{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipAsAService.BLLTests", "ZipAsAService.BLLTests\ZipAsAService.BLLTests.csproj", "{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CEBFE2F-3977-4FD3-90A7-24D70C29B92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEBFE2F-3977-4FD3-90A7-24D70C29B92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEBFE2F-3977-4FD3-90A7-24D70C29B92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEBFE2F-3977-4FD3-90A7-24D70C29B92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95239699-DB7B-437F-8A80-92724ABECF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95239699-DB7B-437F-8A80-92724ABECF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95239699-DB7B-437F-8A80-92724ABECF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95239699-DB7B-437F-8A80-92724ABECF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0FB45EF-B8B6-4380-9BCC-790A820FC702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FB45EF-B8B6-4380-9BCC-790A820FC702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FB45EF-B8B6-4380-9BCC-790A820FC702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FB45EF-B8B6-4380-9BCC-790A820FC702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE07198-E2DB-4221-AD4C-E668D49260F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE07198-E2DB-4221-AD4C-E668D49260F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE07198-E2DB-4221-AD4C-E668D49260F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE07198-E2DB-4221-AD4C-E668D49260F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62AFFC3-BDE2-441B-B9C4-2D0AFCB1741D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDBE0AE-81CA-49A1-AC10-2E188FE76618}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D05BAFB6-B912-4B67-B048-B80A21228F1E}
+	EndGlobalSection
+EndGlobal
