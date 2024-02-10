@@ -21,5 +21,7 @@ builder.AddNpmApp("angular", "../ZipAsAService.Angular")
     .WithServiceBinding(containerPort: 4200, scheme: "http", env: "PORT")
     //.AsDockerfileInManifest()
     ;
-
+//TODO: add grafana
+//TODO: add sql server container or direct
+//
 builder.Build().Run(); 
