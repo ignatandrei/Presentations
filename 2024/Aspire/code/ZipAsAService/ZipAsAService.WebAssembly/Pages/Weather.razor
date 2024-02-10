@@ -51,15 +51,14 @@ else
         //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
         forecasts= await weatherApiClient.GetWeatherAsync();
     }
-    private string InputValue { get; set; } = "Andrei";
+    private string InputValue { get; set; } = "Hello, World!";
 
     private async void DownloadZippedText()
     {
-        Console.WriteLine("start");
         string text = InputValue;
 
         var zippedBytes = await weatherApiClient.GetZipFile(text);
-
+        System.Console.WriteLine("Number bytes"+zippedBytes.Length);
         if (zippedBytes.Length > 0)
         {
             var fileName = "text.zip";

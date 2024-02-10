@@ -1,4 +1,6 @@
 
+using System.Text;
+
 namespace ZipAsAService.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
@@ -10,7 +12,16 @@ public class WeatherApiClient(HttpClient httpClient)
 
     public async Task<byte[]> GetZipFile(string text)
     {
-        return await httpClient.GetByteArrayAsync($"/zip/{text}") ?? [];
+        var data= await httpClient.GetStringAsync($"/zip/{text}");
+        data=data.Replace("\"", string.Empty);
+        var x= System.Convert.FromBase64String(data);
+        return x;
+        //var x= await httpClient.GetByteArrayAsync($"/zip/{text}");
+        //string base64String = Encoding.UTF8.GetString(x, 0, x.Length);
+        //var data= System.Convert.FromBase64String(base64String);
+        return x;
+        //return data;
+        //return await httpClient.GetByteArrayAsync($"/zip/{text}") ?? [];
     }
 
 }
