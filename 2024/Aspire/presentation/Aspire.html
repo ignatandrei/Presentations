@@ -30,16 +30,11 @@
 					<br />
 				</div>
 			</section>
-			<section  data-name="FirstSlide">
+			<section  data-name="Content">
 				<div class="r-fit-text">
-					<ul>
-						<li>About me</li>
-						<li>What is Aspire</li>
-						<li>How to install Aspire</li>
-						<li>Demo: Zip As A Service</li>
-						<li></li>						
-					</ul>
-				</div>
+					For content please see up menu &#x25B2; 
+					<br />
+					For download
 			</section>
 			<section data-name="Author" style="text-align: left;">
 				<div class="r-fit-text">
@@ -76,44 +71,72 @@
 				</div>
 			</section>
 			
-			<section  data-name="Slide2">
+			<section  data-name="Aspire">
 				<div class="r-fit-text">
+					What is Aspire ? <a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<br />
+					.NET Aspire is an opinionated, cloud ready stack for building observable, production ready, distributed applications. 
+
 					
+
+					<aside class="notes">
+						Containers 
+						Orchestration
+						Dashboard with metrics and tracing / open Telemetry
+						Health checks
+						Service Discovery	
+					</aside>
 				</div>
 			</section>
-			<section  data-name="Slide3">
+			<section  data-name="StartAspire">
 				<div class="r-fit-text">
-					
+					If you have a monolith,  probably no  Aspire required . Maybe for Containers ? Docker for databases ?
+					<br />
+					If you have at least 2 projects to run ( e.g. application  , business logic and test ) - Aspire is for you
+					<br />
+					<a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<br />
+
+
 				</div>
 			</section>
-			<section  data-name="Slide4">
+			<section  data-name="Demo">
 				<div class="r-fit-text">
+					<h1>Let's see a demo - Zip As A Service</h1>
 					
+					<ul>
+							<li>ZAAS-BLL</li>
+							<li>ZAAS-Tests</li>
+							<li>ZAAS-WebAPI</li>
+							<li>ZAAS-UI -   Blazor ,Angular, WinForms</li>
+					</ul>
+					
+					<aside class="notes">
+						Needed for ASPIRE: ZipAsAService.ServiceDefaults, ZipAsAService.AppHost
+						<br />
+						Demo 1 : running test , see logs <br />
+						Demo 2: running webapi , see logs<br />
+						Demo 3: running UI ( Blazor, Angular, WinForms ) , see logs<br />
+						Demo 4: running Metrics from sample aspire project, show grafana and sql server containers<br />
+
+					</aside>
+
+
 				</div>
 			</section>
-			<section  data-name="Slide5">
+			<section  data-name="Links">
 				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide6">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide7">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide8">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide9">
-				<div class="r-fit-text">
-					
+					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<br />
+					<a rel="noopener" href='https://github.com/dotnet/aspire-samples/' target="_blank">https://github.com/dotnet/aspire-samples/tree/main/samples/Metrics</a>
+					<br />
+					<a rel="noopener" href='https://github.com/dotnet/aspire' target="_blank">https://github.com/dotnet/aspire</a>
+					<br />
+					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<br />
+					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<br />
+
 				</div>
 			</section>
 			<section id="endAspire" data-name="Last">
@@ -135,7 +158,7 @@
 	<script src="plugin/math/math.js"></script>
 	<script src="plugin/zoom/zoom.js"></script>
 	<script src="plugin/simplemenu/simplemenu.js"></script>
-
+	
 
 	<script>
 		// More info about initialization & config:
@@ -165,6 +188,8 @@
 					footer: ""
 				}
 			}
+
+	
 		});
 	</script>
 </body>
