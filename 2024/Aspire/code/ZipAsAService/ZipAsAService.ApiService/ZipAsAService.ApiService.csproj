@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="14.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ZipAsAService.BLL\ZipAsAService.BLL.csproj" />
     <ProjectReference Include="..\ZipAsAService.ServiceDefaults\ZipAsAService.ServiceDefaults.csproj" />
   </ItemGroup>
