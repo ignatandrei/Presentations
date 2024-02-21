@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console_Wait", "Console_Wait\Console_Wait.csproj", "{5402853F-9463-4F9C-8A6E-51CDCA7F3FB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCG_Wait", "RSCG_Wait\RSCG_Wait.csproj", "{EB8BEA21-995E-4942-A55A-61A2C5994A72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5402853F-9463-4F9C-8A6E-51CDCA7F3FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5402853F-9463-4F9C-8A6E-51CDCA7F3FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5402853F-9463-4F9C-8A6E-51CDCA7F3FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5402853F-9463-4F9C-8A6E-51CDCA7F3FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8BEA21-995E-4942-A55A-61A2C5994A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8BEA21-995E-4942-A55A-61A2C5994A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8BEA21-995E-4942-A55A-61A2C5994A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8BEA21-995E-4942-A55A-61A2C5994A72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C007602-7049-4895-B487-10E23875F020}
+	EndGlobalSection
+EndGlobal
