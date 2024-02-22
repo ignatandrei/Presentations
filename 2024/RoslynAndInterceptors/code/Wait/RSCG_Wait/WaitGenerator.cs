@@ -31,7 +31,7 @@ namespace RSCG_Wait;
 public partial class MyGeneratedCode
 {
     public static string DateStart => "{{DateTime.Now.ToString()}}";
-    
+    public static int SecondsToWait={{secondsToWait}};
 }
 """);
         Thread.Sleep(secondsToWait*1000);
