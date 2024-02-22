@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templating\ClassToInterface.txt" />
+  </ItemGroup>
+
+  
+ 
+  <ItemGroup>
+    <AdditionalFiles Include="Templating\ClassToInterface.txt" />
+    <AdditionalFiles Include="Templating\ClassTypeName.txt" />
+    <AdditionalFiles Include="Templating\ClassPropByName.txt" />
+	<AdditionalFiles Include="Templating\ClassDebuggerDisplay.txt" />
+  </ItemGroup>
+
+  
+ 
+  <!--<ItemGroup>
+    <PackageReference Include="RSCG_Templating" Version="2023.1221.1857" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <PackageReference Include="RSCG_TemplatingCommon" Version="2023.1221.1857" />
+  </ItemGroup>-->
+
+ 
+  <ItemGroup>
+	  <ProjectReference Include="..\RSCG_Templating\RSCG_Templating.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	  <ProjectReference Include="..\RSCG_TemplatingCommon\RSCG_TemplatingCommon.csproj" />
+  </ItemGroup>
+  
+
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GX</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+</Project>

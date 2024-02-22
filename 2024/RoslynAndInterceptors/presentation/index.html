@@ -31,15 +31,15 @@
 					<br />
 				</div>
 			</section>
-			<section  data-name="Content">
+			<section data-name="Content">
 				<div class="r-fit-text">
-					For content please see up menu &#x25B2; 
+					For content please see up menu &#x25B2;
 					<br />
 					Online at https://ignatandrei.github.io/Presentations/RoslynAndInterceptorsprez.html
-					
+
 					<br />
 					For download https://ignatandrei.github.io/Presentations/RoslynAndInterceptors.zip
-					
+
 			</section>
 			<section data-name="Author" style="text-align: left;">
 				<div class="r-fit-text">
@@ -47,7 +47,7 @@
 						System.Console.WriteLine("Ignat Andrei");
 						System.Console.WriteLine("RoslynAndInterceptors");							
 						  </code></pre>
-						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
+					<p><img alt="ignat" src="ignat.jpg" style="width: 10%">
 						Andrei Ignat <a
 							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
 					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
@@ -75,29 +75,30 @@
 					</aside>
 				</div>
 			</section>
-			<section  data-name="Introduction">
+			<section data-name="Introduction">
 				<div class="r-fit-text">
-					<a href="https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
+					<a
+						href="https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
 					<br />
-					<img alt="roslyn" src="RSCG_How.png"  />
+					<img alt="roslyn" src="RSCG_How.png" />
 					<br />
 					Demo : Wait.sln , read from csproj data
 					<aside class="notes">
 						How to debug
 						<br />
 						Should compile and wait in the meantime. See in csproj RSCG_Wait_Seconds
-						<br/>
+						<br />
 						Show code from WaitGenerator
-						<br/>
+						<br />
 						See WaitGeneratorStart.g.cs and WaitGeneratorEnd.g.cs
-						<br/>
+						<br />
 					</aside>
 
 				</div>
 			</section>
-			<section  data-name="CommentsAndGenerateDiagnostics">
+			<section data-name="CommentsAndGenerateDiagnostics">
 				<div class="r-fit-text">
-					Demo : RSCG_TimeBombComment.sln 
+					Demo : RSCG_TimeBombComment.sln
 					<pre><code data-trim data-noescape>
 						var syntax = context
 							.SyntaxProvider.CreateSyntaxProvider(
@@ -112,27 +113,62 @@
 						//TODO 2023-09-13 we should change fix
 						<br />
 						Show how we intercept //TODO and show error or warning
-						<br/>
-						
+						<br />
+
 					</aside>
 
 				</div>
 			</section>
-			<section  data-name="Class2Dictionary">
+			<section data-name="Class2Dictionary">
 				<div class="r-fit-text">
-					
+					<p>Class2Dictionary</p>
+					<div class="r-stretch">
+						<pre><code data-trim data-noescape>
+		[IGenerateDataFromClass("ClassPropByName")]
+		public partial class Person
+		{
+			public string? FirstName { get; set; }
+			public string? LastName { get; set; }
+		}
+
+		var p = new Person();
+	p.FirstName = "Andrei";
+	//set last name via prop
+	p.SetPropValue(ePerson_Properties.LastName, "Ignat");
+	Console.WriteLine("called directly last name : " 
+	+ p.LastName);
+	//get last name via enum
+	Console.WriteLine("called via enum : "
+			+ p.GetPropValue(ePerson_Properties.FirstName));
+
+	private bool IsSyntaxTargetForGeneration(SyntaxNode s)
+	{
+		if(s is not ClassDeclarationSyntax cds) return false;
+		if(cds.AttributeLists.Count == 0) return false;
+		return cds.AttributeLists.Any(it => it.ToFullString()
+			.Trim().Contains("IGenerateDataFromClass"));
+	   
+	}											
+var methods = symbolClass
+    .GetMembers()
+    .Where(it=>it.Kind == SymbolKind.Method)
+    .Select(it=>it as IMethodSymbol)
+    .Where(it=>it != null)
+    .Select(it=>it!)
+            </code></pre>
+					</div>
+
 				</div>
 			</section>
-			<section  data-name="Interceptors">
+			<section data-name="Interceptors">
 				<div class="r-fit-text">
-					
+
 				</div>
 			</section>
 			<section id="endRoslynAndInterceptors" data-name="Last">
 				<h1>Questions ? </h1>
 				<h2>Thank you for your time </h2>
-				Andrei Ignat <a
-					href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+				Andrei Ignat <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
 			</section>
 
 		</div>
@@ -170,7 +206,7 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
 			, simplemenu: {
-				scale:0.3,
+				scale: 0.3,
 				barhtml: {
 					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
 					footer: ""
