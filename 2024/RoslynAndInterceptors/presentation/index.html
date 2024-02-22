@@ -95,24 +95,35 @@
 
 				</div>
 			</section>
-			<section  data-name="GenerateDiagnostics">
+			<section  data-name="CommentsAndGenerateDiagnostics">
 				<div class="r-fit-text">
-					Demo : RSCG_TimeBombComment.sln , read from 
+					Demo : RSCG_TimeBombComment.sln 
+					<pre><code data-trim data-noescape>
+						var syntax = context
+							.SyntaxProvider.CreateSyntaxProvider(
+								predicate: (sn, _) => FindCorrectComment(sn),
+								transform: (ctx, _) => GetDataForGeneration(ctx)
+							)
+							.Where(it => it != null)
+							.SelectMany((it, _) => it!)
+							;
+						</code></pre>
 					<aside class="notes">
 						//TODO 2023-09-13 we should change fix
 						<br />
-						Show how we intercept TODO and show error or warning
+						Show how we intercept //TODO and show error or warning
 						<br/>
+						
 					</aside>
 
 				</div>
 			</section>
-			<section  data-name="Comments2Code">
+			<section  data-name="Class2Dictionary">
 				<div class="r-fit-text">
 					
 				</div>
 			</section>
-			<section  data-name="Class2Code">
+			<section  data-name="Interceptors">
 				<div class="r-fit-text">
 					
 				</div>
@@ -120,9 +131,8 @@
 			<section id="endRoslynAndInterceptors" data-name="Last">
 				<h1>Questions ? </h1>
 				<h2>Thank you for your time </h2>
-
-
-
+				Andrei Ignat <a
+					href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
 			</section>
 
 		</div>

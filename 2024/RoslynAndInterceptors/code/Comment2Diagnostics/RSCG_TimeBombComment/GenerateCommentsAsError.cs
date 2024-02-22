@@ -4,18 +4,18 @@ internal class GenerateCommentsAsError
 
     public static void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        var s = context.SyntaxProvider.CreateSyntaxProvider(
+        var syntax = context.SyntaxProvider.CreateSyntaxProvider(
             predicate: (sn, _) => FindCorrectComment(sn),
             transform: (ctx, _) => GetDataForGeneration(ctx))
             .Where(it => it != null)
             .SelectMany((it, _) => it!)
             ;
 
-        var c = context
+        var comp = context
             .CompilationProvider
-            .Combine(s.Collect());
+            .Combine(syntax.Collect());
 
-        context.RegisterSourceOutput(c,
+        context.RegisterSourceOutput(comp,
            (spc, source) => Execute(source.Left, source.Right, spc));
     }
     private static Diagnostic GenerateForTB(SyntaxTrivia item)
