@@ -77,12 +77,12 @@
 			</section>
 			<section data-name="Introduction">
 				<div class="r-fit-text">
-					<a
-						href="https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
+					<a rel="noopener" target="_blank" 
+						href="https://devblogs.microsoft.com/ dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
 					<br />
 					<img alt="roslyn" src="RSCG_How.png" />
 					<br />
-					Demo : Wait.sln , https://www.nuget.org/packages/RSCG_WaitAndOptions
+					Demo : Wait.sln ,<a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_WaitAndOptions">https://www.nuget.org/packages/RSCG_WaitAndOptions</a>
 					<aside class="notes">
 						How to debug
 						<br />
@@ -98,7 +98,7 @@
 			</section>
 			<section data-name="CommentsAndGenerateDiagnostics">
 				<div class="r-fit-text">
-					Demo : RSCG_TimeBombComment.sln , https://www.nuget.org/packages/RSCG_TimeBombComment
+					Demo : RSCG_TimeBombComment.sln , <a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_TimeBombComment">https://www.nuget.org/packages/RSCG_TimeBombComment</a>
 					<pre><code data-trim data-noescape>
 						var syntax = context
 							.SyntaxProvider.CreateSyntaxProvider(
@@ -121,34 +121,34 @@
 			</section>
 			<section data-name="Class2Dictionary">
 				<div class="r-fit-text">
-					<p>Class2Dictionary, https://www.nuget.org/packages/RSCG_Templating</p>
+					<p>Class2Dictionary, <a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_Templating">https://www.nuget.org/packages/RSCG_Templating</a></p>
 					<div class="r-stretch">
 						<pre><code data-trim data-noescape>
-		[IGenerateDataFromClass("ClassPropByName")]
-		public partial class Person
-		{
-			public string? FirstName { get; set; }
-			public string? LastName { get; set; }
-		}
+[IGenerateDataFromClass("ClassPropByName")]
+public partial class Person
+{
+	public string? FirstName { get; set; }
+	public string? LastName { get; set; }
+}
 
-		var p = new Person();
-	p.FirstName = "Andrei";
-	//set last name via prop
-	p.SetPropValue(ePerson_Properties.LastName, "Ignat");
-	Console.WriteLine("called directly last name : " 
-	+ p.LastName);
-	//get last name via enum
-	Console.WriteLine("called via enum : "
-			+ p.GetPropValue(ePerson_Properties.FirstName));
+var p = new Person();
+p.FirstName = "Andrei";
+//set last name via prop
+p.SetPropValue(ePerson_Properties.LastName, "Ignat");
+Console.WriteLine("called directly last name : " 
++ p.LastName);
+//get last name via enum
+Console.WriteLine("called via enum : "
+		+ p.GetPropValue(ePerson_Properties.FirstName));
 
-	private bool IsSyntaxTargetForGeneration(SyntaxNode s)
-	{
-		if(s is not ClassDeclarationSyntax cds) return false;
-		if(cds.AttributeLists.Count == 0) return false;
-		return cds.AttributeLists.Any(it => it.ToFullString()
-			.Trim().Contains("IGenerateDataFromClass"));
-	   
-	}											
+private bool IsSyntaxTargetForGeneration(SyntaxNode s)
+{
+	if(s is not ClassDeclarationSyntax cds) return false;
+	if(cds.AttributeLists.Count == 0) return false;
+	return cds.AttributeLists.Any(it => it.ToFullString()
+		.Trim().Contains("IGenerateDataFromClass"));
+	
+}											
 var methods = symbolClass
     .GetMembers()
     .Where(it=>it.Kind == SymbolKind.Method)
@@ -162,6 +162,10 @@ var methods = symbolClass
 			</section>
 			<section data-name="Interceptors">
 				<div class="r-fit-text">
+<a rel="noopener" target="_blank" href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors">https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors</a>
+
+Demo InterceptAndrei , see 
+<a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_WhatIAmDoing/">https://www.nuget.org/packages/RSCG_WhatIAmDoing/</a>
 
 				</div>
 			</section>
