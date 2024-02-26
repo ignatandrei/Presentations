@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>SerializerBench.BenchMarkData-20240226-220104</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3155/23H2/2023Update/SunValley3)
+13th Gen Intel Core i9-13905H, 1 CPU, 20 logical and 14 physical cores
+.NET SDK 8.0.200
+  [Host]     : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+  Job-JUPOKP : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>RunStrategy=Throughput  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Reflection</td><td>11.070 &mu;s</td><td>1.1496 &mu;s</td><td>3.3897 &mu;s</td><td>9.469 &mu;s</td><td>0.6943</td><td>8.53 KB</td>
+</tr><tr><td>RSCG</td><td>7.896 &mu;s</td><td>0.1504 &mu;s</td><td>0.1333 &mu;s</td><td>7.873 &mu;s</td><td>0.6866</td><td>8.53 KB</td>
+</tr></tbody></table>
+</body>
+</html>
