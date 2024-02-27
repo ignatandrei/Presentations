@@ -5,6 +5,8 @@ Person p=new ();
 p.Name="Andrei Ignat";
 Console.WriteLine(p.GetInfoAndrei("test"));
 
-var data=p.GetInfoAndrei("newtest");
+
+var pers=new Person();
+var data=pers.GetInfoAndrei("newtest");
 
 Console.WriteLine(data);

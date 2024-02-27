@@ -81,17 +81,18 @@ namespace RSCG_InterceptorTemplate{
 static partial class SimpleIntercept
 {
 [System.Runtime.CompilerServices.InterceptsLocation(@"{{pathFile}}", {{lineNumber}}, {{startMethod+1}})]
-public static string NewAndrei_{{nameMethod}} (this InterceptAndreiConsole.Person p, string data )  
+public static string NewAndrei_{{nameMethod}}_{{lineNumber}} (this InterceptAndreiConsole.Person p, string data )  
     {    
         var result =  p.{{nameMethod}}(data);
-        var additionalInfo = "Interceptor was here";
+        var additionalInfo = "I have intercepted line {{lineNumber}}: ";
         return additionalInfo + result;
     }//end method NewAndrei_{{nameMethod}}
 }//end class
 }//end namespace
 
 """;
-            context.AddSource($"Intercept{nameMethod}.cs", output);
+            var nameFile = $"Intercept{nameMethod}_{lineNumber}.cs";
+            context.AddSource(nameFile, output);
         }
     }
 
