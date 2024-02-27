@@ -77,12 +77,13 @@
 			</section>
 			<section data-name="Introduction">
 				<div class="r-fit-text">
-					<a rel="noopener" target="_blank" 
+					<a rel="noopener" target="_blank"
 						href="https://devblogs.microsoft.com/ dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
 					<br />
 					<img alt="roslyn" src="RSCG_How.png" />
 					<br />
-					Demo : Wait.sln ,<a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_WaitAndOptions">https://www.nuget.org/packages/RSCG_WaitAndOptions</a>
+					Demo : Wait.sln ,<a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_WaitAndOptions">https://www.nuget.org/packages/RSCG_WaitAndOptions</a>
 					<aside class="notes">
 						How to debug
 						<br />
@@ -98,7 +99,8 @@
 			</section>
 			<section data-name="CommentsAndGenerateDiagnostics">
 				<div class="r-fit-text">
-					Demo : RSCG_TimeBombComment.sln , <a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_TimeBombComment">https://www.nuget.org/packages/RSCG_TimeBombComment</a>
+					Demo : RSCG_TimeBombComment.sln , <a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_TimeBombComment">https://www.nuget.org/packages/RSCG_TimeBombComment</a>
 					<pre><code data-trim data-noescape>
 						var syntax = context
 							.SyntaxProvider.CreateSyntaxProvider(
@@ -121,7 +123,9 @@
 			</section>
 			<section data-name="Class2Dictionary">
 				<div class="r-fit-text">
-					<p>Class2Dictionary, <a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_Templating">https://www.nuget.org/packages/RSCG_Templating</a></p>
+					<p>Class2Dictionary, <a rel="noopener" target="_blank"
+							href="https://www.nuget.org/packages/RSCG_Templating">https://www.nuget.org/packages/RSCG_Templating</a>
+					</p>
 					<div class="r-stretch">
 						<pre><code data-trim data-noescape>
 [IGenerateDataFromClass("ClassPropByName")]
@@ -162,49 +166,39 @@ var methods = symbolClass
 			</section>
 			<section data-name="Microsoft RSCG">
 				<div class="r-fit-text">
-If you want to study ,there are  at https://github.com/search?q=repo%3Adotnet%2Fruntime%20IIncrementalGenerator&type=code
-<p>
-TODO: put links
-</p><p>
-System.Text.Json
-</p><p>
-System.Text.RegularExpressions
-</p><p>
+					If you want to study ,there are at <a
+						href="https://github.com/search?q=repo%3Adotnet%2Fruntime%20IIncrementalGenerator&type=code">https://github.com/search?q=repo%3Adotnet%2Fruntime%20IIncrementalGenerator&type=code</a>
+					<pre><code data-trim data-noescape>
+System.Text.Json,System.Text.RegularExpressions,
 
-Microsoft.Extensions.Logging
-</p><p>
+Microsoft.Extensions.Logging,Microsoft.Extensions.Options.Generators.OptionsValidatorGenerator,
 
-Microsoft.Extensions.Options.Generators.OptionsValidatorGenerator
-</p><p>
+Microsoft.Extensions.Configuration.Binder,RDG,Com,TelemetryLogging
+</code></pre>
+					<p>
+						You can see examples at <a target="_blank" rel="noopener"
+							href="https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG#12-created-by-microsoft">https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG#12-created-by-microsoft</a>
+					</p>
 
-Microsoft.Extensions.Configuration.Binder
-</p><p>
+					<br />
 
-RDG
-</p><p>
 
-Com
-</p><p>
+					See
+					<a target="_blank" rel="noopener"
+						href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0">https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0</a>
+					<br />
+					Demo SerializerBench
 
-TelemetryLogging
-</p><p>
-
-See 
-<a target="_blank" href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0">https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0</a>
-
-Demo SerializerBench and see SerializerBench.BenchMarkData-report.html
-</p>
-
-					
-
-</div>
+				</div>
 			</section>
 			<section data-name="Interceptors">
 				<div class="r-fit-text">
-<a rel="noopener" target="_blank" href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors">https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors</a>
+					<a rel="noopener" target="_blank"
+						href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors">https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors</a>
 
-Demo InterceptAndrei , see 
-<a rel="noopener" target="_blank" href="https://www.nuget.org/packages/RSCG_WhatIAmDoing/">https://www.nuget.org/packages/RSCG_WhatIAmDoing/</a>
+					Demo InterceptAndrei , see
+					<a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_WhatIAmDoing/">https://www.nuget.org/packages/RSCG_WhatIAmDoing/</a>
 
 				</div>
 			</section>
