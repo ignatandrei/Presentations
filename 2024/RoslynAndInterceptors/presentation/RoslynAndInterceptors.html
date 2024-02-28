@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>RoslynAndInterceptors</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="blue" data-name="RoslynAndInterceptors" style="text-align: left;">
+				<div class="r-fit-text">
+					Welcome to RoslynAndInterceptors
+					<br />
+					Press <em>space</em> to navigate.
+					<br />
+					Press left arrow to go back.
+					<br />
+					Press right arrow to go forward.
+					<br />
+				</div>
+			</section>
+			<section data-name="Content">
+				<div class="r-fit-text">
+					For content please see up menu &#x25B2;
+					<br />
+					Online at https://ignatandrei.github.io/Presentations/RoslynAndInterceptorsprez.html
+
+					<br />
+					For download https://ignatandrei.github.io/Presentations/RoslynAndInterceptors.zip
+
+			</section>
+			<section data-name="Author" style="text-align: left;">
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						System.Console.WriteLine("Ignat Andrei");
+						System.Console.WriteLine("RoslynAndInterceptors");							
+						  </code></pre>
+					<p><img alt="ignat" src="ignat.jpg" style="width: 10%">
+						Andrei Ignat <a
+							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+					</p>
+					<p>Book Making Open Source Component : <a
+							href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a
+							href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a
+							href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a
+							href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+					</p>
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<!-- https://revealjs.com/fragments/ -->
+					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+
+					</aside>
+				</div>
+			</section>
+			<section data-name="Introduction">
+				<div class="r-fit-text">
+					<a rel="noopener" target="_blank"
+						href="https://devblogs.microsoft.com/ dotnet/introducing-c-source-generators/">https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/</a>
+					<br />
+					<img alt="roslyn" src="RSCG_How.png" />
+					<br />
+					Demo : Wait.sln ,<a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_WaitAndOptions">https://www.nuget.org/packages/RSCG_WaitAndOptions</a>
+					<aside class="notes">
+						How to debug
+						<br />
+						Should compile and wait in the meantime. See in csproj RSCG_Wait_Seconds
+						<br />
+						Show code from WaitGenerator
+						<br />
+						See WaitGeneratorStart.g.cs and WaitGeneratorEnd.g.cs
+						<br />
+					</aside>
+
+				</div>
+			</section>
+			<section data-name="CommentsAndGenerateDiagnostics">
+				<div class="r-fit-text">
+					Demo : RSCG_TimeBombComment.sln , <a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_TimeBombComment">https://www.nuget.org/packages/RSCG_TimeBombComment</a>
+					<pre><code data-trim data-noescape>
+						var syntax = context
+							.SyntaxProvider.CreateSyntaxProvider(
+								predicate: (sn, _) => FindCorrectComment(sn),
+								transform: (ctx, _) => GetDataForGeneration(ctx)
+							)
+							.Where(it => it != null)
+							.SelectMany((it, _) => it!)
+							;
+						</code></pre>
+					<aside class="notes">
+						//TODO 2023-09-13 we should change fix
+						<br />
+						Show how we intercept //TODO and show error or warning
+						<br />
+
+					</aside>
+
+				</div>
+			</section>
+			<section data-name="Class2Dictionary">
+				<div class="r-fit-text">
+					<p>Class2Dictionary, <a rel="noopener" target="_blank"
+							href="https://www.nuget.org/packages/RSCG_Templating">https://www.nuget.org/packages/RSCG_Templating</a>
+					</p>
+					<div class="r-stretch">
+						<pre><code data-trim data-noescape>
+[IGenerateDataFromClass("ClassPropByName")]
+public partial class Person
+{
+	public string? FirstName { get; set; }
+	public string? LastName { get; set; }
+}
+
+var p = new Person();
+p.FirstName = "Andrei";
+//set last name via prop
+p.SetPropValue(ePerson_Properties.LastName, "Ignat");
+Console.WriteLine("called directly last name : " 
++ p.LastName);
+//get last name via enum
+Console.WriteLine("called via enum : "
+		+ p.GetPropValue(ePerson_Properties.FirstName));
+
+private bool IsSyntaxTargetForGeneration(SyntaxNode s)
+{
+	if(s is not ClassDeclarationSyntax cds) return false;
+	if(cds.AttributeLists.Count == 0) return false;
+	return cds.AttributeLists.Any(it => it.ToFullString()
+		.Trim().Contains("IGenerateDataFromClass"));
+	
+}											
+var methods = symbolClass
+    .GetMembers()
+    .Where(it=>it.Kind == SymbolKind.Method)
+    .Select(it=>it as IMethodSymbol)
+    .Where(it=>it != null)
+    .Select(it=>it!)
+            </code></pre>
+					</div>
+
+				</div>
+			</section>
+			<section data-name="Microsoft RSCG">
+				<div class="r-fit-text">
+					If you want to study ,there are at <a
+						href="https://github.com/search?q=repo%3Adotnet%2Fruntime%20IIncrementalGenerator&type=code">https://github.com/search?q=repo%3Adotnet%2Fruntime%20IIncrementalGenerator&type=code</a>
+					<pre><code data-trim data-noescape>
+System.Text.Json,System.Text.RegularExpressions,
+
+Microsoft.Extensions.Logging,Microsoft.Extensions.Options.Generators.OptionsValidatorGenerator,
+
+Microsoft.Extensions.Configuration.Binder,RDG,Com,TelemetryLogging
+</code></pre>
+					<p>
+						You can see examples at <a target="_blank" rel="noopener"
+							href="https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG#12-created-by-microsoft">https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG#12-created-by-microsoft</a>
+					</p>
+
+					<br />
+
+
+					See
+					<a target="_blank" rel="noopener"
+						href="https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0">https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/source-generation?pivots=dotnet-8-0</a>
+					<br />
+					Demo SerializerBench
+
+				</div>
+			</section>
+			<section data-name="Interceptors">
+				<div class="r-fit-text">
+
+					<h1>Interceptors!</h1>
+
+					<a rel="noopener" target="_blank"
+						href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors">https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12#interceptors</a>
+
+					Demo InterceptAndrei , see
+					<a rel="noopener" target="_blank"
+						href="https://www.nuget.org/packages/RSCG_WhatIAmDoing/">https://www.nuget.org/packages/RSCG_WhatIAmDoing/</a>
+
+				</div>
+			</section>
+			<section id="endRoslynAndInterceptors" data-name="Last">
+				<h1>Questions ? </h1>
+				Thank you for your time 
+				<br />
+				<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG">https://ignatandrei.github.io/RSCG_Examples/v2/docs/List-of-RSCG</a>
+				<br/>
+				Andrei Ignat <a  rel="noopener" target="_blank"href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+			, simplemenu: {
+				scale: 0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
