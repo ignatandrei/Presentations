@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <!-- now is 2.0.0 beta 1 https://www.nuget.org/packages/Azure.AI.OpenAI -->
+    <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.5" />
+    
+  </ItemGroup>
+
+</Project>
