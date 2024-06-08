@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Aspire</title>
+	<title>Generative AI For .NET</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
@@ -19,9 +19,9 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-background-color="blue" data-name="Aspire" style="text-align: left;">
+			<section data-background-color="blue" data-name="GenerativeAIForNET" style="text-align: left;">
 				<div class="r-fit-text">
-					Welcome to Aspire
+					Welcome to GenerativeAIForNET
 					<br />
 					Press <em>space</em> to navigate.
 					<br />
@@ -31,23 +31,23 @@
 					<br />
 				</div>
 			</section>
-			<section  data-name="Content">
+			<section data-name="Content">
 				<div class="r-fit-text">
-					For content please see up menu &#x25B2; 
+					For content please see up menu &#x25B2;
 					<br />
-					Online at https://ignatandrei.github.io/Presentations/Aspireprez.html
-					
+					Online at https://ignatandrei.github.io/Presentations/GenerativeAIForNETprez.html
+
 					<br />
-					For download https://ignatandrei.github.io/Presentations/Aspire.zip
-					
+					For download https://ignatandrei.github.io/Presentations/GenerativeAIForNET.zip
+
 			</section>
 			<section data-name="Author" style="text-align: left;">
 				<div class="r-fit-text">
 					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
 						System.Console.WriteLine("Ignat Andrei");
-						System.Console.WriteLine("Aspire");							
+						System.Console.WriteLine("GenerativeAIForNET");							
 						  </code></pre>
-						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
+					<p><img alt="ignat" src="ignat.jpg" style="width: 10%">
 						Andrei Ignat <a
 							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
 					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
@@ -75,76 +75,134 @@
 					</aside>
 				</div>
 			</section>
-			
-			<section  data-name="Aspire">
-				<div class="r-fit-text">
-					What is Aspire ? <a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
-					<br />
-					.NET Aspire is an opinionated, cloud ready stack for building observable, production ready, distributed applications. 
 
+			<section data-name="GenerativeAIForNET">
+				<div class="r-fit-text">
+					<br /><br /><br /><br />
+					Generative AI for the .NET dev
+					<br />
+					Press key down for a fast introduction in LLM / Prompt Engineering
+				</div>
+				<section>
+					<h1>&#x25BC;</h1>
+
+				</section>
+				<section>
+					LLM
+				</section>
+				<section>
+					<img src="slidesAI/Slide10.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide11.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide12.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide13.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide14.JPG" />
+				</section>
+
+
+				<section>
+					Prompt Enginnering
+				</section>
+
+				<section>
+					<img src="slidesAI/Slide18.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide19.JPG" />
+				</section>
+				<section>
+					<img src="slidesAI/Slide20.JPG" />
+				</section>
+
+
+
+			</section>
+			<section data-name="StartGenerativeAIForNET">
+				<section>
+					<div class="r-fit-text">
+						<br /><br /><br /><br />
+						Common uses
+						<h3>&#x25BC;</h3>
+
+					</div>
+				</section>
+
+				<section>
+
+					<img src="slidesAI/Slide22.JPG" />
+				</section>
+				<section>
+					Demo ContentGeneration
+				</section>
+				<section>
+					<div class="r-fit-text">
 					
+					https://oai.azure.com/portal , Completions, examples with C#
+					<br />
+					<img src="slidesAI/ExamplesCompletion.png" width="800" height="400" />
 
-					<aside class="notes">
-						Containers 
-						Orchestration
-						Dashboard with metrics and tracing / open Telemetry
-						Health checks
-						Service Discovery	
-					</aside>
-				</div>
+					</div>
+Summarize, Generate Sql, 					
+				</section>
+
+
 			</section>
-			<section  data-name="StartAspire">
-				<div class="r-fit-text">
-					If you have a monolith,  probably no  Aspire required . Maybe for Containers ? Docker for databases ?
-					<br />
-					If you have at least 2 projects to run ( e.g. application  , business logic and test ) - Aspire is for you
-					<br />
-					<a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
-					<br />
-
-
-				</div>
-			</section>
-			<section  data-name="Demo">
+			<section data-name="Demo">
 				<div class="r-fit-text">
 					<h1>Let's see a demo - Zip As A Service</h1>
-					
+
 					<ul>
-							<li>ZAAS-BLL</li>
-							<li>ZAAS-Tests</li>
-							<li>ZAAS-WebAPI</li>
-							<li>ZAAS-UI -   Blazor ,Angular, WinForms</li>
+						<li>ZAAS-BLL</li>
+						<li>ZAAS-Tests</li>
+						<li>ZAAS-WebAPI</li>
+						<li>ZAAS-UI - Blazor ,Angular, WinForms</li>
 					</ul>
-					
+
 					<aside class="notes">
-						Needed for ASPIRE: ZipAsAService.ServiceDefaults, ZipAsAService.AppHost
+						Needed for GenerativeAIForNET: ZipAsAService.ServiceDefaults, ZipAsAService.AppHost
 						<br />
 						Demo 1 : running test , see logs <br />
 						Demo 2: running webapi , see logs<br />
 						Demo 3: running UI ( Blazor, Angular, WinForms ) , see logs<br />
-						Demo 4: running Metrics from sample aspire project, show grafana and sql server containers<br />
+						Demo 4: running Metrics from sample GenerativeAIForNET project, show grafana and sql server
+						containers<br />
 
 					</aside>
 
 
 				</div>
 			</section>
-			<section  data-name="Links">
+			<section data-name="Links">
 				<div class="r-fit-text">
-					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<a rel="noopener"
+						href='https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview'
+						target="_blank">https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview</a>
 					<br />
-					<a rel="noopener" href='https://github.com/dotnet/aspire-samples/' target="_blank">https://github.com/dotnet/aspire-samples/tree/main/samples/Metrics</a>
+					<a rel="noopener" href='https://github.com/dotnet/GenerativeAIForNET-samples/'
+						target="_blank">https://github.com/dotnet/GenerativeAIForNET-samples/tree/main/samples/Metrics</a>
 					<br />
-					<a rel="noopener" href='https://github.com/dotnet/aspire' target="_blank">https://github.com/dotnet/aspire</a>
+					<a rel="noopener" href='https://github.com/dotnet/GenerativeAIForNET'
+						target="_blank">https://github.com/dotnet/GenerativeAIForNET</a>
 					<br />
-					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<a rel="noopener"
+						href='https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview'
+						target="_blank">https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview</a>
 					<br />
-					<a rel="noopener" href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					<a rel="noopener"
+						href='https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview'
+						target="_blank">https://learn.microsoft.com/en-us/dotnet/GenerativeAIForNET/get-started/GenerativeAIForNET-overview</a>
 					<br />
 
 				</div>
 			</section>
-			<section id="endAspire" data-name="Last">
+			<section id="endGenerativeAIForNET" data-name="Last">
 				<h1>Questions ? </h1>
 				<h2>Thank you for your time </h2>
 
@@ -163,7 +221,7 @@
 	<script src="plugin/math/math.js"></script>
 	<script src="plugin/zoom/zoom.js"></script>
 	<script src="plugin/simplemenu/simplemenu.js"></script>
-	
+
 
 	<script>
 		// More info about initialization & config:
@@ -187,14 +245,14 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
 			, simplemenu: {
-				scale:0.3,
+				scale: 0.3,
 				barhtml: {
 					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
 					footer: ""
 				}
 			}
 
-	
+
 		});
 	</script>
 </body>
