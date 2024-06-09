@@ -3,7 +3,7 @@ using Azure;
 using Azure.AI.OpenAI;
 
 var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY");
-key = "";//copy from the link above
+//key = "";//copy from the link above
 if (string.IsNullOrEmpty(key))
 {
     Console.WriteLine("Please set the environment variable AZURE_OPENAI_API_KEY");

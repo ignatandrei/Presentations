@@ -15,8 +15,13 @@ using Microsoft.SemanticKernel.Connectors.OpenAI;
 // e.g. string openAIEndpoint = "https://cog-demo123.openai.azure.com/";
 string endpoint = "https://openaiazureandrei.openai.azure.com/";
 string deployment = "testnew";
-string key = "TODO";
-
+var key = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY");
+//key = "";//copy from the link above
+if (string.IsNullOrEmpty(key))
+{
+    Console.WriteLine("Please set the environment variable AZURE_OPENAI_API_KEY");
+    return;
+}
 // Create a Kernel containing the Azure OpenAI Chat Completion Service
 IKernelBuilder b = Kernel.CreateBuilder();
 //b.Services.AddLogging(b => b.AddConsole().SetMinimumLevel(LogLevel.Trace)); // uncomment to see all interactions with the model logged
@@ -30,8 +35,8 @@ kernel.ImportPluginFromFunctions("WeatherPlugin",
     KernelFunctionFactory.CreateFromMethod(([Description("The city, e.g. Montreal, Sidney")] string location, string unit = null) =>
     {
         // Here you would call a weather API to get the weather for the location
-        //return "Periods of rain or drizzle, 15 C";
-        return "Good Weather, 27 C";
+        return "Periods of rain or drizzle, 15 C";
+        //return "Good Weather, 27 C";
     }, "get_current_weather", "Get the current weather in a given location")
 ]);
 
@@ -49,8 +54,9 @@ await PrintAndSendAsync();
 
 async Task PrintAndSendAsync()
 {
+    Console.WriteLine("--------------------");   
     Console.WriteLine($"{chatHistory.Last().Role} >>> {chatHistory.Last().Content}");
-
+    Console.WriteLine("--------------------");
     OpenAIPromptExecutionSettings settings = new() { ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };
     chatHistory.Add(await kernel.GetRequiredService<IChatCompletionService>().GetChatMessageContentAsync(chatHistory, settings, kernel));
 
