@@ -29,27 +29,23 @@
 					<br />
 					Press right arrow to go forward.
 					<br />
-				</div>
-			</section>
-			<section  data-name="Content">
-				<div class="r-fit-text">
-					For content please see up menu &#x25B2; 
 					<br />
-					Online at https://ignatandrei.github.io/Presentations/Aspireprez.html
+					Online at https://ignatandrei.github.io/Presentations/AspireAdvancedprez.html
 					
 					<br />
-					For download https://ignatandrei.github.io/Presentations/Aspire.zip
+					For download https://ignatandrei.github.io/Presentations/AspireAdvanced.zip
 					
 			</section>
 			<section data-name="Author" style="text-align: left;">
+				<h4>About me</h4> 
+					<img alt="ignat" src="ignat.jpg" style="width: 10%">
+						Andrei Ignat <a
+							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
 				<div class="r-fit-text">
 					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
 						System.Console.WriteLine("Ignat Andrei");
 						System.Console.WriteLine("Aspire");							
 						  </code></pre>
-						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
-						Andrei Ignat <a
-							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
 					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
 					</p>
 					<p>Book Making Open Source Component : <a
@@ -76,9 +72,10 @@
 				</div>
 			</section>
 			
-			<section  data-name="Aspire">
+			<section  data-name="What is Aspire ?">
+				<h4>What is Aspire ?</h4>
 				<div class="r-fit-text">
-					What is Aspire ? <a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
+					 <a href='https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview' target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview</a>
 					<br />
 					.NET Aspire is an opinionated, cloud ready stack for building observable, production ready, distributed applications. 
 					<br />
@@ -98,7 +95,8 @@
 					</aside>
 				</div>
 			</section>
-			<section  data-name="StartAspire">
+			<section  data-name="Uses of Aspire">
+				<h4>Uses of Aspire</h4>
 				<div class="r-fit-text">
 					If you have a monolith,  probably no  Aspire required . Maybe for Containers ? Docker for databases ?
 					<br />
@@ -155,7 +153,7 @@
 	<script src="plugin/math/math.js"></script>
 	<script src="plugin/zoom/zoom.js"></script>
 	<script src="plugin/simplemenu/simplemenu.js"></script>
-	
+	<!-- <script src="plugin/tableofcontents.js"></script> -->
 
 	<script>
 		// More info about initialization & config:
@@ -176,6 +174,28 @@
 			help: true,
 			showNotes: false,
 			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+     
+        { src: 'plugin/tableofcontents.js' }
+    ],
+	tableofcontents: {
+					// Specifies the slide title of the table of contents slide
+					title: "Table of Contents",
+
+					// Specifies the position of the table of contents slide in the presentation
+					position: 2,
+
+					// Specifies which slide tag elements will be used
+					// for generating the table of contents.
+					titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+					// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+					ignoreFirstSlide: true,
+
+					// Specifies if every single element of the table of contents
+					// will be stepped through before moving on to the next slide.
+					fadeInElements: false
+				},
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
 			, simplemenu: {
@@ -184,7 +204,8 @@
 					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
 					footer: ""
 				}
-			}
+			},
+
 
 	
 		});
