@@ -7,6 +7,9 @@ builder.AddNpmApp("angular", "../AspireJavaScript.Angular")
     .WithReference(weatherApi)
     .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints()
-    .PublishAsDockerFile();
+    //https://learn.microsoft.com/en-us/dotnet/aspire/deployment/manifest-format
+    //dotnet run --output-path manifest.json --publisher manifest
+    //.PublishAsDockerFile()
+    ;
 
 builder.Build().Run();
