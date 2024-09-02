@@ -1,0 +1,12 @@
+[
+    {
+      "id": "Second",
+      "link": "http://127.0.0.1:6001/openapi/base64/v1.json",
+      "enabled": true
+    },
+    {
+      "id": "First",
+      "link": "http://127.0.0.1:6002/openapi/webapirot13/v1.json",
+      "enabled": true
+    }
+  ]

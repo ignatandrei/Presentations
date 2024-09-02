@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>c5cf49e0-76b2-4229-86da-afe434413712</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+   <ProjectReference Include="..\AddAutomation\AddAutomation.csproj" IsAspireProjectResource="false" />
+   <ProjectReference Include="..\WebAPIBase64\WebAPIBase64.csproj" />
+    <ProjectReference Include="..\WebAPIROT13\WebAPIROT13.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+  </ItemGroup>
+
+</Project>
