@@ -13,7 +13,7 @@ builder.Services.AddScoped<SqlConnection>(_
         => new(builder.Configuration.GetConnectionString("AddressBook")))
     ;
 //TODO: uncomment the following line for ASPIRE
-//builder.AddSqlServerClient("DefaultConnection");
+//builder.AddSqlServerClient("AddressBook");
 
 var app = builder.Build();
 
