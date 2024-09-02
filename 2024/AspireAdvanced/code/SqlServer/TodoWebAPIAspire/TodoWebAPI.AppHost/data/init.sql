@@ -40,7 +40,7 @@ IF (SELECT COUNT(*) FROM Contacts) = 0
 BEGIN
     INSERT INTO Contacts (FirstName, LastName, Email, Phone)
     VALUES
-        ('John', 'Doe', 'john.doe@example.com', '555-123-4567'),
-        ('Jane', 'Doe', 'jane.doe@example.com', '555-234-5678');
+        ('Andrei', 'Ignat', 'ignatandrei@yahoo.com', '1970-04-16'),
+        ('ADCES', 'ASPIRE', 'no email', 'in 2024');
 END;
 GO
