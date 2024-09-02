@@ -98,18 +98,20 @@
 			<section  data-name="Uses of Aspire">
 				<h4>Uses of Aspire</h4>
 				<div class="r-fit-text">
-					If you have a monolith,  probably no  Aspire required . Maybe for Containers ? Docker for databases ?
+					If you have external dependencies( Database, caching, others ) and you want to load ,  maybe you need Aspire.
 					<br />
-					If you have at least 2 projects to run ( e.g. webapi  and UI ) - Aspire is for you
+					If you have at least 2 projects to run ( e.g. WebAPI  and UI ) - Aspire is for you
 					<br />
-					If you want to load dependencies ( e.g. SqlServer , Redis , others ) - Aspire is for you
-					<br />
-					<b>Sample1</b>: App with WebAPI and Database . Adding automatically SqlServer from docker container
+					<b>Sample1</b>: App with WebAPI and Database . Adding automatically SqlServer and creating DB from docker container
 					<br />
 				<b>Sample2</b>: App with WebAPI and Angular . Coordinating the 2 projects
 					<br />
 				<b>More samples</b> at https://github.com/dotnet/aspire-samples - node, python, go ...
-
+					Documentation: 
+					<br />
+					https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/integrations-overview
+					<br />
+					https://github.com/davidfowl/WaitForDependenciesAspire
 				<aside class="notes">
 					Dashboards, metrics, tracing	
 				</aside>
