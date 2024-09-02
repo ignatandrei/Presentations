@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>5eca6354-ff3a-49b9-9986-ef74427cd4b6</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="data\init.sql" />
+    <None Remove="sqlserverconfig\configure-db.sh" />
+    <None Remove="sqlserverconfig\entrypoint.sh" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\init.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	  <Content Include="sqlserverconfig\configure-db.sh">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="sqlserverconfig\entrypoint.sh">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+	<PackageReference Include="Aspire.Hosting.SqlServer" Version="8.2.0" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Todo\Todo.csproj" />
+  </ItemGroup>
+
+</Project>
