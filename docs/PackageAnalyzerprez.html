@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Solution Analyzer</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="blue" data-name="Aspire" style="text-align: left;">
+				<div class="r-fit-text">
+					Welcome to Solution Analyzer
+					<br />
+					Press <em>space</em> to navigate.
+					<br />
+					Press left arrow to go back.
+					<br />
+					Press right arrow to go forward.
+					<br />
+					<br />
+					Online at https://ignatandrei.github.io/Presentations/PackageAnalyzerprez.html
+					
+					<br />
+					For download https://ignatandrei.github.io/Presentations/PackageAnalyzer.zip
+					
+			</section>
+			<section data-name="Author" style="text-align: left;">
+				<h4>About me</h4> 
+					<img alt="ignat" src="ignat.jpg" style="width: 10%">
+						Andrei Ignat <a
+							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						System.Console.WriteLine("Ignat Andrei");
+						System.Console.WriteLine("Aspire");							
+						  </code></pre>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+					</p>
+					<p>Book Making Open Source Component : <a
+							href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a
+							href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a
+							href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a
+							href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+					</p>
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<!-- https://revealjs.com/fragments/ -->
+					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+
+					</aside>
+				</div>
+			</section>
+			
+			<section  data-name="What is .NET Tool ?">
+				<h4>What is .NET Tool ?</h4>
+				<div class="r-fit-text">
+					 <a href='https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools' target="_blank">https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools</a>
+					<br />
+					.NET Tool is an executable deployed on github or nuget.org that can be installed and run using the dotnet command line interface (CLI). 
+					<br />
+					.NET Tools are distributed as NuGet packages that contain a .NET Core console application.
+					<br />
+					Example:<a target="_blank" href="https://www.nuget.org/packages/?q=&includeComputedFrameworks=true&packagetype=dotnettool&prerel=false&sortby=totalDownloads-desc">
+						https://www.nuget.org/packages/?q=&includeComputedFrameworks=true&packagetype=dotnettool&prerel=false&sortby=totalDownloads-desc
+					</a>
+					<pre><code data-trim data-noescape>
+					dotnet tool install dotnetsay
+					</code></pre>
+					<aside class="notes">
+						Show local / global 	
+					</aside>
+				</div>
+			</section>
+			<section  data-name="Solution analyzer">
+				<h4>Uses of Solution Analyzer</h4>
+				<div class="r-fit-text">
+					It has started to analyze the solution and the packages in the solution - if the major version of the packages is different ,then things can break <div class=""></div>
+					<br />
+					Also, anyone has a solution that presents like the architecture that should be followed -how to analyze it ?					
+					<br />				
+					<a href="https://github.com/ignatandrei/PackageAnalyzer" target="_blank">https://github.com/ignatandrei/PackageAnalyzer</a>
+					<br />
+					Install near the sln file
+					<pre><code data-trim data-noescape>
+						dotnet new tool-manifest
+						dotnet tool update netpackageanalyzerconsole
+						dotnet PackageAnalyzer generateFiles -wg HtmlSummary
+					</code></pre>
+					You can see how he analyze himself at <a target="_blank" rel="noopener" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html">
+						https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					</a>
+
+					<br />
+					Alternate : https://www.ndepend.com/ <br /> 
+					<h3>Do you have any project to analyze ?</h3>
+				<aside class="notes">
+					
+				</aside>
+
+				</div>
+			</section>
+			<section  data-name="Uses ">
+				<h4>Demos</h4>
+				<div class="r-fit-text">
+					
+					<br/>
+					
+					<br/>
+
+						<ol>
+							<li>
+								Project relations
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#projects-with-tests">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#projects-with-tests
+								</a>
+							</li>
+							<li>
+								Package major different
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/Physiqube_summary.html#packages-with-major-version-different">
+									https://ignatandrei.github.io/PackageAnalyzer/Physiqube_summary.html#packages-with-major-version-different
+								</a>
+							</li>
+							<li>
+								Cyclomatic Complexity 
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#Cyclomatic-Complexity-for-Method">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#Cyclomatic-Complexity-for-Method
+								</a>
+							</li>
+							<li>
+								Lines of Code
+								<a href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#executable-lines-per-method">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#executable-lines-per-method
+								</a>
+							</li>
+							<li>
+								Maintainability Index 
+							</li>
+							<li>Projects with most classes
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#number-of-classes-per-assembly">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#number-of-classes-per-assembly
+								</a> </li>
+							<li>Licenses, Git Commits,Radar,  many others ... </li>
+						</ol>
+					<br/>
+					<a target="_blank" rel="noopener" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html">
+						 https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+						</a>
+				</div>
+			</section>
+			<section  data-name="Links">
+				<div class="r-fit-text">
+					<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-values?view=vs-2022">
+					https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-values?view=vs-2022
+				</a>
+				<br/>
+				<a href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html" rel="noopener" target="_blank">
+					https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					</a>	
+
+				</div>
+			</section>
+			<section id="endPackageAnalyzer" data-name="Last">
+				
+				<h1>Questions ? </h1>
+				<h2>Thank you for your time </h2>
+
+
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+	<!-- <script src="plugin/tableofcontents.js"></script> -->
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+     
+        { src: 'plugin/tableofcontents.js' }
+    ],
+	tableofcontents: {
+					// Specifies the slide title of the table of contents slide
+					title: "Table of Contents",
+
+					// Specifies the position of the table of contents slide in the presentation
+					position: 2,
+
+					// Specifies which slide tag elements will be used
+					// for generating the table of contents.
+					titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+					// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+					ignoreFirstSlide: true,
+
+					// Specifies if every single element of the table of contents
+					// will be stepped through before moving on to the next slide.
+					fadeInElements: false
+				},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+			, simplemenu: {
+				scale:0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			},
+
+
+	
+		});
+	</script>
+</body>
+
+</html>
