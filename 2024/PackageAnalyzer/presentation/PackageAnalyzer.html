@@ -84,30 +84,32 @@
 					Example:<a target="_blank" href="https://www.nuget.org/packages/?q=&includeComputedFrameworks=true&packagetype=dotnettool&prerel=false&sortby=totalDownloads-desc">
 						https://www.nuget.org/packages/?q=&includeComputedFrameworks=true&packagetype=dotnettool&prerel=false&sortby=totalDownloads-desc
 					</a>
-
+					<pre><code data-trim data-noescape>
+					dotnet tool install dotnetsay
+					</code></pre>
 					<aside class="notes">
 						Show local / global 	
 					</aside>
 				</div>
 			</section>
 			<section  data-name="Solution analyzer">
-				<h4>Uses of Aspire</h4>
+				<h4>Uses of Solution Analyzer</h4>
 				<div class="r-fit-text">
 					It has started to analyze the solution and the packages in the solution - if the major version of the packages is different ,then things can break <div class=""></div>
 					<br />
-					Also, anyone has a solution that presents like the architecture that should be followed -how to analyze it ?
-					
+					Also, anyone has a solution that presents like the architecture that should be followed -how to analyze it ?					
+					<br />				
+					<a href="https://github.com/ignatandrei/PackageAnalyzer" target="_blank">https://github.com/ignatandrei/PackageAnalyzer</a>
 					<br />
-					
-					https://github.com/ignatandrei/PackageAnalyzer
-
 					Install near the sln file
 					<pre><code data-trim data-noescape>
 						dotnet new tool-manifest
 						dotnet tool update netpackageanalyzerconsole
 						dotnet PackageAnalyzer generateFiles -wg HtmlSummary
 					</code></pre>
-					You can see how he analyze himself at https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					You can see how he analyze himself at <a target="_blank" rel="noopener" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html">
+						https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					</a>
 
 					<br />
 					Alternate : https://www.ndepend.com/ <br /> 
@@ -119,33 +121,62 @@
 				</div>
 			</section>
 			<section  data-name="Uses ">
+				<h4>Demos</h4>
 				<div class="r-fit-text">
-					Project relations
+					
 					<br/>
-					Package major different: Physiqube_summary.html#packages-with-major-version-different
+					
 					<br/>
-					Code metrics: 
+
 						<ol>
 							<li>
-								Cyclomatic Complexity NetPackageAnalyzer_summary.html#Cyclomatic-Complexity-for-Method
+								Project relations
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#projects-with-tests">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#projects-with-tests
+								</a>
 							</li>
 							<li>
-								Lines of Code Physiqube_summary.html#executable-lines-per-method
+								Package major different
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/Physiqube_summary.html#packages-with-major-version-different">
+									https://ignatandrei.github.io/PackageAnalyzer/Physiqube_summary.html#packages-with-major-version-different
+								</a>
+							</li>
+							<li>
+								Cyclomatic Complexity 
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#Cyclomatic-Complexity-for-Method">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#Cyclomatic-Complexity-for-Method
+								</a>
+							</li>
+							<li>
+								Lines of Code
+								<a href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#executable-lines-per-method">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#executable-lines-per-method
+								</a>
 							</li>
 							<li>
 								Maintainability Index 
 							</li>
-							<li>Projects with most classes NetPackageAnalyzer_summary.html#number-of-classes-per-assembly </li>
-
+							<li>Projects with most classes
+								<a rel="noopener" target="_blank" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#number-of-classes-per-assembly">
+									https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html#number-of-classes-per-assembly
+								</a> </li>
+							<li>Licenses, Git Commits,Radar,  many others ... </li>
 						</ol>
 					<br/>
-					Licenses, Git Commits
-					<br/>
-					https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					<a target="_blank" rel="noopener" href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html">
+						 https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+						</a>
 				</div>
 			</section>
 			<section  data-name="Links">
 				<div class="r-fit-text">
+					<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-values?view=vs-2022">
+					https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-values?view=vs-2022
+				</a>
+				<br/>
+				<a href="https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html" rel="noopener" target="_blank">
+					https://ignatandrei.github.io/PackageAnalyzer/NetPackageAnalyzer_summary.html
+					</a>	
 
 				</div>
 			</section>
