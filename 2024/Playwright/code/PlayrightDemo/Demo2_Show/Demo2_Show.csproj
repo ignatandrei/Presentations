@@ -7,6 +7,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="screenshots\**" />
+    <Compile Remove="videos\**" />
+    <EmbeddedResource Remove="screenshots\**" />
+    <EmbeddedResource Remove="videos\**" />
+    <None Remove="screenshots\**" />
+    <None Remove="videos\**" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Playwright" Version="1.47.0" />
 	</ItemGroup>
