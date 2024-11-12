@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
-builder.AddServiceDefaults();
+//builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
@@ -38,7 +38,7 @@ app.MapGet("/data/{timeoutSec}", async (int timeoutSec) =>
     return "min:sec"+DateTime.Now.ToString("mm:ss");
 });
 
-app.MapDefaultEndpoints();
+//app.MapDefaultEndpoints();
 
 app.Run();
 
