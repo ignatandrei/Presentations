@@ -5,3 +5,8 @@ Feature Switches: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet
 OpenAPI discussion: https://github.com/dotnet/aspnetcore/discussions/58103
 
 https://medium.com/bytehide/everything-new-in-net-9-the-ultimate-developers-guide-f931c532909a
+
+https://medium.com/@simao.shider/net-9-features-every-developer-should-know-about-0c6480cef96b
+
+https://www.nikolatech.net/blogs/improvements-in-dotnet9
+
