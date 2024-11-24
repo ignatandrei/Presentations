@@ -1,0 +1,5 @@
+
+Feature Switches: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime
+
+
+OpenAPI discussion: https://github.com/dotnet/aspnetcore/discussions/58103
