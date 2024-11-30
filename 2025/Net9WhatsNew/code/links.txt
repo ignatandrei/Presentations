@@ -10,3 +10,5 @@ https://medium.com/@simao.shider/net-9-features-every-developer-should-know-abou
 
 https://www.nikolatech.net/blogs/improvements-in-dotnet9
 
+https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-9/
+

@@ -9,7 +9,8 @@
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
   <ItemGroup>
-    <RuntimeHostConfigurationOption Include="Feature.IsSupported" Value="false" Trim="true" />
+	  <!--change true to false and dotnet publish-->
+    <RuntimeHostConfigurationOption Include="Feature.IsSupported" Value="true" Trim="true" />
   </ItemGroup>
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
