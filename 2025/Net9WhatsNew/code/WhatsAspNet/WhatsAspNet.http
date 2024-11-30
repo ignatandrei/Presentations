@@ -1,0 +1,6 @@
+@WhatsAspNet_HostAddress = http://localhost:5159
+
+GET {{WhatsAspNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

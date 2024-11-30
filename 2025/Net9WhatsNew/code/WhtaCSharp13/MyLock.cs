@@ -37,7 +37,7 @@ internal class MyLock
         using (lock1.EnterScope())
         {
             Console.WriteLine("Locked");
-            //await Data();
+            //  await Data();
         }
         return true;
     }
