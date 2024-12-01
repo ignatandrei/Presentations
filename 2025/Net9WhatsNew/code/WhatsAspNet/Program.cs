@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.FileProviders;
 using Scalar.AspNetCore;
 
@@ -64,7 +65,13 @@ app.UseReDoc(options =>
 {
     options.SpecUrl("/openapi/v1.json");
 });
-//TODO: NSWAG
+//goto /nswag-swagger
+app.UseSwaggerUi(options =>
+{
+    options.DocumentPath = "/openapi/v1.json";
+    // Update the path to not conflict with the Swashbuckle's version of Swagger UI
+    options.Path = "/nswag-swagger";
+});
 //TODO: blockly
 //https://timdeschryver.dev/blog/what-about-my-api-documentation-now-that-swashbuckle-is-no-longer-a-dependency-in-aspnet-9
 
