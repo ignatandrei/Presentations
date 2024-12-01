@@ -3,26 +3,28 @@ using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-
-
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+//https://devblogs.microsoft.com/dotnet/dotnet9-openapi/
+//See generating at build time https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/aspnetcore-openapi
 builder.Services.AddOpenApi();
-
+builder.Services.AddProblemDetails();
 var app = builder.Build();
-
+app.UseDeveloperExceptionPage();
+app.UseStatusCodePages();
 app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 {
+    //default changed: openapi/v1.json
     app.MapOpenApi();
 }
 Console.WriteLine("dotnet publish");
-Console.WriteLine("http://localhost:5000/ThisIsAsset.html");
-Console.WriteLine("http://localhost:5000/wwwrootStaticFiles/thisIsStatic.html");
+Console.WriteLine("/ThisIsAsset.html");
+Console.WriteLine("/wwwrootStaticFiles/thisIsStatic.html");
 
-//for wwwroot just this
+//for wwwroot just this , I am doing this to show the difference
 //app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -35,13 +37,14 @@ app.UseStaticFiles(new StaticFileOptions
 //https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0
 app.MapStaticAssets();
 Console.WriteLine("dotnet publish");
-Console.WriteLine("http://localhost:5000/ThisIsAsset.html");
-Console.WriteLine("http://localhost:5000/wwwrootStaticFiles/thisIsStatic.html");
+Console.WriteLine("/ThisIsAsset.html");
+Console.WriteLine("/wwwrootStaticFiles/thisIsStatic.html");
 
 
 //app.UseHttpsRedirection();
 
 
+app.MapGet("/", () => TypedResults.InternalServerError("Something went wrong!"));
 
 var summaries = new[]
 {
