@@ -41,6 +41,7 @@ Console.WriteLine("dotnet publish");
 Console.WriteLine("/ThisIsAsset.html");
 Console.WriteLine("/wwwrootStaticFiles/thisIsStatic.html");
 
+//https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/using-openapi-documents?view=aspnetcore-9.0
 
 //app.UseHttpsRedirection();
 //goto /swaggerSwahsbuckle
