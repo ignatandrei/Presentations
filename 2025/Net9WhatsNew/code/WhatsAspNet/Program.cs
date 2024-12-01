@@ -57,6 +57,8 @@ app.MapScalarApiReference(opt =>
     
 });
 
+//TODO: blockly
+
 app.MapGet("/", () => TypedResults.InternalServerError("Something went wrong!"));
 
 var summaries = new[]
