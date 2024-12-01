@@ -1,4 +1,5 @@
 using Microsoft.Extensions.FileProviders;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,19 @@ Console.WriteLine("/wwwrootStaticFiles/thisIsStatic.html");
 
 
 //app.UseHttpsRedirection();
+//goto /swaggerSwahsbuckle
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/openapi/v1.json", "v1");
+    options.RoutePrefix = "swaggerSwahsbuckle";
+});
 
+//scalar
+//goto scalar/v1
+app.MapScalarApiReference(opt =>
+{
+    
+});
 
 app.MapGet("/", () => TypedResults.InternalServerError("Something went wrong!"));
 
