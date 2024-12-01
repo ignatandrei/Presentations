@@ -51,13 +51,20 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = "swaggerSwahsbuckle";
 });
 
+
 //scalar
 //goto scalar/v1
 app.MapScalarApiReference(opt =>
 {
     
 });
-
+//redoc
+//goto /api-docs
+app.UseReDoc(options =>
+{
+    options.SpecUrl("/openapi/v1.json");
+});
+//TODO: NSWAG
 //TODO: blockly
 //https://timdeschryver.dev/blog/what-about-my-api-documentation-now-that-swashbuckle-is-no-longer-a-dependency-in-aspnet-9
 
