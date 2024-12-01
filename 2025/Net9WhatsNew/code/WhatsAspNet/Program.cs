@@ -59,6 +59,7 @@ app.MapScalarApiReference(opt =>
 });
 
 //TODO: blockly
+//https://timdeschryver.dev/blog/what-about-my-api-documentation-now-that-swashbuckle-is-no-longer-a-dependency-in-aspnet-9
 
 app.MapGet("/", () => TypedResults.InternalServerError("Something went wrong!"));
 
