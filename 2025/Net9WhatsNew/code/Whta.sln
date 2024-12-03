@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whta.AppHost", "Whta.AppHos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whta.ServiceDefaults", "Whta.ServiceDefaults\Whta.ServiceDefaults.csproj", "{321B529D-2CCD-266D-8142-D610823432E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDemo", "EFCoreDemo\EFCoreDemo.csproj", "{8682D095-C607-42CC-974F-7635828D7DE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreConsole", "EFCoreConsole\EFCoreConsole.csproj", "{15921BF3-49A7-42A2-8230-0FEA01077E0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{321B529D-2CCD-266D-8142-D610823432E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{321B529D-2CCD-266D-8142-D610823432E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{321B529D-2CCD-266D-8142-D610823432E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8682D095-C607-42CC-974F-7635828D7DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8682D095-C607-42CC-974F-7635828D7DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8682D095-C607-42CC-974F-7635828D7DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8682D095-C607-42CC-974F-7635828D7DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15921BF3-49A7-42A2-8230-0FEA01077E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15921BF3-49A7-42A2-8230-0FEA01077E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15921BF3-49A7-42A2-8230-0FEA01077E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15921BF3-49A7-42A2-8230-0FEA01077E0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

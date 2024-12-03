@@ -12,3 +12,7 @@ https://www.nikolatech.net/blogs/improvements-in-dotnet9
 
 https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-9/
 
+https://github.com/dotnet/EntityFramework.Docs
+
+https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew
+
