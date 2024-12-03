@@ -77,7 +77,7 @@ public partial class <#= Options.ContextName #> : DbContext
     {
 #>
 //andrei
-partial void AfterOnConfiguring(DbContextOptionsBuilder optionsBuilder);
+partial void BeforeOnConfiguring(DbContextOptionsBuilder optionsBuilder);
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 <#
     if (!Options.SuppressConnectionStringWarning)
@@ -91,8 +91,9 @@ partial void AfterOnConfiguring(DbContextOptionsBuilder optionsBuilder);
     usings.AddRange(useProviderCall.GetRequiredUsings());
 #>
         {
+        BeforeOnConfiguring(optionsBuilder);
         optionsBuilder<#= code.Fragment(useProviderCall, indent: 3) #>;
-        AfterOnConfiguring(optionsBuilder);
+        
         }
 
 <#

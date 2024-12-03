@@ -22,12 +22,12 @@ public partial class TestsContext : DbContext
     public virtual DbSet<Test> Tests { get; set; }
 
 //andrei
-partial void AfterOnConfiguring(DbContextOptionsBuilder optionsBuilder);
+partial void BeforeOnConfiguring(DbContextOptionsBuilder optionsBuilder);
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         {
+        BeforeOnConfiguring(optionsBuilder);
         optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=tests;UID=sa;PWD=yourStrong(!)Password;TrustServerCertificate=true");
-        AfterOnConfiguring(optionsBuilder);
         }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
