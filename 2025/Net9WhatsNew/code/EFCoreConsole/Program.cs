@@ -14,4 +14,6 @@ Console.WriteLine(lastDepartment.Iddepartment);
 //https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew#table-pruning
 var deps = await cnt.Departments.Where(it=>it.Employees.Any() ).ToArrayAsync();
 Console.WriteLine(deps.Length);
+//https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew#auto-compiled-models
 //dotnet ef dbcontext optimize
+//read https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew#msbuild-integration 
