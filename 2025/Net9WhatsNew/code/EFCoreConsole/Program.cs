@@ -17,3 +17,5 @@ Console.WriteLine(deps.Length);
 //https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew#auto-compiled-models
 //dotnet ef dbcontext optimize
 //read https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew#msbuild-integration 
+//NOT In this demo: AOT
+//https://learn.microsoft.com/en-us/ef/core/performance/nativeaot-and-precompiled-queries
