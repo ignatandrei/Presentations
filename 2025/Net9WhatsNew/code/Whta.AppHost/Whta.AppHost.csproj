@@ -16,7 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EFCoreConsole\EFCoreConsole.csproj" />
     <ProjectReference Include="..\WhatsAspNet\WhatsAspNet.csproj" />
+    <ProjectReference Include="..\WhtaCSharp13\WhtaCSharp13.csproj" />
+    <ProjectReference Include="..\Whta\Whta.csproj" />
   </ItemGroup>
 
 </Project>
