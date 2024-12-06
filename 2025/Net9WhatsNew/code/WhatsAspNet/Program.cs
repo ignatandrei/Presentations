@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.FileProviders;
+using NetCore2BlocklyNew;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ var app = builder.Build();
 app.UseDeveloperExceptionPage();
 app.UseStatusCodePages();
 app.MapDefaultEndpoints();
+app.UseBlocklyUI(app.Environment);
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -72,6 +74,10 @@ app.UseSwaggerUi(options =>
     // Update the path to not conflict with the Swashbuckle's version of Swagger UI
     options.Path = "/nswag-swagger";
 });
+
+app.UseBlocklyUI(app.Environment);
+app.UseBlocklyAutomation();
+
 //TODO: blockly
 //https://timdeschryver.dev/blog/what-about-my-api-documentation-now-that-swashbuckle-is-no-longer-a-dependency-in-aspnet-9
 
