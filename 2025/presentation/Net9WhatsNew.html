@@ -105,7 +105,21 @@ SearchValuesDemo
 GenerateGuidV7
 BigMulDemo
 WhenEachDemo
+
 </code></pre>
+Not in this demo:
+
+<small>
+
+JSON Serialization/Deserialization: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/extract-schema
+<br />
+Multiple JSON :https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-utf8jsonreader#read-multiple-json-documents
+<br />
+DI Choose Constructor: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#dependency-injection---activatorutilitiescreateinstance-constructor
+<br />
+PersistedAssemblyBuilder, https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#persisted-assemblies
+<br />
+</small>
 <br />
 <p>Demo: Whta.csproj</p>
 <aside class="notes">
@@ -123,6 +137,11 @@ params keyword for collections
 new lock object
 field keyword
 </code></pre>
+Not in this demo
+<br />
+partial properties:  https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13#more-partial-members
+<br />
+
 Demo: WhtaCSharp13.csproj
 </div>
 <aside class="notes">
@@ -139,7 +158,8 @@ Demo: WhtaCSharp13.csproj
 	Improvements in SqlGeneration
 	AutoCompiled Models	
 	</code></pre>
-	Not Here: AOT https://learn.microsoft.com/en-us/ef/core/performance/nativeaot-and-precompiled-queries
+	Not Here: <br />AOT https://learn.microsoft.com/en-us/ef/core/performance/nativeaot-and-precompiled-queries
+	<br />
 	Demo: EFCoreConsole.csproj, EFCoreDemo.csproj
 </div>
 <aside class="notes">
@@ -156,7 +176,9 @@ Click on button and see the code generated
 		TypedResults.InternalServerError
 
 		</code></pre>
-			Not here: SignalR, Blazor
+			Not here: SignalR, Blazor, Hybrid Cache
+			<br />
+			https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0#new-hybridcache-library
 			<br />
 			Demo:WhatsAspNet.csproj
 	</div>
@@ -173,8 +195,13 @@ Click on button and see the code generated
 		<pre><code data-trim data-noescape >
 			WithLifetime(ContainerLifetime.Persistent)
 			WaitFor(asp);
+			restart
 		</code></pre>
-			Demo: Whta.AppHost.csproj
+		Not Here: 
+		<br />
+		https://learn.microsoft.com/en-us/dotnet/aspire/app-host/eventing
+		<br />
+		<br /><br />Demo: Whta.AppHost.csproj
 	</div>
 	<aside class="notes">
 	Click on button and see the code generated

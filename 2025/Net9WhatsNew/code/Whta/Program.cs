@@ -6,12 +6,10 @@ libraries9.Base64Demo();
 libraries9.BinaryFormatterDemo();
 libraries9.OrderedDictionaryDemo();
 libraries9.TimeSpanDemo();
-//TODO: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#dependency-injection---activatorutilitiescreateinstance-constructor
 //libraries9.DebugAssertDemo();
 libraries9.LinqCountAggregateDemo();
 libraries9.SearchValuesDemo();
-//TODO:PersistedAssemblyBuilder 
-//https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#persisted-assemblies
+
 
 string testString = "apple";
 if(libraries9.ExampleFunc().IsMatch(testString))
@@ -32,8 +30,11 @@ else
     Console.WriteLine("Not Matched");
 }
 //JSON Serialization/Deserialization
-//TODO: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/extract-schema
-//TODO:https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-utf8jsonreader#read-multiple-json-documents
+//mention: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/extract-schema
+//mention:https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-utf8jsonreader#read-multiple-json-documents
+//mention: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#dependency-injection---activatorutilitiescreateinstance-constructor
+//mention:PersistedAssemblyBuilder 
+//https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#persisted-assemblies
 
 await libraries9.GenerateGuidV7();
 libraries9.BigMulDemo();

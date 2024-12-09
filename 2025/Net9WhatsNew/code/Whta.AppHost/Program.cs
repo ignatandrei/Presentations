@@ -12,6 +12,5 @@ builder.AddProject<Projects.WhtaCSharp13>("csharp13");
 
 builder.Build().Run();
 
-//TODO: https://learn.microsoft.com/en-us/dotnet/aspire/app-host/eventing
-//TODO: redis with https://learn.microsoft.com/en-us/dotnet/aspire/app-host/eventing
+//not here: https://learn.microsoft.com/en-us/dotnet/aspire/app-host/eventing
 
