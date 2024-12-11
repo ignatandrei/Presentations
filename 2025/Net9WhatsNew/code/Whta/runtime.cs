@@ -1,4 +1,6 @@
-﻿namespace Whta;
+﻿using FeatureSwitchDemo;
+
+namespace Whta;
 //runtime
 //https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime
 
@@ -10,8 +12,8 @@ static internal class runtime9
     //TODO: 
     static internal void FeatureSwitchDemo()
     {
-        if (Feature.IsSupported)
-            Feature.Implementation();
+        if (MyFeature.IsSupported)
+            MyFeature.Implementation();
     }
 
     //TODO:

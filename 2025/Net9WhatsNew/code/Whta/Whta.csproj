@@ -8,6 +8,10 @@
     <PublishAot>true</PublishAot>
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FeatureSwitchDemo\FeatureSwitchDemo.csproj" />
+  </ItemGroup>
   <ItemGroup>
 	  <!--change true to false and dotnet publish-->
     <RuntimeHostConfigurationOption Include="Feature.IsSupported" Value="true" Trim="true" />

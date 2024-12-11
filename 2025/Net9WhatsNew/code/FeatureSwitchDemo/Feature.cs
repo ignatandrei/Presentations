@@ -1,16 +1,16 @@
-﻿
-namespace Whta;
+﻿using System.Diagnostics.CodeAnalysis;
 
-public class Feature
+namespace FeatureSwitchDemo;
+
+public class MyFeature
 {
     [FeatureSwitchDefinition("Feature.IsSupported")]
-    internal static bool IsSupported => AppContext.TryGetSwitch("Feature.IsSupported", out bool isEnabled) ? isEnabled : true;
+    public static bool IsSupported => AppContext.TryGetSwitch("Feature.IsSupported", out bool isEnabled) ? isEnabled : true;
 
-    internal static void Implementation() => Console.WriteLine("" +
+    public static void Implementation() => Console.WriteLine("" +
         "Hello, Implementation!" +
         "Hello, Implementation!" +
         "Hello, Implementation!" +
-        "Hello, Implementation!"+ 
         "Hello, Implementation!" +
         "Hello, Implementation!" +
         "Hello, Implementation!" +
@@ -682,8 +682,8 @@ public class Feature
         "Hello, Implementation!" +
         "Hello, Implementation!" +
         "Hello, Implementation!" +
-        "Hello, Implementation!" 
+        "Hello, Implementation!" +
+        "Hello, Implementation!"
         );
 
 }
-
