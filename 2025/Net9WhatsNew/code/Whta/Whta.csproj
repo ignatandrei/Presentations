@@ -14,8 +14,11 @@
   </ItemGroup>
   <ItemGroup>
 	  <!--change true to false and dotnet publish-->
-    <RuntimeHostConfigurationOption Include="Feature.IsSupported" Value="true" Trim="true" />
+    <RuntimeHostConfigurationOption Include="Feature.IsSupported" Value="false" Trim="true" />
   </ItemGroup>
+  <!--<ItemGroup>
+    <PackageReference Include="FeatureSwitchDemo" Version="1.0.0" />
+  </ItemGroup>-->
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GX</CompilerGeneratedFilesOutputPath>
