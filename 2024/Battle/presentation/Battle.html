@@ -97,6 +97,9 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 			<section  data-name="DataAccess">
 				<h4>Data Access</h4>
 				<div class="r-fit-text">
+					Debate:<i> Code to DB sau DB to Code</i>
+<br />
+					Pro EFCore : independenta de  BD 
 				<table border="1">					
 					<tr>
 						<td>
@@ -114,50 +117,50 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 					</tr>
 					<tr>
 						<td>
-							Pro 1
+							Folosesti doar LINQ si nu te gindesti la Proceduri stocate , SQL pur
 						</td>
 						<td>
-							Pro 1
+							Ai control asupra Sql-ului si poti sa faci optimizari
 						</td>
 						<td>
-							Contra 1
+							Refacerea modelului daca modific BD ....
 						</td>
 						<td>
-							Contra 1
+							Trebuie sa te pricepi la SQL
 						</td>
 					</tr><tr>
 						<td>
-							Pro 2
+							Se optimizeaza cu Split Queries si AsNoTracking
 						</td>
 						<td>
-							Pro 2
+							Daca ai mai multa experienta cu SQL, atunci Dapper este mai usor de folosit
 						</td>
 						<td>
-							Contra 2
+							merge lazy loading
 						</td>
 						<td>
-							Contra 2
+							Nu merge lazy loading 
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Pro 3
+							Crapa la build time, in loc de compile time
 						</td>
 						<td>
-							Pro 3
+							Mai putin boilerplate code
 						</td>
 						<td>
-							Contra 3
+							read heavy :  setup mai greu 
 						</td>
 						<td>
 							Contra 3
 						</td>
 					</tr><tr>
 						<td>
-							Pro 4
+							Scaffolding ( BD => Code )
 						</td>
 						<td>
-							Pro 4
+							Cod mai simplu 
 						</td>
 						<td>
 							Contra 4
@@ -192,20 +195,20 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 		</tr>
 		<tr>
 			<td>
-				Pro 1
+				Simplitate - pentru programatori incepatori
 			</td>
 			<td>
-				Pro 1
+				Are de toate : Autentificare, Autorizare , request , filter
 			</td>
 			<td>
-				Contra 1
+				Stufos dupa o buna perioada de timp
 			</td>
 			<td>
 				Contra 1
 			</td>
 		</tr><tr>
 			<td>
-				Pro 2
+				Un punct bun de inceput
 			</td>
 			<td>
 				Pro 2
@@ -219,20 +222,21 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 		</tr>
 		<tr>
 			<td>
-				Pro 3
+				Rapid de scris
 			</td>
 			<td>
 				Pro 3
 			</td>
 			<td>
-				Contra 3
+				Lipsesc unele functionalitati - validare cu atribute default 
 			</td>
 			<td>
 				Contra 3
 			</td>
 		</tr><tr>
 			<td>
-				Pro 4
+				memoria mai mica
+				bun pentru microservicii ( micro !)
 			</td>
 			<td>
 				Pro 4
@@ -271,29 +275,29 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								Pro 1
+								Simplu - mai putin layere 
 							</td>
 							<td>
-								Pro 1
+								Dependency Injection by default
 							</td>
 							<td>
-								Contra 1
+								Mai greu de facut logging , monitoring si altele
 							</td>
 							<td>
-								Contra 1
+								Start time 
 							</td>
 						</tr><tr>
 							<td>
 								Pro 2
 							</td>
 							<td>
-								Pro 2
+								Logging, monitoring 
 							</td>
 							<td>
 								Contra 2
 							</td>
 							<td>
-								Contra 2
+								Resurse
 							</td>
 						</tr>
 						<tr>
@@ -301,7 +305,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 								Pro 3
 							</td>
 							<td>
-								Pro 3
+								Scalare si concurenta
 							</td>
 							<td>
 								Contra 3
@@ -359,13 +363,13 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								Pro 1
+								mai usor de utilizat decit tuplu
 							</td>
 							<td>
-								Pro 1
+								daca le folosesti o singura data , atunci named tuple
 							</td>
 							<td>
-								Pro 1
+								poti sa comentezi mai usor proprietatile unei clase decit ale unui tuplu / record
 							</td>
 							<td>
 								Contra 1
@@ -378,7 +382,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 							</td>
 						</tr><tr>
 							<td>
-								Pro 2
+								Bun la partea de dto,event, query results
 							</td>
 							<td>
 								Pro 2
@@ -398,7 +402,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								Pro 3
+								Partea de egalitate
 							</td>
 							<td>
 								Pro 3

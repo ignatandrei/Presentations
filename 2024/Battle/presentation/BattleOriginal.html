@@ -97,9 +97,6 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 			<section  data-name="DataAccess">
 				<h4>Data Access</h4>
 				<div class="r-fit-text">
-					Debate:<i> Code to DB sau DB to Code</i>
-<br />
-					Pro EFCore : independenta de  BD 
 				<table border="1">					
 					<tr>
 						<td>
@@ -117,50 +114,50 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 					</tr>
 					<tr>
 						<td>
-							Folosesti doar LINQ si nu te gindesti la Proceduri stocate , SQL pur
+							Pro 1
 						</td>
 						<td>
-							Ai control asupra Sql-ului si poti sa faci optimizari
+							Pro 1
 						</td>
 						<td>
-							Refacerea modelului daca modific BD ....
+							Contra 1
 						</td>
 						<td>
-							Trebuie sa te pricepi la SQL
+							Contra 1
 						</td>
 					</tr><tr>
 						<td>
-							Se optimizeaza cu Split Queries si AsNoTracking
+							Pro 2
 						</td>
 						<td>
-							Daca ai mai multa experienta cu SQL, atunci Dapper este mai usor de folosit
+							Pro 2
 						</td>
 						<td>
-							merge lazy loading
+							Contra 2
 						</td>
 						<td>
-							Nu merge lazy loading 
+							Contra 2
 						</td>
 					</tr>
 					<tr>
 						<td>
-							Crapa la build time, in loc de compile time
+							Pro 3
 						</td>
 						<td>
-							Mai putin boilerplate code
+							Pro 3
 						</td>
 						<td>
-							read heavy :  setup mai greu 
+							Contra 3
 						</td>
 						<td>
 							Contra 3
 						</td>
 					</tr><tr>
 						<td>
-							Scaffolding ( BD => Code )
+							Pro 4
 						</td>
 						<td>
-							Cod mai simplu 
+							Pro 4
 						</td>
 						<td>
 							Contra 4
@@ -195,20 +192,20 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 		</tr>
 		<tr>
 			<td>
-				Simplitate - pentru programatori incepatori
+				Pro 1
 			</td>
 			<td>
-				Are de toate : Autentificare, Autorizare , request , filter
+				Pro 1
 			</td>
 			<td>
-				Stufos dupa o buna perioada de timp
+				Contra 1
 			</td>
 			<td>
 				Contra 1
 			</td>
 		</tr><tr>
 			<td>
-				Un punct bun de inceput
+				Pro 2
 			</td>
 			<td>
 				Pro 2
@@ -222,21 +219,20 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 		</tr>
 		<tr>
 			<td>
-				Rapid de scris
+				Pro 3
 			</td>
 			<td>
 				Pro 3
 			</td>
 			<td>
-				Lipsesc unele functionalitati - validare cu atribute default 
+				Contra 3
 			</td>
 			<td>
 				Contra 3
 			</td>
 		</tr><tr>
 			<td>
-				memoria mai mica
-				bun pentru microservicii ( micro !)
+				Pro 4
 			</td>
 			<td>
 				Pro 4
@@ -275,29 +271,29 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								Simplu - mai putin layere 
+								Pro 1
 							</td>
 							<td>
-								Dependency Injection by default
+								Pro 1
 							</td>
 							<td>
-								Mai greu de facut logging , monitoring si altele
+								Contra 1
 							</td>
 							<td>
-								Start time 
+								Contra 1
 							</td>
 						</tr><tr>
 							<td>
 								Pro 2
 							</td>
 							<td>
-								Logging, monitoring 
+								Pro 2
 							</td>
 							<td>
 								Contra 2
 							</td>
 							<td>
-								Resurse
+								Contra 2
 							</td>
 						</tr>
 						<tr>
@@ -305,7 +301,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 								Pro 3
 							</td>
 							<td>
-								Scalare si concurenta
+								Pro 3
 							</td>
 							<td>
 								Contra 3
@@ -337,8 +333,8 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 					Click on button and see the code generated
 				</aside>
 			</section>
-			<section  data-name="Programming" style="text-align: left;">
-				<h4>Programming</h4>
+			<section  data-name="Csharp" style="text-align: left;">
+				<h4>Csharp</h4>
 				<div class="r-fit-text">
 					<table border="1">					
 						<tr>
@@ -363,13 +359,13 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								mai usor de utilizat decit tuplu
+								Pro 1
 							</td>
 							<td>
-								daca le folosesti o singura data , atunci named tuple
+								Pro 1
 							</td>
 							<td>
-								poti sa comentezi mai usor proprietatile unei clase decit ale unui tuplu / record
+								Pro 1
 							</td>
 							<td>
 								Contra 1
@@ -382,7 +378,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 							</td>
 						</tr><tr>
 							<td>
-								Bun la partea de dto,event, query results
+								Pro 2
 							</td>
 							<td>
 								Pro 2
@@ -402,7 +398,7 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 						</tr>
 						<tr>
 							<td>
-								Partea de egalitate
+								Pro 3
 							</td>
 							<td>
 								Pro 3
@@ -638,7 +634,42 @@ Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
 					Click on button and see the code generated
 				</aside>
 			</section>
-			
+			<section  data-name="Patterns">
+				<h4>Patterns</h4>
+				<div class="r-fit-text">
+				<table border="1">					
+					<tr>
+						<td>
+							Pro UnitOfWork
+						</td>
+						<td>
+							Pro Repository
+						</td>
+						<td>
+							Contra UnitOfWork
+						</td>
+						<td>
+							Contra Repository
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Pro 1
+						</td>
+						<td>
+							Pro 1
+						</td>
+						<td>
+							Contra 1
+						</td>
+						<td>
+							Contra 1
+						</td>
+					</tr>
+					</table>
+				</div>
+			</section>
+
 			<section id="endBattle" data-name="Last">
 				
 				<h2>Thank you for your time </h2>
