@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreConsole", "EFCoreCons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureSwitchDemo", "FeatureSwitchDemo\FeatureSwitchDemo.csproj", "{B82339ED-9226-4C91-B665-8B6FED6080C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolkitMVVM", "PartialProperties\ToolkitMVVM.csproj", "{21B4E20D-B20A-9239-A278-A28CC2F9B117}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialProperties", "PartialProperties\PartialProperties.csproj", "{21B4E20D-B20A-9239-A278-A28CC2F9B117}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
