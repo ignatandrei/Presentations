@@ -75,11 +75,10 @@ app.UseSwaggerUi(options =>
     options.Path = "/nswag-swagger";
 });
 
+//goto /blocklyAutomation
 app.UseBlocklyUI(app.Environment);
 app.UseBlocklyAutomation();
 
-//TODO: blockly
-//https://timdeschryver.dev/blog/what-about-my-api-documentation-now-that-swashbuckle-is-no-longer-a-dependency-in-aspnet-9
 
 app.MapGet("/", () => TypedResults.InternalServerError("Something went wrong!"));
 
