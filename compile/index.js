@@ -385,6 +385,16 @@ fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
 // Create the zip file.
 archive.createZip();
 
+folder='../2025/';
+file='Net9WhatsNew'
+fileHtml='presentation/Net9WhatsNew.html';  
+archive = new DirArchiver(`${folder}${file}`, `../docs/${file}.zip`,[]);
+fs.copyFileSync(`${folder}${file}/${fileHtml}`, `../docs/${file}prez.html`);
+ 
+// Create the zip file.
+archive.createZip();
+
+
 
 var folderToc = require("folder-toc");
 folderToc("../docs",  {
