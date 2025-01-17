@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Net9WhatsNew</title>
+
+<link rel="stylesheet" href="dist/reset.css">
+<link rel="stylesheet" href="dist/reveal.css">
+<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+<link rel="stylesheet" href="dist/theme/sky.css">
+
+<!-- Theme used for syntax highlighted code -->
+<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+<section data-background-color="blue" data-name="Net9WhatsNew" style="text-align: left;">
+<div class="r-fit-text">
+Welcome to Net9WhatsNew
+<br />
+Press <em>space</em> to navigate.
+<br />
+Press left arrow to go back.
+<br />
+Press right arrow to go forward.
+<br />
+<br />
+Online at https://ignatandrei.github.io/Presentations/Net9WhatsNewprez.html
+<br />
+For download https://ignatandrei.github.io/Presentations/Net9WhatsNew.zip
+</section>
+<section data-name="Author" style="text-align: left;">
+<h4>About me</h4> 
+<img alt="ignat" src="ignat.jpg" style="width: 10%">
+Andrei Ignat <a
+href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+<div class="r-fit-text">
+<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+System.Console.WriteLine("Ignat Andrei");
+System.Console.WriteLine("Net9WhatsNew");
+  </code></pre>
+<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+</p>
+<p>Book Making Open Source Component : <a
+href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+<p>Book Copy Paste from StackOverflow : <a
+href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+<p>Roslyn Source Code Generators with examples :
+<a
+href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+</p>
+<p>Monthly meetings: <a
+href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+</p>
+For notes press S <br />
+For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+For all slides press ESC<br />
+<!-- https://revealjs.com/fragments/ -->
+<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+<aside class="notes">
+Shhh, these are your private notes 📝
+
+</aside>
+</div>
+</section>
+<section  data-name="Intro" style="text-align: left;">
+<h4>Introduction to what's new .NET 9</h4>
+<div class="r-fit-text">
+<a href="https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview" target="_blank">https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview</a>
+<p>STS release ( supported until May 12, 2026)</p>
+<ul>
+<li>.NET 9 Runtime</li>
+<li>C# 13</li>
+<li>Entity Framework Core</li>
+<li>ASP.NET Core</li>
+<li>Aspire</li>
+<li>Not in this demo : <a href="https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview" target="_blank">Blazor, WPF, AI, MAUI , F# 9 </a></li>
+<li>Not in this demo : <a href="https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-9/" target="_blank">Performance improvements </a></li>
+</ul>
+<aside class="notes">
+</aside>
+</div>
+</section>
+<section  data-name=".NET9">
+<h4><a href="https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime" target="_blank">.NET 9 Runtime</a></h4>
+<div class="r-fit-text">
+<a href="https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime" target="_blank">
+https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/runtime
+</a>
+<br />
+<pre><code data-trim data-noescape >
+FeatureSwitchDemo
+Base64Demo
+BinaryFormatterDemo
+OrderedDictionaryDemo
+TimeSpanDemo
+LinqCountAggregateDemo
+SearchValuesDemo
+GenerateGuidV7
+BigMulDemo
+WhenEachDemo
+
+</code></pre>
+Not in this demo:
+
+<small>
+
+JSON Serialization/Deserialization: https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/extract-schema
+<br />
+Multiple JSON :https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/use-utf8jsonreader#read-multiple-json-documents
+<br />
+DI Choose Constructor: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#dependency-injection---activatorutilitiescreateinstance-constructor
+<br />
+PersistedAssemblyBuilder, https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/libraries#persisted-assemblies
+<br />
+</small>
+<br />
+<p>Demo: Whta.csproj</p>
+<aside class="notes">
+</aside>
+</div>
+</section>
+<section  data-name="C#13" >
+<h4><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13" target="_blank">C# 13</a></h4>
+<div class="r-fit-text">
+	<a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13" target="_blank">
+	https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13 </a>
+
+<pre><code data-trim data-noescape >
+params keyword for collections
+new lock object
+field keyword
+partial properties
+</code></pre>
+Not in this demo
+<br />
+<br />
+
+Demo: WhtaCSharp13.csproj , PartialProperties.csproj
+</div>
+<aside class="notes">
+	WhtaCSharp13.csproj
+</aside>
+</section>
+<section  data-name="EFCore" >
+<h4><a href="https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew" target="_blank">Entity Framework Core</a></h4>
+<div class="r-fit-text">
+<a href="https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew" target="_blank">https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-9.0/whatsnew</a>
+<pre><code data-trim data-noescape >
+	Seeding ( see  BeforeOnConfiguring)
+	Order/OrderDescending
+	Improvements in SqlGeneration
+	AutoCompiled Models	
+	</code></pre>
+	Not Here: <br />AOT https://learn.microsoft.com/en-us/ef/core/performance/nativeaot-and-precompiled-queries
+	<br />
+	Demo: EFCoreConsole.csproj, EFCoreDemo.csproj
+</div>
+<aside class="notes">
+Click on button and see the code generated
+</aside>
+</section>
+<section  data-name="ASP.NET" >
+	<h4><a href="https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0" target="_blank">ASP.NET</a></h4>
+	<div class="r-fit-text">
+		<a href="https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0" target="_blank">https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0</a>
+		<pre><code data-trim data-noescape >
+		One OpenAPI json, multiple UI 
+		Assets: MapStaticAssets
+		TypedResults.InternalServerError
+
+		</code></pre>
+			Not here: SignalR, Blazor, Hybrid Cache
+			<br />
+			https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-9.0?view=aspnetcore-9.0#new-hybridcache-library
+			<br />
+			Demo:WhatsAspNet.csproj
+	</div>
+
+	<aside class="notes">
+	Click on button and see the code generated
+	</aside>
+	</section>
+
+<section  data-name="Aspire" >
+	<h4><a href="https://learn.microsoft.com/en-us/dotnet/aspire/whats-new/dotnet-aspire-9?tabs=windows" target="_blank">Aspire</a></h4>
+	<div class="r-fit-text">
+		<a href="https://learn.microsoft.com/en-us/dotnet/aspire/whats-new/dotnet-aspire-9?tabs=windows" target="_blank">https://learn.microsoft.com/en-us/dotnet/aspire/whats-new/dotnet-aspire-9?tabs=windows</a>
+		<pre><code data-trim data-noescape >
+			WithLifetime(ContainerLifetime.Persistent)
+			WaitFor(asp);
+			restart
+		</code></pre>
+		Not Here: 
+		<br />
+		https://learn.microsoft.com/en-us/dotnet/aspire/app-host/eventing
+		<br />
+		<br /><br />Demo: Whta.AppHost.csproj
+	</div>
+	<aside class="notes">
+	Click on button and see the code generated
+	</aside>
+	</section>
+	
+<section id="endNet9WhatsNew" data-name="Last">
+<h1>Questions ? </h1>
+<h2>Thank you for your time </h2>
+
+
+
+</section>
+
+</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/math/math.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/simplemenu/simplemenu.js"></script>
+<!-- <script src="plugin/tableofcontents.js"></script> -->
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+hash: true,
+history: false,
+controls: true,
+controlsTutorial: true,
+controlsBackArrows: 'visible',
+slideNumber: 'c/t',
+showSlideNumber: 'all',
+jumpToSlide: true,
+keyboard: true,
+touch: true,
+loop: true,
+help: true,
+showNotes: false,
+pdfMaxPagesPerSlide: 1,
+dependencies: [
+     
+        { src: 'plugin/tableofcontents.js' }
+    ],
+tableofcontents: {
+// Specifies the slide title of the table of contents slide
+title: "Contents",
+titleTag:"h3",
+
+// Specifies the position of the table of contents slide in the presentation
+position: 2,
+
+// Specifies which slide tag elements will be used
+// for generating the table of contents.
+titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+ignoreFirstSlide: true,
+
+// Specifies if every single element of the table of contents
+// will be stepped through before moving on to the next slide.
+fadeInElements: false
+},
+// Learn about plugins: https://revealjs.com/plugins/
+plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+, simplemenu: {
+scale:0.3,
+barhtml: {
+header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+footer: ""
+}
+},
+
+
+});
+</script>
+</body>
+
+</html>
