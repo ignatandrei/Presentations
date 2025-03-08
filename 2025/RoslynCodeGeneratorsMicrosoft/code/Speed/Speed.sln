@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoSerializeJSON", "DemoSerializeJSON\DemoSerializeJSON.csproj", "{A35AE361-5B21-5F7C-D13A-009D28DEBCEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoInterceptor", "DemoInterceptor\DemoInterceptor.csproj", "{EAA2F5E5-25A2-47D7-8924-591E07AC7BE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A35AE361-5B21-5F7C-D13A-009D28DEBCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35AE361-5B21-5F7C-D13A-009D28DEBCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35AE361-5B21-5F7C-D13A-009D28DEBCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35AE361-5B21-5F7C-D13A-009D28DEBCEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA2F5E5-25A2-47D7-8924-591E07AC7BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA2F5E5-25A2-47D7-8924-591E07AC7BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA2F5E5-25A2-47D7-8924-591E07AC7BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA2F5E5-25A2-47D7-8924-591E07AC7BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D82DADAA-D844-4960-AE33-A0FB5014A478}
+	EndGlobalSection
+EndGlobal

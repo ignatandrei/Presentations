@@ -1,0 +1,6 @@
+@DemoInterceptor_HostAddress = http://localhost:5169
+
+GET {{DemoInterceptor_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
