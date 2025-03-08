@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RSCG_TimeBombComment": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\Console_TimeBombComment\\Console_TimeBombComment.csproj"
+    }
+  }
+}
