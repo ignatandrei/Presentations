@@ -58,7 +58,7 @@ internal class GenerateCommentsAsError
         if (comments.IsDefaultOrEmpty)
             return;
         var data = comments.Distinct();
-        //int nr = 0;
+        int nr = 0;
         bool isOnRelease = (compilation.Options?.OptimizationLevel == OptimizationLevel.Release);
         foreach (var item in data)
         {
@@ -66,7 +66,6 @@ internal class GenerateCommentsAsError
             
             if (text.StartsWith(commentStart2))
             {
-                int nr = 0;
                 spc.ReportDiagnostic(GenerateForTB(item));
                 var parent = item.Token.Parent;
                 while (parent != null && !(parent is ClassDeclarationSyntax))
