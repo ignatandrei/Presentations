@@ -66,7 +66,7 @@
 					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
 
 					<aside class="notes">
-						Shhh, these are your private notes 📝
+						Shhh, these are your private notes 
 
 					</aside>
 				</div>
@@ -80,7 +80,8 @@
 
 					ollama ls
 					ollama pull
-					ollama run MODEL
+					ollama run smallthinker
+						Write a short poem in code
 					ollama ps
 
 
@@ -98,13 +99,26 @@
 			</section>
 			<section  data-name="Install GenAIScript">
 				<div class="r-fit-text">
-					
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						npm init
+						npm install -D genaiscript
+							  </code></pre>
+						<br />
+					https://microsoft.github.io/genaiscript/reference/cli/
 				</div>
 			</section>
 			<section  data-name="FirstScript">
 				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+					npx genaiscript scripts create poem
+					script({
+						model: "ollama:llama3.2",
+					})
+					<br />
+					npx genaiscript run poem
 					
-				</div>
+				</code></pre>
+			</div>
 			</section>
 			<section  data-name="Improve a blog post">
 				<div class="r-fit-text">
