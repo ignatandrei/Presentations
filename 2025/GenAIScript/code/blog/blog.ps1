@@ -4,7 +4,7 @@ $modelNames =  @('ollama:llama3.2','ollama:deepseek-r1',"ollama:phi4","ollama:ge
 foreach ( $modelName in $modelNames )
 {
     $sw = [Diagnostics.Stopwatch]::StartNew()
-    $a = npx genaiscript run blog blog.txt --model $modelName   | Out-String
+    $a = npx genaiscript run blogpost blog.txt --model $modelName   | Out-String
     $sw.Stop()
     $index= $a.IndexOf($modelName)    
     Write-Host "found " $index "for "   $modelName 
