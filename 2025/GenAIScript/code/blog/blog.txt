@@ -1,0 +1,74 @@
+The .NET Stats project wants to show the stars for .NET github projects.
+
+The projects are taken from .NET Foundation , https://dotnetfoundation.org/ ,
+Vitali Fokin https://github.com/quozd/awesome-dotnet/
+and Thang Chung https://github.com/thangchung/awesome-dotnet-core
+There are more than 1000 repositories investigated.
+
+Here are the first 30 projects with most  stars :
+
+“ASP.NET Core” https://github.com/aspnet/home number stars 35690
+“ASP.NET MVC” https://github.com/dotnet/aspnetcore number stars 35674
+“Another Redis Desktop Manager” https://github.com/qishibo/AnotherRedisDesktopManager number stars 31157
+“Avalonia” https://github.com/AvaloniaUI/Avalonia number stars 26327
+“.NET MAUI” https://github.com/dotnet/maui number stars 22303
+“Awesome .NET Core” https://github.com/thangchung/awesome-dotnet-core number stars 20073
+“ASP.NET Core Developer Roadmap” https://github.com/MoienTajik/AspNetCore-Developer-Roadmap number stars 18741
+“React Native for Windows” https://github.com/microsoft/react-native-windows number stars 16513
+“bitwarden-core” https://github.com/bitwarden/core number stars 15891
+“Entity Framework” https://github.com/dotnet/efcore number stars 13839
+“Polly” https://github.com/App-vNext/Polly number stars 13504
+“awesome-static-analysis” https://github.com/mre/awesome-static-analysis number stars 13452
+“ABP” https://github.com/abpframework/abp number stars 13065
+“AspNet Boilerplate” https://github.com/aspnetboilerplate/aspnetboilerplate number stars 11838
+“awesome-ddd” https://github.com/heynickc/awesome-ddd number stars 11360
+“Mono” https://github.com/mono/mono number stars 11170
+“BenchmarkDotNet” https://github.com/dotnet/BenchmarkDotNet number stars 10682
+“AngleSharp” https://github.com/AngleSharp/AngleSharp/issues number stars 10389
+“Orleans” https://github.com/dotnet/orleans number stars 10172
+“AutoMapper” https://github.com/automapper/automapper number stars 9966
+“RestSharp” https://github.com/restsharp/RestSharp number stars 9646
+“MahApps.Metro” https://github.com/MahApps/MahApps.Metro number stars 9355
+“FluentValidation” https://github.com/fluentvalidation/fluentvalidation number stars 9160
+“ML.NET” https://github.com/dotnet/machinelearning number stars 9073
+“Awesome Blazor” https://github.com/AdrienTorris/awesome-blazor number stars 8895
+“Humanizer” https://github.com/Humanizr/Humanizer number stars 8722
+“Orchard Core” https://github.com/OrchardCMS/OrchardCore number stars 7488
+“Reactive Extensions for .NET – ReactiveX” https://github.com/dotnet/reactive number stars 6765
+“Stride” https://github.com/stride3d/stride number stars 6708
+“Awesome Unity” https://github.com/RyanNielson/awesome-unity number stars 6702
+And the first 30 projects with most  stars in 2024
+
+“Avalonia” https://github.com/AvaloniaUI/Avalonia number stars 4477
+“Another Redis Desktop Manager” https://github.com/qishibo/AnotherRedisDesktopManager number stars 3663
+“ASP.NET Core” https://github.com/aspnet/home number stars 2909
+“ASP.NET MVC” https://github.com/dotnet/aspnetcore number stars 2902
+“.NET MAUI” https://github.com/dotnet/maui number stars 2542
+“bitwarden-core” https://github.com/bitwarden/core number stars 2465
+“ASP.NET Core Developer Roadmap” https://github.com/MoienTajik/AspNetCore-Developer-Roadmap number stars 2090
+“Awesome .NET Core” https://github.com/thangchung/awesome-dotnet-core number stars 1551
+“ABP” https://github.com/abpframework/abp number stars 1463
+“Elsa Workflows” https://github.com/elsa-workflows/elsa-core number stars 1408
+“Bootstrap Blazor” https://github.com/dotnetcore/BootstrapBlazor/issues number stars 1283
+“awesome-static-analysis” https://github.com/mre/awesome-static-analysis number stars 1120
+“BenchmarkDotNet” https://github.com/dotnet/BenchmarkDotNet number stars 1073
+“Polly” https://github.com/App-vNext/Polly number stars 1001
+“Entity Framework” https://github.com/dotnet/efcore number stars 994
+“React Native for Windows” https://github.com/microsoft/react-native-windows number stars 979
+“awesome-ddd” https://github.com/heynickc/awesome-ddd number stars 972
+“Stride” https://github.com/stride3d/stride number stars 945
+“Silk.NET” https://github.com/dotnet/Silk.NET number stars 929
+“Verify” https://github.com/VerifyTests/Verify number stars 798
+“Awesome Blazor” https://github.com/AdrienTorris/awesome-blazor number stars 775
+“AngleSharp” https://github.com/AngleSharp/AngleSharp/issues number stars 762
+“Python.NET” https://github.com/pythonnet/pythonnet number stars 758
+“FluentValidation” https://github.com/fluentvalidation/fluentvalidation number stars 686
+“.NET Community Toolkit” https://github.com/CommunityToolkit/dotnet/issues number stars 680
+“Humanizer” https://github.com/Humanizr/Humanizer number stars 679
+“MiniExcel” https://github.com/shps951023/MiniExcel number stars 677
+“Orchard Core” https://github.com/OrchardCMS/OrchardCore number stars 660
+“Orleans” https://github.com/dotnet/orleans number stars 643
+“Ant Design Blazor” https://github.com/ant-design-blazor/ant-design-blazor number stars 622
+
+You can see at https://ignatandrei.github.io/dotnetstats/ and the source code at http://github.com/ignatandrei/dotnetstats/
+
