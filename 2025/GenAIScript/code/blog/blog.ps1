@@ -20,9 +20,5 @@ remove-item blogAI.txt
 $text | Out-File blogAI.txt
 return
 exit
-# npx genaiscript run befCommit     --model "ollama:deepseek-r1" 
-# npx genaiscript run blog      --model "ollama:phi4" 
-# npx genaiscript run blog      --model "ollama:gemma2:27b"
-# npx genaiscript run blog      --model "ollama:smallthinker"
-# npx genaiscript run blog      --model "ollama:smallthinker"
 
+# npx genaiscript run blogpost blog.txt     --model "ollama:deepseek-r1"
