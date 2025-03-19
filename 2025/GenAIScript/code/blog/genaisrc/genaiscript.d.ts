@@ -1,6 +1,6 @@
 /**
  * GenAIScript Ambient Type Definition File
- * @version 1.116.2
+ * @version 1.117.1
  */
 type OptionsOrString<TOptions extends string> = (string & {}) | TOptions
 
@@ -379,6 +379,8 @@ type ModelType = OptionsOrString<
     | "deepseek:deepseek-chat"
     | "transformers:onnx-community/Qwen2.5-0.5B-Instruct:q4"
     | "transformers:HuggingFaceTB/SmolLM2-1.7B-Instruct:q4f16"
+    | "llamafile:*"
+    | "sglang:*"
     | "echo"
     | "none"
 >
@@ -435,6 +437,7 @@ type ModelProviderType = OptionsOrString<
     | "ollama"
     | "lmstudio"
     | "jan"
+    | "sglang"
     | "llamafile"
     | "litellm"
     | "github_copilot_chat"
@@ -2203,6 +2206,13 @@ interface DocxParseOptions {
     cache?: boolean | string
 }
 
+interface EncodeIDsOptions {
+    matcher?: RegExp
+    prefix?: string
+    open?: string
+    close?: string
+}
+
 interface Parsers {
     /**
      * Parses text as a JSON5 payload
@@ -2472,6 +2482,22 @@ interface Parsers {
      * @param text
      */
     dedent(templ: TemplateStringsArray | string, ...values: unknown[]): string
+
+    /**
+     * Encodes ids in a text and returns the function to decode them
+     * @param text
+     * @param options
+     */
+    encodeIDs(
+        text: string,
+        options?: EncodeIDsOptions
+    ): {
+        encoded: string
+        text: string
+        decode: (text: string) => string
+        matcher: RegExp
+        ids: Record<string, string>
+    }
 }
 
 interface YAML {
@@ -4219,6 +4245,11 @@ interface BrowseSessionOptions
               width: number
               height: number
           }
+
+    /**
+     * CDP connection string
+     */
+    connectOverCDP?: string
 }
 
 interface TimeoutOptions {
