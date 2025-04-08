@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Battle</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="blue" data-name="Battle" style="text-align: left;">
+				<div class="r-fit-text">
+					Welcome to Battle
+					<br />
+					Press <em>space</em> to navigate.
+					<br />
+					Press left arrow to go back.
+					<br />
+					Press right arrow to go forward.
+					<br />
+					<br />
+					Online at https://ignatandrei.github.io/Presentations/Battle2025prez.html
+
+					<br />
+					For download https://ignatandrei.github.io/Presentations/Battle2025.zip
+
+			</section>
+			<section data-name="Author" style="text-align: left;">
+				<h4>About me</h4>
+				<img alt="ignat" src="ignat.jpg" style="width: 10%">
+				Andrei Ignat <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						System.Console.WriteLine("Ignat Andrei");
+						System.Console.WriteLine("Battle");							
+						  </code></pre>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+					</p>
+					<p>Book Making Open Source Component : <a
+							href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a
+							href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a
+							href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a
+							href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+					</p>
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<!-- https://revealjs.com/fragments/ -->
+					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+
+					</aside>
+				</div>
+			</section>
+
+			<section data-name="Introduction" style="text-align: left;">
+				<div class="r-fit-text">
+					<h5>We will talk about different technologies in .NET to achieve the same purpose.</h5>
+					<br /><br />
+					<div>
+							example : 
+						OOP: Default Interface methods <em>vs</em> abstract class<br />
+
+						Test : XUnit <em>vs</em> MSTest <em>vs</em> NUnit<br />
+
+						<aside class="notes">
+
+						</aside>
+
+				</div>
+			</section>
+
+			<section data-name="FirstTime">
+				<section>
+					<h4>First time ( press down arrow)</h4>
+					<div class="r-fit-text">
+					DataAccess: EFCore <em>vs</em> Dapper <br />
+
+					API: Controllers <em>vs</em> MinimalAPI <br />
+
+					CLI : Console App <em>vs</em> ASP.NET Core app<br />
+
+					Programming : Records <em>vs</em> Class <em>vs</em> Tuples<br />
+					</div>
+				</section>
+				<section data-name="DataAccess">
+					<h4>Data Access</h4>
+					<div class="r-fit-text">
+						Debate:<i> Code to DB sau DB to Code</i>
+						<br />
+						Pro EFCore : independenta de BD
+						<table border="1">
+							<tr>
+								<td>
+									Pro EFCORE
+								</td>
+								<td>
+									Pro Dapper
+								</td>
+								<td>
+									Contra EFCORE
+								</td>
+								<td>
+									Contra Dapper
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Folosesti doar LINQ si nu te gindesti la Proceduri stocate , SQL pur
+								</td>
+								<td>
+									Ai control asupra Sql-ului si poti sa faci optimizari
+								</td>
+								<td>
+									Refacerea modelului daca modific BD ....
+								</td>
+								<td>
+									Trebuie sa te pricepi la SQL
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Se optimizeaza cu Split Queries si AsNoTracking
+								</td>
+								<td>
+									Daca ai mai multa experienta cu SQL, atunci Dapper este mai usor de folosit
+								</td>
+								<td>
+									merge lazy loading
+								</td>
+								<td>
+									Nu merge lazy loading
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Crapa la build time, in loc de compile time
+								</td>
+								<td>
+									Mai putin boilerplate code
+								</td>
+								<td>
+									read heavy : setup mai greu
+								</td>
+								<td>
+									Contra 3
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Scaffolding ( BD => Code )
+								</td>
+								<td>
+									Cod mai simplu
+								</td>
+								<td>
+									Contra 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+							</tr>
+						</table>
+						<aside class="notes">
+
+						</aside>
+					</div>
+				</section>
+				<section data-name="API" style="text-align: left;">
+					<h4>API</h4>
+					<div class="r-fit-text">
+						<table border="1">
+							<tr>
+								<td>
+									Pro Minimal API
+								</td>
+								<td>
+									Pro Controller
+								</td>
+								<td>
+									Contra Minimal API
+								</td>
+								<td>
+									Contra Controller
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Simplitate - pentru programatori incepatori
+								</td>
+								<td>
+									Are de toate : Autentificare, Autorizare , request , filter
+								</td>
+								<td>
+									Stufos dupa o buna perioada de timp
+								</td>
+								<td>
+									Contra 1
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Un punct bun de inceput
+								</td>
+								<td>
+									Pro 2
+								</td>
+								<td>
+									Contra 2
+								</td>
+								<td>
+									Contra 2
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Rapid de scris
+								</td>
+								<td>
+									Pro 3
+								</td>
+								<td>
+									Lipsesc unele functionalitati - validare cu atribute default
+								</td>
+								<td>
+									Contra 3
+								</td>
+							</tr>
+							<tr>
+								<td>
+									memoria mai mica
+									bun pentru microservicii ( micro !)
+								</td>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<aside class="notes">
+						Click on button and see the code generated
+					</aside>
+				</section>
+
+				<section data-name="CLI" style="text-align: left;">
+					<h4>CLI</h4>
+					<div class="r-fit-text">
+						<table border="1">
+							<tr>
+								<td>
+									Pro Console App
+								</td>
+								<td>
+									Pro ASP.NET Core app
+								</td>
+								<td>
+									Contra Console App
+								</td>
+								<td>
+									Contra ASP.NET Core app
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Simplu - mai putin layere
+								</td>
+								<td>
+									Dependency Injection by default
+								</td>
+								<td>
+									Mai greu de facut logging , monitoring si altele
+								</td>
+								<td>
+									Start time
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pro 2
+								</td>
+								<td>
+									Logging, monitoring
+								</td>
+								<td>
+									Contra 2
+								</td>
+								<td>
+									Resurse
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pro 3
+								</td>
+								<td>
+									Scalare si concurenta
+								</td>
+								<td>
+									Contra 3
+								</td>
+								<td>
+									Contra 3
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+							</tr>
+						</table>
+
+
+
+
+					</div>
+					<aside class="notes">
+						Click on button and see the code generated
+					</aside>
+				</section>
+				<section data-name="Programming" style="text-align: left;">
+					<h4>Programming</h4>
+					<div class="r-fit-text">
+						<table border="1">
+							<tr>
+								<td>
+									Pro Records
+								</td>
+								<td>
+									Pro Tuples
+								</td>
+								<td>
+									Pro Class
+								</td>
+								<td>
+									Contra Records
+								</td>
+								<td>
+									Contra Tuples
+								</td>
+								<td>
+									Contra Class
+								</td>
+							</tr>
+							<tr>
+								<td>
+									mai usor de utilizat decit tuplu
+								</td>
+								<td>
+									daca le folosesti o singura data , atunci named tuple
+								</td>
+								<td>
+									poti sa comentezi mai usor proprietatile unei clase decit ale unui tuplu / record
+								</td>
+								<td>
+									Contra 1
+								</td>
+								<td>
+									Contra 1
+								</td>
+								<td>
+									Contra 1
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Bun la partea de dto,event, query results
+								</td>
+								<td>
+									Pro 2
+								</td>
+								<td>
+									Pro 2
+								</td>
+								<td>
+									Contra 2
+								</td>
+								<td>
+									Contra 2
+								</td>
+								<td>
+									Contra 2
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Partea de egalitate
+								</td>
+								<td>
+									Pro 3
+								</td>
+								<td>
+									Pro 3
+								</td>
+								<td>
+									Contra 3
+								</td>
+								<td>
+									Contra 3
+								</td>
+								<td>
+									Contra 3
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Pro 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+								<td>
+									Contra 4
+								</td>
+							</tr>
+						</table>
+
+
+					</div>
+					<aside class="notes">
+						Click on button and see the code generated
+					</aside>
+				</section>
+			</section>
+			<section data-name="OOP" style="text-align: left;">
+				<h5>Default Interface vs Abstract Class</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro Default Interface methods
+							</td>
+							<td>
+								Pro abstract class
+							</td>
+							<td>
+								Contra Default Interface methods
+							</td>
+							<td>
+								Contra abstract class
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
+			<section data-name="Test" style="text-align: left;">
+				<h5>Testing frameworks</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro XUnit
+							</td>
+							<td>
+								Pro MSTest
+							</td>
+							<td>
+								Pro NUnit
+							</td>
+							<td>
+								Contra XUnit
+							</td>
+							<td>
+								Contra MSTest
+							</td>
+							<td>
+								Contra NUnit
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+
+
+
+
+					<aside class="notes">
+						Click on button and see the code generated
+					</aside>
+			</section>
+
+			<section data-name="Swagger" style="text-align: left;">
+				<h5>Swagger on Dev vs on Prod</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro Swagger On Dev
+							</td>
+							<td>
+								Pro Swagger on prod
+							</td>
+							<td>
+								Contra Swagger On Dev
+							</td>
+							<td>
+								Contra Swagger On Prod
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
+
+
+			<section data-name="Patterns" style="text-align: left;">
+				<h5>UnitOfWork vs Repository</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro Unit Of Work
+							</td>
+							<td>
+								Pro Repository
+							</td>
+							<td>
+								Contra Unit Of Work
+							</td>
+							<td>
+								Contra Repository
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
+			<section data-name="Stateless" style="text-align: left;">
+				<h5>WebAPI vs Azure Functions</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro WebAPI
+							</td>
+							<td>
+								Pro Azure Functions
+							</td>
+							<td>
+								Contra WebAPI
+							</td>
+							<td>
+								Contra Azure Functions
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
+			<section data-name="Database" style="text-align: left;">
+				<h5>SqlServer on local vs Azure Sql</h5>
+				<div class="r-fit-text">
+					<table border="1">
+						<tr>
+							<td>
+								Pro SqlServer on local
+							</td>
+							<td>
+								Pro Azure Sql
+							</td>
+							<td>
+								Contra SqlServer on local
+							</td>
+							<td>
+								Contra Azure Sql
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Pro 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+							<td>
+								Contra 1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Pro 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+							<td>
+								Contra 2
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Pro 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+							<td>
+								Contra 3
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Pro 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+							<td>
+								Contra 4
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
+
+			<section id="endBattle" data-name="Last">
+
+				<h2>Thank you for your time </h2>
+
+
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+	<!-- <script src="plugin/tableofcontents.js"></script> -->
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+
+				{ src: 'plugin/tableofcontents.js' }
+			],
+			tableofcontents: {
+				// Specifies the slide title of the table of contents slide
+				title: "Table of Contents",
+
+				// Specifies the position of the table of contents slide in the presentation
+				position: 2,
+
+				// Specifies which slide tag elements will be used
+				// for generating the table of contents.
+				titleTagSelector: "h5, h6",
+
+				// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+				ignoreFirstSlide: true,
+
+				// Specifies if every single element of the table of contents
+				// will be stepped through before moving on to the next slide.
+				fadeInElements: false
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+			, simplemenu: {
+				scale: 0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			},
+
+
+
+		});
+	</script>
+</body>
+
+</html>
