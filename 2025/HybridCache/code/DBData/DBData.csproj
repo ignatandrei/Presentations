@@ -7,11 +7,16 @@
 	  <IsAspireProject>false</IsAspireProject>
   </PropertyGroup>
 	<ItemGroup>
-		<EmbeddedResource  Include="sql/*.sql" />
-	<PackageReference Include="Chorn.EmbeddedResourceAccessGenerator" Version="1.1.5" OutputItemType="Analyzer"  >
+		<EmbeddedResource Include="sql/*.sql" />
+	<PackageReference Include="Chorn.EmbeddedResourceAccessGenerator" Version="1.1.5" OutputItemType="Analyzer">
 		<PrivateAssets>all</PrivateAssets>
 		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
 	</ItemGroup>
 	<PropertyGroup>
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
