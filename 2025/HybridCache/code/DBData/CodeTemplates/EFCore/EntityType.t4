@@ -64,6 +64,29 @@ namespace <#= NamespaceHint #>;
         }
     }
 #>
+//andrei start
+
+partial class <#= EntityType.Name #>Table 
+{
+
+<#
+    foreach (var property1 in EntityType.GetProperties().OrderBy(p => p.GetColumnOrder() ?? -1))
+    {
+        var needsNullable = Options.UseNullableReferenceTypes && property1.IsNullable && !property1.ClrType.IsValueType;
+        var needsInitializer = Options.UseNullableReferenceTypes && !property1.IsNullable && !property1.ClrType.IsValueType;
+    
+    #>
+    public <#= code.Reference(property1.ClrType) #><#= needsNullable ? "?" : "" #> <#= property1.Name #> { get; set; }
+    <#
+
+
+    }
+#>
+    
+}
+
+//andrei end
+
 public partial class <#= EntityType.Name #>
 {
 <#

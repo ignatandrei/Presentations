@@ -23,7 +23,7 @@ public partial class EmpDepContext : DbContext
     {
         modelBuilder.Entity<Department>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Departme__3214EC071B872AB8");
+            entity.HasKey(e => e.Id).HasName("PK__Departme__3214EC0791B3FF5E");
 
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
@@ -32,7 +32,7 @@ public partial class EmpDepContext : DbContext
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Employee__3214EC0717993ACF");
+            entity.HasKey(e => e.Id).HasName("PK__Employee__3214EC07D4A63667");
 
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
