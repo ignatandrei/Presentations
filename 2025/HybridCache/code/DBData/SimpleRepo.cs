@@ -16,7 +16,17 @@ public class SimpleRepo
     {
         this.empDepContext = empDepContext;
     }
-    //public async Task<int> UpdateDepartmentName(string name)
+    public async Task<int> UpdateDepartmentName(DepartmentTable departmentTable)
+    {
+        var department = await this.empDepContext.Department.FindAsync(departmentTable.Id);
+        if (department == null)
+        {
+            return 0;
+        }
+        department.Name = departmentTable.Name;
+        await this.empDepContext.SaveChangesAsync();
+        return department.Id;
+    }
     public async Task<EmployeeDisplay[]> EmployeeAsDisplay()
     {
         var ret= this.empDepContext.Employee.Select(e => new EmployeeDisplay
