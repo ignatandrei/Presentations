@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.2.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>306c77e4-ca7b-4200-bbe8-6ad2c2618d0b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DBData\DBData.csproj" IsAspireProjectResource="false" />
+    <ProjectReference Include="..\HybridCacheDemo.ApiService\HybridCacheDemo.ApiService.csproj" />
+    <ProjectReference Include="..\HybridCacheDemo.Web\HybridCacheDemo.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.0" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="9.2.0" />
+	<PackageReference Include="Aspire.Hosting.SqlServer" Version="9.2.0" />
+	<PackageReference Include="CommunityToolkit.Aspire.Hosting.SqlServer.Extensions" Version="9.3.0" />
+
+  </ItemGroup>
+
+</Project>
