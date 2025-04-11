@@ -3,9 +3,10 @@ using Aspire.Hosting;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("cache")
+var cache = builder.AddRedis("rediscache")
     .WithRedisInsight()
     .WithRedisCommander()
+    .WithDbGate()
     ;
 var password = builder.AddParameter("password","P@ssw0rd");
 var sqlserver = builder.AddSqlServer("sqlserver",password,1433)
