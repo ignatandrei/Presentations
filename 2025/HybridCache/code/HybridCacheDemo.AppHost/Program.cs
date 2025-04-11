@@ -4,8 +4,8 @@ using Aspire.Hosting;
 var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("rediscache")
-    .WithRedisInsight()
-    .WithRedisCommander()
+    //.WithRedisInsight()
+    //.WithRedisCommander()
     .WithDbGate()
     ;
 var password = builder.AddParameter("password","P@ssw0rd");

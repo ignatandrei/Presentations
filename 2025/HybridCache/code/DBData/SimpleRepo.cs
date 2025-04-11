@@ -8,12 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DBData;
-public class DepartmentDisplay
-{
-    public int Id { get; set; }
-    public string Name { get; set; } = null!;
-    public int Employees { get; set; } 
-}
 public class SimpleRepo
 {
     private readonly EmpDepContext empDepContext;
@@ -22,6 +16,7 @@ public class SimpleRepo
     {
         this.empDepContext = empDepContext;
     }
+    //public async Task<int> UpdateDepartmentName(string name)
     public async Task<EmployeeDisplay[]> EmployeeAsDisplay()
     {
         var ret= this.empDepContext.Employee.Select(e => new EmployeeDisplay

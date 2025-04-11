@@ -5,7 +5,7 @@ namespace DBData.genDBModels;
 
 //andrei start
 
-partial class EmployeeTable 
+public partial class EmployeeTable 
 {
 
     public int Id { get; set; }
