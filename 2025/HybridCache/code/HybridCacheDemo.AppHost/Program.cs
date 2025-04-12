@@ -32,4 +32,10 @@ builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
     .WithReference(apiService)
     .WaitFor(apiService);
 
+builder.AddProject<Projects.ConsoleMemoryCache>("console")
+    .WithReference(cache)
+    .WaitFor(cache)
+    .WithExplicitStart()
+    ;
+
 builder.Build().Run();

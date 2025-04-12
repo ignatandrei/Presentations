@@ -1,0 +1,37 @@
+﻿using DBData;
+
+namespace MultiCacheDemo;
+public class CacheWithData<T>
+{
+    public DateTime Created { get; set; }
+    public T Data { get; set; }
+    public CacheWithData(T data)
+    {
+        Created = DateTime.Now;
+        Data = data;
+    }
+}
+
+public class EmployeesCache : CacheWithData<EmployeeDisplay[]>
+{
+    public EmployeesCache(EmployeeDisplay[] data) : base(data)
+    {
+    }
+
+    public static implicit operator EmployeesCache(EmployeeDisplay[] data)
+    {
+        return new EmployeesCache(data);
+    }
+}
+
+public class DepartmentsCache : CacheWithData<DepartmentDisplay[]>
+{
+    public DepartmentsCache(DepartmentDisplay[] data) : base(data)
+    {
+    }
+
+    public static implicit operator DepartmentsCache(DepartmentDisplay[] data)
+    {
+        return new DepartmentsCache(data);
+    }
+}

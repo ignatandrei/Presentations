@@ -1,18 +1,17 @@
 ﻿using DBData;
 using DBData.genDBModels;
-
 namespace MultiCacheDemo;
 
 public class CacheStatic
 {
     private readonly SimpleRepo simpleRepo;
-    static EmployeeDisplay[]? employeeDisplayCache = null;
-    static DepartmentDisplay[]? departmentCache = null;
+    static EmployeesCache? employeeDisplayCache = null;
+    static DepartmentsCache? departmentCache = null;
     public CacheStatic(SimpleRepo simpleRepo)
     {
         this.simpleRepo = simpleRepo;
     }
-    public async Task<DepartmentDisplay[]> Departments()
+    public async Task<DepartmentsCache> Departments()
     {
         if(departmentCache != null)
         {
@@ -28,7 +27,7 @@ public class CacheStatic
         departmentCache = null; // Invalidate the cache
         return ret;
     }
-    public async Task<EmployeeDisplay[]> EmployeeAsDisplay()
+    public async Task<EmployeesCache> EmployeeAsDisplay()
     {
         if(employeeDisplayCache != null)
         {
