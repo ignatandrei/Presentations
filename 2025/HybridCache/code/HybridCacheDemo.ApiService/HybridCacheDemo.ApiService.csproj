@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HybridCacheDemo.ServiceDefaults\HybridCacheDemo.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\MultiCacheDemo\MultiCacheDemo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

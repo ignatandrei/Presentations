@@ -11,10 +11,10 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 await Task.Delay(15000);
 builder.Configuration.AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true);
 var conStringData = builder.Configuration.GetConnectionString("EmpDep");
-builder.Services.AddSingleton<SimpleRepo>();
 builder.Services.AddMemoryCache();
-builder.Services.AddSingleton<CacheIMemory>();
-builder.Services.AddSingleton<CacheStatic>();
+builder.Services.AddTransient<SimpleRepo>();
+builder.Services.AddTransient<CacheIMemory>();
+builder.Services.AddTransient<CacheStatic>();
 builder.Services.AddDbContext<EmpDepContext>(options =>
     options.UseSqlServer(conStringData));
 

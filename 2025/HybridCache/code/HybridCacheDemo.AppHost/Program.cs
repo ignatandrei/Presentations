@@ -22,7 +22,18 @@ var database = sqlserver.AddDatabase("EmpDep")
     .WithCreationScript(str); 
 
 var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiservice")
-    .WithHttpsHealthCheck("/health");
+    .WithHttpsHealthCheck("/health")
+    .WithHttpCommand(
+        "/static/employees",
+        "Get Employees",
+        commandOptions: new HttpCommandOptions
+        {
+            Description = "Get Employees",
+            Method = HttpMethod.Get,
+            IconName = "DocumentLightning",
+            IsHighlighted = true
+        })
+    ;
 
 builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
     .WithExternalHttpEndpoints()
