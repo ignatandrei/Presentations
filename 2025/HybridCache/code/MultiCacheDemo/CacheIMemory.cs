@@ -37,7 +37,7 @@ public class CacheIMemory
     {
         var ret = await this.simpleRepo.UpdateDepartmentName(departmentTable);
         memoryCache.Remove("departments");
-        memoryCache.Remove("employees");
+        //memoryCache.Remove("employees");
         return ret;
     }
     public async Task<EmployeesCache> EmployeeAsDisplay()

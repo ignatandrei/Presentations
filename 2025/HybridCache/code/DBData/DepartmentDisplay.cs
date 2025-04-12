@@ -1,6 +1,6 @@
 ﻿namespace DBData;
-
-public class DepartmentDisplay
+[RSCG_IFormattableCommon.AddIFormattable]
+public partial class DepartmentDisplay
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;

@@ -23,8 +23,8 @@ public class CacheStatic
     public async Task<int> UpdateDepartmentName(DepartmentTable departmentTable)
     {
         var ret = await this.simpleRepo.UpdateDepartmentName(departmentTable);
-        employeeDisplayCache = null; // Invalidate the cache
         departmentCache = null; // Invalidate the cache
+        //employeeDisplayCache = null; // Invalidate the cache
         return ret;
     }
     public async Task<EmployeesCache> EmployeeAsDisplay()

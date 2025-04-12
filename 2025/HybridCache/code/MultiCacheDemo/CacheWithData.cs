@@ -4,6 +4,9 @@ namespace MultiCacheDemo;
 public class CacheWithData<T>
 {
     public DateTime Created { get; set; }
+    
+    public int SecondsElapsed => (int)(DateTime.Now - Created).TotalSeconds;
+    public string CreatedString => Created.ToString("HH:mm:ss");
     public T Data { get; set; }
     public CacheWithData(T data)
     {

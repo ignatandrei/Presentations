@@ -1,6 +1,6 @@
 ﻿namespace DBData;
-
-public class EmployeeDisplay
+[RSCG_IFormattableCommon.AddIFormattable]
+public partial class EmployeeDisplay
 {
     public int Id { get; set; }
     public string Name { get; set; }
