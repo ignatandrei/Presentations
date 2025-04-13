@@ -8,6 +8,8 @@ var cache = builder.AddRedis("rediscache")
     //.WithRedisCommander()
     .WithDbGate()
     ;
+//TODO: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/custom-resource-commands
+
 var password = builder.AddParameter("password","P@ssw0rd");
 var sqlserver = builder.AddSqlServer("sqldata",password,1433)
     .WithDbGate()

@@ -1,0 +1,15 @@
+[
+    {
+        "id":  "CacheStaticDepartment",
+        "description":  "Demo With Cache Static Department",
+        "categories":  "static;department",
+        "blocks":  "text;text_multiline"
+    },
+ {
+        "id":  "CacheStaticEmployees",
+        "description":  "Demo With Cache Static Employees",
+        "categories":  "static;employees",
+        "blocks":  "text;text_multiline"
+    }
+
+]
