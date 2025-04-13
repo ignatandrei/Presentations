@@ -17,6 +17,16 @@ builder.Services.AddTransient<CacheIMemory>();
 builder.Services.AddTransient<CacheStatic>();
 builder.Services.AddDbContext<EmpDepContext>(options =>
     options.UseSqlServer(conStringData));
+builder.Services.AddTransient<CacheIDistributed>();
+builder.Services.AddDistributedSqlServerCache(options =>
+{
+    options.ConnectionString = builder.Configuration.GetConnectionString(
+        "CachingData");
+    options.SchemaName = "dbo";
+    options.TableName = "TestCache";
+});
+
+
 
 
 //builder.Services.AddDistributedSqlServerCache(options =>
@@ -30,8 +40,43 @@ builder.Services.AddDbContext<EmpDepContext>(options =>
 using IHost host = builder.Build();
 
 await host.StartAsync();
-//await testIMemory(host);
+await testIMemory(host);
 await testStatic(host);
+await testDistributed(host);
+async Task<int> testDistributed(IHost host)
+{
+    var cacheDist= host.Services.GetRequiredService<CacheIDistributed>();
+    await cacheDist.UpdateDepartmentName(new DepartmentTable()
+    {
+        Id = 1,
+        Name = "IT"
+    });
+
+    var dataEmp = await cacheDist.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+    foreach (var emp in dataEmp.Data)
+    {
+        Console.WriteLine(emp.ToString("G"));
+    }
+    await Task.Delay(10_000);
+
+    dataEmp = await cacheDist.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+
+    await cacheDist.UpdateDepartmentName(new DepartmentTable()
+    {
+        Id = 1,
+        Name = "test" + Guid.NewGuid().ToString()
+    });
+    dataEmp = await cacheDist.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+    foreach (var emp in dataEmp.Data)
+    {
+        Console.WriteLine(emp.ToString("G"));
+    }
+    return 1;
+
+}
 async Task<int> testStatic(IHost host)
 {
 
