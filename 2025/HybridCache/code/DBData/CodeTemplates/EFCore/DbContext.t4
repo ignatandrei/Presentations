@@ -46,6 +46,8 @@ namespace <#= NamespaceHint #>;
 //dotnet new ef-templates
 //dotnet tool update --global dotnet-ef
 //dotnet ef dbcontext scaffold "Data Source=127.0.0.1;Initial Catalog=XpertContract;UID=sa;PWD=P@ssw0rd;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer  --context-dir genContext --output-dir genDBModels  --force --no-pluralize --no-onconfiguring
+//sqlcache
+//dotnet sql-cache create "Server=127.0.0.1,1433;User ID=sa;Password=P@ssw0rd;TrustServerCertificate=true;Initial Catalog=CachingData" dbo TestCache
 <#
     }
 #>
