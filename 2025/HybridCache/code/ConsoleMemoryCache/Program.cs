@@ -19,6 +19,14 @@ builder.Services.AddDbContext<EmpDepContext>(options =>
     options.UseSqlServer(conStringData));
 
 
+//builder.Services.AddDistributedSqlServerCache(options =>
+//{
+//    options.ConnectionString = builder.Configuration.GetConnectionString(
+//        "DistCache_ConnectionString");
+//    options.SchemaName = "dbo";
+//    options.TableName = "TestCache";
+//});
+
 using IHost host = builder.Build();
 
 await host.StartAsync();

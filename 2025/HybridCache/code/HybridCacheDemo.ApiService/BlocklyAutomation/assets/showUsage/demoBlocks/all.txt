@@ -17,6 +17,13 @@
         "categories":  "IMemory;employees",
         "blocks":  "text;text_multiline"
     }
+,
+{
+        "id":  "CacheIDistributedEmployees",
+        "description":  "Demo With Distributed IMemory Employees",
+        "categories":  "Distributed;employees",
+        "blocks":  "text;text_multiline"
+    }
 
 
 ]

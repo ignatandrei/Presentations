@@ -7,13 +7,7 @@ BEGIN
     VALUES
         ('IT'),
         ('HR');
-END;
-GO
-
-USE [EmpDep]
-GO
-
-INSERT INTO [dbo].[Employee]
+   INSERT INTO [dbo].[Employee]
            ([IdDepartment]
            ,[FirstName]
            ,[LastName]
@@ -25,6 +19,8 @@ INSERT INTO [dbo].[Employee]
            ,'Ignat'
            ,'ignatandrei@yahoo.com'
            ,'0728200034')
+
+END;
 GO
 
 

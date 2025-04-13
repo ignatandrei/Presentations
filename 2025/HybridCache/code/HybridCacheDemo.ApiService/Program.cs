@@ -3,6 +3,7 @@ using DBData.genContext;
 using DBData.genDBModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using MultiCacheDemo;
 using OpenAPISwaggerUI;
 
@@ -33,13 +34,23 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddTransient<SimpleRepo>();
-builder.Services.AddTransient<CacheIMemory>();
 builder.Services.AddTransient<CacheStatic>();
+builder.Services.AddTransient<CacheIMemory>();
+builder.Services.AddTransient<CacheIDistributed>();
 
 var conStringData = builder.Configuration.GetConnectionString("EmpDep");
 
 builder.Services.AddDbContext<EmpDepContext>(options =>
     options.UseSqlServer(conStringData));
+
+
+builder.Services.AddDistributedSqlServerCache(options =>
+{
+    options.ConnectionString = builder.Configuration.GetConnectionString(
+        "CachingData");
+    options.SchemaName = "dbo";
+    options.TableName = "TestCache";
+});
 
 var app = builder.Build();
 
@@ -86,6 +97,25 @@ app.MapGet("/imemory/departments", async ([FromServices] CacheIMemory cache) =>
 });
 
 app.MapPost("/imemory/departments", async ([FromServices] CacheIMemory cache, [FromBody] DepartmentTable departmentTable) =>
+{
+    var ret = await cache.UpdateDepartmentName(departmentTable);
+    return Results.Ok(ret);
+});
+#endregion
+
+#region distributed
+app.MapGet("/distributed/employees", async ([FromServices] CacheIDistributed cache) =>
+{
+
+    return await cache.EmployeeAsDisplay();
+});
+app.MapGet("/distributed/departments", async ([FromServices] CacheIDistributed cache) =>
+{
+
+    return await cache.Departments();
+});
+
+app.MapPost("/distributed/departments", async ([FromServices] CacheIDistributed cache, [FromBody] DepartmentTable departmentTable) =>
 {
     var ret = await cache.UpdateDepartmentName(departmentTable);
     return Results.Ok(ret);

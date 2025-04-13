@@ -1,5 +1,5 @@
 ﻿namespace DBData;
-//dotnet sql-cache create "Server=127.0.0.1,1433;User ID=sa;Password=P@ssw0rd;TrustServerCertificate=true;Initial Catalog=CachingData" dbo TestCache
+
 public static class DBFiles
 {
     public static IEnumerable<string> FilesToCreateDB

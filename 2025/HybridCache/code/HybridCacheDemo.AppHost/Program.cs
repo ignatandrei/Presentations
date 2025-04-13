@@ -21,8 +21,8 @@ var sqlserver = builder.AddSqlServer("sqldata",password,1433)
 var filesToExecute = DBData.DBFiles.FilesToCreateDB.ToArray();
 var str= string.Join("\r\n GO \r\n", filesToExecute);
 var database = sqlserver.AddDatabase("EmpDep")
-    .WithCreationScript(str); 
-
+    .WithCreationScript(str);
+File.WriteAllText("script.txt", str);
 var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiservice")
     .WithHttpsHealthCheck("/health")
     .WithHttpCommand(
