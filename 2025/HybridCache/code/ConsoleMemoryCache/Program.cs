@@ -18,6 +18,12 @@ builder.Services.AddTransient<CacheStatic>();
 builder.Services.AddDbContext<EmpDepContext>(options =>
     options.UseSqlServer(conStringData));
 builder.Services.AddTransient<CacheIDistributed>();
+builder.Services.AddTransient<CacheHybrid>();
+
+builder.Services.AddHybridCache(opt =>
+{
+    opt.DisableCompression = false;
+});
 builder.Services.AddDistributedSqlServerCache(options =>
 {
     options.ConnectionString = builder.Configuration.GetConnectionString(
@@ -40,9 +46,44 @@ builder.Services.AddDistributedSqlServerCache(options =>
 using IHost host = builder.Build();
 
 await host.StartAsync();
-await testIMemory(host);
-await testStatic(host);
-await testDistributed(host);
+//await testIMemory(host);
+//await testStatic(host);
+//await testDistributed(host);
+await testHybrid(host);
+async Task<int> testHybrid(IHost host)
+{
+    var cach = host.Services.GetRequiredService<CacheHybrid>();
+    await cach.UpdateDepartmentName(new DepartmentTable()
+    {
+        Id = 1,
+        Name = "IT"
+    });
+
+    var dataEmp = await cach.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+    foreach (var emp in dataEmp.Data)
+    {
+        Console.WriteLine(emp.ToString("G"));
+    }
+    await Task.Delay(10_000);
+
+    dataEmp = await cach.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+
+    await cach.UpdateDepartmentName(new DepartmentTable()
+    {
+        Id = 1,
+        Name = "test" + Guid.NewGuid().ToString()
+    });
+    dataEmp = await cach.EmployeeAsDisplay();
+    Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
+    foreach (var emp in dataEmp.Data)
+    {
+        Console.WriteLine(emp.ToString("G"));
+    }
+    return 1;
+
+}
 async Task<int> testDistributed(IHost host)
 {
     var cacheDist= host.Services.GetRequiredService<CacheIDistributed>();
