@@ -1,0 +1,77 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" x="107" y="-78">
+    <value name="TEXT">
+      <block type="post__imemory_departments">
+        <value name="val_values">
+          <block type="DepartmentTable">
+            <value name="val_id">
+              <block type="math_number">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="val_name">
+              <block type="text">
+                <field name="TEXT">IT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="get__imemory_employees"></block>
+        </value>
+        <next>
+          <block type="wait_seconds">
+            <field name="SECONDS">10</field>
+            <next>
+              <block type="text_print">
+                <value name="TEXT">
+                  <block type="get__imemory_employees"></block>
+                </value>
+                <next>
+                  <block type="text_print">
+                    <value name="TEXT">
+                      <block type="post__imemory_departments">
+                        <value name="val_values">
+                          <block type="DepartmentTable">
+                            <value name="val_id">
+                              <block type="math_number">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="val_name">
+                              <block type="text">
+                                <field name="TEXT">NewIT</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="text_print">
+                        <value name="TEXT">
+                          <block type="get__imemory_departments"></block>
+                        </value>
+                        <next>
+                          <block type="text_print">
+                            <value name="TEXT">
+                              <block type="get__imemory_employees"></block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

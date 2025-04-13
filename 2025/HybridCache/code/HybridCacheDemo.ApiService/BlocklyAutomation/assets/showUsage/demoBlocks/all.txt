@@ -10,6 +10,13 @@
         "description":  "Demo With Cache Static Employees",
         "categories":  "static;employees",
         "blocks":  "text;text_multiline"
+    },
+ {
+        "id":  "CacheIMemoryEmployees",
+        "description":  "Demo With Cache IMemory Employees",
+        "categories":  "IMemory;employees",
+        "blocks":  "text;text_multiline"
     }
+
 
 ]

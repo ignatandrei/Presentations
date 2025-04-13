@@ -54,7 +54,7 @@ app.UseCors(MyAllowSpecificOrigins);
 
 }
 
-
+#region static
 app.MapGet("/static/employees", async ([FromServices] CacheStatic cache) =>
 {
 
@@ -71,6 +71,26 @@ app.MapPost("/static/departments", async ([FromServices] CacheStatic cache, [Fro
     var ret = await cache.UpdateDepartmentName(departmentTable);
     return Results.Ok(ret);
 });
+#endregion
+
+#region memory
+app.MapGet("/imemory/employees", async ([FromServices] CacheIMemory cache) =>
+{
+
+    return await cache.EmployeeAsDisplay();
+});
+app.MapGet("/imemory/departments", async ([FromServices] CacheIMemory cache) =>
+{
+
+    return await cache.Departments();
+});
+
+app.MapPost("/imemory/departments", async ([FromServices] CacheIMemory cache, [FromBody] DepartmentTable departmentTable) =>
+{
+    var ret = await cache.UpdateDepartmentName(departmentTable);
+    return Results.Ok(ret);
+});
+#endregion
 
 
 app.MapDefaultEndpoints();
