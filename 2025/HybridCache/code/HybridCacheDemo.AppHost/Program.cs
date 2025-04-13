@@ -18,10 +18,16 @@ var sqlserver = builder.AddSqlServer("sqldata",password,1433)
     // Keep the container running between app host sessions.
     .WithLifetime(ContainerLifetime.Persistent)
     ;
-var filesToExecute = DBData.DBFiles.FilesToCreateDB.ToArray();
-var str= string.Join("\r\n GO \r\n", filesToExecute);
-var database = sqlserver.AddDatabase("EmpDep")
+var filesEmpDep = DBData.DBFiles.FilesToCreateEmpDep.ToArray();
+var str= string.Join("\r\n GO \r\n", filesEmpDep);
+var databaseEmpDep = sqlserver.AddDatabase("EmpDep")
     .WithCreationScript(str);
+
+var filesCache = DBData.DBFiles.FilesToCreateCache.ToArray();
+str = string.Join("\r\n GO \r\n", filesCache);
+var databaseCache = sqlserver.AddDatabase("CachingData")
+    .WithCreationScript(str);
+
 File.WriteAllText("script.txt", str);
 var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiservice")
     .WithHttpsHealthCheck("/health")
@@ -35,6 +41,13 @@ var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiser
             IconName = "DocumentLightning",
             IsHighlighted = true
         })
+    .WithReference(cache)
+    .WaitFor(cache)
+    .WithReference(databaseEmpDep)
+    .WaitFor(databaseEmpDep)
+    .WithReference(databaseCache)
+    .WaitFor(databaseCache)
+
     ;
 
 builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
@@ -48,9 +61,11 @@ builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
 builder.AddProject<Projects.ConsoleMemoryCache>("console")
     .WithReference(cache)
     .WaitFor(cache)
-    .WithReference(database)
-    .WaitFor(database)
-    //.WithExplicitStart()
+    .WithReference(databaseEmpDep)
+    .WaitFor(databaseEmpDep)
+    .WithReference(databaseCache)
+    .WaitFor(databaseCache)
+    .WithExplicitStart()
     ;
 
 builder.Build().Run();
