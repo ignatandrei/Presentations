@@ -29,6 +29,7 @@ public class SimpleRepo
     }
     public async Task<EmployeeDisplay[]> EmployeeAsDisplay()
     {
+        Console.WriteLine("****** Obtaining Employees from Database ******");
         var ret= this.empDepContext.Employee.Select(e => new EmployeeDisplay
         {
             Id = e.Id,
@@ -40,6 +41,7 @@ public class SimpleRepo
     }
     public Task<DepartmentDisplay[]> Departments()
     {
+        Console.WriteLine("****** Obtaining Departments from Database ******");
         var ret = this.empDepContext.Department
             .Select(it=>
                 new DepartmentDisplay

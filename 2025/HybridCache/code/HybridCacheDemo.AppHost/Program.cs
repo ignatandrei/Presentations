@@ -58,7 +58,7 @@ builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
     .WithReference(apiService)
     .WaitFor(apiService);
 
-builder.AddProject<Projects.ConsoleMemoryCache>("console")
+builder.AddProject<Projects.ConsoleStatic>("consoleStatic")
     .WithReference(cache)
     .WaitFor(cache)
     .WithReference(databaseEmpDep)

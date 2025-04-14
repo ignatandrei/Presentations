@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCacheDemo", "MultiCach
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMemoryCache", "ConsoleMemoryCache\ConsoleMemoryCache.csproj", "{93E7EBDB-8817-4E53-B8F8-86B114723D70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStatic", "ConsoleStatic\ConsoleStatic.csproj", "{108996BE-C1E9-45BE-9066-89950F8D8366}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{93E7EBDB-8817-4E53-B8F8-86B114723D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93E7EBDB-8817-4E53-B8F8-86B114723D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93E7EBDB-8817-4E53-B8F8-86B114723D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108996BE-C1E9-45BE-9066-89950F8D8366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108996BE-C1E9-45BE-9066-89950F8D8366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108996BE-C1E9-45BE-9066-89950F8D8366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108996BE-C1E9-45BE-9066-89950F8D8366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
