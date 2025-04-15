@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleIMemory\ConsoleIMemory.csproj" />
     <ProjectReference Include="..\ConsoleStatic\ConsoleStatic.csproj" />
     <ProjectReference Include="..\DBData\DBData.csproj" IsAspireProjectResource="false" />
     <ProjectReference Include="..\HybridCacheDemo.ApiService\HybridCacheDemo.ApiService.csproj" />

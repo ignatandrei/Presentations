@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMemoryCache", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStatic", "ConsoleStatic\ConsoleStatic.csproj", "{108996BE-C1E9-45BE-9066-89950F8D8366}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleIMemory", "ConsoleIMemory\ConsoleIMemory.csproj", "{AFDBA855-7FF3-46CC-BA21-F98A278A2A03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{108996BE-C1E9-45BE-9066-89950F8D8366}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{108996BE-C1E9-45BE-9066-89950F8D8366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{108996BE-C1E9-45BE-9066-89950F8D8366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFDBA855-7FF3-46CC-BA21-F98A278A2A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDBA855-7FF3-46CC-BA21-F98A278A2A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDBA855-7FF3-46CC-BA21-F98A278A2A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDBA855-7FF3-46CC-BA21-F98A278A2A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
