@@ -3,11 +3,11 @@ using Aspire.Hosting;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("rediscache")
-    //.WithRedisInsight()
-    //.WithRedisCommander()
-    .WithDbGate()
-    ;
+//var cache = builder.AddRedis("rediscache")
+//    //.WithRedisInsight()
+//    //.WithRedisCommander()
+//    .WithDbGate()
+//    ;
 //TODO: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/custom-resource-commands
 
 var password = builder.AddParameter("password","P@ssw0rd");
@@ -41,8 +41,6 @@ var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiser
             IconName = "DocumentLightning",
             IsHighlighted = true
         })
-    .WithReference(cache)
-    .WaitFor(cache)
     .WithReference(databaseEmpDep)
     .WaitFor(databaseEmpDep)
     .WithReference(databaseCache)
@@ -53,14 +51,10 @@ var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiser
 builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithHttpsHealthCheck("/health")
-    .WithReference(cache)
-    .WaitFor(cache)
     .WithReference(apiService)
     .WaitFor(apiService);
 
 builder.AddProject<Projects.ConsoleStatic>("consoleStatic")
-    .WithReference(cache)
-    .WaitFor(cache)
     .WithReference(databaseEmpDep)
     .WaitFor(databaseEmpDep)
     .WithReference(databaseCache)
