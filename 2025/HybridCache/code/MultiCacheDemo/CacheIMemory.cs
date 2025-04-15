@@ -24,7 +24,7 @@ public class CacheIMemory
         MemoryCacheEntryOptions memoryCacheEntryOptions = new MemoryCacheEntryOptions()
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
-            SlidingExpiration = TimeSpan.FromMinutes(2)
+            SlidingExpiration = TimeSpan.FromSeconds(15)
         };
         var ret= await memoryCache.GetOrCreateAsync("departments", async (mc) => 
         {
@@ -46,7 +46,7 @@ public class CacheIMemory
         MemoryCacheEntryOptions memoryCacheEntryOptions = new MemoryCacheEntryOptions()
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
-            SlidingExpiration = TimeSpan.FromMinutes(2)
+            SlidingExpiration = TimeSpan.FromSeconds(15)
         };
         var ret = await memoryCache.GetOrCreateAsync("employees", async (mc) =>
         {
