@@ -29,17 +29,11 @@
 					<br />
 					Press right arrow to go forward.
 					<br />
-				</div>
-			</section>
-			<section  data-name="Content">
-				<div class="r-fit-text">
-					For content please see up menu &#x25B2; 
-					<br />
 					Online at https://ignatandrei.github.io/Presentations/HybridCacheprez.html
 					
 					<br />
 					For download https://ignatandrei.github.io/Presentations/HybridCache.zip
-					
+				</div>
 			</section>
 			<section data-name="Author" style="text-align: left;">
 				<div class="r-fit-text">
@@ -75,12 +69,14 @@
 					</aside>
 				</div>
 			</section>
-			<section  data-name="Caching Strategies">
+			<section  data-name="CachingData">
+				<h1>Data cached </h1>
 				<div class="r-fit-text">
+
+
 					<a href="https://www.swequiz.com/blog/every-caching-strategy-explained-in-5-minutes">https://www.swequiz.com/blog/every-caching-strategy-explained-in-5-minutes</a>
-					Cache Aside
 					<br />
-					What we will be caching ?
+					What we will be caching (Cache Aside )?
 					<br />
 					Departments
 					<table border='1'><tr><th>id</th>
@@ -98,42 +94,33 @@
 
 				</div>
 			</section>
-			<section  data-name="Slide2">
+			<section  data-name="Static">
+				<h1>Static</h1>
+				<div class="r-fit-text">
+					Each app has his own copy :
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheStaticDepartment'>Cache Static Department</a>
+					<br />Run  ConsoleStatic
+					<hr />
+					How much cache to Delete :  
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheStaticEmployees'>Cache Static Employee</a>
+					
+
+				</div>
+			</section>
+			<section  data-name="InMemory">
+				<h1>In Memory</h1>
 				<div class="r-fit-text">
 					
 				</div>
 			</section>
-			<section  data-name="Slide3">
+			<section  data-name="Distributed">
+				<h1>Distributed</h1>
 				<div class="r-fit-text">
 					
 				</div>
 			</section>
-			<section  data-name="Slide4">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide5">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide6">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide7">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide8">
-				<div class="r-fit-text">
-					
-				</div>
-			</section>
-			<section  data-name="Slide9">
+			<section  data-name="Hybrid">
+				<h1>Hybrid</h1>
 				<div class="r-fit-text">
 					
 				</div>
@@ -179,6 +166,30 @@
 			showNotes: false,
 			pdfMaxPagesPerSlide: 1,
 			// Learn about plugins: https://revealjs.com/plugins/
+			dependencies: [
+     
+        		{ src: 'plugin/tableofcontents.js' }
+		    ],
+			tableofcontents: {
+// Specifies the slide title of the table of contents slide
+title: "Contents",
+titleTag:"h3",
+
+// Specifies the position of the table of contents slide in the presentation
+position: 2,
+
+// Specifies which slide tag elements will be used
+// for generating the table of contents.
+titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+ignoreFirstSlide: true,
+
+// Specifies if every single element of the table of contents
+// will be stepped through before moving on to the next slide.
+fadeInElements: false
+},
+
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
 			, simplemenu: {
 				scale:0.3,

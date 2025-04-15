@@ -1,4 +1,8 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="n-tgqTOI2iLLOko#!s{u">Result</variable>
+    <variable id="VS?n?a(BA+p~p|o;a$@8">emp</variable>
+  </variables>
   <block type="text_print" x="107" y="-78">
     <value name="TEXT">
       <block type="post__static_departments">
@@ -19,18 +23,24 @@
       </block>
     </value>
     <next>
-      <block type="text_print">
-        <value name="TEXT">
-          <block type="get__static_employees"></block>
+      <block type="procedures_callnoreturn">
+        <mutation name="ShowData">
+          <arg name="Result"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="get__static_departments"></block>
         </value>
         <next>
-          <block type="wait_seconds">
-            <field name="SECONDS">10</field>
+          <block type="procedures_callnoreturn">
+            <mutation name="ShowData">
+              <arg name="Result"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="get__static_employees"></block>
+            </value>
             <next>
-              <block type="text_print">
-                <value name="TEXT">
-                  <block type="get__static_employees"></block>
-                </value>
+              <block type="wait_seconds">
+                <field name="SECONDS">10</field>
                 <next>
                   <block type="text_print">
                     <value name="TEXT">
@@ -52,13 +62,19 @@
                       </block>
                     </value>
                     <next>
-                      <block type="text_print">
-                        <value name="TEXT">
+                      <block type="procedures_callnoreturn">
+                        <mutation name="ShowData">
+                          <arg name="Result"></arg>
+                        </mutation>
+                        <value name="ARG0">
                           <block type="get__static_departments"></block>
                         </value>
                         <next>
-                          <block type="text_print">
-                            <value name="TEXT">
+                          <block type="procedures_callnoreturn">
+                            <mutation name="ShowData">
+                              <arg name="Result"></arg>
+                            </mutation>
+                            <value name="ARG0">
                               <block type="get__static_employees"></block>
                             </value>
                           </block>
@@ -73,5 +89,117 @@
         </next>
       </block>
     </next>
+  </block>
+  <block type="procedures_defnoreturn" collapsed="true" x="112" y="455">
+    <mutation>
+      <arg name="Result" varid="n-tgqTOI2iLLOko#!s{u"></arg>
+    </mutation>
+    <field name="NAME">ShowData</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set">
+        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR" id="n-tgqTOI2iLLOko#!s{u">Result</field>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" disabled="true">
+            <value name="TEXT">
+              <block type="variables_get">
+                <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                <value name="VALUE">
+                  <block type="converttojson">
+                    <value name="ValueToConvert">
+                      <block type="variables_get">
+                        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print">
+                    <value name="TEXT">
+                      <block type="HTMLheaders">
+                        <field name="NAME">H1</field>
+                        <value name="NAME">
+                          <shadow type="text">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="text_join">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text">
+                                <field name="TEXT">Cached at : </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="getproperty">
+                                <field name="objectName">object</field>
+                                <field name="prop">property</field>
+                                <value name="ObjectToChange">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                                  </block>
+                                </value>
+                                <value name="PropertyName">
+                                  <shadow type="text">
+                                    <field name="TEXT">enter property name</field>
+                                  </shadow>
+                                  <block type="text">
+                                    <field name="TEXT">createdString</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="text_print">
+                        <value name="TEXT">
+                          <block type="convertToTable">
+                            <value name="ArrayToConvert">
+                              <block type="converttostring">
+                                <value name="ValueToConvert">
+                                  <block type="getproperty">
+                                    <field name="objectName">object</field>
+                                    <field name="prop">property</field>
+                                    <value name="ObjectToChange">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                                      </block>
+                                    </value>
+                                    <value name="PropertyName">
+                                      <shadow type="text">
+                                        <field name="TEXT">enter property name</field>
+                                      </shadow>
+                                      <block type="text">
+                                        <field name="TEXT">data</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
   </block>
 </xml>

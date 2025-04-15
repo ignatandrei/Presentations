@@ -29,17 +29,12 @@
 					<br />
 					Press right arrow to go forward.
 					<br />
-				</div>
-			</section>
-			<section  data-name="Content">
-				<div class="r-fit-text">
-					For content please see up menu &#x25B2; 
-					<br />
 					Online at https://ignatandrei.github.io/Presentations/PresentationNameprez.html
 					
 					<br />
 					For download https://ignatandrei.github.io/Presentations/PresentationName.zip
 					
+				</div>
 			</section>
 			<section data-name="Author" style="text-align: left;">
 				<div class="r-fit-text">
@@ -76,16 +71,21 @@
 				</div>
 			</section>
 			<section  data-name="FirstSlide">
+				<h1>First Slide Contents</h1>
 				<div class="r-fit-text">
 					
 				</div>
 			</section>
 			<section  data-name="Slide2">
+				<h1>Second Slide Contents</h1>
+				
 				<div class="r-fit-text">
 					
 				</div>
 			</section>
 			<section  data-name="Slide3">
+				<h1>Third Slide Contents</h1>
+				
 				<div class="r-fit-text">
 					
 				</div>
@@ -160,6 +160,30 @@
 			help: true,
 			showNotes: false,
 			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+     
+        		{ src: 'plugin/tableofcontents.js' }
+		    ],
+			tableofcontents: {
+// Specifies the slide title of the table of contents slide
+title: "Contents",
+titleTag:"h3",
+
+// Specifies the position of the table of contents slide in the presentation
+position: 2,
+
+// Specifies which slide tag elements will be used
+// for generating the table of contents.
+titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+ignoreFirstSlide: true,
+
+// Specifies if every single element of the table of contents
+// will be stepped through before moving on to the next slide.
+fadeInElements: false
+},
+
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
 			, simplemenu: {

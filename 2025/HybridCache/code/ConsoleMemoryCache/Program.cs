@@ -107,41 +107,7 @@ public class RunProgram
         return 1;
 
     }
-    public static async Task<int> testStatic(IHost host)
-    {
-
-        var cacheStatic = host.Services.GetRequiredService<CacheStatic>();
-        //await cacheStatic.UpdateDepartmentName(new DepartmentTable()
-        //{
-        //    Id = 1,
-        //    Name = "IT"
-        //});
-
-        var dataEmp = await cacheStatic.EmployeeAsDisplay();
-        Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-        foreach (var emp in dataEmp.Data)
-        {
-            Console.WriteLine(emp.ToString("G"));
-        }
-        await Task.Delay(10_000);
-
-        dataEmp = await cacheStatic.EmployeeAsDisplay();
-        Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-
-        //await cacheStatic.UpdateDepartmentName(new DepartmentTable()
-        //{
-        //    Id = 1,
-        //    Name = "test" + Guid.NewGuid().ToString()
-        //});
-        //dataEmp = await cacheStatic.EmployeeAsDisplay();
-        //Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-        //foreach (var emp in dataEmp.Data)
-        //{
-        //    Console.WriteLine(emp.ToString("G"));
-        //}
-        return 1;
-    }
-
+    
     public static async Task<int> testIMemory(IHost host)
     {
 
