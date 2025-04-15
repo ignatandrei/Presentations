@@ -68,5 +68,12 @@ builder.AddProject<Projects.ConsoleIMemory>("ConsoleIMemory")
     .WaitFor(databaseCache)
     .WithExplicitStart()
     ;
+builder.AddProject<Projects.ConsoleIDistributed>("ConsoleIDistributed")
+    .WithReference(databaseEmpDep)
+    .WaitFor(databaseEmpDep)
+    .WithReference(databaseCache)
+    .WaitFor(databaseCache)
+    .WithExplicitStart()
+    ;
 
 builder.Build().Run();
