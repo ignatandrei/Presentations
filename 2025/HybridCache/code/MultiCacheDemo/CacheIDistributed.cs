@@ -26,7 +26,7 @@ public class CacheIDistributed
         DistributedCacheEntryOptions opt = new ()
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
-            SlidingExpiration = TimeSpan.FromMinutes(2)
+            SlidingExpiration = TimeSpan.FromSeconds(15)
         };
         var ret = await distributedCache.GetStringAsync("departments");
         if(string.IsNullOrWhiteSpace(ret))
@@ -51,7 +51,7 @@ public class CacheIDistributed
         DistributedCacheEntryOptions opt = new ()
         {
             AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
-            SlidingExpiration = TimeSpan.FromMinutes(2)
+            SlidingExpiration = TimeSpan.FromSeconds(15)
         };
         var ret = await distributedCache.GetStringAsync("employees");
         if(string.IsNullOrEmpty(ret))

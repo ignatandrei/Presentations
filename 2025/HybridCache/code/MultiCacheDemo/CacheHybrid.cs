@@ -57,7 +57,7 @@ public class CacheHybrid
         {
             Expiration = TimeSpan.FromMinutes(5),
             Flags = HybridCacheEntryFlags.None,
-            LocalCacheExpiration = TimeSpan.FromMinutes(2)
+            LocalCacheExpiration = TimeSpan.FromMinutes(3)
         };
         return await this.hybrid.GetOrCreateAsync(
             key: "departments",
