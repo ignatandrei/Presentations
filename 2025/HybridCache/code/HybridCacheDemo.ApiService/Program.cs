@@ -37,7 +37,7 @@ builder.Services.AddTransient<SimpleRepo>();
 builder.Services.AddTransient<CacheStatic>();
 builder.Services.AddTransient<CacheIMemory>();
 builder.Services.AddTransient<CacheIDistributed>();
-
+builder.Services.AddTransient<CacheHybrid>();
 var conStringData = builder.Configuration.GetConnectionString("EmpDep");
 
 builder.Services.AddDbContext<EmpDepContext>(options =>
@@ -116,6 +116,25 @@ app.MapGet("/distributed/departments", async ([FromServices] CacheIDistributed c
 });
 
 app.MapPost("/distributed/departments", async ([FromServices] CacheIDistributed cache, [FromBody] DepartmentTable departmentTable) =>
+{
+    var ret = await cache.UpdateDepartmentName(departmentTable);
+    return Results.Ok(ret);
+});
+#endregion
+
+#region hybrid
+app.MapGet("/hybrid/employees", async ([FromServices] CacheHybrid cache) =>
+{
+
+    return await cache.EmployeeAsDisplay();
+});
+app.MapGet("/hybrid/departments", async ([FromServices] CacheHybrid cache) =>
+{
+
+    return await cache.Departments();
+});
+
+app.MapPost("/hybrid/departments", async ([FromServices] CacheHybrid cache, [FromBody] DepartmentTable departmentTable) =>
 {
     var ret = await cache.UpdateDepartmentName(departmentTable);
     return Results.Ok(ret);

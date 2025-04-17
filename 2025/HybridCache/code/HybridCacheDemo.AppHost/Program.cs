@@ -48,11 +48,11 @@ var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiser
 
     ;
 
-builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
-    .WithExternalHttpEndpoints()
-    .WithHttpsHealthCheck("/health")
-    .WithReference(apiService)
-    .WaitFor(apiService);
+//builder.AddProject<Projects.HybridCacheDemo_Web>("webfrontend")
+//    .WithExternalHttpEndpoints()
+//    .WithHttpsHealthCheck("/health")
+//    .WithReference(apiService)
+//    .WaitFor(apiService);
 
 builder.AddProject<Projects.ConsoleStatic>("ConsoleStatic")
     .WithReference(databaseEmpDep)

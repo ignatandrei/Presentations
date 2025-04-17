@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridCacheDemo.ServiceDefa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridCacheDemo.ApiService", "HybridCacheDemo.ApiService\HybridCacheDemo.ApiService.csproj", "{35022EF4-6DC3-2F81-4A51-ABAA7C16B4B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridCacheDemo.Web", "HybridCacheDemo.Web\HybridCacheDemo.Web.csproj", "{74D5A9B3-3283-6754-A099-046BDC58286D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBData", "DBData\DBData.csproj", "{E999879C-D740-43F3-B125-57DFBCEBFD92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCacheDemo", "MultiCacheDemo\MultiCacheDemo.csproj", "{92EF519E-5D6A-4EFB-B8DE-AAB245167F95}"
@@ -42,10 +40,6 @@ Global
 		{35022EF4-6DC3-2F81-4A51-ABAA7C16B4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35022EF4-6DC3-2F81-4A51-ABAA7C16B4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35022EF4-6DC3-2F81-4A51-ABAA7C16B4B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74D5A9B3-3283-6754-A099-046BDC58286D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74D5A9B3-3283-6754-A099-046BDC58286D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74D5A9B3-3283-6754-A099-046BDC58286D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74D5A9B3-3283-6754-A099-046BDC58286D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E999879C-D740-43F3-B125-57DFBCEBFD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E999879C-D740-43F3-B125-57DFBCEBFD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E999879C-D740-43F3-B125-57DFBCEBFD92}.Release|Any CPU.ActiveCfg = Release|Any CPU

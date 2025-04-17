@@ -17,7 +17,6 @@
     <ProjectReference Include="..\ConsoleStatic\ConsoleStatic.csproj" />
     <ProjectReference Include="..\DBData\DBData.csproj" IsAspireProjectResource="false" />
     <ProjectReference Include="..\HybridCacheDemo.ApiService\HybridCacheDemo.ApiService.csproj" />
-    <ProjectReference Include="..\HybridCacheDemo.Web\HybridCacheDemo.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
