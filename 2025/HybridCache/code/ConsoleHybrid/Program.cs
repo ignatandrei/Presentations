@@ -3,8 +3,6 @@ using DBData.genDBModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MultiCacheDemo;
-
-Console.WriteLine("Hello, World!");
 Console.WriteLine("Hello, World!");
 var builder = await RunProgram.DI();
 using IHost host = builder.Build();
@@ -20,7 +18,13 @@ static async Task<int> testHybrid(IHost host)
         Id = 1,
         Name = "IT"
     });
-
+    var deps = await cach.Departments();
+    Console.WriteLine($" Dep cached at {deps.CreatedString}");
+    foreach (var dep in deps.Data)
+    {
+        Console.WriteLine(dep.ToString("G"));
+    }
+    Console.WriteLine("-----------------");
     var dataEmp = await cach.EmployeeAsDisplay();
     Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
     foreach (var emp in dataEmp.Data)

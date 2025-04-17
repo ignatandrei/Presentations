@@ -1,0 +1,244 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="n-tgqTOI2iLLOko#!s{u">Result</variable>
+    <variable id="VS?n?a(BA+p~p|o;a$@8">emp</variable>
+  </variables>
+  <block type="procedures_callnoreturn" x="131" y="-81">
+    <mutation name="ShowData">
+      <arg name="Result"></arg>
+    </mutation>
+    <value name="ARG0">
+      <block type="get__hybrid_departments"></block>
+    </value>
+    <next>
+      <block type="procedures_callnoreturn">
+        <mutation name="ShowData">
+          <arg name="Result"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="get__hybrid_employees"></block>
+        </value>
+        <next>
+          <block type="text_print">
+            <value name="TEXT">
+              <block type="post__hybrid_departments">
+                <value name="val_values">
+                  <block type="DepartmentTable">
+                    <value name="val_id">
+                      <block type="math_number">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="val_name">
+                      <block type="text">
+                        <field name="TEXT">IT</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="wait_seconds">
+                <field name="SECONDS">10</field>
+                <next>
+                  <block type="procedures_callnoreturn">
+                    <mutation name="ShowData">
+                      <arg name="Result"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="get__hybrid_departments"></block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn">
+                        <mutation name="ShowData">
+                          <arg name="Result"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="get__hybrid_employees"></block>
+                        </value>
+                        <next>
+                          <block type="text_print">
+                            <value name="TEXT">
+                              <block type="post__hybrid_departments">
+                                <value name="val_values">
+                                  <block type="DepartmentTable">
+                                    <value name="val_id">
+                                      <block type="math_number">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <value name="val_name">
+                                      <block type="text">
+                                        <field name="TEXT">NewIT</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn">
+                                <mutation name="ShowData">
+                                  <arg name="Result"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="get__hybrid_departments"></block>
+                                </value>
+                                <next>
+                                  <block type="procedures_callnoreturn">
+                                    <mutation name="ShowData">
+                                      <arg name="Result"></arg>
+                                    </mutation>
+                                    <value name="ARG0">
+                                      <block type="get__hybrid_employees"></block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" x="107" y="602">
+    <mutation>
+      <arg name="Result" varid="n-tgqTOI2iLLOko#!s{u"></arg>
+    </mutation>
+    <field name="NAME">ShowData</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set">
+        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR" id="n-tgqTOI2iLLOko#!s{u">Result</field>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" disabled="true">
+            <value name="TEXT">
+              <block type="variables_get">
+                <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                <value name="VALUE">
+                  <block type="converttojson">
+                    <value name="ValueToConvert">
+                      <block type="variables_get">
+                        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="text_print">
+                    <value name="TEXT">
+                      <block type="HTMLheaders">
+                        <field name="NAME">H1</field>
+                        <value name="NAME">
+                          <shadow type="text">
+                            <field name="TEXT"></field>
+                          </shadow>
+                          <block type="text_join">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="getproperty">
+                                <field name="objectName">object</field>
+                                <field name="prop">property</field>
+                                <value name="ObjectToChange">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                                  </block>
+                                </value>
+                                <value name="PropertyName">
+                                  <shadow type="text">
+                                    <field name="TEXT">enter property name</field>
+                                  </shadow>
+                                  <block type="text">
+                                    <field name="TEXT">typeOfData</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text">
+                                <field name="TEXT">Cached at : </field>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="getproperty">
+                                <field name="objectName">object</field>
+                                <field name="prop">property</field>
+                                <value name="ObjectToChange">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                                  </block>
+                                </value>
+                                <value name="PropertyName">
+                                  <shadow type="text">
+                                    <field name="TEXT">enter property name</field>
+                                  </shadow>
+                                  <block type="text">
+                                    <field name="TEXT">createdString</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="text_print">
+                        <value name="TEXT">
+                          <block type="convertToTable">
+                            <value name="ArrayToConvert">
+                              <block type="converttostring">
+                                <value name="ValueToConvert">
+                                  <block type="getproperty">
+                                    <field name="objectName">object</field>
+                                    <field name="prop">property</field>
+                                    <value name="ObjectToChange">
+                                      <block type="variables_get">
+                                        <field name="VAR" id="VS?n?a(BA+p~p|o;a$@8">emp</field>
+                                      </block>
+                                    </value>
+                                    <value name="PropertyName">
+                                      <shadow type="text">
+                                        <field name="TEXT">enter property name</field>
+                                      </shadow>
+                                      <block type="text">
+                                        <field name="TEXT">data</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

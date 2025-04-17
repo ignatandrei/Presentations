@@ -60,7 +60,7 @@ public class CacheHybrid
             LocalCacheExpiration = TimeSpan.FromSeconds(15)
         };
         return await this.hybrid.GetOrCreateAsync(
-            key: "departments",
+            key: "employees",
             factory: async (ct) =>
             {
                 EmployeesCache data = await this.simpleRepo.EmployeeAsDisplay();
@@ -68,7 +68,8 @@ public class CacheHybrid
             },
             options: opt,
             cancellationToken: default,
-            tags: ["departments"]
+            tags: ["employees"]
+            //tags: ["employees", "departments"]
             );
 
     }

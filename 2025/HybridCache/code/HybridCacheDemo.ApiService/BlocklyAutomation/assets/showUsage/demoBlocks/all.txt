@@ -25,5 +25,12 @@
         "blocks":  "text;text_multiline"
     }
 
+,
+{
+        "id":  "CacheHybrid",
+        "description":  "Demo With Hybrid ",
+        "categories":  "hybrid;employees",
+        "blocks":  "text;text_multiline"
+    }
 
 ]

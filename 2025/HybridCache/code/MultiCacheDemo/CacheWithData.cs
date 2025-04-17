@@ -12,7 +12,9 @@ public class CacheWithData<T>
     {
         Created = DateTime.Now;
         Data = data;
+        TypeOfData= typeof(T).Name;
     }
+    public string TypeOfData { get; set; }
 }
 
 public class EmployeesCache : CacheWithData<EmployeeDisplay[]>
