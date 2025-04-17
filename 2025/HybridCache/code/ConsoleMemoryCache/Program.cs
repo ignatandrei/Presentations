@@ -39,39 +39,5 @@ public class RunProgram
         return builder;
 
     }
-    public static async Task<int> testHybrid(IHost host)
-    {
-        var cach = host.Services.GetRequiredService<CacheHybrid>();
-        await cach.UpdateDepartmentName(new DepartmentTable()
-        {
-            Id = 1,
-            Name = "IT"
-        });
-
-        var dataEmp = await cach.EmployeeAsDisplay();
-        Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-        foreach (var emp in dataEmp.Data)
-        {
-            Console.WriteLine(emp.ToString("G"));
-        }
-        await Task.Delay(10_000);
-
-        dataEmp = await cach.EmployeeAsDisplay();
-        Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-
-        await cach.UpdateDepartmentName(new DepartmentTable()
-        {
-            Id = 1,
-            Name = "test" + Guid.NewGuid().ToString()
-        });
-        dataEmp = await cach.EmployeeAsDisplay();
-        Console.WriteLine($"Employees number {dataEmp.Data.Length} cached at {dataEmp.CreatedString} : seconds ago {dataEmp.SecondsElapsed} ");
-        foreach (var emp in dataEmp.Data)
-        {
-            Console.WriteLine(emp.ToString("G"));
-        }
-        return 1;
-
-    }
     
 }

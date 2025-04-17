@@ -27,8 +27,8 @@ public class CacheHybrid
         HybridCacheEntryOptions opt = new()
         {
             Expiration = TimeSpan.FromMinutes(5),
-             Flags= HybridCacheEntryFlags.None,
-            LocalCacheExpiration = TimeSpan.FromMinutes(2)
+            Flags= HybridCacheEntryFlags.None,
+            LocalCacheExpiration = TimeSpan.FromSeconds(15)
         };
         return await this.hybrid.GetOrCreateAsync(
             key: "departments",
@@ -57,7 +57,7 @@ public class CacheHybrid
         {
             Expiration = TimeSpan.FromMinutes(5),
             Flags = HybridCacheEntryFlags.None,
-            LocalCacheExpiration = TimeSpan.FromMinutes(3)
+            LocalCacheExpiration = TimeSpan.FromSeconds(15)
         };
         return await this.hybrid.GetOrCreateAsync(
             key: "departments",

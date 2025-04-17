@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleHybrid\ConsoleHybrid.csproj" />
     <ProjectReference Include="..\ConsoleIDistributed\ConsoleIDistributed.csproj" />
     <ProjectReference Include="..\ConsoleIMemory\ConsoleIMemory.csproj" />
     <ProjectReference Include="..\ConsoleStatic\ConsoleStatic.csproj" />

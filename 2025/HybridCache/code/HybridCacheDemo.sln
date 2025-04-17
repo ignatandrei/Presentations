@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleIMemory", "ConsoleIM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleIDistributed", "ConsoleIDistributed\ConsoleIDistributed.csproj", "{43C4C3C8-CC8B-41DC-BC03-46DD5B986A90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHybrid", "ConsoleHybrid\ConsoleHybrid.csproj", "{2C86F281-31F7-2E41-EF8C-31FAA1271E5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{43C4C3C8-CC8B-41DC-BC03-46DD5B986A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C4C3C8-CC8B-41DC-BC03-46DD5B986A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43C4C3C8-CC8B-41DC-BC03-46DD5B986A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C86F281-31F7-2E41-EF8C-31FAA1271E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C86F281-31F7-2E41-EF8C-31FAA1271E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C86F281-31F7-2E41-EF8C-31FAA1271E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C86F281-31F7-2E41-EF8C-31FAA1271E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

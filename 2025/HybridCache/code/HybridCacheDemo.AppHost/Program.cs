@@ -28,7 +28,7 @@ str = string.Join("\r\n GO \r\n", filesCache);
 var databaseCache = sqlserver.AddDatabase("CachingData")
     .WithCreationScript(str);
 
-File.WriteAllText("script.txt", str);
+//File.WriteAllText("script.txt", str);
 var apiService = builder.AddProject<Projects.HybridCacheDemo_ApiService>("apiservice")
     .WithHttpsHealthCheck("/health")
     .WithHttpCommand(
@@ -69,6 +69,13 @@ builder.AddProject<Projects.ConsoleIMemory>("ConsoleIMemory")
     .WithExplicitStart()
     ;
 builder.AddProject<Projects.ConsoleIDistributed>("ConsoleIDistributed")
+    .WithReference(databaseEmpDep)
+    .WaitFor(databaseEmpDep)
+    .WithReference(databaseCache)
+    .WaitFor(databaseCache)
+    .WithExplicitStart()
+    ;
+builder.AddProject<Projects.ConsoleHybrid>("ConsoleHybrid")
     .WithReference(databaseEmpDep)
     .WaitFor(databaseEmpDep)
     .WithReference(databaseCache)
