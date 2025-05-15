@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>HybridCache</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="blue" data-name="HybridCache" style="text-align: left;">
+				<div class="r-fit-text">
+					Welcome to HybridCache
+					<br />
+					Press <em>space</em> to navigate.
+					<br />
+					Press left arrow to go back.
+					<br />
+					Press right arrow to go forward.
+					<br />
+					Online at https://ignatandrei.github.io/Presentations/HybridCacheprez.html
+					
+					<br />
+					For download https://ignatandrei.github.io/Presentations/HybridCache.zip
+				</div>
+			</section>
+			<section data-name="Author" style="text-align: left;">
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						System.Console.WriteLine("Ignat Andrei");
+						System.Console.WriteLine("HybridCache");							
+						  </code></pre>
+						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
+						Andrei Ignat <a
+							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+					</p>
+					<p>Book Making Open Source Component : <a
+							href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a
+							href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a
+							href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a
+							href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+					</p>
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<!-- https://revealjs.com/fragments/ -->
+					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+
+					</aside>
+				</div>
+			</section>
+			<section  data-name="CachingData">
+				<h1>Data cached </h1>
+				<div class="r-fit-text">
+
+
+					<a href="https://www.swequiz.com/blog/every-caching-strategy-explained-in-5-minutes">https://www.swequiz.com/blog/every-caching-strategy-explained-in-5-minutes</a>
+					<br />
+					What we will be caching (Cache Aside )?
+					<br />
+					Departments
+					<table border='1'><tr><th>id</th>
+						<th>name</th>
+						<th>employees</th>
+						</tr><tr><td>1</td><td>IT</td><td>1</td></tr><tr><td>2</td><td>HR</td><td>0</td></tr></table>
+					<br />
+					Employees
+					<table border='1'><tr><th>id</th>
+						<th>name</th>
+						<th>departmentName</th>
+						</tr><tr><td>1</td><td>Andrei Ignat</td><td>IT</td></tr></table>
+						
+
+
+				</div>
+			</section>
+			<section  data-name="Static">
+				<h1>Static</h1>
+				<div class="r-fit-text">
+					Each app has his own copy :
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheStaticDepartment'>Cache Static Department</a>
+					<br />Run  ConsoleStatic
+					<hr />
+					How much cache to Delete :  
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheStaticEmployees'>Cache Static Employee</a>
+					
+
+				</div>
+			</section>
+			<section  data-name="IMemory">
+				<h1>IMemory</h1>
+				<div class="r-fit-text">					
+					<div class="r-fit-text">
+						Each app has his own copy :
+						<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheIMemoryEmployees'>Cache IMemory</a>
+						<br />Run  ConsoleIMemory
+						<hr />
+						Sliding Expiration - put wait to 20 seconds 
+						<hr />How much cache to Delete :  
+						<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheIMemoryEmployees'>Cache IMemory Employee</a>
+						
+	
+					</div>
+						
+				</div>
+			</section>
+			<section  data-name="IIDistributed">
+				<h1>IDistributed</h1>
+				<div class="r-fit-text">
+					Each app has NOT his own copy :
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheIDistributedEmployees'>Cache IDistributed</a>
+					<br />Run  ConsoleIDistributed
+					<hr />
+					Sliding Expiration - put wait to 20 seconds 
+					<hr />How much cache to Delete :  
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheIDistributedEmployees'>Cache IDistributed Employee</a>
+					
+				
+				</div>
+			</section>
+			<section  data-name="Hybrid">
+				<h1>Hybrid</h1>
+				<div class="r-fit-text">
+					Each app has NOT his own copy :
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheHybrid'>Cache Hybrid</a>
+					<br />Run  ConsoleHybrid
+					<hr />
+					Local Cache Expiration - put wait to 20 seconds  and see SSMS
+					<hr />How much cache to Delete :  
+					<a target="_blank" href='https://localhost:7349/blocklyautomation/automation/loadexample/CacheHybrid'>Cache Hybrid Employee</a>
+					
+					
+				</div>
+			</section>
+			<section id="endHybridCache" data-name="Last">
+Hybrid<h1>Questions ? </h1ConsoleHybrid			<h2>Thank you for your time </h2>
+
+
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			// Learn about plugins: https://revealjs.com/plugins/
+			dependencies: [
+     
+        		{ src: 'plugin/tableofcontents.js' }
+		    ],
+			tableofcontents: {
+// Specifies the slide title of the table of contents slide
+title: "Contents",
+titleTag:"h3",
+
+// Specifies the position of the table of contents slide in the presentation
+position: 2,
+
+// Specifies which slide tag elements will be used
+// for generating the table of contents.
+titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+ignoreFirstSlide: true,
+
+// Specifies if every single element of the table of contents
+// will be stepped through before moving on to the next slide.
+fadeInElements: false
+},
+
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+			, simplemenu: {
+				scale:0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
