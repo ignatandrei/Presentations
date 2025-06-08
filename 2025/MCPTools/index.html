@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>MCP Tools</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="blue" data-name="MCP Tools" style="text-align: left;">
+				<div class="r-fit-text">
+					Welcome to MCP Tools
+					<br />
+					Press <em>space</em> to navigate.
+					<br />
+					Press left arrow to go back.
+					<br />
+					Press right arrow to go forward.
+					<br />
+					Online at https://ignatandrei.github.io/Presentations/MCPToolsprez.html
+					
+					<br />
+					For download https://ignatandrei.github.io/Presentations/MCPTools.zip
+					<br />
+					
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<!-- https://revealjs.com/fragments/ -->
+					<!-- <a href="#/FirstSlide">Skip author and go fir</a> -->
+
+				</div>
+			</section>
+			<section data-name="Author" style="text-align: left;">
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
+						System.Console.WriteLine("Ignat Andrei");
+						System.Console.WriteLine("MCP Tools");							
+						  </code></pre>
+						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
+						Andrei Ignat <a
+							href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a>
+					</p>
+					<p>Book Making Open Source Component : <a
+							href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a
+							href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a
+							href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a
+							href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a>
+					</p>
+					<aside class="notes">
+						Shhh, these are your private notes 📝
+
+					</aside>
+				</div>
+			</section>
+			<section  data-name="LLM">
+				<h1>What is LLM</h1>
+				<div class="r-fit-text">
+					Running a LLM ( with Ollama ) 
+				</div>
+			</section>
+			<section  data-name="MCP">
+				<h1>MCP</h1>
+				<a href="MCPTools/MCPLLM.png" target="_blank">Click to enlarge
+				<img alt="ignat" src="MCPTools/MCPLLM.png" style="width: 40%;height:20%" />
+				</a>
+				
+				<div class="r-fit-text">
+				
+				<a href="https://modelcontextprotocol.io/introduction" target="_blank">
+https://modelcontextprotocol.io/introduction
+				</a>
+				In the notes, the mermaid diagram
+				<aside class="notes">
+---
+config:
+      theme: redux
+---
+sequenceDiagram
+    actor U as User
+    box AI
+    participant LLM   
+    participant M1 as MCPServerWeather
+    participant M2 as MCPServerLocation
+    participant M3 as MCPServerTrains
+    participant M4 as MCPPlaywright
+    end
+    rect rgb(200, 150, 255)
+    M1-->>LLM: register GetWeather 
+    M2-->>LLM: register GetLocation
+    M3-->>LLM: register GetTrains
+    end
+    rect rgb(191, 223, 255)
+    U->>LLM: Tell me if I can go to ski in Brasov <br/>and how I get there 
+    end
+    LLM-->LLM: Analyzing
+    Note over LLM, LLM: LLM understand that Brasov is a city    
+    LLM-)M1: GetWeather(Brasov)
+    M1-->>LLM: -10 C
+    LLM-->LLM: Analyzing
+    Note over LLM, LLM: LLM understand that we can ski at -10
+    LLM-)M2: GetLocation()
+    M2-->>LLM: Bucuresti
+    LLM-->LLM: Analyzing
+    Note over LLM, LLM: LLM understand trains between Bucuresti and Brasov
+    LLM-)M3: GetTrains(Bucuresti,Brasov)
+    M3-->>LLM: JSON with hours and trains
+    rect rgb(191, 223, 255)
+    LLM->>U: You can take the train at 6 AM, 8AM ... 
+    end
+    rect rgb(191, 223, 255)
+    U->>LLM: I prefer the 8 AM
+    end
+    LLM-->LLM: Analyzing
+    Note over LLM, LLM: LLM understand that  buy ticket at 8 AM
+    LLM->>M4: Open browser to wwww to buy ticket
+    
+    
+    %% Alice->>John: Hello John, how are you?
+    %% John-->>Alice: Great!
+    %% Alice-)John: See you later!
+
+
+</aside>
+				</div>
+			</section>
+			<section  data-name="ExampleWithFileSystem">
+				<h1>FileSystemExample</h1>
+				<div class="r-fit-text">
+				https://modelcontextprotocol.io/examples
+					
+				</div>
+			</section>
+			<section  data-name="VSAndMCP">
+			<h1>VS And MCP</h1>
+				<div class="r-fit-text">
+					In VS you can add MCP servers to use with copilot.
+				</div>
+			</section>
+			<section  data-name="ConstructMCPServer">
+			<h1>Construct MCP Server</h1>
+			<div class="r-fit-text">
+				Code for construct MCP Server
+				</div>
+			</section>	
+			<section  data-name="MCPServers">
+			<h1>List of MCPServers</h1>
+				<div class="r-fit-text">
+						Official
+						<br />
+						Not official
+				</div>
+			</section>
+			<section id="endMCP Tools" data-name="Last">
+				<h1>Questions ? </h1>
+				<h2>Thank you for your time </h2>
+
+
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+     
+        		{ src: 'plugin/tableofcontents.js' }
+		    ],
+			tableofcontents: {
+// Specifies the slide title of the table of contents slide
+title: "Contents",
+titleTag:"h3",
+
+// Specifies the position of the table of contents slide in the presentation
+position: 2,
+
+// Specifies which slide tag elements will be used
+// for generating the table of contents.
+titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+// Specifies if the first slide, mostly the title slide of the presentation, should be ignored.
+ignoreFirstSlide: true,
+
+// Specifies if every single element of the table of contents
+// will be stepped through before moving on to the next slide.
+fadeInElements: false
+},
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu]
+			, simplemenu: {
+				scale:0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
