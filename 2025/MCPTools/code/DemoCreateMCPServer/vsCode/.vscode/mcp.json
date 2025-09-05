@@ -1,0 +1,28 @@
+{
+  "servers": {
+    "github-mcp": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp"
+    },
+    "time": {
+        "command": "docker",
+        "args": ["run", "-i", "--rm", "mcp/time"]
+      },
+      "myProject":{
+        "type": "http",
+        "url": "http://localhost:5000"
+      },  
+    
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${workspaceFolder}",
+        "D:\\test",
+        "D:\\src"
+      ]
+    }
+  }
+  
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MCP Server Demo Steps</title>
+	<style>
+		body { font-family: Arial, sans-serif; background: #f8f9fa; margin: 0; padding: 0; }
+		main { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 32px; }
+		h1 { color: #2c3e50; text-align: center; }
+		ol { padding-left: 20px; }
+		li { margin-bottom: 18px; font-size: 1.1em; }
+		.step-title { font-weight: bold; color: #2980b9; }
+		code { background: #eef; padding: 2px 6px; border-radius: 4px; }
+		a { color: #27ae60; text-decoration: none; }
+		a:hover { text-decoration: underline; }
+	</style>
+</head>
+<body>
+	<main>
+		<h1>MCP Server Demo Setup</h1>
+		<ol>
+			<li><span class="step-title">Step 1:</span> Start the dotnet project.<br>
+				<code>MCP_PDF.exe</code>
+			</li>
+			<li><span class="step-title">Step 2:</span> Start MCP Inspector and connect to <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>.<br>
+				<code>npx -y @modelcontextprotocol/inspector</code><br>
+				<em>List tools and prompts</em>
+			</li>
+			<li><span class="step-title">Step 3:</span> Start server <code>myProject</code> as defined in <code>mcp.json</code>.<br>
+				<em>Serve the prompt discovered at the previous point</em>
+			</li>
+		</ol>
+	</main>
+</body>
+</html>
