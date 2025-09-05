@@ -1,0 +1,16 @@
+{
+  "name": "demoforcurrentdatetime",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"npx -y @modelcontextprotocol/inspector npx @modelcontextprotocol/server-filesystem D:/test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/inspector": "^0.16.6"
+  }
+}
