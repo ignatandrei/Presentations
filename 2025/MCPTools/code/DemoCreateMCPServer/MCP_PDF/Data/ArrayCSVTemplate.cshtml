@@ -1,0 +1,40 @@
+@using System.Text.Json;
+@using System.Text.Json.Nodes
+@inherits RazorBlade.PlainTextTemplate<MCP_PDF.Data.ArrayData>
+@{
+
+    var nr = Model.JsonArray.Length;
+    string header = "NR," +string.Join(",", Model.Properties);  
+
+}
+@header
+@for (int i = 0; i < nr; i++)
+{
+    var jsonObject = Model.JsonArray[i];
+    string row = (i + 1) + "," +
+                string.Join(",", Model
+                    .Properties
+                    .Select(it => GetJsonValue(jsonObject.GetProperty(it)))
+                );
+<text>@row
+</text>
+
+}
+
+@functions{
+    private object? GetJsonValue(JsonElement element)
+    {
+        var valueKind = element.ValueKind;
+        return valueKind switch
+        {
+            JsonValueKind.String => element.GetString(),
+            JsonValueKind.Number => element.GetDouble(),
+            JsonValueKind.True => true,
+            JsonValueKind.False => false,
+            JsonValueKind.Null => null,
+            JsonValueKind.Array => "not handled array",
+            JsonValueKind.Object => "not handled object",
+            _ => "not handled " + valueKind.ToString()
+        };
+    }
+}

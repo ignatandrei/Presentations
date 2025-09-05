@@ -1,0 +1,21 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/draft/2025-07-09/server.json",
+  "description": "Array to Any - PDF, HTML....",
+  "name": "io.github.ignatandrei/MCPArray2Any",
+  "packages": [
+    {
+    "registry_name": "nuget",
+      "name": "MCPArray2Any",
+      "version": "10.2025.727.1559",
+      "package_arguments": [],
+      "environment_variables": []
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/ignatandrei/MCP_PDF",
+    "source": "github"
+  },
+  "version_detail": {
+    "version": "10.2025.727.1559"
+  }
+}
