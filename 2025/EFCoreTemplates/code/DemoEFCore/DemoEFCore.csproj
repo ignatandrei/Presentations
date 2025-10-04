@@ -13,11 +13,13 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.1" />
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="9.5.1" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.SqlServer.Extensions" Version="9.8.0" />
     <PackageReference Include="DotnetGlobalToolsExtensionAspire" Version="940.2025.821.800" />
     <PackageReference Include="SqlExtensionsAspire" Version="94.2025.802.1154" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EFScaf0\EFScaf0.csproj" />
     <ProjectReference Include="..\SqlScripts\SqlScripts.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 

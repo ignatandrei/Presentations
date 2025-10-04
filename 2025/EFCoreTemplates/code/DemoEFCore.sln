@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEFCore", "DemoEFCore\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlScripts", "SqlScripts\SqlScripts.csproj", "{D95E73C1-44CE-4177-A008-0CC1FF5446DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFScaf0", "EFScaf0\EFScaf0.csproj", "{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D95E73C1-44CE-4177-A008-0CC1FF5446DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D95E73C1-44CE-4177-A008-0CC1FF5446DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D95E73C1-44CE-4177-A008-0CC1FF5446DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
