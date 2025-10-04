@@ -27,4 +27,10 @@ builder.AddProject<EFScafTemplates>("EFScaffoldingTemplates")
     .WithReference(database)
     .ExecuteScaffoldEF(database);
 
+builder.AddProject<EFScafTemplatesDapper>("EFScafDapper")
+    .WithExplicitStart()
+    .WaitFor(database)
+    .WithReference(database)
+    .ExecuteScaffoldEF(database);
+
 builder.Build().Run();

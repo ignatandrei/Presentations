@@ -4,7 +4,7 @@ using EFScafTemplates.Models;
 using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine("dotnet new install Microsoft.EntityFrameworkCore.Templates");
-Console.WriteLine("Please run dotnet ef scaffold");
+Console.WriteLine("Please run dotnet new ef-templates/ dotnet ef scaffold");
 
 var connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__mydatabase");
 var opt = SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder<ApplicationDbContext>(), connectionString).Options;
