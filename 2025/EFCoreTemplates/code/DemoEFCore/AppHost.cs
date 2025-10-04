@@ -21,4 +21,10 @@ builder.AddProject<EFScaf0>("EFScaffoldingFirst")
     .WithReference(database)
     .ExecuteScaffoldEF(database);
 
+builder.AddProject<EFScafTemplates>("EFScaffoldingTemplates")
+    .WithExplicitStart()
+    .WaitFor(database)
+    .WithReference(database)
+    .ExecuteScaffoldEF(database);
+
 builder.Build().Run();

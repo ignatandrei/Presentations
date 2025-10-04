@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EFScaf0\EFScaf0.csproj" />
+    <ProjectReference Include="..\EFScafTemplates\EFScafTemplates.csproj" />
     <ProjectReference Include="..\SqlScripts\SqlScripts.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 

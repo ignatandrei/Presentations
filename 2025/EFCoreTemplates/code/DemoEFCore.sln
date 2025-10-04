@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlScripts", "SqlScripts\Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFScaf0", "EFScaf0\EFScaf0.csproj", "{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFScafTemplates", "EFScafTemplates\EFScafTemplates.csproj", "{CE3A8324-EEA9-415F-ADAE-69E3C38C287E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2633CB05-BA79-4ECD-993E-6EF5C5AD8336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3A8324-EEA9-415F-ADAE-69E3C38C287E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3A8324-EEA9-415F-ADAE-69E3C38C287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3A8324-EEA9-415F-ADAE-69E3C38C287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3A8324-EEA9-415F-ADAE-69E3C38C287E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
