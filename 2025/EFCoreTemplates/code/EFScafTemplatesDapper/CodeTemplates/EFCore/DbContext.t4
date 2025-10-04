@@ -26,9 +26,12 @@
     var code = services.GetRequiredService<ICSharpHelper>();
 
 #>
+using Dapper;
+using Microsoft.Data.SqlClient;
+using <#=Options.ModelNamespace#>;
 namespace <#= NamespaceHint #>;
 
-public partial class <#= Options.ContextName #> 
+public static class <#= Options.ContextName #> 
 {
 
 <#
@@ -78,6 +81,20 @@ public partial class <#= Options.ContextName #>
     public static string <#= entityType.Name #>_SelectByPK = "SELECT <#= selectCols #> FROM <#= entityType.Name #> WHERE <#=wherePKCols#>";
     public static string <#= entityType.Name #>_DeleteByPK = "DELETE FROM <#= entityType.Name #> WHERE <#=wherePKCols#>";
     public static string <#= entityType.Name #>_UpdateByPK = "UPDATE <#= entityType.Name #> SET <#=updateCols#> WHERE <#=wherePKCols#>";
+    
+    public static async Task<IEnumerable<<#= entityType.Name #>>> SelectAll<#= entityType.Name #>(this SqlConnection con){
+        return await con.QueryAsync<<#=entityType.Name #>>(<#= entityType.Name #>_SelectAll);
+    }
+    public static async Task<<#= entityType.Name #>> SelectByPK<#= entityType.Name #>(this SqlConnection con, <#= entityType.Name #> item){
+        return await con.QuerySingleAsync<<#=entityType.Name #>>(<#= entityType.Name #>_SelectByPK,item);
+    }
+    public static async Task<int> UpdateByPK<#= entityType.Name #>(this SqlConnection con, <#= entityType.Name #> item){
+        return await con.ExecuteAsync(<#= entityType.Name #>_UpdateByPK,item);
+    }
+    public static async Task<int> DeleteByPK<#= entityType.Name #>(this SqlConnection con, <#= entityType.Name #> item){
+        return await con.ExecuteAsync(<#= entityType.Name #>_DeleteByPK,item);
+    }
+
 <#
     }
 

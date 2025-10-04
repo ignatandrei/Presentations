@@ -13,7 +13,7 @@ SqlConnection sqlConnection = new SqlConnection(connectionString);
 await sqlConnection.OpenAsync();
 
 
-var deps = await sqlConnection.QueryAsync<Employee>(ApplicationDbContext.Department_SelectAll);
+var deps = await sqlConnection.QueryAsync<Department>(ApplicationDbContext.Department_SelectAll);
 foreach (var d in deps)
 {
     Console.WriteLine($"Department {d.Id} : {d.Name} ");
@@ -22,7 +22,7 @@ var d1=deps.First();
 d1.Name+= "X";
 await sqlConnection.ExecuteAsync(ApplicationDbContext.Department_UpdateByPK, d1);
 
-deps = await sqlConnection.QueryAsync<Employee>(ApplicationDbContext.Department_SelectAll);
+deps = await sqlConnection.SelectAllDepartment();
 foreach (var d in deps)
 {
     Console.WriteLine($"Department {d.Id} : {d.Name} ");
