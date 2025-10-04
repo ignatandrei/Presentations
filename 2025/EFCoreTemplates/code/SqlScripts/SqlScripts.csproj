@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="sql/*.sql" ConstEmbed="SQL" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Podimo.ConstEmbed" Version="1.0.5" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+	</ItemGroup>
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GX</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+
+	<PropertyGroup>
+		<!-- The namespace under which we generate the constants. -->
+		<ConstEmbedNamespace>SqlScripts</ConstEmbedNamespace>
+		<!-- The visibility of the classes in which the constants are declared. -->
+		<ConstEmbedVisibility>public</ConstEmbedVisibility>
+	</PropertyGroup>
+
+</Project>
+
