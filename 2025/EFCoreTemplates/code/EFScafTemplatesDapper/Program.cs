@@ -21,9 +21,13 @@ foreach (var d in deps)
 var d1=deps.First();
 d1.Name+= "X";
 await sqlConnection.ExecuteAsync(ApplicationDbContext.Department_UpdateByPK, d1);
+var d2 = new Department();
+d2.Name+= "Y";
 
+await sqlConnection.InsertDepartment(d2);
 deps = await sqlConnection.SelectAllDepartment();
 foreach (var d in deps)
 {
     Console.WriteLine($"Department {d.Id} : {d.Name} ");
 }
+

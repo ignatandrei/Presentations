@@ -58,6 +58,8 @@ public static class <#= Options.ContextName #>
         var firstPropertyUpdate = true;
         string selectCols = "";
         string updateCols = "";
+        string insertCols ="";
+        string insertColsValues ="";
         foreach (var property in entityType.GetProperties())
         {
             if (!firstPropertySelect)
@@ -69,11 +71,14 @@ public static class <#= Options.ContextName #>
             if(property.IsPrimaryKey())continue;
             if (!firstPropertyUpdate)
             {
+                insertCols +=", ";
                 updateCols += ", ";
+                insertColsValues+=", ";
             }
             firstPropertyUpdate=false;
             updateCols += property.Name + " = @" + property.Name;
-            
+            insertCols += property.Name ;
+            insertColsValues+="@"+property.Name ;
         }
 #>
     //public virtual DbSet<<#= entityType.Name #>> <#= entityType.GetDbSetName() #> { get; set; }
@@ -81,6 +86,7 @@ public static class <#= Options.ContextName #>
     public static string <#= entityType.Name #>_SelectByPK = "SELECT <#= selectCols #> FROM <#= entityType.Name #> WHERE <#=wherePKCols#>";
     public static string <#= entityType.Name #>_DeleteByPK = "DELETE FROM <#= entityType.Name #> WHERE <#=wherePKCols#>";
     public static string <#= entityType.Name #>_UpdateByPK = "UPDATE <#= entityType.Name #> SET <#=updateCols#> WHERE <#=wherePKCols#>";
+    public static string <#= entityType.Name #>_Insert = "Insert into <#= entityType.Name #>(<#= insertCols #>) Values(<#= insertColsValues #>)";
     
     public static async Task<IEnumerable<<#= entityType.Name #>>> SelectAll<#= entityType.Name #>(this SqlConnection con){
         return await con.QueryAsync<<#=entityType.Name #>>(<#= entityType.Name #>_SelectAll);
@@ -93,6 +99,9 @@ public static class <#= Options.ContextName #>
     }
     public static async Task<int> DeleteByPK<#= entityType.Name #>(this SqlConnection con, <#= entityType.Name #> item){
         return await con.ExecuteAsync(<#= entityType.Name #>_DeleteByPK,item);
+    }
+    public static async Task<int> Insert<#= entityType.Name #>(this SqlConnection con, <#= entityType.Name #> item){
+        return await con.ExecuteAsync(<#= entityType.Name #>_Insert,item);
     }
 
 <#
