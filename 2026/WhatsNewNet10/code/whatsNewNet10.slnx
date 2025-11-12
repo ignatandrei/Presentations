@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="WhatsNewDotNet10/WhatsNewDotNet10.csproj" Id="be589be7-b5d2-4327-bd9e-38b4c564e92a" />
+  <Project Path="whatsNewNet10.ApiService/whatsNewNet10.ApiService.csproj" />
+  <Project Path="whatsNewNet10.AppHost/whatsNewNet10.AppHost.csproj" />
+  <Project Path="whatsNewNet10.ServiceDefaults/whatsNewNet10.ServiceDefaults.csproj" />
+  <Project Path="whatsNewNet10.Tests/whatsNewNet10.Tests.csproj" />
+  <Project Path="whatsNewNet10.Web/whatsNewNet10.Web.csproj" />
+</Solution>
