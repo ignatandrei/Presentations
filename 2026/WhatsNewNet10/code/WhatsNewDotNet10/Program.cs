@@ -49,16 +49,36 @@ https://aspire.dev/whats-new/aspire-13/#named-references
 
 https://aspire.dev/whats-new/aspire-13/#%EF%B8%8F-breaking-changes
 */
+Console.WriteLine("---- C#14 ----");
 
+Console.WriteLine("---- Extension members ----");
+List<int>? numbers = [1, 2, 10];
+Console.WriteLine($"Is numbers empty? {numbers.IsEmptyAndrei()}");
+
+Console.WriteLine($"Is numbers empty New ? {numbers.IsEmptyNew()}");
+
+Console.WriteLine($"Is numbers empty Property ? {numbers.IsEmptyProperty}");
+
+Console.WriteLine($"Zero numbers array length: {List<int>.Zero.IsEmptyNew()}"); 
+
+Console.WriteLine("--- field example ");
+Person? p= new ();
+p.FirstName = "andrei";
+Console.WriteLine($"Person FirstName: {p.FirstName}");
+
+Console.WriteLine("https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#more-partial-members");
+
+Console.WriteLine("-- null conditional assignement");
+//https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#null-conditional-assignment
+
+p = null;
+p?.FirstName = "Andrei";
+Console.WriteLine($"Person FirstName with null conditional assignment: {p?.FirstName ?? "Person is null"}");
+
+
+Console.WriteLine("---- End of C#14 ----");
 /* More todo
- * https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#extension-members
-
-https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#the-field-keyword
-
-https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#more-partial-members
-
-
-https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-14#null-conditional-assignment
+ * 
 
 https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
 
