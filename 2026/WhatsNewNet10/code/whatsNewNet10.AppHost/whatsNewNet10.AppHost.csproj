@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WhatsNewDotNet10\WhatsNewDotNet10.csproj" />
     <ProjectReference Include="..\whatsNewNet10.ApiService\whatsNewNet10.ApiService.csproj" />
     <ProjectReference Include="..\whatsNewNet10.Web\whatsNewNet10.Web.csproj" />
   </ItemGroup>

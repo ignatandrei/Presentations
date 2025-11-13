@@ -6,7 +6,15 @@ var apiService = builder.AddProject<Projects.whatsNewNet10_ApiService>("apiservi
 builder.AddProject<Projects.whatsNewNet10_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     .WithHttpHealthCheck("/health")
+    .WithUrl("/weather")
     .WithReference(apiService)
     .WaitFor(apiService);
 
-builder.Build().Run();
+builder
+    .AddProject<Projects.WhatsNewDotNet10>("RunMeToSeeWhatsNewInNET10")
+    .WithExplicitStart();
+
+
+var app = builder.Build();
+var serv = app.Services;
+app.Run();

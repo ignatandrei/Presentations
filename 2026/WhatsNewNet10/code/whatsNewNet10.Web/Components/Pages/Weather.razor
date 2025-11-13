@@ -8,17 +8,24 @@
 
 <h1>Weather</h1>
 
-<p>This component demonstrates showing data loaded from a backend API service.</p>
+<p>IASyncEnumerable for all: </p>
+<a href="https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
+" target="_blank">
+    https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
+</a>
+<br />
+<button class="btn btn-primary" @onclick="async ()=> await LoadData()">Load Data</button>
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>No forecasts saved</em></p>
 }
 else
 {
     <table class="table">
         <thead>
             <tr>
+                <th>Nr</th>
                 <th>Date</th>
                 <th aria-label="Temperature in Celsius">Temp. (C)</th>
                 <th aria-label="Temperature in Fahrenheit">Temp. (F)</th>
@@ -26,9 +33,11 @@ else
             </tr>
         </thead>
         <tbody>
+            @{ int nr  =1;}
             @foreach (var forecast in forecasts)
             {
                 <tr>
+                    <td>@(nr++)</td>
                     <td>@forecast.Date.ToShortDateString()</td>
                     <td>@forecast.TemperatureC</td>
                     <td>@forecast.TemperatureF</td>
@@ -40,10 +49,21 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    [PersistentState]
+    public WeatherForecast[]? forecasts { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    //protected override async Task OnInitializedAsync()
+    protected async Task LoadData()
     {
-        forecasts = await WeatherApi.GetWeatherAsync();
+        Console.WriteLine("LoadData called");
+        forecasts = [];
+        StateHasChanged();
+        await Task.Delay(1000); // Simulate delay before streaming starts
+        await foreach(var forecast in WeatherApi.GetWeatherAsync())
+        {
+            forecasts ??= Array.Empty<WeatherForecast>();
+            forecasts = forecasts.Append(forecast).ToArray();
+            StateHasChanged();
+        };
     }
 }

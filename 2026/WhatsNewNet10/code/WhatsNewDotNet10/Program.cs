@@ -80,7 +80,6 @@ Console.WriteLine("---- End of C#14 ----");
 /* More todo
  * 
 
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
 
 https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#declarative-model-for-persisting-state-from-components-and-services
 
