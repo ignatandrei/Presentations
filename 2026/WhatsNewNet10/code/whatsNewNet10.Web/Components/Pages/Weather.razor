@@ -1,8 +1,8 @@
 ﻿@page "/weather"
-@attribute [StreamRendering(true)]
-@attribute [OutputCache(Duration = 5)]
+@rendermode InteractiveServer
 
 @inject WeatherApiClient WeatherApi
+@inject IJSRuntime JS
 
 <PageTitle>Weather</PageTitle>
 
@@ -14,7 +14,7 @@
     https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
 </a>
 <br />
-<button class="btn btn-primary" @onclick="async ()=> await LoadData()">Load Data</button>
+<button class="btn btn-primary" @onclick="async()=>await LoadData(2)">Load Data</button>
 
 @if (forecasts == null)
 {
@@ -51,19 +51,31 @@ else
 @code {
     [PersistentState]
     public WeatherForecast[]? forecasts { get; set; }
-
-    //protected override async Task OnInitializedAsync()
-    protected async Task LoadData()
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData(1);
+    }
+    protected async Task LoadData(int div)
     {
         Console.WriteLine("LoadData called");
         forecasts = [];
         StateHasChanged();
         await Task.Delay(1000); // Simulate delay before streaming starts
+        int nr = 1;
         await foreach(var forecast in WeatherApi.GetWeatherAsync())
         {
             forecasts ??= Array.Empty<WeatherForecast>();
             forecasts = forecasts.Append(forecast).ToArray();
-            StateHasChanged();
+            if(nr++ % div == 0)
+            {
+                await Task.Delay(1000);
+                Console.WriteLine($"Loaded {nr} forecasts");
+                StateHasChanged();
+            }
+            
+            
         };
+        await Task.Delay(1000);
+        StateHasChanged();
     }
 }

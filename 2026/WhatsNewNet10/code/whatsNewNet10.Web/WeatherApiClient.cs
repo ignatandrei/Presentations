@@ -11,7 +11,6 @@ public class WeatherApiClient(HttpClient httpClient)
             {
                 yield return forecast;
             }
-            await Task.Delay(1000, cancellationToken);
         }
 
     }
