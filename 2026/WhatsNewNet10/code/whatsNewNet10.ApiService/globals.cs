@@ -1,0 +1,1 @@
+﻿global using whatsNewNet10.ApiService;

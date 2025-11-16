@@ -1,8 +1,10 @@
+using System.Runtime.CompilerServices;
+
 namespace whatsNewNet10.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
 {
-    public async IAsyncEnumerable<WeatherForecast> GetWeatherAsync(CancellationToken cancellationToken = default)
+    public async IAsyncEnumerable<WeatherForecast> GetWeatherAsync([EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         
         await foreach (var forecast in httpClient.GetFromJsonAsAsyncEnumerable<WeatherForecast>("/weatherforecast", cancellationToken))
