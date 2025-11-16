@@ -101,12 +101,10 @@ https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view
 ? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#avoid-cookie-login-redirects-for-known-api-endpoints
 
 
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#better-support-for-testing-apps-with-top-level-statements
 
 
 https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-json-patch-implementation-with-systemtextjson
 
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#detect-if-url-is-local-using-redirecthttpresultislocalurl
 
 
 https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#improved-translation-for-parameterized-collection
