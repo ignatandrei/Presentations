@@ -107,11 +107,6 @@ https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view
 
 
 
-https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#improved-translation-for-parameterized-collection
-
-https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#support-for-the-net-10-leftjoin-and-rightjoin-operators
-
-https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-10.0/whatsnew#named-query-filters
 
 
 breaking changes

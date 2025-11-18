@@ -1,0 +1,30 @@
+﻿@page "/weatherServerSentEvents"
+
+@inject WeatherApiClient WeatherApi
+@inject IJSRuntime JS
+
+<PageTitle>Weather Server Sent Events</PageTitle>
+
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#support-for-server-sent-events-sse
+
+<h1>Weather Server Sent Events</h1>
+
+
+<ul></ul>
+<script>
+     const evtSource = new EventSource('https://apiservice-whatsnewnet10.dev.localhost:7454/weatherSSE');
+    const eventList = document.querySelector('ul');
+        evtSource.addEventListener("weather", (event) => {
+
+            console.log(event.data);
+      const newElement = document.createElement("li");
+      const time = JSON.parse(event.data);
+      newElement.textContent = `weather at  ${event.data}`;
+      eventList.appendChild(newElement);
+    });
+     function myFunction() {
+        window.alert('test');
+      
+
+    }
+</script>

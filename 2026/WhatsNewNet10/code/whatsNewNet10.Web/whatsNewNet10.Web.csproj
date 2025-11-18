@@ -10,4 +10,8 @@
     <ProjectReference Include="..\whatsNewNet10.ServiceDefaults\whatsNewNet10.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch.SystemTextJson" Version="10.0.0" />
+  </ItemGroup>
+
 </Project>

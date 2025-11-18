@@ -2,6 +2,8 @@
 //see url of apphost
 //also see url of the api service from the web project
 
+using whatsNewNet10.AppHost;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 HttpCommandOptions defGet= new()
@@ -21,10 +23,30 @@ builder.AddProject<Projects.whatsNewNet10_Web>("webfrontend")
     .WithReference(apiService)
     .WaitFor(apiService);
 
+
 builder
     .AddProject<Projects.WhatsNewDotNet10>("RunMeToSeeWhatsNewInNET10")
     .WithExplicitStart();
 
+
+var password = builder.AddParameter("password", "#P@ssw0rd!");
+
+var sql = builder.AddSqlServer("sql",password)
+                 .WithLifetime(ContainerLifetime.Persistent);
+var db = sql
+    .AddDatabase("database")
+    
+    ;
+
+builder.AddProject<Projects.EFCoreDemo>("EFCoreDemo")
+       .WithReference(db)
+       .WaitFor(db)
+       .ExecuteScaffoldEF(db);
+       ;
+
+// After adding all resources, run the app...
+
+builder.Build().Run();
 
 var app = builder.Build();
 var serv = app.Services;

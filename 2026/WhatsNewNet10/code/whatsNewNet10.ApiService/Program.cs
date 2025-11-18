@@ -1,5 +1,7 @@
 
 //
+using System.Runtime.CompilerServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -11,6 +13,7 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
+builder.Services.AddCors();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -19,6 +22,15 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
+
+app.UseCors(it =>
+{
+    it
+      .AllowAnyHeader()
+      .AllowAnyMethod()
+      .SetIsOriginAllowed(it=>true)
+      .AllowCredentials();
+});
 
 //if (app.Environment.IsDevelopment())
 {
@@ -30,16 +42,24 @@ app.UseExceptionHandler();
     app.MapOpenApi("/openapi/{documentName}.yaml");
 }
 
-string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
 
 app.MapGet("/", () => "API service is running. Navigate to /weatherforecast to see sample data.");
 
 // https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#populate-xml-doc-comments-into-openapi-document
 
-app.MapGet("/weatherforecast", MyWeather.GetWeather)
-.WithName("GetWeatherForecast");
+app.MapGet("/weatherforecastDocumention", MyWeather.GetWeather)
+    .WithName("weatherforecastDocumention");
+
+//https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#support-for-server-sent-events-sse
+app.MapGet("/weatherSSE", (CancellationToken cancellationToken) =>
+{
+    return TypedResults.ServerSentEvents(MyWeather.GetWeatherForecast(cancellationToken),eventType: "weather");
+});
+
+app.MapGet("/weatherforecast", (CancellationToken cancellationToken) => MyWeather.GetWeatherForecast(cancellationToken));
 
 app.MapDefaultEndpoints();
 
 app.Run();
+
 

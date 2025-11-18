@@ -14,11 +14,11 @@
     https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#httpclient-response-streaming-enabled-by-default
 </a>
 <br />
-<button class="btn btn-primary" @onclick="async()=>await LoadData(2)">Load Data</button>
+<button class="btn btn-primary" @onclick="async()=>await LoadData(5)">Load => @forecasts?.Length</button>
 
 @if (forecasts == null)
 {
-    <p><em>No forecasts saved</em></p>
+    <p><em>No forecasts loaded</em></p>
 }
 else
 {
@@ -53,10 +53,11 @@ else
     public WeatherForecast[]? forecasts { get; set; }
     protected override async Task OnInitializedAsync()
     {
-        await LoadData(1);
+        //LoadData(10);
     }
     protected async Task LoadData(int div)
     {
+        
         Console.WriteLine("LoadData called");
         forecasts = [];
         StateHasChanged();
@@ -65,15 +66,14 @@ else
         await foreach(var forecast in WeatherApi.GetWeatherAsync())
         {
             forecasts ??= Array.Empty<WeatherForecast>();
+            Console.WriteLine($"Loaded {forecasts.Length} forecasts");
             forecasts = forecasts.Append(forecast).ToArray();
             if(nr++ % div == 0)
             {
-                await Task.Delay(1000);
                 Console.WriteLine($"Loaded {nr} forecasts");
                 StateHasChanged();
+                await Task.Delay(2000);
             }
-            
-            
         };
         await Task.Delay(1000);
         StateHasChanged();

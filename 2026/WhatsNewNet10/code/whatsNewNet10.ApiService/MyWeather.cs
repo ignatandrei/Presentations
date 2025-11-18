@@ -1,4 +1,6 @@
-﻿namespace whatsNewNet10.ApiService;
+﻿using System.Runtime.CompilerServices;
+
+namespace whatsNewNet10.ApiService;
 /// <summary>
 /// this is a sample weather service class
 /// </summary>
@@ -20,6 +22,19 @@ public class MyWeather
                 ))
                 .ToArray();
     }
+
+    public static async IAsyncEnumerable<WeatherForecast> GetWeatherForecast(
+        [EnumeratorCancellation] CancellationToken cancellationToken)
+    {
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            var heartRate = Random.Shared.Next(-30, 30);
+            Console.WriteLine(" another weather sent ");
+            yield return new WeatherForecast(DateOnly.FromDateTime(DateTime.Now), heartRate, "this is a heart beat at" + TimeOnly.FromDateTime(DateTime.Now).ToString("mmss"));
+            await Task.Delay(3_000, cancellationToken);
+        }
+    }
+
 
 }
 /// <summary>

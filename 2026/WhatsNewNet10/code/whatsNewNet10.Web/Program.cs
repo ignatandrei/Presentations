@@ -3,6 +3,10 @@ using whatsNewNet10.Web.Components;
 //see generated program.cs from roslyn
 //https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#better-support-for-testing-apps-with-top-level-statements
 
+//
+//https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-json-patch-implementation-with-systemtextjson
+MyJsonPatch.ApplyPatch();
+//return;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
