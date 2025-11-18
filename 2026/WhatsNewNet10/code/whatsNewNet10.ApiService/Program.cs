@@ -56,6 +56,7 @@ app.MapGet("/weatherSSE", (CancellationToken cancellationToken) =>
     return TypedResults.ServerSentEvents(MyWeather.GetWeatherForecast(cancellationToken),eventType: "weather");
 });
 
+//IAsyncEnumerable with CancellationToken support 
 app.MapGet("/weatherforecast", (CancellationToken cancellationToken) => MyWeather.GetWeatherForecast(cancellationToken));
 
 app.MapDefaultEndpoints();

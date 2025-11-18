@@ -18,13 +18,9 @@ https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view
 
             console.log(event.data);
       const newElement = document.createElement("li");
-      const time = JSON.parse(event.data);
+      //const time = JSON.parse(event.data);
       newElement.textContent = `weather at  ${event.data}`;
       eventList.appendChild(newElement);
     });
-     function myFunction() {
-        window.alert('test');
-      
-
-    }
+     
 </script>

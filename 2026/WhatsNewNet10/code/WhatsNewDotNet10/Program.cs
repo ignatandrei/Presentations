@@ -94,22 +94,12 @@ The requirement to declare the model types outside of Razor components (.razor f
 
 https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-inputhidden-component-to-handle-hidden-input-fields-in-forms
 
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#support-for-server-sent-events-sse
-
-
-
-? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#avoid-cookie-login-redirects-for-known-api-endpoints
-
-
-
-
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-json-patch-implementation-with-systemtextjson
-
-
-
-
 
 breaking changes
-https://learn.microsoft.com/en-us/dotnet/core/compatibility/breaking-changes
-*/
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/10.0/backgroundservice-executeasync-task
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/webhostbuilder-deprecated
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/10.0/asyncenumerable
+
+ */
 Console.WriteLine("---- End of .NET 10 Features ----");
