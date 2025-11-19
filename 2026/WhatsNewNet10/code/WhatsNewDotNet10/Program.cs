@@ -21,11 +21,6 @@ Console.WriteLine("RUN dotnet nuget why --cli-schema");
 Console.WriteLine("RUN dotnet ef --cli-schema");
 
 
-//I'm not confortable
-//https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#use-net-msbuild-tasks-with-net-framework-msbuild
-/*
-* Starting with .NET 10, msbuild.exe and Visual Studio 2026 can run MSBuild tasks that are built for .NET. 
-*/
 
 Console.WriteLine("File based apps with publish ");
 Console.WriteLine("https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#file-based-apps-enhancements");
@@ -34,21 +29,6 @@ Console.WriteLine("https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotne
 //TODO: https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#native-shell-tab-completion-scripts
 //dotnet completions script pwsh | out-String | Invoke-Expression -ErrorAction SilentlyContinue
 
-/*TODO ASPIRE 
-https://aspire.dev/whats-new/aspire-13/#net-maui-integration
-
-https://aspire.dev/whats-new/aspire-13/#aspire-mcp-server
-
-https://aspire.dev/whats-new/aspire-13/#health-checks-last-run-time
-
-https://aspire.dev/whats-new/aspire-13/#c-file-based-app-support
-
-https://aspire.dev/whats-new/aspire-13/#network-identifiers
-
-https://aspire.dev/whats-new/aspire-13/#named-references
-
-https://aspire.dev/whats-new/aspire-13/#%EF%B8%8F-breaking-changes
-*/
 Console.WriteLine("---- C#14 ----");
 
 Console.WriteLine("---- Extension members ----");
@@ -81,25 +61,6 @@ Console.WriteLine("---- End of C#14 ----");
  * 
 
 
-? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#declarative-model-for-persisting-state-from-components-and-services
-
-? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-javascript-interop-features
-
-? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#blazor-router-has-a-notfoundpage-parameter
-
-? https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#improved-form-validation
-
-The requirement to declare the model types outside of Razor components (.razor files) is due to the fact that both the new validation feature and the Razor compiler itself are using a source generator. Currently, output of one source generator can't be used as an input for another source generator.
-
-
-https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-inputhidden-component-to-handle-hidden-input-fields-in-forms
-
-
-breaking changes
-https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0
-https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/10.0/backgroundservice-executeasync-task
-https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/webhostbuilder-deprecated
-https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/10.0/asyncenumerable
 
  */
 Console.WriteLine("---- End of .NET 10 Features ----");

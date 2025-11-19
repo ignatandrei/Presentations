@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>EFCore Templates</title>
+	<title>WhatsNewNET10</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
@@ -19,9 +19,9 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-background-color="blue" data-name="EFCore Templates" style="text-align: left;">
+			<section data-background-color="blue" data-name="WhatsNewNET10" style="text-align: left;">
 				<div class="r-fit-text">
-					Welcome to EFCore Templates
+					Welcome to WhatsNewNET10
 					<br />
 					Press <em>space</em> to navigate.
 					<br />
@@ -29,9 +29,9 @@
 					<br />
 					Press right arrow to go forward.
 					<br />
-					Online at <a href="https://ignatandrei.github.io/Presentations/EFCoreTemplatesprez.html" target="_blank">https://ignatandrei.github.io/Presentations/EFCoreTemplatesprez.html</a>
+					Online at <a href="https://ignatandrei.github.io/Presentations/WhatsNewNET10prez.html" target="_blank">https://ignatandrei.github.io/Presentations/WhatsNewNET10prez.html</a>
 					<br />
-					For download <a href="https://ignatandrei.github.io/Presentations/EFCoreTemplates.zip" target="_blank">	https://ignatandrei.github.io/Presentations/EFCoreTemplates.zip</a>
+					For download <a href="https://ignatandrei.github.io/Presentations/WhatsNewNET10.zip" target="_blank">	https://ignatandrei.github.io/Presentations/WhatsNewNET10.zip</a>
 					</a><br />
 					
 					For notes press S <br />
@@ -46,7 +46,7 @@
 				<div class="r-fit-text">
 					<pre><code data-trim data-noescape data-ln-start-from="16" data-line-numbers="16,16-17">
 						System.Console.WriteLine("Ignat Andrei");
-						System.Console.WriteLine("EFCore Templates");							
+						System.Console.WriteLine("WhatsNewNET10");							
 						  </code></pre>
 						  <p><img alt="ignat" src="ignat.jpg" style="width: 10%">
 						Andrei Ignat <a
@@ -70,48 +70,83 @@
 					</aside>
 				</div>
 			</section>
-			<section  data-name="EFCore">
-				<h3>EFCore</h3>
+			<section data-name="Net10C#14">
+				<h3>Libraries, runtime, sdk, C#14</h3>
 				<div class="r-fit-text">
-						ORM EFCore
-					<img alt="ignat" src="EFCoreTemplates/BD1.png" style="width: 40%;height:20%" />
+					WhatsNewDotNet10.csproj
 				</div>
-				<aside class="notes">
-				     
-				</aside>
 			</section>
-			<section  data-name="Scaffold1">
-				<h3>Scaffold1</h3>
+			<section  data-name="EFCore">
+				<h3>WhatsNew EFCore</h3>
 				<div class="r-fit-text">
-				
-				<a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli" target="_blank">https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli</a>
-				<br />
-				DEMO				
+				EFCoreDemo.csproj
 				</div>
 				<aside class="notes">Notes(ALT+S)
 
 				</aside>
 			</section>
-			<section  data-name="Scaffold Templates">
-				<h1>Scaffold Templates</h1>
+			<section  data-name="WhatsNewASPNET">
+				<h3>WhatsNew ASPNET</h1>
 				<div class="r-fit-text">
-				<a  target="_blank" href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/templates?tabs=dotnet-core-cli">https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/templates?tabs=dotnet-core-cli</a>
+				WhatsNewNet10.ApiService.csproj
 				<br />
-				Demo 2 with T4 templates
+				WhatsNewNet10.Web.csproj
 			</section>
-			<section  data-name="Dapper">			
-			<h1>Dapper</h1>
+		<section>
+  <section data-name="ManyOthers">
+	<H3>Many Others Links </H3>, go down
+  </section>
+  <section>Aspire
+	<div class="r-fit-text">
+	https://aspire.dev/whats-new/aspire-13/
+	</div>
+  </section>
+<section>Blazor
+	<div class="r-fit-text">
+
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#declarative-model-for-persisting-state-from-components-and-services
+<br />
+ https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-javascript-interop-features
+<br />
+ https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#blazor-router-has-a-notfoundpage-parameter
+
+<br />
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#improved-form-validation
+
+<br />
+The requirement to declare the model types outside of Razor components (.razor files) is due to the fact that both the new validation feature and the Razor compiler itself are using a source generator. Currently, output of one source generator can't be used as an input for another source generator.
+<br />
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-10.0?view=aspnetcore-10.0#new-inputhidden-component-to-handle-hidden-input-fields-in-forms
+
+
+
+</div>
+  </section>
+  <section>
+	<div class="r-fit-text">
+https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-10/sdk#use-net-msbuild-tasks-with-net-framework-msbuild
+/*
+* Starting with .NET 10, msbuild.exe and Visual Studio 2026 can run MSBuild tasks that are built for .NET. 
+*/
+<br />
+
+	</div>
+
+  </section>
+</section>
+			<section id="breaking10" data-name="breaking10">
+				<h3>breaking Changes </h3>
 				<div class="r-fit-text">
-					<a target="_blank" href="TODO">TODO Link dapper</a>
-			</div>
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0<br />
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/10.0/backgroundservice-executeasync-task<br />
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/aspnet-core/10/webhostbuilder-deprecated<br />
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/10.0/asyncenumerable<br />
+https://duendesoftware.com/blog/20251104-dotnet-10-breaking-changes-to-keep-an-eye-on-when-upgrading<br />
+
+</div>
 			</section>
-			<section  data-name="DapperTemplates">
-			<h3>Dapper Templates</h3>
-			<div class="r-fit-text">
-					Demo with customized T4 dapper templates
-			</div>
-			</section>	
-			<section id="endEFCore Templates" data-name="Last">
+
+			<section id="endWhatsNewNET10" data-name="Last">
 				<h1>Questions ? </h1>
 				<h2>Thank you for your time </h2>
 			</section>

@@ -1,12 +1,5 @@
 
-//
-using System.Runtime.CompilerServices;
-
 var builder = WebApplication.CreateBuilder(args);
-
-
-
-
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
@@ -62,5 +55,4 @@ app.MapGet("/weatherforecast", (CancellationToken cancellationToken) => MyWeathe
 app.MapDefaultEndpoints();
 
 app.Run();
-
 
