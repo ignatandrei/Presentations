@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DbMigrations\DbMigrations.csproj" IsAspireProjectResource="false"  />
     <ProjectReference Include="..\EFCoreDemo\EFCoreDemo.csproj" />
     <ProjectReference Include="..\WhatsNewDotNet10\WhatsNewDotNet10.csproj" />
     <ProjectReference Include="..\whatsNewNet10.ApiService\whatsNewNet10.ApiService.csproj" />
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="13.0.0" />
+    <PackageReference Include="SqlExtensionsAspire" Version="95.2025.1102.1042" />
   </ItemGroup>
 
 </Project>

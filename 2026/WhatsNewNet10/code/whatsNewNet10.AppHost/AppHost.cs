@@ -2,6 +2,8 @@
 //see url of apphost
 //also see url of the api service from the web project
 
+using DbMigrations;
+using SqlExtensionsAspire;
 using whatsNewNet10.AppHost;
 
 var builder = DistributedApplication.CreateBuilder(args);
@@ -35,7 +37,8 @@ var sql = builder.AddSqlServer("sql",password)
                  .WithLifetime(ContainerLifetime.Persistent);
 var db = sql
     .AddDatabase("database")
-    
+    .ExecuteSqlServerScriptsAtStartup(SqlScripts.GetAllSqlScripts().ToArray())
+    .WithSqlPadViewerForDB(sql)
     ;
 
 builder.AddProject<Projects.EFCoreDemo>("EFCoreDemo")

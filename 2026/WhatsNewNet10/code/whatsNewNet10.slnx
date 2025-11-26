@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="DbMigrations/DbMigrations.csproj" Id="9570df63-5c7f-42a5-b356-5979465f6130" />
   <Project Path="EFCoreDemo/EFCoreDemo.csproj" Id="3624d904-3376-434a-97d0-e9a8109d53c8" />
   <Project Path="WhatsNewDotNet10/WhatsNewDotNet10.csproj" Id="be589be7-b5d2-4327-bd9e-38b4c564e92a" />
   <Project Path="whatsNewNet10.ApiService/whatsNewNet10.ApiService.csproj" />
