@@ -41,6 +41,20 @@ Console.WriteLine($"Is numbers empty Property ? {numbers.IsEmptyProperty}");
 
 Console.WriteLine($"Zero numbers array length: {List<int>.Zero.IsEmptyNew()}"); 
 
+Console.WriteLine("---- python extensions ----");
+Console.WriteLine("Test" * 3);
+Console.WriteLine("---- javascript ---");    
+Console.WriteLine("10" - 4);
+Console.WriteLine("10" + "4");
+Console.WriteLine("10" - "4");
+Console.WriteLine("---  fsharp --- ");
+var str = "Hello, C# code!"        
+        | (s => s.Replace("C#", "F#-like "))
+        | FunExtensions.ToUpper
+;
+
+Console.WriteLine(str); // NO! HELLO F#-LIKE CODE!
+
 Console.WriteLine("--- field example ");
 Person? p= new ();
 p.FirstName = "andrei";
