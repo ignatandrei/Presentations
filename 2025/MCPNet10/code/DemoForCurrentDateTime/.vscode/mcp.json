@@ -20,6 +20,11 @@
       "args": ["MCPArray2Any@10.2025.1125.656", "--yes"],
       "env": {}
     },
+    "MCPArray2AnyHTTP": {
+      "type": "http",
+      "url": "http://localhost:5000/"
+      
+    },
     "fetch": {
       "command": "uvx",
       "args": ["mcp-server-fetch"],
