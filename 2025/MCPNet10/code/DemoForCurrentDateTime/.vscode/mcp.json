@@ -17,7 +17,7 @@
     "MCPArray2Any": {
       "type": "stdio",
       "command": "dnx",
-      "args": ["MCPArray2Any@10.2025.1206.1802", "--yes"],
+      "args": ["MCPArray2Any@10.2025.1212.1802", "--yes"],
       "env": {}
     },
     "MCPArray2AnyHTTP": {

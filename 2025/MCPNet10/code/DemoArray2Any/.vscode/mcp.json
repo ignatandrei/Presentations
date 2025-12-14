@@ -1,0 +1,29 @@
+{
+  "servers": {
+    "MCP_Array_Any": {
+      "type": "stdio",
+      "command": "dnx",
+      "args": ["MCPArray2Any@10.2025.1212.1802", "--yes"],
+      "env": {
+        
+      }
+    },
+     "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${workspaceFolder}",
+        "${workspaceFolder}/output"
+        
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  }
+}
