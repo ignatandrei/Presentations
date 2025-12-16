@@ -82,6 +82,7 @@
 						<br />
 						What is today date ?
 						<br />
+						Demo with Ollama and MCPHost+Ollama (mcphost --model ollama:qwen3 --config local.json)
 						
 				<aside class="notes">
 					<a href="https://ollama.com/library/" target="_blank">https://ollama.com/library/</a>
@@ -173,15 +174,6 @@ sequenceDiagram
 				</div>				
 				Docker , Nuget ...
 			</section>
-			<section  data-name="SimpleHostWithMCP">
-				<h1>Simple Host With MCP</h1>
-				<div class="r-fit-text">
-					Demo : Ollama + qwen3 + https://github.com/mark3labs/mcphost
-					mcphost --model ollama:qwen3
-					<br/>
-					mcphost --model ollama:qwen3 --config local.json	
-				</div>
-				</section>			
 			<section  data-name="VSAndMCP">			
 			<h1>VS And MCP</h1>
 				<div class="r-fit-text">
@@ -194,29 +186,26 @@ sequenceDiagram
 			</div>
 
 					<quote>
-<<						You have multiple options to add an MCP server in VS Code: >>	
+<<						You have multiple options to add an MCP server in VS Code: 	
 					</quote>
 					<div>
-					Demo For CurrentDateTime + MCP inspector
-						<br />ollama show Gemma3 ,qwen - 
+					Demo For CurrentDateTime 
+					<br />
+					+ MCP inspector npx @modelcontextprotocol/inspector
+					<br />ollama show Gemma3 ,qwen - 
 				</div>
 					
 				</div>
 			</section>
-			<section>
-				Examples of MCP -  MCP  server as .NET Tool, MCP in VS/Code
-
-				Nuget : 
-				<a href="https://www.nuget.org/packages/MCPArray2Any" target="_blank">
-					https://www.nuget.org/packages/MCPArray2Any
-					</a>	
-				<a href="https://www.nuget.org/packages/MCPArray2Any.win-x64" target="_blank">
-					https://www.nuget.org/packages/MCPArray2Any.win-x64
-					</a>	
-					<a href="https://www.nuget.org/packages/MCPArray2Any.linux-x64" target="_blank">
-					https://www.nuget.org/packages/MCPArray2Any.linux-x64
-					</a>	
-			</section>
+			<!-- <section  data-name="SimpleHostWithMCP">
+				<h1>Simple Host With MCP</h1>
+				<div class="r-fit-text">
+					Demo : Ollama + qwen3 + https://github.com/mark3labs/mcphost
+					mcphost --model ollama:qwen3
+					<br/>
+					mcphost --model ollama:qwen3 --config local.json	
+				</div>
+				</section>			 -->
 			<section  data-name="ConstructMCPServer">
 			<h1>Construct MCP Server</h1>
 			<div class="r-fit-text">
@@ -233,6 +222,42 @@ sequenceDiagram
 				https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft</a>
 			</div>
 			</section>	
+			<section data-name="MCPinNUGet">
+				<h2>MCP & Deploy NuGet</h2>
+				<div class="r-fit-text">
+
+				Examples of MCP -  MCP  server as .NET Tool, MCP in VS/Code
+
+				Nuget : 
+				<a href="https://www.nuget.org/packages/MCPArray2Any" target="_blank">
+					https://www.nuget.org/packages/MCPArray2Any
+					</a>	
+				<a href="https://www.nuget.org/packages/MCPArray2Any.win-x64" target="_blank">
+					https://www.nuget.org/packages/MCPArray2Any.win-x64
+					</a>	
+					<a href="https://www.nuget.org/packages/MCPArray2Any.linux-x64" target="_blank">
+					https://www.nuget.org/packages/MCPArray2Any.linux-x64
+					</a>	
+					</div>
+			</section>
+			<section data-name="MCPvsSwagger">
+				<h2>MCP vs OpenAPI</h2>
+
+				<div class="r-fit-text">
+				
+					Generate MCP from  Swagger or Swagger from MCP ? 
+					<br /> 
+					Demo
+						<br />
+						 mcparray http
+						<br />
+						http://localhost:5000/swagger
+						<br />
+						person[3]{firstName,lastName}:\n\rJohn,Doe\n\rAAnna,Smith\n\rAPeter,Jones\n\r
+
+
+				</div>
+			</section>
 			<section id="endMCP Tools" data-name="Last">
 				<h1>Questions ? </h1>
 				<h2>Thank you for your time </h2>
