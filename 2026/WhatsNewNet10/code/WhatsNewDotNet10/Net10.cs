@@ -57,9 +57,9 @@ internal class Net10
         Console.WriteLine("updated value is "+JsonSerializer.Deserialize<MyRecord>(json)!.Value); // -1
 
         JsonSerializerOptions options = new() { AllowDuplicateProperties = true };
-        JsonSerializer.Deserialize<MyRecord>(json, options);                // throws JsonException
-        JsonSerializer.Deserialize<JsonObject>(json, options);              // throws JsonException
-        JsonSerializer.Deserialize<Dictionary<string, int>>(json, options); // throws JsonException
+        JsonSerializer.Deserialize<MyRecord>(json, options);                
+        JsonSerializer.Deserialize<JsonObject>(json, options);              
+        JsonSerializer.Deserialize<Dictionary<string, int>>(json, options); 
 
         JsonDocumentOptions notDuplicate = new() { AllowDuplicateProperties = false };
         try
