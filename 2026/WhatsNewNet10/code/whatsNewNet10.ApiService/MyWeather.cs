@@ -31,7 +31,7 @@ public class MyWeather
             var heartRate = Random.Shared.Next(-30, 30);
             Console.WriteLine(" another weather sent ");
             yield return new WeatherForecast(DateOnly.FromDateTime(DateTime.Now), heartRate, "this is a heart beat at" + TimeOnly.FromDateTime(DateTime.Now).ToString("mmss"));
-            await Task.Delay(3_000, cancellationToken);
+            await Task.Delay(1_000, cancellationToken);
         }
     }
 
