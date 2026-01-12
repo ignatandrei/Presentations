@@ -44,7 +44,8 @@ var db = sql
 builder.AddProject<Projects.EFCoreDemo>("EFCoreDemo")
        .WithReference(db)
        .WaitFor(db)
-       .ExecuteScaffoldEF(db);
+       .ExecuteScaffoldEF(db)
+        .WithExplicitStart()
        ;
 
 // After adding all resources, run the app...

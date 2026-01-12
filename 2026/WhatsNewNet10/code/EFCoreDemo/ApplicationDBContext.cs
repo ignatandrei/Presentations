@@ -11,6 +11,9 @@ public partial class ApplicationDbContext : DbContext
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Employee>()
-            .HasQueryFilter("NoLongerActive", it => it.TerminationDate == null);
+            .HasQueryFilter("Active", it => it.TerminationDate == null);
+
+        //modelBuilder.Entity<Employee>()
+        //    .HasQueryFilter("IT", it => it.Name.Contains("T"));
     }
 }
