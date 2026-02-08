@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Here will be data, fetched from the server
+    <ul id="data" class="myUl"></ul>
+
+    <script>
+        var dt = new Date();
+        var ulAppend = document.getElementById('data');
+        const li = document.createElement('li');
+        li.textContent = "started at " + dt;
+        ulAppend.appendChild(li);
+
+        for (var i = 5; i < 25; i+=5) {
+            fetch('/data/'+i)
+                .then(response => response.text())
+                .then(data => {
+                    
+                        const li = document.createElement('li');
+                        li.textContent = data;
+                        ulAppend.appendChild(li);
+                    });
+                
+        }
+        </script>
+    <button onclick="javascript:window.alert('test')" >Click me</button>
+</body>
+</html>
