@@ -30,7 +30,7 @@
 					Press right arrow to go forward.
 					<br />
 					<br />
-					Online at https://ignatandrei.github.io/Presentations/Playwrightprez.html
+					Online at https://ignatandrei.github.io/Presentations/PlaywrightMCPAgentsprez.html
 					
 					<br />
 					For download https://ignatandrei.github.io/Presentations/Playwright.zip
@@ -118,7 +118,7 @@
 				</aside>
 			</section>
 
-			<section  data-name="RunNodeJS" style="text-align: left;">
+			<section  data-name="NodeJS" style="text-align: left;">
 				<h4>Run in NodeJS</h4>
 				<div class="r-fit-text">
 Explain structure				
@@ -126,17 +126,46 @@ Explain structure
 npx playwright codegen http://localhost:5348/
 npx playwright test --ui
 					</code></pre>
-
-					Run Andrei Test
-			
-					After this, https://playwright.dev/docs/test-agents
-					Run also Aspire Eshop.
+Generate a new Node Playwright project and run the tests
+<pre><code data-trim data-noescape >
+npm init playwright@latest
+</code></pre>
+					Run test generated <br />
 			</div>
 				<aside class="notes">
 					Click on button and see the code generated
 				</aside>
 			</section>
 
+			<section  data-name="Agents" style="text-align: left;">
+				<h4>Run in NodeJS</h4>
+				<div class="r-fit-text">
+
+Generate a new Node Playwright project and run the tests
+<pre><code data-trim data-noescape >
+npm init playwright@latest
+</code></pre>
+					Run  Aspire Eshop to have the test application. See cart behaviour<br />			
+					Modify the seed to show the initial page<br />
+					After this, https://playwright.dev/docs/test-agents<br />
+
+
+<pre><code data-trim data-noescape >
+npx playwright init-agents --loop=vscode
+
+Planner: 
+Explore the Todo app interface, create a test plan for basic operations.
+
+Generator: 
+Generate tests for the "### 1. ...." section.
+
+</code>
+					Generate Tests and run
+			</div>
+				<aside class="notes">
+					Click on button and see the code generated
+				</aside>
+			</section>
 
 			<section  data-name="Links" style="text-align: left;">
 				<h4>Links</h4>
