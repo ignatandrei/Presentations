@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>GitHub Copilot – Features, Marketplace & More</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/sky.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- ==================== TITLE ==================== -->
+			<section data-background-color="#24292e" data-name="GitHubCopilot" style="text-align: left; color: white;">
+				<div class="r-fit-text">
+					<span style="color:#f0f6fc;">🤖 GitHub Copilot</span>
+					<br />
+					<span style="color:#58a6ff;">Features, Marketplace &amp; More</span>
+					<br /><br />
+					Press <em>space</em> to navigate forward. &nbsp; Left/Right arrows to move between slides.
+					<br /><br />
+					Online at https://ignatandrei.github.io/Presentations/GitHubCopilotprez.html
+					<br />
+					For download https://ignatandrei.github.io/Presentations/GitHubCopilot.zip
+				</div>
+			</section>
+
+			<!-- ==================== AUTHOR ==================== -->
+			<section data-name="Author" style="text-align: left;">
+				<h4>About me</h4>
+				<img alt="ignat" src="ignat.jpg" style="width: 10%">
+				Andrei Ignat <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a>
+				<div class="r-fit-text">
+					<pre><code data-trim data-noescape>
+System.Console.WriteLine("Ignat Andrei");
+System.Console.WriteLine("GitHub Copilot");
+					</code></pre>
+					<p>YouTube 5 minutes .NET and tools : <a href="http://bit.ly/5MinTools">http://bit.ly/5MinTools</a></p>
+					<p>Book Making Open Source Component : <a href="http://bit.ly/NetOpenSourceComponent">http://bit.ly/NetOpenSourceComponent</a></p>
+					<p>Book Copy Paste from StackOverflow : <a href="https://amzn.to/2PQ8EDc">https://amzn.to/2PQ8EDc</a></p>
+					<p>Roslyn Source Code Generators with examples :
+						<a href="https://ignatandrei.github.io/RSCG_Examples/v2">https://ignatandrei.github.io/RSCG_Examples/</a>
+					</p>
+					<p>Monthly meetings: <a href="https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/">https://www.meetup.com/Bucharest-A-D-C-E-S-Meetup/</a></p>
+					For notes press S <br />
+					For print <a href="?print-pdf" target="_blank">?print-pdf</a><br />
+					For all slides press ESC<br />
+					<aside class="notes">
+						Welcome everyone!
+
+						Today's talk is about GitHub Copilot — GitHub's AI-powered developer platform that has grown far beyond simple autocomplete.
+
+						I will cover:
+						- What Copilot is and its core features: completions, chat, inline editing, agent mode
+						- MCP / CLI integration
+						- Working in parallel with the (many) CLI and GitHub.com (PR review, Copilot Chat on the web)
+
+						Target audience: developers, tech leads, architects, and anyone evaluating or already using AI coding tools.
+
+						Feel free to ask questions at any time — or hold them until the Q&amp;A slide at the end.
+
+						Press S at any time to see these speaker notes. Press ESC for an overview of all slides.
+					</aside>
+				</div>
+			</section>
+
+			<!-- ==================== WHAT IS COPILOT ==================== -->
+			<section data-name="WhatIsCopilot" style="text-align: left;">
+				<h4>History GitHub Copilot</h4>
+				<div class="r-fit-text">
+					<a href="https://github.com/features/copilot" target="_blank">https://github.com/features/copilot</a>
+					<p>GitHub Copilot is an AI-powered coding assistant developed by GitHub .<br />
+					It uses large language models trained on billions of lines of public code to suggest code, functions, tests, and more — right in your editor.</p>
+					<ul>
+						<li>Powered by Models - either in cloud on local ( see Ollama in VSCode ).</li>
+						<li>Available as a <a href="https://github.com/features/copilot/plans" target="_blank">free tier and paid plans</a></li>
+						<li>Where can you work with Copilot ? </li>
+					</ul>
+					<aside class="notes">
+						Open VSCode and show the GitHub Copilot Chat button in the sidebar and the inline chat icon in the editor.
+						Also see ollama model qwen3 for local models 
+						Open also Copilot CLI in terminal .
+						Open https://github.com/ignatandrei/powershellProfile/pull/6#issue-comment-box
+						Open https://github.com/ignatandrei/powershellProfile/agents 
+					</aside>
+				</div>
+			</section>
+
+			<!-- ==================== CORE FEATURES ==================== -->
+			<section data-name="CoreFeatures" style="text-align: left;">
+				<h4>Special features</h4>
+				<div class="r-fit-text">
+					<ul>
+						<li><strong>Resume for Copilot CLI</strong> </li>
+						<li><strong>Slash Commands</strong> – <code>/explain</code>, <code>/fix</code>, <code>/tests</code>, <code>/doc</code>, <code>/optimize</code> and more.</li>
+						<li><strong>Context Variables</strong> – <code>#file</code>, <code>#selection</code>, <code>#codebase</code>, <code>#terminal</code>, <code>#web</code> to provide rich context.</li>
+						<li><strong>MCP / CLI Integrations</strong></li>
+					</ul>
+					Demo 1
+					Demonstration of slash commands and context variables in Copilot Chat.
+					Demo of playwright MCP server in VS Code Agent Mode.
+					Demo of playwright CLI tool in terminal.
+					<aside class="notes">
+					</aside>
+				</div>
+			</section>
+			<!-- ==================== MARKETPLACE / EXTENSIONS ==================== -->
+			<section data-name="Marketplace" style="text-align: left;">
+				<h4>GitHub Copilot Extensions &amp; Marketplace</h4>
+				<div class="r-fit-text">
+					Agents, Skills, Hooks
+					<br />
+					Demo Code 2
+					<br />				
+					And plugins 
+					<a href="https://awesome-copilot.github.com/learning-hub/installing-and-using-plugins/#_top" target="_blank">https://awesome-copilot.github.com/learning-hub/installing-and-using-plugin</a>
+					
+					Show Andrei Ignat Marketplace
+					<aside class="notes">
+					In copilot : 
+					
+					https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-marketplace
+
+					/plugin marketplace list 
+					  /plugin marketplace  remove dotnet-agent-skills --force
+					 /plugin marketplace add https://github.com/dotnet/skills/  
+					 /plugin marketplace browse  dotnet-agent-skills
+					 
+					 See https://github.com/dotnet/skills/tree/main/plugins/dotnet-diag
+
+					  /plugin marketplace add https://github.com/ignatandrei/AICopilotMarketplace
+
+					 https://awesome-copilot.github.com/learning-hub/installing-and-using-plugins/#sharing-marketplace-registrations-across-a-team
+					</aside>
+				</div>
+			</section>
+
+			<!-- ==================== END ==================== -->
+			<section id="endGitHubCopilot" data-name="Last">
+				<h1>Questions?</h1>
+				<h2>Thank you for your time 🚀</h2>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/simplemenu/simplemenu.js"></script>
+
+	<script>
+		Reveal.initialize({
+			hash: true,
+			history: false,
+			controls: true,
+			controlsTutorial: true,
+			controlsBackArrows: 'visible',
+			slideNumber: 'c/t',
+			showSlideNumber: 'all',
+			jumpToSlide: true,
+			keyboard: true,
+			touch: true,
+			loop: true,
+			help: true,
+			showNotes: false,
+			pdfMaxPagesPerSlide: 1,
+			dependencies: [
+				{ src: 'plugin/tableofcontents.js' }
+			],
+			tableofcontents: {
+				title: "Table of Contents",
+				position: 2,
+				titleTagSelector: "h1, h2, h3, h4, h5, h6",
+				ignoreFirstSlide: true,
+				fadeInElements: false
+			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealMath, RevealZoom, Simplemenu],
+			simplemenu: {
+				scale: 0.3,
+				barhtml: {
+					header: '<div class="menubar"><a href="http://msprogrammer.serviciipeweb.ro/" target="_blank"><img class="logo" src="ignat.jpg" height="50px" width="50px"></a><ul class="menu"></ul></div>',
+					footer: ""
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
