@@ -1,5 +1,5 @@
 ---
-name: Search
+name: search-dilema
 description: Search for articles on dilema.ro by submitting a POST request and returning the first 3 article names with links. Use when the user wants to find articles on dilema.ro by keyword or title.
 allowed-tools: Bash(playwright-cli:*)
 ---
