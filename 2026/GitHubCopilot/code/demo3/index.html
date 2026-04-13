@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using the .NET Agent Skills Marketplace</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --panel-2: #1f2630;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #9da7b3;
+      --accent: #58a6ff;
+      --accent-2: #2f81f7;
+      --good: #3fb950;
+      --warn: #d29922;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(88, 166, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(63, 185, 80, 0.10), transparent 22%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero,
+    .section,
+    .example-shell {
+      background: linear-gradient(180deg, rgba(31, 38, 48, 0.95), rgba(22, 27, 34, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(88, 166, 255, 0.12);
+      border: 1px solid rgba(88, 166, 255, 0.28);
+      color: #c9d1d9;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 1.06rem;
+    }
+
+    .hero-grid,
+    .steps,
+    .cards,
+    .principles,
+    .example-grid,
+    .footer-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.35fr 0.9fr;
+      align-items: start;
+      margin-top: 28px;
+    }
+
+    .stat-box,
+    .card,
+    .step,
+    .principle,
+    .example-box,
+    .note {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .stat-box {
+      padding: 18px;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .callout {
+      padding: 18px 20px;
+      background: rgba(210, 153, 34, 0.10);
+      border: 1px solid rgba(210, 153, 34, 0.35);
+      border-radius: 18px;
+      color: #f0d79c;
+    }
+
+    .callout strong {
+      color: #fff4cf;
+    }
+
+    .section {
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      align-items: end;
+    }
+
+    .section-head p {
+      max-width: 720px;
+    }
+
+    .steps {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .step {
+      padding: 18px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      font-weight: 700;
+      background: rgba(47, 129, 247, 0.18);
+      color: #dbeafe;
+      border: 1px solid rgba(88, 166, 255, 0.24);
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 20px;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: #c9d1d9;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .card ul,
+    .example-box ul {
+      margin: 14px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .card li,
+    .example-box li {
+      margin-bottom: 7px;
+    }
+
+    .principles {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .principle {
+      padding: 18px;
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .example-shell {
+      padding: 28px;
+    }
+
+    .example-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      margin-top: 18px;
+    }
+
+    .example-box {
+      padding: 20px;
+    }
+
+    .prompt {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(88, 166, 255, 0.24);
+      background: rgba(88, 166, 255, 0.08);
+      color: #dceeff;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+
+    .command-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .command {
+      padding: 18px;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+
+    .command strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      margin-top: 18px;
+    }
+
+    .note {
+      padding: 18px;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(63, 185, 80, 0.10);
+      border: 1px solid rgba(63, 185, 80, 0.28);
+      color: #d9ffe1;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .steps,
+      .cards,
+      .principles,
+      .example-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">.NET Agent Skills marketplace example</div>
+      <h1>How to use the dotnet/skills marketplace with Copilot</h1>
+      <p class="hero-copy">
+        The <a href="https://github.com/dotnet/skills/">dotnet/skills</a> repository is the .NET team's curated marketplace of agent plugins, skills, and custom agents for coding agents.
+        It gives you a concrete example of the newer marketplace model: add a trusted catalog, install a plugin such as <strong>dotnet</strong> or <strong>dotnet-diag</strong>,
+        restart Copilot, then use the loaded skills and agents in a real .NET workflow.
+      </p>
+
+      <div class="hero-grid">
+        <div class="stat-box">
+          <strong>What the marketplace is for</strong>
+          <p>
+            This marketplace lets .NET developers add focused capabilities for diagnostics, ASP.NET Core, testing, upgrades, NuGet, templates, AI, and other common .NET tasks.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Add marketplace</span>
+            <span class="tag">Install plugin</span>
+            <span class="tag">Load skills</span>
+            <span class="tag">Use in workflow</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Why this is a strong demo</strong><br>
+          The repository already publishes a named marketplace, <strong>dotnet-agent-skills</strong>, with install instructions for Copilot CLI.
+          That makes it much easier to show an end-to-end story than a generic "plugin marketplace" mockup.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>How a user should use the marketplace</h2>
+          <p>
+            The flow for <strong>dotnet/skills</strong> is simple: add the marketplace, install a plugin, restart Copilot, then use the new skills or agents on a real .NET task.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">1</div>
+          <h3>Add the marketplace</h3>
+          <p>Register the .NET team's marketplace with <strong>/plugin marketplace add dotnet/skills</strong>.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">2</div>
+          <h3>Pick a plugin</h3>
+          <p>Choose a plugin that matches the job, such as <strong>dotnet</strong>, <strong>dotnet-diag</strong>, or <strong>dotnet-aspnet</strong>.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">3</div>
+          <h3>Install it</h3>
+          <p>Install from the marketplace with <strong>/plugin install &lt;plugin&gt;@dotnet-agent-skills</strong>.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">4</div>
+          <h3>Restart Copilot</h3>
+          <p>Restart so the newly installed plugin can load its skills, language server, or custom agents.</p>
+        </article>
+        <article class="step">
+          <div class="step-number">5</div>
+          <h3>Use the new capabilities</h3>
+          <p>Run <strong>/skills</strong> or <strong>/agents</strong>, then ask Copilot to apply the installed plugin to your current .NET problem.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Examples from the dotnet/skills marketplace</h2>
+          <p>
+            These examples come directly from the plugins published in the <strong>dotnet/skills</strong> repository.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet</h3>
+            <span class="pill">Core .NET development</span>
+          </div>
+          <p>Common everyday C# and .NET skills, plus a C# language server integration for <strong>.cs</strong> files.</p>
+          <ul>
+            <li>Core .NET coding tasks</li>
+            <li>C# language-aware help</li>
+            <li>Useful default plugin for most .NET repos</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet-diag</h3>
+            <span class="pill">Diagnostics and performance</span>
+          </div>
+          <p>Skills for .NET performance investigations, debugging, and incident analysis.</p>
+          <ul>
+            <li>Analyze .NET performance problems</li>
+            <li>Collect traces and dumps</li>
+            <li>Use the optimizing-dotnet-performance agent</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet-aspnet</h3>
+            <span class="pill">ASP.NET Core</span>
+          </div>
+          <p>ASP.NET Core web development skills for middleware, endpoints, real-time communication, and API patterns.</p>
+          <ul>
+            <li>Design and troubleshoot endpoints</li>
+            <li>Work through middleware behavior</li>
+            <li>Get help with common API patterns</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet-test</h3>
+            <span class="pill">Testing</span>
+          </div>
+          <p>Skills for running, diagnosing, and migrating .NET tests across platforms and test frameworks.</p>
+          <ul>
+            <li>Run and filter tests faster</li>
+            <li>Diagnose broken test runs</li>
+            <li>Handle MSTest workflows</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet-upgrade</h3>
+            <span class="pill">Modernization</span>
+          </div>
+          <p>Guidance for migrating and upgrading .NET projects across framework versions, language features, and compatibility targets.</p>
+          <ul>
+            <li>Plan framework upgrades</li>
+            <li>Modernize language features</li>
+            <li>Reduce upgrade risk</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>dotnet-ai</h3>
+            <span class="pill">AI and ML</span>
+          </div>
+          <p>AI and ML skills for .NET, including LLM integration, RAG pipelines, MCP, and classic ML with ML.NET.</p>
+          <ul>
+            <li>Choose the right AI approach</li>
+            <li>Design agentic workflows in .NET</li>
+            <li>Connect AI ideas to shipping code</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Commands to add dotnet/skills and install a plugin</h2>
+          <p>
+            These are the concrete commands published in the repository README for Copilot CLI.
+          </p>
+        </div>
+      </div>
+
+      <div class="command-list">
+        <article class="command">
+          <strong>1. Launch Copilot CLI</strong>
+          <div class="prompt">copilot</div>
+        </article>
+
+        <article class="command">
+          <strong>2. Add the marketplace</strong>
+          <div class="prompt">/plugin marketplace add dotnet/skills</div>
+          <p>
+            This registers the <strong>dotnet-agent-skills</strong> marketplace from the .NET team.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>3. Install a plugin from the marketplace</strong>
+          <div class="prompt">/plugin install dotnet-diag@dotnet-agent-skills</div>
+          <p>
+            Swap in other plugins such as <strong>dotnet</strong>, <strong>dotnet-aspnet</strong>, or <strong>dotnet-test</strong>.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>4. Restart Copilot</strong>
+          <div class="prompt">exit
+copilot</div>
+          <p>
+            Restarting loads the newly installed plugin into the session.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>5. Show available skills</strong>
+          <div class="prompt">/skills</div>
+          <p>
+            Use this to prove the plugin loaded and to show which skills are now available.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>6. Show available custom agents</strong>
+          <div class="prompt">/agents</div>
+          <p>
+            This is especially useful after installing <strong>dotnet-diag</strong>, which ships a performance-focused agent.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>7. Use the installed plugin in a real prompt</strong>
+          <div class="prompt">Investigate why this .NET service is slow under load. Use the installed diagnostics capabilities to suggest the next trace or dump command, explain what data to collect, and point out the most likely hot paths to inspect first.</div>
+          <p>
+            After installation, the goal is not to call the marketplace again; it is to use the newly loaded skills in normal Copilot work.
+          </p>
+        </article>
+
+        <article class="command">
+          <strong>8. Update the plugin later</strong>
+          <div class="prompt">/plugin update dotnet-diag@dotnet-agent-skills</div>
+          <p>
+            The same naming pattern works for updates: <strong>&lt;plugin&gt;@dotnet-agent-skills</strong>.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Design principles for a new marketplace</h2>
+          <p>
+            The .NET marketplace is a good reference because it is curated around real developer tasks instead of generic app categories.
+          </p>
+        </div>
+      </div>
+
+      <div class="principles">
+        <article class="principle">
+          <strong>Curate by developer workflow</strong>
+          <p>Each plugin maps to a recognizable .NET need such as diagnostics, ASP.NET Core, testing, upgrades, or AI integration.</p>
+        </article>
+        <article class="principle">
+          <strong>Make installation obvious</strong>
+          <p>The add-marketplace and install commands are short, repeatable, and easy to demo live.</p>
+        </article>
+        <article class="principle">
+          <strong>Connect installation to usage</strong>
+          <p>A good marketplace example does not stop at install time; it immediately shows the new skill or agent solving a real engineering task.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="example-shell">
+      <h2>Worked example: install dotnet-diag and use it</h2>
+      <p>
+        Here is a concrete example you can demo live. The developer adds the marketplace, installs <strong>dotnet-diag</strong>, and then uses the loaded diagnostics skills
+        to investigate a performance problem in a .NET service.
+      </p>
+
+      <div class="example-grid">
+        <article class="example-box">
+          <h3>User journey</h3>
+          <ul>
+            <li>Run <strong>/plugin marketplace add dotnet/skills</strong>.</li>
+            <li>Install <strong>/plugin install dotnet-diag@dotnet-agent-skills</strong>.</li>
+            <li>Restart Copilot, then inspect <strong>/skills</strong> and <strong>/agents</strong>.</li>
+            <li>Ask Copilot to use those diagnostics capabilities against the current codebase or incident.</li>
+          </ul>
+
+          <div class="prompt">Example prompt to Copilot:
+
+"This ASP.NET Core service gets slow after a few minutes of load. Use the installed .NET diagnostics capabilities to explain whether I should start with a trace, dump, or benchmark, tell me the next command to run, and outline how you would narrow down the hot path."</div>
+        </article>
+
+        <article class="example-box">
+          <h3>Expected result</h3>
+          <ul>
+            <li>Copilot uses the plugin's diagnostics knowledge to recommend the right investigation path.</li>
+            <li>It suggests concrete next commands such as trace or dump collection instead of generic advice.</li>
+            <li>The developer gets an agent-ready .NET workflow without hunting for separate troubleshooting docs.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="footer-grid">
+        <article class="note">
+          <strong>Why dotnet/skills works well as a marketplace demo</strong>
+          <p>
+            It has a real marketplace name, concrete install commands, multiple focused plugins, and at least one custom agent. That gives you both the "how to add it"
+            story and the "what do I do with it next" story on one page.
+          </p>
+        </article>
+        <article class="note">
+          <strong>Simple rule of thumb</strong>
+          <p>
+            Add <strong>dotnet/skills</strong>, install the plugin that matches the task, restart, then use <strong>/skills</strong>, <strong>/agents</strong>, and a focused prompt to show the value.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

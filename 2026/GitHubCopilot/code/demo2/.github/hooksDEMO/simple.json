@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "powershell": "$wshell = New-Object -ComObject Wscript.Shell; $wshell.Popup('Welcome to your development environment!', 0, 'Session Started', 64)"
+      }
+    ]
+  }
+}
