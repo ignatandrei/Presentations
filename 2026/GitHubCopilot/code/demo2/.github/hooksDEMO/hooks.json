@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "powershell": "Add-Content -Path .github\\hooks\\session.log -Value 'Copilot session started'"
+      }
+    ]
+  }
+}
