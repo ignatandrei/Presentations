@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aspire 13: What's New</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: rgba(14, 25, 44, 0.92);
+      --panel-2: rgba(20, 34, 58, 0.92);
+      --text: #e8eefc;
+      --muted: #9db0d0;
+      --accent: #7cc4ff;
+      --accent-2: #a78bfa;
+      --line: rgba(150, 180, 220, 0.18);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background:
+      radial-gradient(circle at top left, rgba(124, 196, 255, 0.22), transparent 28%),
+      radial-gradient(circle at top right, rgba(167, 139, 250, 0.18), transparent 24%),
+      linear-gradient(180deg, #081120 0%, #060b14 100%);
+      color: var(--text);
+      font: 16px/1.5 Inter, Segoe UI, Arial, sans-serif;
+    }
+    body { padding: 32px; }
+    .deck { max-width: 1320px; margin: 0 auto; }
+    .hero, .summary, .category {
+      background: linear-gradient(180deg, var(--panel), rgba(9, 16, 29, 0.94));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .hero { padding: 40px; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(124, 196, 255, 0.18), transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(124, 196, 255, 0.12);
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 16px 0 10px; font-size: clamp(36px, 5vw, 62px); line-height: 1.02; }
+    .lead { max-width: 900px; color: var(--muted); font-size: 18px; margin: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .chip, .release {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 14px;
+    }
+    .summary { padding: 22px; margin-bottom: 24px; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .release {
+      display: block;
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+    .release strong { display: block; font-size: 22px; margin-bottom: 6px; }
+    .release span { color: var(--muted); }
+    .category {
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    .category h2 { margin: 0 0 6px; font-size: 28px; }
+    .category p.intro { margin: 0 0 18px; color: var(--muted); max-width: 980px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, var(--panel-2), rgba(12, 20, 35, 0.96));
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(124, 196, 255, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    ul { margin: 10px 0 0 18px; padding: 0; color: var(--text); }
+    li { margin: 6px 0; color: var(--muted); }
+    .source { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+    footer {
+      margin: 28px 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    a { color: var(--accent); }
+    @media (max-width: 980px) {
+      .summary-grid, .cards { grid-template-columns: 1fr; }
+      body { padding: 18px; }
+      .hero { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="hero">
+      <div class="eyebrow">Aspire 13 release wave</div>
+      <h1>What&apos;s new in Aspire 13</h1>
+      <p class="lead">A thematic presentation of the major changes across Aspire 13.0, 13.1, 13.2, and 13.3, grouped by the real product shifts rather than by release version.</p>
+      <div class="chips">
+        <span class="chip">Platform and language support</span>
+        <span class="chip">CLI and lifecycle control</span>
+        <span class="chip">Dashboard and telemetry</span>
+        <span class="chip">Deployment and infrastructure</span>
+        <span class="chip">MCP and AI tooling</span>
+      </div>
+    </section>
+
+    <section class="summary">
+      <div class="summary-grid">
+        <div class="release"><strong>Platform shift</strong><span>Aspire became multi-language, with Python, JavaScript, and TypeScript AppHost support.</span></div>
+        <div class="release"><strong>Operational control</strong><span>The CLI now manages run, stop, describe, export, restore, and destroy flows.</span></div>
+        <div class="release"><strong>Telemetry surface</strong><span>The dashboard gained export/import, notifications, browser data, and richer visualization.</span></div>
+        <div class="release"><strong>Deploy anywhere</strong><span>Azure, Kubernetes, Compose, and registries all became more explicit and portable.</span></div>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Platform and language support</h2>
+      <p class="intro">Current Aspire 13 capabilities focus on a multi-language platform with Python and JavaScript as first-class runtimes and near-parity TypeScript AppHost support.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="tag">Python</span></div>
+          <h3>Production-ready Python app model</h3>
+          <ul>
+            <li>Run Python scripts, modules, and executables from the app model.</li>
+            <li>Uvicorn/FastAPI support, package-manager detection, and Dockerfile generation.</li>
+            <li>Python version detection and certificate trust automation.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\01-python-app-model</code><br>Source: <a href="https://aspire.dev/whats-new/aspire-13" target="_blank" rel="noreferrer">Aspire 13</a></p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="tag">JavaScript + TypeScript</span></div>
+          <h3>Unified JavaScript publishing and TypeScript AppHost parity</h3>
+          <ul>
+            <li>First-class JS publish flows for static sites, Node servers, npm-script apps, and Next.js.</li>
+            <li>Support for Bun, Yarn, and pnpm in modern apphost workflows.</li>
+            <li>TypeScript AppHost parity features such as unified <code>withEnvironment</code> and Compose/deployment hooks.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\02-js-ts-parity</code><br>Sources: <a href="https://aspire.dev/whats-new/aspire-13" target="_blank" rel="noreferrer">Aspire 13</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>CLI and developer workflows</h2>
+      <p class="intro">The current CLI is an end-to-end lifecycle tool: build and deploy pipelines, background run control, diagnostics, export, docs lookup, and teardown.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="tag">Lifecycle</span></div>
+          <h3>Full app lifecycle from terminal</h3>
+          <ul>
+            <li><code>aspire start</code>, <code>stop</code>, <code>ps</code>, <code>describe</code>, <code>doctor</code>, and <code>restore</code>.</li>
+            <li><code>aspire secret</code>, <code>aspire certs</code>, <code>aspire wait</code>, and <code>aspire export</code> for ops and automation.</li>
+            <li><code>aspire destroy</code> for clean resource teardown.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\03-cli-lifecycle</code><br>Sources: <a href="https://aspire.dev/whats-new/aspire-13-2" target="_blank" rel="noreferrer">Aspire 13.2</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="tag">Pipelines</span></div>
+          <h3>Pipeline and dashboard-first workflows</h3>
+          <ul>
+            <li><code>aspire do</code> powers composable build/publish/deploy pipelines.</li>
+            <li><code>aspire dashboard run</code> enables standalone dashboard usage.</li>
+            <li><code>aspire docs api</code> and NativeAOT tool distribution strengthen developer ergonomics.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\04-pipelines-dashboard</code><br>Sources: <a href="https://aspire.dev/whats-new/aspire-13" target="_blank" rel="noreferrer">Aspire 13</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Dashboard and telemetry</h2>
+      <p class="intro">The final state is a richer telemetry surface that combines backend and browser data with export/import, notifications, and programmable APIs.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="tag">Telemetry</span></div>
+          <h3>Unified telemetry operations</h3>
+          <ul>
+            <li>Import/export telemetry bundles, JSON exports, and .env variable export.</li>
+            <li>Telemetry HTTP API for logs, spans, traces, and real-time follow mode.</li>
+            <li>Notification center with structured command results.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\05-telemetry-operations</code><br>Source: <a href="https://aspire.dev/whats-new/aspire-13-2" target="_blank" rel="noreferrer">Aspire 13.2</a></p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="tag">Observability</span></div>
+          <h3>Cross-layer observability in one dashboard</h3>
+          <ul>
+            <li>Browser console logs, network requests, and screenshots alongside server telemetry.</li>
+            <li>GenAI visualizer improvements including tool definitions, evaluations, and richer payload handling.</li>
+            <li>Standalone dashboard mode for any OTLP source.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\06-cross-layer-observability</code><br>Sources: <a href="https://aspire.dev/whats-new/aspire-13-1" target="_blank" rel="noreferrer">Aspire 13.1</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>Deployment and infrastructure</h2>
+      <p class="intro">Deployment now centers on explicit environments, portable runtime behavior, and clean lifecycle control across Kubernetes, Azure, and Compose.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="tag">Kubernetes + Compose</span></div>
+          <h3>Portable deploy and teardown across runtimes</h3>
+          <ul>
+            <li>Helm-based Kubernetes deployment with Ingress and Gateway API routing resources.</li>
+            <li>Podman support and privileged Docker Compose publishing for advanced workloads.</li>
+            <li>Container tunnel enabled by default for consistent host connectivity.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\06-deploy</code><br>Source: <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="tag">Azure + Registry</span></div>
+          <h3>Explicit cloud resources and registry flows</h3>
+          <ul>
+            <li>Azure Managed Redis, deployment slots, and clearer role/compute validation.</li>
+            <li>Explicit container registry resources and push steps in pipeline workflows.</li>
+            <li>Build, deploy, and destroy are now symmetric lifecycle operations.</li>
+          </ul>
+          <p class="source">No code example<br>Sources: <a href="https://aspire.dev/whats-new/aspire-13-1" target="_blank" rel="noreferrer">Aspire 13.1</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>AI agent tooling</h2>
+      <p class="intro">The latest workflow is AI-assisted by default, with MCP-aware agent setup and a deep VS Code integration for live control over resources.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="meta"><span class="tag">AI agents + MCP</span></div>
+          <h3>Agent-native Aspire workflows</h3>
+          <ul>
+            <li><code>aspire agent init</code> configures MCP and installs Aspire-focused skills.</li>
+            <li>MCP tools expose integrations, apphosts, resources, logs, and traces.</li>
+          </ul>
+          <p class="source">Folder: <code>examples\07-agent</code><br>Sources: <a href="https://aspire.dev/whats-new/aspire-13-1" target="_blank" rel="noreferrer">Aspire 13.1</a>, <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">Aspire 13.3</a></p>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="tag">Final</span></div>
+          <h3>Questions?</h3>
+          <ul>
+            <li><a href="https://aspire.dev/docs/" target="_blank" rel="noreferrer">https://aspire.dev/docs/</a></li>
+            <li>See sources below</li>
+          </ul>
+          <p class="source">No code example</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      Sources: <a href="https://aspire.dev/whats-new/aspire-13" target="_blank" rel="noreferrer">13.0</a>,
+      <a href="https://aspire.dev/whats-new/aspire-13-1" target="_blank" rel="noreferrer">13.1</a>,
+      <a href="https://aspire.dev/whats-new/aspire-13-2" target="_blank" rel="noreferrer">13.2</a>,
+      <a href="https://aspire.dev/whats-new/aspire-13-3" target="_blank" rel="noreferrer">13.3</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="AspireDeploy.AppHost/AspireDeploy.AppHost.csproj" />
+  <Project Path="AspireDeploy.Server/AspireDeploy.Server.csproj" />
+  <Project Path="frontend/frontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

@@ -1,0 +1,9 @@
+{
+  "name": "demo-next",
+  "private": true,
+  "scripts": {
+    "dev": "node -e \"console.log('https://aspire.dev/whats-new/aspire-13/#package-manager-flexibility')\"",
+    "build": "node -e \"console.log('https://aspire.dev/whats-new/aspire-13/#package-manager-flexibility')\"",
+    "start": "node -e \"console.log('https://aspire.dev/whats-new/aspire-13/#package-manager-flexibility')\""
+  }
+}

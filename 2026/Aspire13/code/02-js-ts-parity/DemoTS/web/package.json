@@ -1,0 +1,9 @@
+{
+  "name": "demo-next",
+  "private": true,
+  "scripts": {
+    "dev": "node -e \"console.log('https://aspire.dev/app-host/typescript-apphost/')\"",
+    "build": "node -e \"console.log('https://aspire.dev/app-host/typescript-apphost/')\"",
+    "start": "node -e \"console.log('https://aspire.dev/app-host/typescript-apphost/')\""
+  }
+}
