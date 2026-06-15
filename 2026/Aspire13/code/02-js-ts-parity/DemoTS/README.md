@@ -9,7 +9,5 @@ Minimal runnable baseline for TS parity discussion.
 ## Run
 ```powershell
 cd .\examples\02-js-ts-parity
-aspire start --apphost .\apphost.ts
-aspire describe
-aspire stop --all
+aspire run --apphost .\apphost.ts
 ```

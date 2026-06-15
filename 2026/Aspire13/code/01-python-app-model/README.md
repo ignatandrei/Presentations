@@ -7,10 +7,10 @@ Minimal Aspire example for Python resources.
 - Explain: Aspire runs Python as a first-class app resource.
 
 ## Run
-```powershell
-cd .\examples\01-python-app-model
-aspire start --apphost .\apphost.cs
-aspire describe
-aspire stop --all
-```
 
+```powershell
+
+cd .\examples\01-python-app-model
+aspire run --apphost .\apphost.cs
+
+```

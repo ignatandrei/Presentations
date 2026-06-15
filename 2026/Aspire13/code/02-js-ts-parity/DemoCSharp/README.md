@@ -9,7 +9,5 @@ Minimal runnable baseline for JS new features
 ## Run
 ```powershell
 cd .\examples\02-js-ts-parity
-aspire start --apphost .\apphost.cs
-aspire describe
-aspire stop --all
+aspire run --apphost .\apphost.cs
 ```
