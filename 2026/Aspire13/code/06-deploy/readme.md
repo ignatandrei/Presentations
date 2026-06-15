@@ -11,5 +11,5 @@ https://aspire.dev/deployment/kubernetes/kubernetes/
 https://aspire.dev/deployment/deploy-with-aspire/#built-in-target-capabilities
 
 aspire deploy --environment Andrei
-
+# see AspireDeploy.AppHost\aspire-output\docker-compose.yaml
 aspire deploy --environment Andreiz
